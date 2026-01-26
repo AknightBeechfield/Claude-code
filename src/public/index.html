@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting Notes Cleaner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Meeting Notes Cleaner</h1>
+      <p class="subtitle">Transform messy notes into clean, scan-friendly format</p>
+    </header>
+
+    <main>
+      <div class="panel input-panel">
+        <label for="rawNotes">Raw Notes</label>
+        <textarea
+          id="rawNotes"
+          placeholder="Paste your meeting notes here...
+
+Example:
+- um, so we decided to launch the new feature next week
+- action item: John will update the docs
+- basically the API is working but we need more tests
+- John will update the documentation (duplicate)
+- question: when is the deadline?
+- blocker: waiting on design approval"
+        ></textarea>
+        <div class="button-row">
+          <button id="cleanBtn" type="button">Clean Notes</button>
+          <button id="clearBtn" type="button" class="secondary">Clear</button>
+        </div>
+      </div>
+
+      <div class="panel output-panel">
+        <label for="cleanedNotes">Cleaned Notes</label>
+        <div id="cleanedNotes" class="output-area">
+          <p class="placeholder">Cleaned notes will appear here...</p>
+        </div>
+        <div class="button-row">
+          <button id="copyBtn" type="button" class="secondary" disabled>Copy to Clipboard</button>
+        </div>
+        <div id="stats" class="stats hidden"></div>
+      </div>
+    </main>
+
+    <div id="error" class="error hidden"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

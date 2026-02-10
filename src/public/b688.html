@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B688 Vintage Bucket Hat — Beechfield</title>
+  <meta name="description" content="Vintage bucket hat in heavy washed cotton with stitched ventilation eyelets and unisex fit. Available in multiple vintage colours." />
+  <link rel="stylesheet" href="https://use.typekit.net/sep5cxb.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useMemo, useState, useEffect } = React;
+
+    // Inline icons
+    const PlayIcon = (props) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <polygon points="5 3 19 12 5 21 5 3" />
+      </svg>
+    );
+
+    const FlameIcon = (props) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M8.5 14a3.5 3.5 0 1 0 7 0c0-2.5-1.8-4.2-3.5-6.5C9.8 9.8 8.5 11.5 8.5 14Z"/>
+        <path d="M12 2s2 3 2 5c0 0 4 2.5 4 7a6 6 0 1 1-12 0c0-4.5 4-7 4-7 0-2 2-5 2-5Z"/>
+      </svg>
+    );
+
+    const EmbroideryIcon = (props) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M3 21l14-14" />
+        <path d="M15 3l6 6" />
+        <circle cx="6" cy="18" r="1" />
+      </svg>
+    );
+
+    function B688PDP() {
+      // ---------- Data ----------
+      const COLORS = [
+        {
+          key: "vintage-black",
+          name: "Vintage Black",
+          swatch: "#1b1b1b",
+          images: [
+            "https://mediahub.beechfieldbrands.com/m/58c9e92cc79c29cf/webimage-beechfield_b688_vintage-black.png",
+          ],
+        },
+        {
+          key: "vintage-denim",
+          name: "Vintage Denim",
+          swatch: "#415a7a",
+          images: [
+            "https://mediahub.beechfieldbrands.com/m/38d20c7e57359682/webimage-beechfield_b688_vintage-denim.png",
+          ],
+        },
+        {
+          key: "vintage-light-denim",
+          name: "Vintage Light Denim",
+          swatch: "#8ba3be",
+          images: [
+            "https://mediahub.beechfieldbrands.com/m/6aa70718c56187bc/webimage-beechfield_b688_vintage-light-denim.png",
+          ],
+        },
+        {
+          key: "vintage-olive",
+          name: "Vintage Olive",
+          swatch: "#4f5b3b",
+          images: [
+            "https://d2csxpduxe849s.cloudfront.net/media/BBD46EA3-F7E7-441D-8663C747FAEA082D/90CE7A18-D971-4276-8D93EA85CFBE03D2/webimage-1A18BEC9-80A5-4B64-9BB77044414C36B2.png",
+            "https://mediahub.beechfieldbrands.com/m/5695b02850463bec/webimage-beechfield_b688_vintage-olive-green.png",
+            "https://mediahub.beechfieldbrands.com/m/720f1717954679da/webimage-beechfield_b688_vintage-olive_front-on-shot.png",
+          ],
+        },
+        {
+          key: "vintage-stone",
+          name: "Vintage Stone",
+          swatch: "#c2b9a8",
+          images: [
+            "https://mediahub.beechfieldbrands.com/m/3494dbeea9143a01/webimage-beechfield_b688_vintage-stone.png",
+          ],
+        },
+        {
+          key: "vintage-red",
+          name: "Vintage Red",
+          swatch: "#a7423d",
+          images: [
+            "https://mediahub.beechfieldbrands.com/m/1608bb4d949a8335/webimage-beechfield_b688_vintage-red.png",
+            "https://mediahub.beechfieldbrands.com/m/c89c7d439d55164/webimage-beechfield_b688_vintage-red_lifestyle_1848.png",
+          ],
+        },
+      ];
+
+      const CERTS = [
+        {
+          name: "Certification B",
+          href: "https://d2csxpduxe849s.cloudfront.net/media/BBD46EA3-F7E7-441D-8663C747FAEA082D/E83D82BC-2191-4CB6-BB5B756E2402F08E/webimage-F8506836-42B8-47C3-ACAB02A2A0257A9E.png",
+        },
+        {
+          name: "Certification C",
+          href: "https://d2csxpduxe849s.cloudfront.net/media/BBD46EA3-F7E7-441D-8663C747FAEA082D/9E43C68C-5B86-4128-A60201816FD40082/webimage-7F53D759-8AD0-4998-90E57D45E86F360D.png",
+        },
+        {
+          name: "Certification D",
+          href: "https://d2csxpduxe849s.cloudfront.net/media/BBD46EA3-F7E7-441D-8663C747FAEA082D/746D8F67-0859-4789-B8FCAA5794FB4528/webimage-98281725-72FD-4EED-B4A76799DC860D7C.png",
+        },
+      ];
+
+      const LOGISTICS = {
+        approxCartonRateGBP: 2.95,
+        productWeightG: { "S/M": 75, "L/XL": 85 },
+        cartonWeightKg: { "S/M": 10, "L/XL": 11 },
+        cartonDimensionsCm: { "S/M": "60 \u00d7 40 \u00d7 40", "L/XL": "60 \u00d7 40 \u00d7 40" },
+        cartonQty: { "S/M": 96, "L/XL": 96 },
+        polyBagQty: { "S/M": 12, "L/XL": 12 },
+        maxPrintAreaCm: { "S/M": "8 \u00d7 5.5", "L/XL": "8 \u00d7 5.5" },
+        maxEmbroideryFlatHoopCm: { "S/M": "8 \u00d7 5.5", "L/XL": "8 \u00d7 5.5" },
+        commodityCode: "6505009090",
+      };
+
+      const ASSET_PACK_URL = "https://mediahub.beechfieldbrands.com/media/?viewType=grid";
+      const COLLECTION = {
+        name: "Vintage Summer Collection",
+        url: "https://beechfieldbrands.com/new-beechfield-vintage-summer",
+      };
+      const VIDEO_URL =
+        "https://mediahub.beechfieldbrands.com/asset/6f907083-6e9e-46bc-8e02-617872a33b67/mp4/beechfield_b688_vintage-red.mp4";
+
+      const COMPARE_PRODUCTS = [
+        {
+          sku: "B688",
+          name: "Vintage Bucket Hat",
+          url: "https://beechfieldbrands.com/products/b688-vintage-bucket-hat",
+          image:
+            "https://mediahub.beechfieldbrands.com/m/720f1717954679da/webimage-beechfield_b688_vintage-olive_front-on-shot.png",
+          type: "Bucket hat",
+          composition: "100% heavy washed cotton",
+          sizes: "S/M (58cm), L/XL (60cm)",
+          certifications: "\u2014",
+          collection: "Vintage Summer Collection",
+          colours:
+            "Vintage Black, Vintage Denim, Vintage Light Denim, Vintage Olive, Vintage Stone, Vintage Red",
+        },
+        {
+          sku: "B686",
+          name: "Reversible Bucket Hat",
+          url: "https://beechfield.com/products/b686-reversible-bucket-hat",
+          image: "https://d2csxpduxe849s.cloudfront.net/media/BBD46EA3-F7E7-441D-8663C747FAEA082D/B74A0512-E430-4E6D-9260560810F94448/CD41F4AA-ECDD-4731-91590603F1E67071/webimage-440E73B3-9755-44B2-847727290AAFC339.png",
+          type: "Bucket hat",
+          composition: "100% cotton twill (fully reversible)",
+          sizes: "S/M (58cm), L/XL (60cm)",
+          certifications: "\u2014",
+          collection: "\u2014",
+          colours: "Black/Light Grey, Olive Green/Stone, French Navy/White",
+        },
+        {
+          sku: "B687",
+          name: "EarthAware\u00ae Organic Cord Bucket Hat",
+          url: "https://beechfield.com/products/b687-earthawarer-organic-cord-bucket-hat",
+          image: "https://d2csxpduxe849s.cloudfront.net/media/BBD46EA3-F7E7-441D-8663C747FAEA082D/41C3700A-C761-404F-8E41E5E1C65D4966/webimage-4DAE8462-92BF-4CEF-8890D0587F9388F6.png",
+          type: "Bucket hat",
+          composition: "100% OCS-certified organic cotton corduroy",
+          sizes: "S/M, L/XL",
+          certifications: "OCS",
+          collection: "\u2014",
+          colours: "Black, Forest Night, Redwood, Stone, Oxford Navy",
+        },
+        {
+          sku: "B84R",
+          name: "Recycled Polyester Bucket Hat",
+          url: "https://beechfield.com/products/b84r-recycled-polyester-bucket-hat",
+          image: "https://d2csxpduxe849s.cloudfront.net/media/BBD46EA3-F7E7-441D-8663C747FAEA082D/0808DB7B-C43C-4735-AA19D9B5F6E4CCD6/webimage-B4BE5CB0-A2EE-4D3D-B3D23357FD4228FC.png",
+          type: "Bucket hat",
+          composition: "100% GRS-certified recycled polyester (rPET)",
+          sizes: "S/M (58cm), L/XL (60cm)",
+          certifications: "GRS",
+          collection: "\u2014",
+          colours: "Black, French Navy, Midnight Camo, Olive Green",
+        },
+        {
+          sku: "B90N",
+          name: "EarthAware\u00ae Organic Cotton Bucket Hat",
+          url: "https://beechfield.com/products/b90n-earthawarer-organic-cotton-bucket-hat",
+          image: "https://mediahub.beechfieldbrands.com/m/7c05344a13ce80c4/webimage-beechfield_b90n_sky-blue.png",
+          type: "Bucket hat",
+          composition: "100% OCS-certified organic cotton twill; UPF50+",
+          sizes: "S/M (58cm), L/XL (60cm)",
+          certifications: "OCS",
+          collection: "\u2014",
+          colours: "Black, Graphite Grey, Navy, Sand, Sky Blue",
+        },
+        {
+          sku: "B90NB",
+          name: "EarthAware\u00ae Junior Organic Cotton Bucket Hat",
+          url: "https://beechfield.com/products/b90nb-earthawarer-junior-organic-cotton-bucket-hat",
+          image: "https://mediahub.beechfieldbrands.com/m/7c05344a13ce80c4/webimage-beechfield_b90n_sky-blue.png",
+          type: "Bucket hat (junior)",
+          composition:
+            "100% OCS-certified organic cotton twill; lining: poly/cotton; UPF50+",
+          sizes: "S/M (53cm, 3\u20136y), M/L (55cm, 7\u201312y)",
+          certifications: "OCS",
+          collection: "\u2014",
+          colours: "Navy, Powder Blue, Powder Pink, Sand",
+        },
+      ];
+
+      const FEATURES = [
+        { key: "type", label: "Product type" },
+        { key: "composition", label: "Material composition" },
+        { key: "sizes", label: "Sizes" },
+        { key: "certifications", label: "Sustainability certifications" },
+        { key: "collection", label: "Collection" },
+        { key: "colours", label: "Available colours" },
+      ];
+
+      const DISTRIBUTORS = [
+        {
+          name: "NorthWear Distributors",
+          region: "UK & IE",
+          stock: {
+            "Vintage Black": 612,
+            "Vintage Denim": 280,
+            "Vintage Light Denim": 190,
+            "Vintage Olive": 340,
+            "Vintage Stone": 255,
+            "Vintage Red": 120,
+          },
+          updated: "Today",
+        },
+        {
+          name: "HatHub Europe",
+          region: "EU",
+          stock: {
+            "Vintage Black": 420,
+            "Vintage Denim": 390,
+            "Vintage Light Denim": 150,
+            "Vintage Olive": 270,
+            "Vintage Stone": 210,
+            "Vintage Red": 95,
+          },
+          updated: "Today",
+        },
+        {
+          name: "UrbanThreads Wholesale",
+          region: "UK",
+          stock: {
+            "Vintage Black": 310,
+            "Vintage Denim": 180,
+            "Vintage Light Denim": 120,
+            "Vintage Olive": 200,
+            "Vintage Stone": 160,
+            "Vintage Red": 80,
+          },
+          updated: "Yesterday",
+        },
+        {
+          name: "ModaSupply",
+          region: "DACH & Benelux",
+          stock: {
+            "Vintage Black": 390,
+            "Vintage Denim": 220,
+            "Vintage Light Denim": 140,
+            "Vintage Olive": 260,
+            "Vintage Stone": 200,
+            "Vintage Red": 110,
+          },
+          updated: "Yesterday",
+        },
+        {
+          name: "CapHouse UK",
+          region: "UK",
+          stock: {
+            "Vintage Black": 210,
+            "Vintage Denim": 160,
+            "Vintage Light Denim": 100,
+            "Vintage Olive": 170,
+            "Vintage Stone": 150,
+            "Vintage Red": 60,
+          },
+          updated: "2 days ago",
+        },
+      ];
+
+      // ---------- State ----------
+      const [selectedColor, setSelectedColor] = useState(COLORS[3]);
+      const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+      const [size, setSize] = useState("S/M");
+      const [showStock, setShowStock] = useState(true);
+      const [showVideo, setShowVideo] = useState(true);
+
+      const gallery = useMemo(() => selectedColor.images, [selectedColor]);
+
+      // ---------- Sanity checks ----------
+      useEffect(() => {
+        const keys = COLORS.map((c) => c.key);
+        console.assert(new Set(keys).size === keys.length, "Colour keys must be unique");
+        console.assert(COMPARE_PRODUCTS.length >= 2, "Expect at least two products to compare");
+        console.assert(FEATURES.every((f) => typeof f.key === "string"), "Every feature needs a key");
+        console.assert(Boolean(VIDEO_URL), "Video URL must be defined");
+        console.assert(ASSET_PACK_URL.startsWith("http"), "Asset pack URL must be absolute");
+        COMPARE_PRODUCTS.forEach((p) => {
+          console.assert(p.sku && p.name && p.url, "COMPARE_PRODUCTS entry incomplete: " + JSON.stringify(p));
+        });
+        ["S/M", "L/XL"].forEach((sz) => {
+          console.assert(LOGISTICS.productWeightG[sz] > 0, "Weight missing for " + sz);
+          console.assert(LOGISTICS.cartonWeightKg[sz] > 0, "Carton weight missing for " + sz);
+          console.assert(LOGISTICS.cartonQty[sz] > 0, "Carton qty missing for " + sz);
+          console.assert(LOGISTICS.polyBagQty[sz] > 0, "Poly bag qty missing for " + sz);
+          console.assert(LOGISTICS.maxPrintAreaCm[sz], "Max print area missing for " + sz);
+          console.assert(LOGISTICS.maxEmbroideryFlatHoopCm[sz], "Max embroidery missing for " + sz);
+        });
+        console.assert(/^\d{10}$/.test(LOGISTICS.commodityCode), "Commodity code should be 10 digits");
+      }, []);
+
+      // ---------- Helpers ----------
+      const totalStockForColor = (colorName) =>
+        DISTRIBUTORS.reduce((sum, d) => sum + (d.stock[colorName] || 0), 0);
+
+      // ---------- Render ----------
+      return (
+        <div
+          style={{ fontFamily: '"Helvetica Neue LT Pro", "Helvetica Neue", Arial, sans-serif' }}
+          className="min-h-screen bg-white text-zinc-900"
+        >
+          {/* Page container */}
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+            {/* Breadcrumb */}
+            <nav className="text-sm text-zinc-500 mb-4" aria-label="Breadcrumb">
+              <ol className="flex items-center gap-2">
+                <li><a className="hover:underline" href="#">Products</a></li>
+                <li>/</li>
+                <li><a className="hover:underline" href="#">Hats</a></li>
+                <li>/</li>
+                <li><a className="hover:underline" href="#">Bucket hats</a></li>
+                <li>/</li>
+                <li className="text-zinc-800">B688 Vintage Bucket Hat</li>
+              </ol>
+            </nav>
+
+            {/* Header */}
+            <header className="space-y-2 mb-4">
+              <h1 className="text-3xl sm:text-4xl font-light tracking-tight">B688 Vintage Bucket Hat</h1>
+              <div className="flex flex-wrap items-center gap-3 text-sm text-zinc-600">
+                <span>SKU: <span className="font-medium text-zinc-800">B688</span></span>
+                <span className="hidden sm:inline">&bull;</span>
+                <a
+                  href={COLLECTION.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center rounded-full bg-red-600 text-white px-3 py-1 text-xs font-medium hover:bg-red-700"
+                >
+                  {COLLECTION.name}
+                </a>
+                <span className="hidden sm:inline">&bull;</span>
+                <a
+                  href="https://beechfieldbrands.com/products/b688-vintage-bucket-hat"
+                  className="hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View current listing
+                </a>
+              </div>
+            </header>
+
+            {/* Tags */}
+            <div className="mb-4 flex flex-wrap items-center gap-2 text-xs" role="list" aria-label="Tags">
+              <span className="rounded-full bg-zinc-100 px-3 py-1 text-zinc-800" role="listitem">Fashion</span>
+              <span className="rounded-full bg-zinc-100 px-3 py-1 text-zinc-800" role="listitem">Vintage</span>
+              <span className="rounded-full bg-zinc-100 px-3 py-1 text-zinc-800" role="listitem">Unisex</span>
+              <span className="rounded-full bg-zinc-100 px-3 py-1 text-zinc-800" role="listitem">UPF50+</span>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* LEFT: Gallery */}
+              <section className="order-1 lg:order-1">
+                <div className="sticky top-6">
+                  <div className="aspect-square w-full overflow-hidden rounded-2xl bg-zinc-50 ring-1 ring-zinc-200 shadow-sm">
+                    {showVideo ? (
+                      <video
+                        src={VIDEO_URL}
+                        autoPlay
+                        muted
+                        loop
+                        controls
+                        playsInline
+                        preload="metadata"
+                        poster={COLORS[3].images[1]}
+                        className="h-full w-full object-contain"
+                      />
+                    ) : (
+                      <img
+                        src={gallery[selectedImageIndex]}
+                        alt={selectedColor.name + " \u2013 B688 Vintage Bucket Hat"}
+                        className="h-full w-full object-contain"
+                      />
+                    )}
+                  </div>
+
+                  <div className="mt-4 grid grid-cols-6 gap-3">
+                    {/* Video thumb */}
+                    <button
+                      onClick={() => setShowVideo(true)}
+                      className={"aspect-square rounded-xl ring-1 ring-zinc-200 bg-white p-1 transition hover:ring-zinc-400 " +
+                        (showVideo ? "outline outline-2 outline-zinc-800" : "")}
+                      aria-label="Play product video"
+                    >
+                      <div className="flex h-full w-full items-center justify-center rounded-lg bg-zinc-100">
+                        <PlayIcon className="h-6 w-6 text-zinc-800" />
+                      </div>
+                    </button>
+                    {gallery.map((src, idx) => (
+                      <button
+                        key={src}
+                        onClick={() => {
+                          setShowVideo(false);
+                          setSelectedImageIndex(idx);
+                        }}
+                        className={"aspect-square rounded-xl ring-1 ring-zinc-200 bg-white p-1 transition hover:ring-zinc-400 " +
+                          (!showVideo && selectedImageIndex === idx ? "outline outline-2 outline-zinc-800" : "")}
+                        aria-label={"View " + selectedColor.name + " image " + (idx + 1)}
+                      >
+                        <img src={src} alt="Thumbnail" className="h-full w-full object-contain" loading="lazy" decoding="async" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* RIGHT: Info */}
+              <section className="order-2 lg:order-2">
+                <div className="mt-0">
+                  <p className="text-base font-medium text-zinc-700">
+                    A retro-inspired bucket hat in 100% heavy washed cotton for a soft, worn&#8209;in feel. Unisex fit with stitched ventilation eyelets. A versatile fashion piece in new vintage colourways.
+                  </p>
+                </div>
+
+                {/* Colour selector */}
+                <div className="mt-6">
+                  <h2 className="text-sm uppercase tracking-wide font-bold text-zinc-800">Colour</h2>
+                  <div
+                    className="mt-3 flex flex-wrap items-center gap-3"
+                    role="radiogroup"
+                    aria-label="Select colour"
+                  >
+                    {COLORS.map((c) => (
+                      <button
+                        key={c.key}
+                        onClick={() => {
+                          setSelectedColor(c);
+                          setSelectedImageIndex(0);
+                        }}
+                        className={"relative h-9 w-9 rounded-full ring-2 focus:outline focus:outline-2 focus:outline-emerald-600 " +
+                          (selectedColor.key === c.key
+                            ? "ring-zinc-900"
+                            : "ring-zinc-300 hover:ring-zinc-500")}
+                        aria-label={c.name}
+                        title={c.name}
+                        role="radio"
+                        aria-checked={selectedColor.key === c.key}
+                        aria-pressed={selectedColor.key === c.key}
+                        style={{ backgroundColor: c.swatch }}
+                      >
+                        <span className="sr-only">{c.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <p className="mt-2 text-sm text-zinc-600">
+                    Selected: <span className="font-medium text-zinc-800">{selectedColor.name}</span>
+                  </p>
+                </div>
+
+                {/* Size selector */}
+                <div className="mt-6">
+                  <h2 className="text-sm uppercase tracking-wide font-bold text-zinc-800">Size</h2>
+                  <div className="mt-2 flex gap-2">
+                    {["S/M", "L/XL"].map((s) => (
+                      <button
+                        key={s}
+                        onClick={() => setSize(s)}
+                        className={"px-3 py-2 rounded-xl border text-sm transition " +
+                          (size === s
+                            ? "border-zinc-900 text-zinc-900"
+                            : "border-zinc-300 text-zinc-700 hover:border-zinc-500")}
+                        aria-pressed={size === s}
+                      >
+                        {s}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <a
+                    href="#stock"
+                    onClick={() => setShowStock(true)}
+                    className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-3 shadow-sm"
+                    aria-label="Get Prices & Availability"
+                  >
+                    Get Prices &amp; Availability
+                  </a>
+                  <a
+                    href="#spec-sheet"
+                    className="inline-flex items-center justify-center rounded-2xl border-2 border-zinc-400 bg-white px-5 py-3 text-sm font-medium text-zinc-800 hover:bg-zinc-50"
+                  >
+                    Product Spec Sheet
+                  </a>
+                </div>
+
+                {/* Quick facts */}
+                <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  <li className="rounded-2xl border border-zinc-200 p-4">
+                    <h3 className="font-bold text-zinc-800">Key Features</h3>
+                    <ul className="mt-2 list-disc pl-5 space-y-1 font-medium text-zinc-700">
+                      <li>100% heavy washed cotton</li>
+                      <li>Soft, vintage finish</li>
+                      <li>Stitched ventilation eyelets</li>
+                      <li>Sun protection: UPF50+</li>
+                      <li>Unisex fit</li>
+                    </ul>
+                  </li>
+                  <li className="rounded-2xl border border-zinc-200 p-4">
+                    <h3 className="font-bold text-zinc-800">Composition &amp; Care</h3>
+                    <ul className="mt-2 list-disc pl-5 space-y-1 font-medium text-zinc-700">
+                      <li>Outer: 100% cotton (heavy washed)</li>
+                      <li>Care: hand wash cool; reshape; air dry</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                {/* Sizing & weight */}
+                <div className="mt-8">
+                  <h2 className="text-xl font-bold">Sizing &amp; weight</h2>
+                  <div className="mt-3 overflow-x-auto rounded-2xl border border-zinc-200">
+                    <table className="min-w-full text-sm">
+                      <thead className="bg-zinc-50 text-zinc-600">
+                        <tr>
+                          <th className="px-4 py-3 text-left font-bold">Metric</th>
+                          <th className="px-4 py-3 text-left font-bold">S/M</th>
+                          <th className="px-4 py-3 text-left font-bold">L/XL</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="bg-white">
+                          <td className="px-4 py-3 font-medium text-zinc-900">Approx product weight (g)</td>
+                          <td className="px-4 py-3">{LOGISTICS.productWeightG["S/M"]}</td>
+                          <td className="px-4 py-3">{LOGISTICS.productWeightG["L/XL"]}</td>
+                        </tr>
+                        <tr className="bg-zinc-50/40">
+                          <td className="px-4 py-3 font-medium text-zinc-900">Max print area (cm)</td>
+                          <td className="px-4 py-3">{LOGISTICS.maxPrintAreaCm["S/M"]}</td>
+                          <td className="px-4 py-3">{LOGISTICS.maxPrintAreaCm["L/XL"]}</td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-4 py-3 font-medium text-zinc-900">Max embroidery (cm, flat bed hoop)</td>
+                          <td className="px-4 py-3">{LOGISTICS.maxEmbroideryFlatHoopCm["S/M"]}</td>
+                          <td className="px-4 py-3">{LOGISTICS.maxEmbroideryFlatHoopCm["L/XL"]}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Pricing */}
+                <div className="mt-8">
+                  <h2 className="text-xl font-bold">Approximate carton rate</h2>
+                  <div className="mt-3 rounded-2xl border border-zinc-200 p-4">
+                    <p className="text-sm text-zinc-600">Indicative equivalent price</p>
+                    <p className="mt-1 text-2xl font-light">&pound;{LOGISTICS.approxCartonRateGBP.toFixed(2)}</p>
+                  </div>
+                </div>
+
+                {/* Media Assets */}
+                <div className="mt-10" id="downloads">
+                  <h2 className="text-xl font-bold">B688 Media Assets</h2>
+                  <p className="mt-1 text-sm text-zinc-600">Complete image &amp; asset pack for this product.</p>
+                  <a
+                    href={ASSET_PACK_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex items-center justify-center rounded-2xl border-2 border-zinc-400 bg-white px-5 py-3 text-sm font-medium text-zinc-800 hover:bg-zinc-50"
+                  >
+                    Download the Full Asset Pack
+                  </a>
+                </div>
+
+                {/* Decoration */}
+                <div className="mt-12">
+                  <h2 className="text-xl font-bold">Decorating the B688 Vintage Bucket Hat</h2>
+                  <div className="mt-3 flex items-center gap-3">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3 py-1 text-sm text-zinc-800"><EmbroideryIcon className="h-4 w-4"/> Embroidery</span>
+                    <span className="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3 py-1 text-sm text-zinc-800"><FlameIcon className="h-4 w-4"/> Heat press</span>
+                  </div>
+                  <div className="mt-6 grid grid-cols-1 gap-6">
+                    {/* Embroidery card */}
+                    <div className="rounded-2xl border border-zinc-200 p-4">
+                      <div className="flex items-center gap-2 text-zinc-900 font-bold"><EmbroideryIcon className="h-5 w-5"/> Embroidery</div>
+                      <ol className="mt-2 list-decimal pl-5 space-y-1 text-sm text-zinc-700">
+                        <li>Prepare cap frame with two sheets of medium backing. Pull out the sweatband and place under the frame lip; fold the peak back.</li>
+                        <li>Fold along the crown line on both sides, clamp the arm and adjust so the crown is flat and tight.</li>
+                        <li>Load into the embroidery machine, stitch, then remove backing and trim threads.</li>
+                      </ol>
+                      <a
+                        href="https://www.youtube.com/watch?v=PVhM0uA5OB0"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-3 inline-flex items-center justify-center rounded-2xl border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 hover:bg-zinc-50"
+                      >
+                        Watch full decorating tutorial
+                      </a>
+                    </div>
+                    {/* Heat press card */}
+                    <div className="rounded-2xl border border-zinc-200 p-4">
+                      <div className="flex items-center gap-2 text-zinc-900 font-bold"><FlameIcon className="h-5 w-5"/> Heat press</div>
+                      <ul className="mt-2 list-disc pl-5 space-y-1 text-sm text-zinc-700">
+                        <li>Check fabric guide for suitability and settings.</li>
+                        <li>Use cap heat press where possible.</li>
+                        <li>Always place heat&#8209;resistant material between fabric and press.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Spec sheet anchor */}
+                <div id="spec-sheet" className="sr-only" aria-hidden="true">Spec sheet placeholder</div>
+
+                {/* Distributor stock */}
+                <div className="mt-10" id="stock">
+                  <div className="flex items-end justify-between gap-4">
+                    <h2 className="text-xl font-bold">Distributor stock by colour</h2>
+                    <button
+                      onClick={() => setShowStock((s) => !s)}
+                      className="text-sm text-zinc-700 underline hover:no-underline"
+                    >
+                      {showStock ? "Hide table" : "Show table"}
+                    </button>
+                  </div>
+
+                  {showStock && (
+                    <div className="mt-4 overflow-x-auto rounded-2xl border border-zinc-200">
+                      <table className="min-w-full text-sm">
+                        <thead className="bg-zinc-50 text-zinc-600">
+                          <tr>
+                            <th className="px-4 py-3 text-left font-bold">Distributor</th>
+                            <th className="px-4 py-3 text-left font-bold">Region</th>
+                            {COLORS.map((c) => (
+                              <th key={c.key} className="px-4 py-3 text-left font-bold whitespace-nowrap">{c.name}</th>
+                            ))}
+                            <th className="px-4 py-3 text-left font-bold">Updated</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {DISTRIBUTORS.map((d, i) => (
+                            <tr key={d.name} className={i % 2 ? "bg-white" : "bg-zinc-50/40"}>
+                              <td className="px-4 py-3 font-medium text-zinc-900">{d.name}</td>
+                              <td className="px-4 py-3 text-zinc-700">{d.region}</td>
+                              {COLORS.map((c) => (
+                                <td key={c.key} className="px-4 py-3 text-zinc-800 tabular-nums">{d.stock[c.name] || 0}</td>
+                              ))}
+                              <td className="px-4 py-3 text-zinc-600">{d.updated}</td>
+                            </tr>
+                          ))}
+                          {/* Totals row */}
+                          <tr className="bg-emerald-50 border-t border-zinc-200">
+                            <td className="px-4 py-3 font-bold text-zinc-900">Total stock</td>
+                            <td className="px-4 py-3 text-zinc-700">&mdash;</td>
+                            {COLORS.map((c) => (
+                              <td key={c.key} className="px-4 py-3 font-bold text-zinc-900 tabular-nums">{totalStockForColor(c.name)}</td>
+                            ))}
+                            <td className="px-4 py-3 text-zinc-700">&mdash;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                  <p className="mt-2 text-xs text-zinc-500">Figures are illustrative placeholders for design review.</p>
+                </div>
+
+                {/* Impact & sustainability */}
+                <div className="mt-12">
+                  <h2 className="text-xl font-bold">Impact</h2>
+                  <p className="mt-1 text-sm text-zinc-600">Indicative production impact metrics for this style. Values are examples for layout and are not final.</p>
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="rounded-2xl border border-zinc-200 p-4">
+                      <p className="text-sm text-zinc-600">Carbon used (per item)</p>
+                      <p className="mt-1 text-2xl font-light">2.4 kg CO&#8322;e</p>
+                    </div>
+                    <div className="rounded-2xl border border-zinc-200 p-4">
+                      <p className="text-sm text-zinc-600">Water used (per item)</p>
+                      <p className="mt-1 text-2xl font-light">190 L</p>
+                    </div>
+                    <div className="rounded-2xl border border-zinc-200 p-4">
+                      <p className="text-sm text-zinc-600">Factory certifications</p>
+                      <p className="mt-1 text-2xl font-light">See downloads</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 flex flex-wrap items-center gap-4">
+                    {CERTS.map((c) => (
+                      <a key={c.href} href={c.href} download className="inline-flex items-center gap-2 text-sm text-zinc-700 hover:underline">
+                        <img src={c.href} alt={c.name + " badge"} className="h-8 w-8 object-contain" loading="lazy" decoding="async" />
+                        {c.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Logistics & packaging */}
+                <div className="mt-12">
+                  <h2 className="text-xl font-bold">Logistics &amp; packaging</h2>
+                  <div className="mt-3 overflow-x-auto rounded-2xl border border-zinc-200">
+                    <table className="min-w-full text-sm">
+                      <thead className="bg-zinc-50 text-zinc-600">
+                        <tr>
+                          <th className="px-4 py-3 text-left font-bold">Metric</th>
+                          <th className="px-4 py-3 text-left font-bold">S/M</th>
+                          <th className="px-4 py-3 text-left font-bold">L/XL</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="bg-white">
+                          <td className="px-4 py-3 font-medium text-zinc-900">Approx carton weight (kg)</td>
+                          <td className="px-4 py-3">{LOGISTICS.cartonWeightKg["S/M"]}</td>
+                          <td className="px-4 py-3">{LOGISTICS.cartonWeightKg["L/XL"]}</td>
+                        </tr>
+                        <tr className="bg-zinc-50/40">
+                          <td className="px-4 py-3 font-medium text-zinc-900">Carton dimensions (cm)</td>
+                          <td className="px-4 py-3">{LOGISTICS.cartonDimensionsCm["S/M"]}</td>
+                          <td className="px-4 py-3">{LOGISTICS.cartonDimensionsCm["L/XL"]}</td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-4 py-3 font-medium text-zinc-900">Carton quantity</td>
+                          <td className="px-4 py-3">{LOGISTICS.cartonQty["S/M"]}</td>
+                          <td className="px-4 py-3">{LOGISTICS.cartonQty["L/XL"]}</td>
+                        </tr>
+                        <tr className="bg-zinc-50/40">
+                          <td className="px-4 py-3 font-medium text-zinc-900">Poly bag qty</td>
+                          <td className="px-4 py-3">{LOGISTICS.polyBagQty["S/M"]}</td>
+                          <td className="px-4 py-3">{LOGISTICS.polyBagQty["L/XL"]}</td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-4 py-3 font-medium text-zinc-900">Commodity code</td>
+                          <td className="px-4 py-3" colSpan={2}>{LOGISTICS.commodityCode}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            {/* Comparison */}
+            <section className="mt-16">
+              <h2 className="text-xl font-bold">Compare similar styles</h2>
+              <div className="mt-4 overflow-x-auto rounded-2xl border border-zinc-200">
+                <table className="min-w-full text-sm">
+                  <thead className="bg-zinc-50 text-zinc-600">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-bold">Feature</th>
+                      {COMPARE_PRODUCTS.map((p) => (
+                        <th key={p.sku} className="px-4 py-3 text-left font-bold align-top">
+                          <div className="space-y-2">
+                            {p.image ? (
+                              <div className="w-full aspect-square overflow-hidden rounded-lg bg-white ring-1 ring-zinc-200">
+                                <img src={p.image} alt={p.sku + " " + p.name} className="h-full w-full object-contain" loading="lazy" decoding="async" />
+                              </div>
+                            ) : (
+                              <div className="w-full aspect-square rounded bg-zinc-200 grid place-items-center text-xs text-zinc-600">{p.sku}</div>
+                            )}
+                            <a href={p.url} className="block text-zinc-900 hover:underline font-medium text-sm">
+                              {p.sku} {p.name}
+                            </a>
+                          </div>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {FEATURES.map((f, i) => (
+                      <tr key={f.key} className={i % 2 ? "bg-white" : "bg-zinc-50/40"}>
+                        <td className="px-4 py-3 font-medium text-zinc-900 whitespace-nowrap">{f.label}</td>
+                        {COMPARE_PRODUCTS.map((p) => (
+                          <td key={p.sku + f.key} className="px-4 py-3 text-zinc-800">{p[f.key] || "\u2014"}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-2 text-xs text-zinc-500">
+                Comparison data shown for layout purposes. Replace with live specs when available. Anchor text uses product code + name for SEO clarity.
+              </p>
+            </section>
+
+            {/* More from this collection */}
+            <section className="mt-12">
+              <div className="relative overflow-hidden rounded-2xl">
+                <img
+                  src="https://mediahub.beechfieldbrands.com/m/c89c7d439d55164/webimage-beechfield_b688_vintage-red_lifestyle_1848.png"
+                  alt="Vintage Summer collection"
+                  className="w-full h-48 sm:h-56 object-cover object-left"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+                <div className="absolute inset-y-0 left-0 p-6 sm:p-8 flex flex-col justify-center">
+                  <h3 className="text-white text-xl sm:text-2xl font-bold">Vintage Summer</h3>
+                  <a
+                    href={COLLECTION.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-2 inline-flex items-center justify-center rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2 shadow-sm w-max"
+                  >
+                    View the collection
+                  </a>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* Minimal page footer */}
+          <footer className="mt-16 border-t border-zinc-200 bg-white">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-zinc-500">
+              <p>
+                &copy; Beechfield &mdash; Prototype product page for B688. Typography: Helvetica Neue LT Pro (Adobe Fonts). CTA colour: Green.
+              </p>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<B688PDP />);
+  </script>
+
+  <!-- SEO: JSON-LD Product schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Beechfield B688 Vintage Bucket Hat",
+    "description": "Vintage bucket hat in heavy washed cotton with stitched ventilation eyelets and unisex fit. Available in multiple vintage colours.",
+    "sku": "B688",
+    "category": "Products > Hats > Bucket hats",
+    "isRelatedTo": {
+      "@type": "Collection",
+      "name": "Vintage Summer Collection",
+      "url": "https://beechfieldbrands.com/new-beechfield-vintage-summer"
+    },
+    "brand": {
+      "@type": "Brand",
+      "name": "Beechfield"
+    },
+    "image": [
+      "https://mediahub.beechfieldbrands.com/m/58c9e92cc79c29cf/webimage-beechfield_b688_vintage-black.png",
+      "https://mediahub.beechfieldbrands.com/m/38d20c7e57359682/webimage-beechfield_b688_vintage-denim.png",
+      "https://mediahub.beechfieldbrands.com/m/6aa70718c56187bc/webimage-beechfield_b688_vintage-light-denim.png",
+      "https://d2csxpduxe849s.cloudfront.net/media/BBD46EA3-F7E7-441D-8663C747FAEA082D/90CE7A18-D971-4276-8D93EA85CFBE03D2/webimage-1A18BEC9-80A5-4B64-9BB77044414C36B2.png",
+      "https://mediahub.beechfieldbrands.com/m/5695b02850463bec/webimage-beechfield_b688_vintage-olive-green.png",
+      "https://mediahub.beechfieldbrands.com/m/720f1717954679da/webimage-beechfield_b688_vintage-olive_front-on-shot.png",
+      "https://mediahub.beechfieldbrands.com/m/3494dbeea9143a01/webimage-beechfield_b688_vintage-stone.png",
+      "https://mediahub.beechfieldbrands.com/m/1608bb4d949a8335/webimage-beechfield_b688_vintage-red.png",
+      "https://mediahub.beechfieldbrands.com/m/c89c7d439d55164/webimage-beechfield_b688_vintage-red_lifestyle_1848.png"
+    ],
+    "video": {
+      "@type": "VideoObject",
+      "name": "Beechfield B688 Vintage Bucket Hat — product video",
+      "contentUrl": "https://mediahub.beechfieldbrands.com/asset/6f907083-6e9e-46bc-8e02-617872a33b67/mp4/beechfield_b688_vintage-red.mp4"
+    },
+    "color": "Vintage Black, Vintage Denim, Vintage Light Denim, Vintage Olive, Vintage Stone, Vintage Red",
+    "size": ["S/M", "L/XL"],
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Collection", "value": "Vintage Summer Collection" },
+      { "@type": "PropertyValue", "name": "Approximate carton rate (GBP)", "value": 2.95 },
+      { "@type": "PropertyValue", "name": "Approx product weight (g) S/M", "value": 75 },
+      { "@type": "PropertyValue", "name": "Approx product weight (g) L/XL", "value": 85 },
+      { "@type": "PropertyValue", "name": "Carton weight (kg) S/M", "value": 10 },
+      { "@type": "PropertyValue", "name": "Carton weight (kg) L/XL", "value": 11 },
+      { "@type": "PropertyValue", "name": "Carton dimensions (cm) S/M", "value": "60 × 40 × 40" },
+      { "@type": "PropertyValue", "name": "Carton dimensions (cm) L/XL", "value": "60 × 40 × 40" },
+      { "@type": "PropertyValue", "name": "Carton qty S/M", "value": 96 },
+      { "@type": "PropertyValue", "name": "Carton qty L/XL", "value": 96 },
+      { "@type": "PropertyValue", "name": "Poly bag qty S/M", "value": 12 },
+      { "@type": "PropertyValue", "name": "Poly bag qty L/XL", "value": 12 },
+      { "@type": "PropertyValue", "name": "Max print area (cm) S/M", "value": "8 × 5.5" },
+      { "@type": "PropertyValue", "name": "Max print area (cm) L/XL", "value": "8 × 5.5" },
+      { "@type": "PropertyValue", "name": "Max embroidery (cm flat bed hoop) S/M", "value": "8 × 5.5" },
+      { "@type": "PropertyValue", "name": "Max embroidery (cm flat bed hoop) L/XL", "value": "8 × 5.5" },
+      { "@type": "PropertyValue", "name": "Commodity code", "value": "6505009090" }
+    ],
+    "keywords": [
+      "vintage bucket hat",
+      "retro bucket hat",
+      "B688 bucket hat",
+      "Beechfield vintage bucket hat",
+      "washed cotton bucket hat",
+      "fashion bucket hat",
+      "UPF50+ bucket hat",
+      "unisex bucket hat"
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "GBP",
+      "lowPrice": "0.00",
+      "highPrice": "0.00",
+      "offerCount": 0,
+      "availability": "http://schema.org/InStock",
+      "url": "https://beechfieldbrands.com/products/b688-vintage-bucket-hat"
+    }
+  }
+  </script>
+</body>
+</html>

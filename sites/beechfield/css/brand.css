@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Beechfield Original Headwear — Brand overrides
+   Positioning: "Original authority in rebrandable headwear"
+   ========================================================================== */
+
+:root {
+  --brand-primary: #0e1520;
+  --brand-accent: #1f614d;
+  --brand-highlight: #ffb58d;
+  --brand-bg-warm: #f5f0eb;
+  --brand-text: #0e1520;
+  --brand-text-muted: #57534e;
+  --brand-border: #e7e5e4;
+}

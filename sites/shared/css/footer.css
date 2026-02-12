@@ -73,7 +73,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: var(--space-4);
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .footer__links {
@@ -98,7 +98,7 @@
 
 .footer__copyright {
   font-size: var(--text-xs);
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .footer__legal {
@@ -108,11 +108,11 @@
 
 .footer__legal a {
   font-size: var(--text-xs);
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .footer__legal a:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

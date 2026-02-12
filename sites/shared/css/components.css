@@ -492,3 +492,39 @@
 .decoration-method--incompatible {
   opacity: 0.4;
 }
+
+/* ── Focus states (accessibility) ── */
+:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(31, 97, 77, 0.2);
+}
+
+.search-toggle:focus-visible,
+.account-toggle:focus-visible,
+.mobile-toggle:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+}
+
+/* Ensure dark-background sections inherit proper text colour */
+.bg-dark,
+.bg-dark p,
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark span {
+  color: var(--bfb-white);
+}
+
+.bg-dark .text-muted,
+.bg-dark .section-header__label,
+.bg-dark .section-header__description {
+  color: rgba(255, 255, 255, 0.8);
+}

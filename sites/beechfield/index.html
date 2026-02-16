@@ -344,313 +344,350 @@
   </div>
 
   <!-- ============================================================
-       HERO — Current Campaign / Micro-Edit
+       HERO — Full-viewport immersive hero
        ============================================================ -->
   <section class="hero" aria-label="Spring Summer 2026 campaign">
     <div class="hero__bg">
       <img src="https://mediahub.beechfieldbrands.com/m/7ab94fd961416885/Product_medium-beechfield_b688_vintage-olive_lifestyle_DSC03587.jpg" alt="Beechfield B688 Heritage Cord Cap in Vintage Olive, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
     </div>
-    <div class="hero__overlay" style="background:linear-gradient(135deg, rgba(14,21,32,0.6) 0%, transparent 100%)"></div>
+    <div class="hero__overlay"></div>
     <div class="container hero__content">
-      <p class="text-sm" style="text-transform:uppercase;letter-spacing:0.15em;opacity:0.8;margin-bottom:var(--space-4)">Spring / Summer 2026</p>
+      <p class="text-sm" style="text-transform:uppercase;letter-spacing:0.15em;opacity:0.7;margin-bottom:var(--space-4)">Spring / Summer 2026</p>
       <h1 class="hero__title">Original Headwear,<br>Designed for Decoration</h1>
       <p class="hero__subtitle">Trusted by decorators for 30 years. Consistent quality, outstanding branding results, always in stock.</p>
+      <div class="flex gap-4" style="margin-top:var(--space-8)">
+        <a href="campaign/ss26/" class="btn btn--white">Explore SS26</a>
+        <a href="products/" class="btn btn--outline-white">Shop All Products</a>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST STRIP — Brand credibility markers
+       ============================================================ -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-strip__inner">
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          30 Years of Expertise
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          Designed for Decoration
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          Always in Stock
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          60+ Colours
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          Responsible by Design
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SHOP BY TYPE — Full-bleed image tiles with text overlay
+       ============================================================ -->
+  <section class="section--flush" aria-label="Shop by type">
+    <div class="tile-grid tile-grid--hero-left">
+
+      <!-- Caps — spans full left column -->
+      <a href="products/caps/" class="tile tile--tall">
+        <div class="tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/ec4847087e60c74/Product_medium-beechfield_b10_chocolate_lifestyle_3162.jpg" alt="Beechfield B10 Original 5 Panel Cap in Chocolate, lifestyle">
+        </div>
+        <div class="tile__overlay"></div>
+        <div class="tile__content">
+          <p class="tile__label">Most Popular</p>
+          <h3 class="tile__title">Caps</h3>
+          <span class="tile__cta">
+            Shop Caps
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Beanies — top right -->
+      <a href="products/beanies/" class="tile">
+        <div class="tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/41ff6a2c771d71b/Product_medium-beechfield_b45_heather-oatmeal_lifestyle_19634.jpg" alt="Beechfield B45 Beanie in Heather Oatmeal, lifestyle">
+        </div>
+        <div class="tile__overlay"></div>
+        <div class="tile__content">
+          <h3 class="tile__title">Beanies</h3>
+          <span class="tile__cta">
+            Shop Beanies
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Bucket Hats — bottom right -->
+      <a href="products/bucket-hats/" class="tile">
+        <div class="tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/4aa2396cf77a89e2/Product_medium-beechfield_b686_french-navy_white_lifestyle_25391.jpg" alt="Beechfield B686 Bucket Hat in French Navy and White, lifestyle">
+        </div>
+        <div class="tile__overlay"></div>
+        <div class="tile__content">
+          <h3 class="tile__title">Bucket Hats</h3>
+          <span class="tile__cta">
+            Shop Bucket Hats
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Second row: 3 equal tiles -->
+    <div class="tile-grid tile-grid--2x3" style="grid-template-rows:1fr">
+
+      <!-- Visors -->
+      <a href="products/visors/" class="tile">
+        <div class="tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/360fe6c864d9b59a/Product_medium-beechfield_b34_pebble_lifestyle_17931.jpg" alt="Beechfield B34 Sport Visor in Pebble, lifestyle">
+        </div>
+        <div class="tile__overlay"></div>
+        <div class="tile__content">
+          <h3 class="tile__title">Visors</h3>
+          <span class="tile__cta">
+            Shop Visors
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Performance -->
+      <a href="products/performance/" class="tile">
+        <div class="tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/ff32290934023d/Product_medium-beechfield_b185_french-navy_lifestyle_14814.jpg" alt="Beechfield B185 Performance Cap in French Navy, lifestyle">
+        </div>
+        <div class="tile__overlay"></div>
+        <div class="tile__content">
+          <h3 class="tile__title">Performance</h3>
+          <span class="tile__cta">
+            Shop Performance
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Accessories -->
+      <a href="products/accessories/" class="tile">
+        <div class="tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/bfb136650957a8f/Product_medium-beechfield_b285_french-navy_lifestyle_19665.jpg" alt="Beechfield B285 Snood in French Navy, lifestyle">
+        </div>
+        <div class="tile__overlay"></div>
+        <div class="tile__content">
+          <h3 class="tile__title">Accessories</h3>
+          <span class="tile__cta">
+            Shop Accessories
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CAP STUDIO — 50/50 split block
+       ============================================================ -->
+  <div class="split-block split-block--warm">
+    <div class="split-block__image">
+      <img src="https://mediahub.beechfieldbrands.com/m/70f33ef727347aa5/Product_medium-beechfield_b10_olive-green_lifestyle_19711.jpg" alt="Beechfield B10 Original 5 Panel Cap in Olive Green, front lifestyle">
+    </div>
+    <div class="split-block__content">
+      <p class="split-block__label">Beechfield Exclusive</p>
+      <h2 class="split-block__title">Cap Studio</h2>
+      <p class="split-block__text">30+ years of headwear expertise, distilled into an interactive guide. Explore shapes, fabrics, and colours to find the perfect cap for your decoration programme.</p>
       <div class="flex gap-4">
-        <a href="campaign/ss26/" class="btn btn-primary" style="background:#fff;color:#0e1520;border-color:#fff">Explore SS26</a>
-        <a href="products/" class="btn btn-secondary" style="border-color:#fff;color:#fff">Shop All Products</a>
+        <a href="cap-studio/shapes.html" class="btn btn-primary">Explore Shapes</a>
+        <a href="cap-studio/fabrics.html" class="btn btn-secondary">Fabric Guide</a>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ============================================================
-       WHY BEECHFIELD — Brand Value Propositions
+       DESIGNED FOR DECORATION — Dark split block
        ============================================================ -->
-  <section class="section">
+  <div class="split-block split-block--dark split-block--reverse">
+    <div class="split-block__image">
+      <img src="https://mediahub.beechfieldbrands.com/m/145ed300bef5060f/Product_medium-beechfield_b188_salmon-pink_stitching.jpg" alt="Close-up of embroidery stitching detail on Beechfield B188 cap in Salmon Pink">
+    </div>
+    <div class="split-block__content">
+      <p class="split-block__label">Decorator Academy</p>
+      <h2 class="split-block__title">Designed for Decoration</h2>
+      <p class="split-block__text">Every Beechfield product is engineered with decoration in mind. Clean panels, stable substrates, consistent results across embroidery, patches, transfer, screen print and DTG.</p>
+      <div class="flex gap-4">
+        <a href="decorator-academy/designed-for-decoration.html" class="btn btn--white">Learn More</a>
+        <a href="decorator-academy/techniques.html" class="btn btn--outline-white">View Techniques</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       DECORATION TECHNIQUES — 4-column grid
+       ============================================================ -->
+  <section class="section section--lg">
     <div class="container">
-      <div class="section-header text-center" style="max-width:640px;margin:0 auto var(--space-10)">
-        <p class="section-header__label">The Beechfield Difference</p>
-        <h2 class="section-header__title">Why Beechfield</h2>
-        <p class="section-header__description">The original authority in rebrandable headwear. Here's why decorators and promotional buyers trust us.</p>
+      <div class="section-header text-center" style="max-width:640px;margin:0 auto var(--space-12)">
+        <p class="section-header__label">Techniques</p>
+        <h2 class="section-header__title">Built for Every Method</h2>
       </div>
 
-      <div class="grid-3" style="gap:var(--space-8)">
-        <!-- 30 Years of Expertise -->
-        <div class="card" style="text-align:center;padding:var(--space-8) var(--space-6)">
-          <div style="margin-bottom:var(--space-4)">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--brand-accent)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div class="deco-grid">
+        <a href="decoration/embroidery.html" class="deco-item">
+          <div class="deco-item__image">
+            <img src="https://mediahub.beechfieldbrands.com/m/145ed300bef5060f/Product_medium-beechfield_b188_salmon-pink_stitching.jpg" alt="Embroidery stitching detail on Beechfield B188">
           </div>
-          <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-2)">30 Years of Expertise</h3>
-          <p style="color:var(--brand-text-muted);font-size:var(--text-sm)">Leading the rebrandable headwear market since 1994. Three decades of cap knowledge, trusted by decorators worldwide.</p>
-        </div>
+          <h4 class="deco-item__title">Embroidery</h4>
+          <p class="deco-item__text">Clean surfaces and stable panels for precise stitching.</p>
+        </a>
+        <a href="decoration/patches.html" class="deco-item">
+          <div class="deco-item__image">
+            <img src="https://mediahub.beechfieldbrands.com/asset/72917149-362c-4c11-af40-74dcafa66e31/Product-medium/beechfield_b638_military-green_ripstrip-patch.jpg" alt="Beechfield B638 cap with ripstrip patch">
+          </div>
+          <h4 class="deco-item__title">Patches</h4>
+          <p class="deco-item__text">Woven, PVC, and leather patches across all panels.</p>
+        </a>
+        <a href="decoration/transfer.html" class="deco-item">
+          <div class="deco-item__image">
+            <img src="https://mediahub.beechfieldbrands.com/m/d7f9a8a14045acf/Product_medium-beechfield_b370_military-green_stitching.jpg" alt="Beechfield B370 cap stitching detail">
+          </div>
+          <h4 class="deco-item__title">Transfer</h4>
+          <p class="deco-item__text">Heat transfer for full-colour designs on flat panels.</p>
+        </a>
+        <a href="decoration/screen-print.html" class="deco-item">
+          <div class="deco-item__image">
+            <img src="https://mediahub.beechfieldbrands.com/m/1014532f65e49d27/Product_medium-beechfield_b916_steel-blue_stitching.jpg" alt="Beechfield B916 cap stitching detail">
+          </div>
+          <h4 class="deco-item__title">Screen Print</h4>
+          <p class="deco-item__text">Bold, durable prints for promotional and event runs.</p>
+        </a>
+      </div>
 
-        <!-- Designed for Decoration -->
-        <div class="card" style="text-align:center;padding:var(--space-8) var(--space-6)">
-          <div style="margin-bottom:var(--space-4)">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--brand-accent)"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-          </div>
-          <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-2)">Designed for Decoration</h3>
-          <p style="color:var(--brand-text-muted);font-size:var(--text-sm)">Every product engineered for embroidery, patches, transfer, screen print and DTG. Clean panels, stable substrates, consistent results.</p>
-        </div>
-
-        <!-- Always in Stock -->
-        <div class="card" style="text-align:center;padding:var(--space-8) var(--space-6)">
-          <div style="margin-bottom:var(--space-4)">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--brand-accent)"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          </div>
-          <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-2)">Always in Stock</h3>
-          <p style="color:var(--brand-text-muted);font-size:var(--text-sm)">Make-to-stock model with daily inventory updates. The styles you rely on, ready when you need them.</p>
-        </div>
-
-        <!-- 60+ Colours -->
-        <div class="card" style="text-align:center;padding:var(--space-8) var(--space-6)">
-          <div style="margin-bottom:var(--space-4)">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--brand-accent)"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-          </div>
-          <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-2)">60+ Colours</h3>
-          <p style="color:var(--brand-text-muted);font-size:var(--text-sm)">From classic black and navy to seasonal pastels and neons. The broadest rebrandable colour palette in the industry.</p>
-        </div>
-
-        <!-- Responsible by Design -->
-        <div class="card" style="text-align:center;padding:var(--space-8) var(--space-6)">
-          <div style="margin-bottom:var(--space-4)">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--brand-accent)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          </div>
-          <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-2)">Responsible by Design</h3>
-          <p style="color:var(--brand-text-muted);font-size:var(--text-sm)">EarthAware organic and recycled ranges. OEKO-TEX compliance, recycled packaging, and 1% for the Planet commitment.</p>
-        </div>
-
-        <!-- Distributor Network -->
-        <div class="card" style="text-align:center;padding:var(--space-8) var(--space-6)">
-          <div style="margin-bottom:var(--space-4)">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--brand-accent)"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-2)">Distributor Network</h3>
-          <p style="color:var(--brand-text-muted);font-size:var(--text-sm)">Available through authorised distributors across Europe. Check stock, compare prices, and order through your preferred partner.</p>
-        </div>
+      <div class="text-center" style="margin-top:var(--space-10)">
+        <a href="decorator-academy/" class="btn--ghost">Visit the Decorator Academy</a>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       SHOP BY TYPE — Category cards
+       COLLECTIONS — Portrait tiles with overlay
        ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header text-center" style="max-width:640px;margin:0 auto var(--space-10)">
-        <p class="section-header__label">Shop by Type</p>
-        <h2 class="section-header__title">Find Your Style</h2>
-        <p class="section-header__description">From caps and beanies to bucket hats and performance headwear. Every style designed for decoration, built for consistency.</p>
-      </div>
-
-      <div class="grid-3" style="gap:var(--space-6)">
-        <!-- Caps -->
-        <a href="products/caps/" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/ec4847087e60c74/Product_medium-beechfield_b10_chocolate_lifestyle_3162.jpg" alt="Beechfield B10 Original 5 Panel Cap in Chocolate, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Caps</h3>
-            <p class="card__text">Baseball, trucker, dad hat, snapback, flat peak and more. Our broadest category with styles for every programme.</p>
-          </div>
-        </a>
-
-        <!-- Beanies -->
-        <a href="products/beanies/" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/41ff6a2c771d71b/Product_medium-beechfield_b45_heather-oatmeal_lifestyle_19634.jpg" alt="Beechfield B45 Beanie in Heather Oatmeal, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Beanies</h3>
-            <p class="card__text">Cuffed, slouchy, ribbed and bobble styles. Premium knit beanies built for embroidery and patch decoration.</p>
-          </div>
-        </a>
-
-        <!-- Bucket Hats -->
-        <a href="products/bucket-hats/" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/4aa2396cf77a89e2/Product_medium-beechfield_b686_french-navy_white_lifestyle_25391.jpg" alt="Beechfield B686 Bucket Hat in French Navy and White, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Bucket Hats</h3>
-            <p class="card__text">From vintage washed to festival-ready. A trend-led silhouette with excellent decoration surfaces.</p>
-          </div>
-        </a>
-
-        <!-- Visors -->
-        <a href="products/visors/" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/360fe6c864d9b59a/Product_medium-beechfield_b34_pebble_lifestyle_17931.jpg" alt="Beechfield B34 Sport Visor in Pebble, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Visors</h3>
-            <p class="card__text">Sport and leisure visors with adjustable fits. Ideal for outdoor events and sports branding.</p>
-          </div>
-        </a>
-
-        <!-- Performance -->
-        <a href="products/performance/" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/ff32290934023d/Product_medium-beechfield_b185_french-navy_lifestyle_14814.jpg" alt="Beechfield B185 Performance Cap in French Navy, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Performance</h3>
-            <p class="card__text">Technical headwear for active and outdoor use. Moisture-wicking, breathable fabrics built to perform.</p>
-          </div>
-        </a>
-
-        <!-- Accessories -->
-        <a href="products/accessories/" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/bfb136650957a8f/Product_medium-beechfield_b285_french-navy_lifestyle_19665.jpg" alt="Beechfield B285 Snood in French Navy, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Accessories</h3>
-            <p class="card__text">Scarves, snoods, headbands and more. Complementary pieces to complete any headwear programme.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CAP STUDIO PROMO
-       ============================================================ -->
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="grid-2" style="align-items:center;gap:var(--space-16)">
-        <div>
-          <p class="section-header__label">Beechfield Exclusive</p>
-          <h2>Cap Studio</h2>
-          <p class="text-lg" style="margin-bottom:var(--space-6)">30+ years of headwear expertise, distilled into an interactive guide. Explore shapes, fabrics, and colours to find the perfect cap for your decoration programme.</p>
-          <div class="flex gap-4">
-            <a href="cap-studio/shapes.html" class="btn btn-primary">Explore Shapes</a>
-            <a href="cap-studio/fabrics.html" class="btn btn-secondary">Fabric Guide</a>
-          </div>
-        </div>
-        <div style="aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden">
-          <img src="https://mediahub.beechfieldbrands.com/m/70f33ef727347aa5/Product_medium-beechfield_b10_olive-green_lifestyle_19711.jpg" alt="Beechfield B10 Original 5 Panel Cap in Olive Green, front lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
+  <section class="section--flush" aria-label="Our Collections">
+    <div style="padding:var(--space-16) var(--space-6) var(--space-10)">
+      <div class="container">
+        <div class="section-header text-center" style="max-width:640px;margin:0 auto">
+          <p class="section-header__label">Signature Ranges</p>
+          <h2 class="section-header__title">Our Collections</h2>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ============================================================
-       DESIGNED FOR DECORATION
-       ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header text-center" style="max-width:640px;margin:0 auto var(--space-10)">
-        <p class="section-header__label">Decorator Academy</p>
-        <h2 class="section-header__title">Designed for Decoration</h2>
-        <p class="section-header__description">Every Beechfield product is engineered with decoration in mind. Explore techniques, placement guides, and expert tutorials.</p>
-      </div>
-
-      <div class="grid-4">
-        <a href="decoration/embroidery.html" class="card">
-          <div class="card__image" style="aspect-ratio:1/1">
-            <img src="https://mediahub.beechfieldbrands.com/m/145ed300bef5060f/Product_medium-beechfield_b188_salmon-pink_stitching.jpg" alt="Close-up of embroidery stitching detail on Beechfield B188 cap in Salmon Pink" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body text-center">
-            <h4 class="card__title">Embroidery</h4>
-            <p class="card__text">The most popular decoration method for headwear. Clean surfaces and stable panels for precise stitching.</p>
-          </div>
-        </a>
-        <a href="decoration/patches.html" class="card">
-          <div class="card__image" style="aspect-ratio:1/1">
-            <img src="https://mediahub.beechfieldbrands.com/asset/72917149-362c-4c11-af40-74dcafa66e31/Product-medium/beechfield_b638_military-green_ripstrip-patch.jpg" alt="Beechfield B638 cap in Military Green with ripstrip patch detail" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body text-center">
-            <h4 class="card__title">Patches</h4>
-            <p class="card__text">Woven, PVC, and leather patches. Versatile placement options across front, side, and back panels.</p>
-          </div>
-        </a>
-        <a href="decoration/transfer.html" class="card">
-          <div class="card__image" style="aspect-ratio:1/1">
-            <img src="https://mediahub.beechfieldbrands.com/m/d7f9a8a14045acf/Product_medium-beechfield_b370_military-green_stitching.jpg" alt="Beechfield B370 cap in Military Green showing stitching detail" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body text-center">
-            <h4 class="card__title">Transfer</h4>
-            <p class="card__text">Heat transfer for full-colour designs. Compatible with our flat-panel and structured cap styles.</p>
-          </div>
-        </a>
-        <a href="decoration/screen-print.html" class="card">
-          <div class="card__image" style="aspect-ratio:1/1">
-            <img src="https://mediahub.beechfieldbrands.com/m/1014532f65e49d27/Product_medium-beechfield_b916_steel-blue_stitching.jpg" alt="Beechfield B916 cap in Steel Blue showing stitching detail" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body text-center">
-            <h4 class="card__title">Screen Print</h4>
-            <p class="card__text">Bold, durable prints on flat surfaces. Ideal for promotional runs and event headwear.</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="text-center" style="margin-top:var(--space-8)">
-        <a href="decorator-academy/" class="btn btn-secondary">Visit the Decorator Academy</a>
-      </div>
+    <div class="collection-grid">
+      <a href="collections/originals.html" class="collection-tile">
+        <div class="collection-tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/6d45c473c996ad14/Product_medium-beechfield_b10_sky-blue_lifestyle_1.jpg" alt="Beechfield B10 Original 5 Panel Cap in Sky Blue, lifestyle">
+        </div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">Originals</h4>
+          <p class="collection-tile__subtitle">The Core Collection</p>
+        </div>
+      </a>
+      <a href="collections/earthaware.html" class="collection-tile">
+        <div class="collection-tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/1fd745ff13d36a7/Product_medium-beechfield_b46_black_lifestyle_1.jpg" alt="Beechfield B46 Slouch Beanie in Black, lifestyle">
+        </div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">EarthAware</h4>
+          <p class="collection-tile__subtitle">Organic &amp; Recycled</p>
+        </div>
+      </a>
+      <a href="collections/vintage.html" class="collection-tile">
+        <div class="collection-tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/378f041609ed53ca/Product_medium-beechfield_b655_vintage-black-lifestyle_1296.jpg" alt="Beechfield B655 Vintage Cap in Black, lifestyle">
+        </div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">Vintage</h4>
+          <p class="collection-tile__subtitle">Washed &amp; Weathered</p>
+        </div>
+      </a>
+      <a href="collections/urbanwear.html" class="collection-tile">
+        <div class="collection-tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/6b716f0a2efd5d9b/Product_medium-beechfield_b640b_olive-green_black_lifestyle_2297.jpg" alt="Beechfield B640B Snapback Trucker in Olive Green and Black, lifestyle">
+        </div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">Urbanwear</h4>
+          <p class="collection-tile__subtitle">Street-Inspired</p>
+        </div>
+      </a>
     </div>
   </section>
 
   <!-- ============================================================
-       COLLECTIONS
+       VALUE PROPOSITION BAR
        ============================================================ -->
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-header__label">Signature Ranges</p>
-        <h2 class="section-header__title">Our Collections</h2>
-      </div>
-
-      <div class="grid-4">
-        <a href="collections/originals.html" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/6d45c473c996ad14/Product_medium-beechfield_b10_sky-blue_lifestyle_1.jpg" alt="Beechfield B10 Original 5 Panel Cap in Sky Blue, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h4 class="card__title">Originals</h4>
-            <p class="card__text">The core collection — timeless styles that form the backbone of any headwear programme.</p>
-          </div>
-        </a>
-        <a href="collections/earthaware.html" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/1fd745ff13d36a7/Product_medium-beechfield_b46_black_lifestyle_1.jpg" alt="Beechfield B46 Slouch Beanie in Black, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h4 class="card__title">EarthAware</h4>
-            <p class="card__text">Organic and recycled materials. Sustainable headwear without compromising on quality or decoration.</p>
-          </div>
-        </a>
-        <a href="collections/vintage.html" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/378f041609ed53ca/Product_medium-beechfield_b655_vintage-black-lifestyle_1296.jpg" alt="Beechfield B655 Vintage Cap in Black, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h4 class="card__title">Vintage</h4>
-            <p class="card__text">Washed and weathered finishes. Fashion-forward headwear with a pre-loved aesthetic.</p>
-          </div>
-        </a>
-        <a href="collections/urbanwear.html" class="card">
-          <div class="card__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/6b716f0a2efd5d9b/Product_medium-beechfield_b640b_olive-green_black_lifestyle_2297.jpg" alt="Beechfield B640B Snapback Trucker in Olive Green and Black, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
-          </div>
-          <div class="card__body">
-            <h4 class="card__title">Urbanwear</h4>
-            <p class="card__text">Street-inspired silhouettes. Bold shapes and contemporary fabrics for modern branding.</p>
-          </div>
-        </a>
+  <div class="value-bar">
+    <div class="value-bar__item">
+      <svg class="value-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div class="value-bar__text">
+        <h4>30 Years</h4>
+        <p>Leading the rebrandable headwear market since 1994</p>
       </div>
     </div>
-  </section>
+    <div class="value-bar__item">
+      <svg class="value-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+      <div class="value-bar__text">
+        <h4>Decoration First</h4>
+        <p>Engineered for embroidery, patches, transfer and print</p>
+      </div>
+    </div>
+    <div class="value-bar__item">
+      <svg class="value-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      <div class="value-bar__text">
+        <h4>Always in Stock</h4>
+        <p>Make-to-stock model with daily inventory updates</p>
+      </div>
+    </div>
+    <div class="value-bar__item">
+      <svg class="value-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      <div class="value-bar__text">
+        <h4>Responsible</h4>
+        <p>EarthAware organic and recycled ranges, OEKO-TEX certified</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ============================================================
-       WHERE TO BUY CTA
+       WHERE TO BUY — Full-width CTA banner with background image
        ============================================================ -->
-  <section class="section bg-dark" aria-label="Where to buy">
-    <div class="container text-center" style="max-width:640px;margin:0 auto">
-      <h2 style="color:#fff;margin-bottom:var(--space-4)">Ready to Order?</h2>
-      <p style="color:rgba(255,255,255,0.85);margin-bottom:var(--space-8);font-size:var(--text-lg)">Beechfield products are available through our network of authorised distributors. Find your nearest partner or check stock availability.</p>
+  <section class="cta-banner" aria-label="Where to buy">
+    <div class="cta-banner__bg">
+      <img src="https://mediahub.beechfieldbrands.com/m/ec4847087e60c74/Product_medium-beechfield_b10_chocolate_lifestyle_3162.jpg" alt="Beechfield lifestyle">
+    </div>
+    <div class="cta-banner__overlay"></div>
+    <div class="cta-banner__content">
+      <h2 class="cta-banner__title">Ready to Order?</h2>
+      <p class="cta-banner__text">Beechfield products are available through our network of authorised distributors. Find your nearest partner or check stock availability.</p>
       <div class="flex flex-center gap-4">
-        <a href="where-to-buy/find-a-distributor.html" class="btn" style="background:#fff;color:#0e1520;border-color:#fff">Find a Distributor</a>
-        <a href="where-to-buy/inventory-finder.html" class="btn btn-secondary" style="border-color:#fff;color:#fff">Check Inventory</a>
+        <a href="where-to-buy/find-a-distributor.html" class="btn btn--white">Find a Distributor</a>
+        <a href="where-to-buy/inventory-finder.html" class="btn btn--outline-white">Check Inventory</a>
       </div>
     </div>
   </section>

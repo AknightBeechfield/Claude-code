@@ -1,6 +1,7 @@
 /* ==========================================================================
    Beechfield Original Headwear — Brand overrides
    Positioning: "Original authority in rebrandable headwear"
+   Inspired by: Atlantis Headwear editorial premium aesthetic
    ========================================================================== */
 
 :root {
@@ -11,4 +12,651 @@
   --brand-text: #0e1520;
   --brand-text-muted: #57534e;
   --brand-border: #e7e5e4;
+}
+
+/* ==========================================================================
+   HERO — Full-viewport immersive hero
+   ========================================================================== */
+.hero {
+  min-height: 100vh;
+  align-items: flex-end;
+}
+
+.hero__content {
+  max-width: 720px;
+  padding-bottom: var(--space-16);
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: var(--space-6);
+}
+
+.hero__subtitle {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-light);
+  line-height: var(--leading-relaxed);
+  max-width: 520px;
+}
+
+.hero__overlay {
+  background: linear-gradient(
+    0deg,
+    rgba(14, 21, 32, 0.85) 0%,
+    rgba(14, 21, 32, 0.3) 40%,
+    transparent 70%
+  ) !important;
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  z-index: 2;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* ==========================================================================
+   SECTION OVERRIDES — Larger spacing, editorial rhythm
+   ========================================================================== */
+.section--lg {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+}
+
+.section--flush {
+  padding: 0;
+}
+
+/* ==========================================================================
+   CATEGORY TILES — Full-bleed image tiles with text overlay
+   ========================================================================== */
+.tile-grid {
+  display: grid;
+  gap: 4px;
+}
+
+.tile-grid--2x3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.tile-grid--hero-left {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.tile-grid--hero-left .tile:first-child {
+  grid-row: 1 / 3;
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.tile--tall {
+  min-height: 648px;
+}
+
+.tile__image {
+  position: absolute;
+  inset: 0;
+}
+
+.tile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s ease;
+}
+
+.tile:hover .tile__image img {
+  transform: scale(1.03);
+}
+
+.tile__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(14, 21, 32, 0.7) 0%, rgba(14, 21, 32, 0.1) 50%, transparent 100%);
+  transition: background 0.4s ease;
+}
+
+.tile:hover .tile__overlay {
+  background: linear-gradient(0deg, rgba(14, 21, 32, 0.8) 0%, rgba(14, 21, 32, 0.2) 60%, transparent 100%);
+}
+
+.tile__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-8);
+  color: #fff;
+  z-index: 1;
+}
+
+.tile__label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
+  margin-bottom: var(--space-2);
+}
+
+.tile__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.tile__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+}
+
+.tile:hover .tile__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tile__cta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.tile:hover .tile__cta svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   SPLIT BLOCK — 50/50 image + text
+   ========================================================================== */
+.split-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+
+.split-block--reverse {
+  direction: rtl;
+}
+
+.split-block--reverse > * {
+  direction: ltr;
+}
+
+.split-block__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.split-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.split-block__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-16) var(--space-16);
+}
+
+.split-block__label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brand-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.split-block__title {
+  font-size: clamp(1.875rem, 3vw, 2.5rem);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-6);
+}
+
+.split-block__text {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--brand-text-muted);
+  margin-bottom: var(--space-8);
+  max-width: 480px;
+}
+
+.split-block--dark {
+  background-color: var(--brand-primary);
+}
+
+.split-block--dark .split-block__content {
+  color: #fff;
+}
+
+.split-block--dark .split-block__label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.split-block--dark .split-block__text {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.split-block--warm {
+  background-color: var(--brand-bg-warm);
+}
+
+/* ==========================================================================
+   VALUE BAR — Horizontal strip of brand values
+   ========================================================================== */
+.value-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--brand-border);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.value-bar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-8) var(--space-6);
+  border-right: 1px solid var(--brand-border);
+}
+
+.value-bar__item:last-child {
+  border-right: none;
+}
+
+.value-bar__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  color: var(--brand-accent);
+}
+
+.value-bar__text h4 {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: var(--space-1);
+}
+
+.value-bar__text p {
+  font-size: var(--text-xs);
+  color: var(--brand-text-muted);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* ==========================================================================
+   COLLECTION STRIP — Horizontal scrolling or grid of collection tiles
+   ========================================================================== */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.collection-tile {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.collection-tile__image {
+  position: absolute;
+  inset: 0;
+}
+
+.collection-tile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s ease;
+}
+
+.collection-tile:hover .collection-tile__image img {
+  transform: scale(1.05);
+}
+
+.collection-tile__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(14, 21, 32, 0.75) 0%, rgba(14, 21, 32, 0.1) 50%, transparent 100%);
+}
+
+.collection-tile__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-6);
+  color: #fff;
+  z-index: 1;
+}
+
+.collection-tile__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-1);
+}
+
+.collection-tile__subtitle {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   DECORATION STRIP — Clean icon row on dark background
+   ========================================================================== */
+.deco-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+}
+
+.deco-item {
+  text-align: center;
+  padding: var(--space-6);
+}
+
+.deco-item__image {
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.deco-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.deco-item:hover .deco-item__image img {
+  transform: scale(1.05);
+}
+
+.deco-item__title {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.deco-item__text {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* ==========================================================================
+   FULL-WIDTH CTA BANNER
+   ========================================================================== */
+.cta-banner {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-banner__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.cta-banner__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.cta-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 21, 32, 0.75);
+}
+
+.cta-banner__content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  max-width: 640px;
+  padding: var(--space-12) var(--space-6);
+}
+
+.cta-banner__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-4);
+}
+
+.cta-banner__text {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  opacity: 0.85;
+  margin-bottom: var(--space-8);
+}
+
+/* ==========================================================================
+   BUTTON OVERRIDES — Cleaner, more editorial
+   ========================================================================== */
+.btn--white {
+  background: #fff;
+  color: var(--brand-primary);
+  border-color: #fff;
+}
+
+.btn--white:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.btn--outline-white {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn--outline-white:hover {
+  background: #fff;
+  color: var(--brand-primary);
+  border-color: #fff;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--brand-primary);
+  border-color: transparent;
+  text-decoration: none;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 2px solid var(--brand-primary);
+  border-radius: 0;
+}
+
+.btn--ghost:hover {
+  color: var(--brand-accent);
+  border-bottom-color: var(--brand-accent);
+}
+
+/* ==========================================================================
+   MARQUEE / TRUST STRIP
+   ========================================================================== */
+.trust-strip {
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--brand-border);
+  overflow: hidden;
+}
+
+.trust-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.trust-strip__item {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brand-text-muted);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.trust-strip__dot {
+  width: 4px;
+  height: 4px;
+  background: var(--brand-accent);
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .split-block {
+    grid-template-columns: 1fr;
+  }
+
+  .split-block--reverse {
+    direction: ltr;
+  }
+
+  .split-block__image {
+    min-height: 400px;
+  }
+
+  .split-block__content {
+    padding: var(--space-10) var(--space-6);
+  }
+
+  .value-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-bar__item:nth-child(2) {
+    border-right: none;
+  }
+
+  .tile-grid--hero-left {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .tile-grid--hero-left .tile:first-child {
+    grid-row: auto;
+  }
+
+  .tile-grid--2x3 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .deco-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 85vh;
+  }
+
+  .hero__content {
+    padding-bottom: var(--space-20);
+  }
+
+  .value-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .value-bar__item {
+    border-right: none;
+    border-bottom: 1px solid var(--brand-border);
+  }
+
+  .value-bar__item:last-child {
+    border-bottom: none;
+  }
+
+  .tile {
+    min-height: 260px;
+  }
+
+  .tile--tall {
+    min-height: 320px;
+  }
+
+  .tile-grid--2x3 {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .deco-grid {
+    grid-template-columns: 1fr;
+  }
 }

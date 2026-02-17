@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beanies | Beechfield Original Headwear</title>
+  <meta name="description" content="Explore the full range of Beechfield blank beanies for embroidery, patches and transfer decoration. Turn-up beanies, slouch beanies, cuffed, pull-on and pom pom styles — designed for decoration.">
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="../../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../../shared/css/base.css">
+  <link rel="stylesheet" href="../../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../../shared/css/components.css">
+  <link rel="stylesheet" href="../../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../../shared/css/footer.css">
+
+  <!-- Brand overrides -->
+  <link rel="stylesheet" href="../../css/brand.css">
+
+  <style>
+    /* ── Category Hero Banner ── */
+    .category-hero {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .category-hero__image {
+      position: absolute;
+      inset: 0;
+    }
+
+    .category-hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .category-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(14, 21, 32, 0.8) 0%,
+        rgba(14, 21, 32, 0.25) 50%,
+        transparent 100%
+      );
+    }
+
+    .category-hero__content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      padding: var(--space-10) var(--space-8);
+      width: 100%;
+    }
+
+    .category-hero__label {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.7;
+      margin-bottom: var(--space-2);
+    }
+
+    .category-hero__title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .category-hero {
+        height: 220px;
+      }
+    }
+
+    /* ── PLP Layout ── */
+    .plp-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: var(--space-8);
+      align-items: start;
+    }
+
+    /* ── Filter Sidebar — flat editorial look ── */
+    .filter-sidebar {
+      position: sticky;
+      top: 88px;
+      border: 1px solid var(--brand-border);
+      border-radius: 0;
+      background: var(--bfb-white);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    .filter-sidebar__title {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 0;
+    }
+
+    .filter-group {
+      border-bottom: 1px solid var(--brand-border);
+      padding-bottom: var(--space-4);
+    }
+
+    .filter-group:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .filter-group__heading {
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .filter-group__heading svg {
+      width: 12px;
+      height: 12px;
+      transition: transform var(--transition-fast);
+    }
+
+    .filter-group__options {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .filter-option {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      cursor: pointer;
+    }
+
+    .filter-option input[type="checkbox"] {
+      accent-color: var(--brand-primary);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    /* ── Toolbar (sort, count, chips) ── */
+    .plp-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+
+    .plp-toolbar__left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .sort-select {
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-sm);
+      border: 1px solid var(--brand-border);
+      border-radius: 0;
+      background: var(--bfb-white);
+      cursor: pointer;
+    }
+
+    .sort-select:focus {
+      outline: none;
+      border-color: var(--brand-primary);
+    }
+
+    .result-count {
+      font-size: var(--text-sm);
+      color: var(--brand-text-muted);
+    }
+
+    .active-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      min-height: var(--space-8);
+      align-items: center;
+    }
+
+    /* ── Page intro ── */
+    .plp-intro {
+      margin-bottom: var(--space-8);
+    }
+
+    .plp-intro h1 {
+      margin-bottom: var(--space-4);
+    }
+
+    .plp-intro p {
+      max-width: 720px;
+      color: var(--brand-text-muted);
+      font-size: var(--text-lg);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* ── Product card — flat editorial overrides ── */
+    .product-card {
+      border-radius: 0;
+    }
+
+    .product-card__image {
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    .product-card__image img {
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-card__image img {
+      transform: scale(1.05);
+    }
+
+    .product-card__body {
+      padding: var(--space-5) var(--space-4) var(--space-6);
+      gap: var(--space-2);
+    }
+
+    /* ── Product card placeholder image ── */
+    .product-card__placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #e7e5e4, #d6d3d1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--neutral-500);
+      font-weight: var(--font-weight-bold);
+    }
+
+    /* ── Responsive: filter sidebar ── */
+    @media (max-width: 1024px) {
+      .plp-layout {
+        grid-template-columns: 220px 1fr;
+        gap: var(--space-6);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .plp-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-sidebar {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP BAR — Brand Switcher
+       ============================================================ -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="../../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
+          <a href="../../../beechfield/" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../../../bagbase/" class="brand-switcher__link">BagBase</a>
+          <a href="../../../quadra/" class="brand-switcher__link">Quadra</a>
+          <a href="../../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions">
+        <a href="../../where-to-buy/find-a-distributor.html">Find a Distributor</a>
+        <a href="../../where-to-buy/inventory-finder.html">Inventory Finder</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HEADER — Logo, Navigation, Search, Account
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <!-- Logo -->
+      <a href="../../index.html" class="site-logo">
+        <div>
+          <span class="site-logo__text">Beechfield</span>
+          <span class="site-logo__brand">Original Headwear</span>
+        </div>
+      </a>
+
+      <!-- Main Navigation -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+
+          <!-- Product Ranges (mega menu) -->
+          <li class="main-nav__item" data-mega="products">
+            <a href="#" class="main-nav__link main-nav__link--active">
+              Product Ranges
+              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 4 L5 7 L8 4"/>
+              </svg>
+            </a>
+            <div class="mega-menu mega-menu--products">
+              <div class="mega-menu__inner">
+                <!-- Column 1: Featured -->
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Featured</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../products/new-in.html" class="mega-menu__link mega-menu__link--featured">New In</a></li>
+                    <li><a href="../../products/hero-products.html" class="mega-menu__link mega-menu__link--featured">Hero Products</a></li>
+                    <li><a href="../../products/best-sellers.html" class="mega-menu__link mega-menu__link--featured">Best Sellers</a></li>
+                    <li><a href="../../products/trending.html" class="mega-menu__link">Trending</a></li>
+                    <li><a href="../../products/eco-styles.html" class="mega-menu__link">Eco-Styles</a></li>
+                    <li><a href="../../products/" class="mega-menu__link mega-menu__link--featured">All Products</a></li>
+                  </ul>
+                </div>
+                <!-- Column 2: By Type -->
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">By Type</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../products/caps/" class="mega-menu__link">Caps</a></li>
+                    <li><a href="../../products/beanies/" class="mega-menu__link mega-menu__link--featured">Beanies</a></li>
+                    <li><a href="../../products/bucket-hats/" class="mega-menu__link">Bucket Hats</a></li>
+                    <li><a href="../../products/visors/" class="mega-menu__link">Visors</a></li>
+                    <li><a href="../../products/performance/" class="mega-menu__link">Performance</a></li>
+                    <li><a href="../../products/accessories/" class="mega-menu__link">Accessories</a></li>
+                  </ul>
+                </div>
+                <!-- Column 3: By Purpose -->
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">By Purpose</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../purpose/outdoors.html" class="mega-menu__link">Outdoors</a></li>
+                    <li><a href="../../purpose/sports.html" class="mega-menu__link">Sports</a></li>
+                    <li><a href="../../purpose/promotion.html" class="mega-menu__link">Promotion</a></li>
+                    <li><a href="../../purpose/fashion.html" class="mega-menu__link">Fashion</a></li>
+                    <li><a href="../../purpose/kids.html" class="mega-menu__link">Kids</a></li>
+                    <li><a href="../../purpose/workwear.html" class="mega-menu__link">Workwear</a></li>
+                    <li><a href="../../purpose/gifting.html" class="mega-menu__link">Gifting</a></li>
+                  </ul>
+                </div>
+                <!-- Column 4: By Decoration -->
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">By Decoration</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../decoration/embroidery.html" class="mega-menu__link">Embroidery</a></li>
+                    <li><a href="../../decoration/patches.html" class="mega-menu__link">Patches</a></li>
+                    <li><a href="../../decoration/transfer.html" class="mega-menu__link">Transfer</a></li>
+                    <li><a href="../../decoration/screen-print.html" class="mega-menu__link">Screen Print</a></li>
+                    <li><a href="../../decoration/dtg.html" class="mega-menu__link">DTG</a></li>
+                    <li><a href="../../decoration/sublimation.html" class="mega-menu__link">Sublimation</a></li>
+                    <li><a href="../../decoration/deboss-foil-laser.html" class="mega-menu__link">Deboss / Foil / Laser</a></li>
+                  </ul>
+                </div>
+                <!-- Column 5: By Colour -->
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">By Colour</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../products/?colour=black" class="mega-menu__link"><span class="colour-dot" style="background:#000"></span> Black</a></li>
+                    <li><a href="../../products/?colour=navy" class="mega-menu__link"><span class="colour-dot" style="background:#1b2a4a"></span> Navy</a></li>
+                    <li><a href="../../products/?colour=grey" class="mega-menu__link"><span class="colour-dot" style="background:#9ca3af"></span> Grey</a></li>
+                    <li><a href="../../products/?colour=white" class="mega-menu__link"><span class="colour-dot" style="background:#fff;border:1px solid #ddd"></span> White</a></li>
+                    <li><a href="../../products/?colour=red" class="mega-menu__link"><span class="colour-dot" style="background:#dc2626"></span> Red</a></li>
+                    <li><a href="../../products/?colour=green" class="mega-menu__link"><span class="colour-dot" style="background:#16a34a"></span> Green</a></li>
+                    <li><a href="../../products/?colour=blue" class="mega-menu__link"><span class="colour-dot" style="background:#2563eb"></span> Blue</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Collections -->
+          <li class="main-nav__item" data-mega="collections">
+            <a href="../../collections/" class="main-nav__link">
+              Collections
+              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 4 L5 7 L8 4"/>
+              </svg>
+            </a>
+            <div class="mega-menu mega-menu--3col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Collections</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../collections/originals.html" class="mega-menu__link">Originals</a></li>
+                    <li><a href="../../collections/morf.html" class="mega-menu__link">Morf</a></li>
+                    <li><a href="../../collections/snowstar.html" class="mega-menu__link">Snowstar</a></li>
+                    <li><a href="../../collections/suprafleece.html" class="mega-menu__link">Suprafleece</a></li>
+                    <li><a href="../../collections/earthaware.html" class="mega-menu__link">EarthAware</a></li>
+                    <li><a href="../../collections/vintage.html" class="mega-menu__link">Vintage</a></li>
+                    <li><a href="../../collections/urbanwear.html" class="mega-menu__link">Urbanwear</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Lookbooks</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">SS26 Lookbook</a></li>
+                    <li><a href="../../lookbooks/aw25-26.html" class="mega-menu__link">AW25/26 Lookbook</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Seasonal</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../campaign/ss26/" class="mega-menu__link mega-menu__link--featured">Spring/Summer 2026</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Cap Studio -->
+          <li class="main-nav__item" data-mega="cap-studio">
+            <a href="../../cap-studio/" class="main-nav__link">
+              Cap Studio
+              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 4 L5 7 L8 4"/>
+              </svg>
+            </a>
+            <div class="mega-menu mega-menu--3col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">By Shape</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../cap-studio/shapes.html#baseball" class="mega-menu__link">Baseball</a></li>
+                    <li><a href="../../cap-studio/shapes.html#trucker" class="mega-menu__link">Trucker</a></li>
+                    <li><a href="../../cap-studio/shapes.html#dad-hat" class="mega-menu__link">Dad Hat</a></li>
+                    <li><a href="../../cap-studio/shapes.html#flat-peak" class="mega-menu__link">Flat Peak</a></li>
+                    <li><a href="../../cap-studio/shapes.html#army" class="mega-menu__link">Army</a></li>
+                    <li><a href="../../cap-studio/shapes.html#camper" class="mega-menu__link">Camper</a></li>
+                    <li><a href="../../cap-studio/shapes.html#visor" class="mega-menu__link">Visor</a></li>
+                    <li><a href="../../cap-studio/shapes.html#flat-cap" class="mega-menu__link">Flat Cap</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">By Fabric</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../cap-studio/fabrics.html#cotton" class="mega-menu__link">Cotton</a></li>
+                    <li><a href="../../cap-studio/fabrics.html#organic-cotton" class="mega-menu__link">Organic Cotton</a></li>
+                    <li><a href="../../cap-studio/fabrics.html#recycled-polyester" class="mega-menu__link">Recycled Polyester</a></li>
+                    <li><a href="../../cap-studio/fabrics.html#polyester" class="mega-menu__link">Polyester</a></li>
+                    <li><a href="../../cap-studio/fabrics.html#corduroy" class="mega-menu__link">Corduroy</a></li>
+                    <li><a href="../../cap-studio/fabrics.html#denim" class="mega-menu__link">Denim</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Resources</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../cap-studio/shapes.html" class="mega-menu__link mega-menu__link--featured">Shape Guide</a></li>
+                    <li><a href="../../cap-studio/fabrics.html" class="mega-menu__link mega-menu__link--featured">Fabric Guide</a></li>
+                    <li><a href="../../cap-studio/colours.html" class="mega-menu__link">Colour Library</a></li>
+                    <li><a href="../../cap-studio/glossary.html" class="mega-menu__link">Glossary</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Decorator Academy -->
+          <li class="main-nav__item" data-mega="decorator">
+            <a href="../../decorator-academy/" class="main-nav__link">
+              Decorator Academy
+              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 4 L5 7 L8 4"/>
+              </svg>
+            </a>
+            <div class="mega-menu mega-menu--2col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Learn</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../decorator-academy/designed-for-decoration.html" class="mega-menu__link mega-menu__link--featured">Designed for Decoration</a></li>
+                    <li><a href="../../decorator-academy/techniques.html" class="mega-menu__link">Techniques</a></li>
+                    <li><a href="../../decorator-academy/decoration-protection.html" class="mega-menu__link">Decoration Protection</a></li>
+                    <li><a href="../../decorator-academy/how-to-videos.html" class="mega-menu__link">How to Videos</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Community</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../decorator-academy/join-the-community.html" class="mega-menu__link mega-menu__link--featured">Join the Community</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Resources -->
+          <li class="main-nav__item" data-mega="resources">
+            <a href="../../resources/" class="main-nav__link">
+              Resources
+              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 4 L5 7 L8 4"/>
+              </svg>
+            </a>
+            <div class="mega-menu mega-menu--2col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Resources</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../resources/blog/" class="mega-menu__link">Blog</a></li>
+                    <li><a href="../../resources/faqs.html" class="mega-menu__link">FAQs</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Assets</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="#" class="mega-menu__link">Brochure</a></li>
+                    <li><a href="#" class="mega-menu__link">Media Hub</a></li>
+                    <li><a href="#" class="mega-menu__link">Campaign Assets</a></li>
+                    <li><a href="#" class="mega-menu__link">Product Assets</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Where to Buy -->
+          <li class="main-nav__item" data-mega="where-to-buy">
+            <a href="../../where-to-buy/" class="main-nav__link">
+              Where to Buy
+              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 4 L5 7 L8 4"/>
+              </svg>
+            </a>
+            <div class="mega-menu mega-menu--2col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Buy</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../where-to-buy/how-to-buy.html" class="mega-menu__link mega-menu__link--featured">How to Buy</a></li>
+                    <li><a href="../../where-to-buy/find-a-distributor.html" class="mega-menu__link">Find a Distributor</a></li>
+                    <li><a href="../../where-to-buy/inventory-finder.html" class="mega-menu__link">Inventory Finder</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">About</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../about/our-values.html" class="mega-menu__link">Our Values</a></li>
+                    <li><a href="../../about/sustainability.html" class="mega-menu__link">Sustainability</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Header actions -->
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </button>
+        <a href="#" class="account-toggle" aria-label="My account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <span class="mobile-toggle__bar"></span>
+          <span class="mobile-toggle__bar"></span>
+          <span class="mobile-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" role="search">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-overlay__input" placeholder="Search by product name, SKU, or keyword..." aria-label="Search products">
+      <button class="search-overlay__close" aria-label="Close search">&times;</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CATEGORY HERO BANNER
+       ============================================================ -->
+  <section class="category-hero" aria-label="Beanies category">
+    <div class="category-hero__image">
+      <img src="https://mediahub.beechfieldbrands.com/m/41ff6a2c771d71b/Product_medium-beechfield_b45_heather-oatmeal_lifestyle_19634.jpg" alt="Beechfield B45 Beanie Hat in Heather Oatmeal, lifestyle">
+    </div>
+    <div class="category-hero__overlay"></div>
+    <div class="category-hero__content">
+      <div class="container">
+        <p class="category-hero__label">Product Range</p>
+        <h1 class="category-hero__title">Beanies</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST STRIP — Brand credibility markers
+       ============================================================ -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-strip__inner">
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          30 Years of Expertise
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          Designed for Decoration
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          Always in Stock
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          60+ Colours
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          Responsible by Design
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       BREADCRUMB
+       ============================================================ -->
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb__separator">/</span>
+      <a href="../../products/">Products</a>
+      <span class="breadcrumb__separator">/</span>
+      <span aria-current="page">Beanies</span>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       PAGE INTRO
+       ============================================================ -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="plp-intro">
+        <p>Discover the full range of Beechfield blank beanies, designed and engineered for embroidery, patches and transfer decoration. From classic turn-up beanies and relaxed slouch styles to dual-layer cuffed designs, pull-on knitted hats and pom pom beanies, our beanie collection offers premium quality blanks in a wide selection of colours and fabrics. Trusted by decorators and promotional buyers worldwide for consistent fit, warmth, and outstanding branding results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PLP LAYOUT — Sidebar + Product Grid
+       ============================================================ -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="plp-layout">
+
+        <!-- ── Filter Sidebar ── -->
+        <aside class="filter-sidebar" aria-label="Product filters">
+          <h2 class="filter-sidebar__title">Filter Products</h2>
+
+          <!-- By Style -->
+          <div class="filter-group">
+            <h3 class="filter-group__heading" data-filter-group="style">
+              By Style
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
+            </h3>
+            <div class="filter-group__options" data-filter-panel="style">
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="style" value="Turn-Up"> Turn-Up
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="style" value="Slouch"> Slouch
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="style" value="Cuffed"> Cuffed
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="style" value="Pull-On"> Pull-On
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="style" value="Pom Pom"> Pom Pom
+              </label>
+            </div>
+          </div>
+
+          <!-- By Colour -->
+          <div class="filter-group">
+            <h3 class="filter-group__heading" data-filter-group="colour">
+              By Colour
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
+            </h3>
+            <div class="filter-group__options" data-filter-panel="colour">
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="Black"> Black
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="Navy"> Navy
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="Grey"> Grey
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="White"> White
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="Red"> Red
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="Green"> Green
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="Blue"> Blue
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="Pink"> Pink
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="Orange"> Orange
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="colour" value="Yellow"> Yellow
+              </label>
+            </div>
+          </div>
+
+          <!-- By Decoration -->
+          <div class="filter-group">
+            <h3 class="filter-group__heading" data-filter-group="decoration">
+              By Decoration
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
+            </h3>
+            <div class="filter-group__options" data-filter-panel="decoration">
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="decoration" value="Embroidery"> Embroidery
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="decoration" value="Patches"> Patches
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="decoration" value="Transfer"> Transfer
+              </label>
+            </div>
+          </div>
+
+          <!-- By Fabric -->
+          <div class="filter-group">
+            <h3 class="filter-group__heading" data-filter-group="fabric">
+              By Fabric
+              <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
+            </h3>
+            <div class="filter-group__options" data-filter-panel="fabric">
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="fabric" value="Acrylic"> Acrylic
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="fabric" value="Organic Cotton"> Organic Cotton
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-group="fabric" value="Recycled"> Recycled
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ── Main Content ── -->
+        <div class="plp-main">
+
+          <!-- Toolbar: Sort + Result Count -->
+          <div class="plp-toolbar">
+            <div class="plp-toolbar__left">
+              <span class="result-count">Showing 6 of 6 products</span>
+            </div>
+            <div>
+              <label for="sort-select" class="text-sm" style="margin-right:var(--space-2)">Sort by:</label>
+              <select id="sort-select" class="sort-select">
+                <option value="name-asc">Name A-Z</option>
+                <option value="name-desc">Name Z-A</option>
+                <option value="sku-asc">SKU</option>
+                <option value="newest">Newest</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Active Filter Chips -->
+          <div class="active-filters" aria-live="polite"></div>
+
+          <!-- Product Grid -->
+          <div class="product-grid">
+
+            <!-- B45 Beanie Hat -->
+            <div class="product-card"
+                 data-filters='{"style":"pull-on","colour":"black,navy,grey,white","decoration":"embroidery,patches","fabric":"acrylic"}'
+                 data-name="Beanie Hat"
+                 data-sku="B45"
+                 data-date="2024-01-01">
+              <div class="product-card__image">
+                <img src="https://mediahub.beechfieldbrands.com/m/41ff6a2c771d71b/Product_medium-beechfield_b45_heather-oatmeal_lifestyle_19634.jpg" alt="Beechfield B45 Beanie Hat in Heather Oatmeal" style="width:100%;height:100%;object-fit:cover">
+                <div class="product-card__badges">
+                  <span class="badge badge-bestseller">Bestseller</span>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__sku">B45</span>
+                <span class="product-card__name">Beanie Hat</span>
+                <div class="product-card__colours">
+                  <span class="colour-dot" style="background:#000" title="Black"></span>
+                  <span class="colour-dot" style="background:#1b2a4a" title="Navy"></span>
+                  <span class="colour-dot" style="background:#9ca3af" title="Grey"></span>
+                  <span class="colour-dot" style="background:#fff;border:1px solid #ddd" title="White"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- B46 Slouch Beanie -->
+            <div class="product-card"
+                 data-filters='{"style":"slouch","colour":"black,navy,grey","decoration":"embroidery,patches","fabric":"acrylic"}'
+                 data-name="Slouch Beanie"
+                 data-sku="B46"
+                 data-date="2024-02-01">
+              <div class="product-card__image">
+                <img src="https://mediahub.beechfieldbrands.com/m/1fd745ff13d36a7/Product_medium-beechfield_b46_black_lifestyle_1.jpg" alt="Beechfield B46 Slouch Beanie in Black" style="width:100%;height:100%;object-fit:cover">
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__sku">B46</span>
+                <span class="product-card__name">Slouch Beanie</span>
+                <div class="product-card__colours">
+                  <span class="colour-dot" style="background:#000" title="Black"></span>
+                  <span class="colour-dot" style="background:#1b2a4a" title="Navy"></span>
+                  <span class="colour-dot" style="background:#9ca3af" title="Grey"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- B44 Thinsulate Beanie -->
+            <div class="product-card"
+                 data-filters='{"style":"turn-up","colour":"black,navy,grey,red","decoration":"embroidery","fabric":"acrylic"}'
+                 data-name="Thinsulate Beanie"
+                 data-sku="B44"
+                 data-date="2024-03-01">
+              <div class="product-card__image">
+                <div class="product-card__placeholder">Thinsulate Beanie</div>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__sku">B44</span>
+                <span class="product-card__name">Thinsulate Beanie</span>
+                <div class="product-card__colours">
+                  <span class="colour-dot" style="background:#000" title="Black"></span>
+                  <span class="colour-dot" style="background:#1b2a4a" title="Navy"></span>
+                  <span class="colour-dot" style="background:#9ca3af" title="Grey"></span>
+                  <span class="colour-dot" style="background:#dc2626" title="Red"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- B47 Snowstar Beanie -->
+            <div class="product-card"
+                 data-filters='{"style":"turn-up","colour":"black,navy,red","decoration":"embroidery,patches","fabric":"acrylic"}'
+                 data-name="Snowstar Beanie"
+                 data-sku="B47"
+                 data-date="2025-01-01">
+              <div class="product-card__image">
+                <div class="product-card__placeholder">Snowstar Beanie</div>
+                <div class="product-card__badges">
+                  <span class="badge badge-trending">Trending</span>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__sku">B47</span>
+                <span class="product-card__name">Snowstar Beanie</span>
+                <div class="product-card__colours">
+                  <span class="colour-dot" style="background:#000" title="Black"></span>
+                  <span class="colour-dot" style="background:#1b2a4a" title="Navy"></span>
+                  <span class="colour-dot" style="background:#dc2626" title="Red"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- B43 Heritage Beanie -->
+            <div class="product-card"
+                 data-filters='{"style":"turn-up","colour":"black,navy,grey","decoration":"embroidery","fabric":"acrylic"}'
+                 data-name="Heritage Beanie"
+                 data-sku="B43"
+                 data-date="2025-02-01">
+              <div class="product-card__image">
+                <div class="product-card__placeholder">Heritage Beanie</div>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__sku">B43</span>
+                <span class="product-card__name">Heritage Beanie</span>
+                <div class="product-card__colours">
+                  <span class="colour-dot" style="background:#000" title="Black"></span>
+                  <span class="colour-dot" style="background:#1b2a4a" title="Navy"></span>
+                  <span class="colour-dot" style="background:#9ca3af" title="Grey"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- B445 Organic Cotton Beanie -->
+            <div class="product-card"
+                 data-filters='{"style":"pull-on","colour":"black,navy,white","decoration":"embroidery,patches","fabric":"organic cotton"}'
+                 data-name="Organic Cotton Beanie"
+                 data-sku="B445"
+                 data-date="2025-09-01">
+              <div class="product-card__image">
+                <div class="product-card__placeholder">Organic Cotton Beanie</div>
+                <div class="product-card__badges">
+                  <span class="badge badge-eco">Eco</span>
+                  <span class="badge badge-new">New</span>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <span class="product-card__sku">B445</span>
+                <span class="product-card__name">Organic Cotton Beanie</span>
+                <div class="product-card__colours">
+                  <span class="colour-dot" style="background:#000" title="Black"></span>
+                  <span class="colour-dot" style="background:#1b2a4a" title="Navy"></span>
+                  <span class="colour-dot" style="background:#fff;border:1px solid #ddd" title="White"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- /product-grid -->
+
+        </div>
+        <!-- /plp-main -->
+
+      </div>
+      <!-- /plp-layout -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <div class="footer__brand-name">Beechfield</div>
+          <p class="footer__brand-tagline">Original authority in rebrandable headwear. Trusted for consistency, craftsmanship and decoration performance since 1994.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">LI</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+
+        <!-- Products column -->
+        <div>
+          <h4 class="footer__column-title">Products</h4>
+          <nav class="footer__links">
+            <a href="../../products/caps/" class="footer__link">Caps</a>
+            <a href="../../products/beanies/" class="footer__link">Beanies</a>
+            <a href="../../products/bucket-hats/" class="footer__link">Bucket Hats</a>
+            <a href="../../products/visors/" class="footer__link">Visors</a>
+            <a href="../../products/performance/" class="footer__link">Performance</a>
+            <a href="../../products/accessories/" class="footer__link">Accessories</a>
+          </nav>
+        </div>
+
+        <!-- Support column -->
+        <div>
+          <h4 class="footer__column-title">Support</h4>
+          <nav class="footer__links">
+            <a href="../../about/our-values.html" class="footer__link">About Us</a>
+            <a href="../../resources/faqs.html" class="footer__link">FAQs</a>
+            <a href="../../where-to-buy/find-a-distributor.html" class="footer__link">Find a Distributor</a>
+            <a href="../../where-to-buy/inventory-finder.html" class="footer__link">Inventory Finder</a>
+            <a href="../../decorator-academy/join-the-community.html" class="footer__link">Join the Community</a>
+            <a href="../../../beechfield-brands/distributors/become-a-distributor.html" class="footer__link">Become a Distributor</a>
+          </nav>
+        </div>
+
+        <!-- Contact column -->
+        <div>
+          <h4 class="footer__column-title">Contact</h4>
+          <nav class="footer__links">
+            <a href="#" class="footer__link">Contact Us</a>
+            <a href="#" class="footer__link">Media Hub</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Beechfield Brands Limited. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Modern Slavery Statement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../../shared/js/navigation.js"></script>
+  <script src="../../../shared/js/filters.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spring / Summer 2026 Campaign | Beechfield Original Headwear</title>
-  <meta name="description" content="Spring / Summer 2026 — Fresh colours, new fabrics and styles for the season ahead. Designed for decoration, ready to brand.">
+  <title>Spring / Summer 2026 Lookbook | Beechfield Original Headwear</title>
+  <meta name="description" content="SS26 Lookbook — 11 new products and 17 fresh colours. Classic shapes reworked with clean lines, confident materials and considered comfort.">
 
   <!-- Shared styles -->
   <link rel="stylesheet" href="../../../shared/css/variables.css">
@@ -17,6 +17,276 @@
 
   <!-- Brand overrides -->
   <link rel="stylesheet" href="../../css/brand.css">
+
+  <!-- Lookbook styles -->
+  <style>
+    /* Full-bleed images */
+    .lookbook-bleed {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .lookbook-bleed img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Collection statement */
+    .lookbook-statement {
+      text-align: center;
+      padding: clamp(80px, 12vw, 160px) var(--space-8);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .lookbook-statement__text {
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: var(--font-weight-light);
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      color: var(--brand-text);
+    }
+    .lookbook-statement__accent {
+      font-style: italic;
+      color: var(--brand-accent);
+    }
+
+    /* Lookbook mosaic grid */
+    .lookbook-mosaic {
+      display: grid;
+      gap: 4px;
+      width: 100%;
+    }
+    .lookbook-mosaic--lr {
+      grid-template-columns: 1.2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .lookbook-mosaic--rl {
+      grid-template-columns: 1fr 1.2fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .lookbook-mosaic__item {
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+    }
+    .lookbook-mosaic__item--tall {
+      grid-row: span 2;
+    }
+    .lookbook-mosaic__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .lookbook-mosaic__item:hover img {
+      transform: scale(1.03);
+    }
+    .lookbook-mosaic__caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-6) var(--space-6) var(--space-4);
+      background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+      color: #fff;
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-light);
+      letter-spacing: 0.05em;
+    }
+
+    /* Quote strip */
+    .lookbook-quote {
+      padding: clamp(60px, 10vw, 120px) var(--space-8);
+      text-align: center;
+      background: #f0ebe4;
+    }
+    .lookbook-quote__text {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      max-width: 640px;
+      margin: 0 auto var(--space-4);
+      color: var(--brand-text);
+    }
+    .lookbook-quote__sub {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-light);
+      font-style: italic;
+      color: var(--brand-text-muted);
+    }
+
+    /* Product highlights grid */
+    .lookbook-products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      padding: 0;
+    }
+    .lookbook-products__item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      color: #fff;
+    }
+    .lookbook-products__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .lookbook-products__item:hover img {
+      transform: scale(1.05);
+    }
+    .lookbook-products__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-6);
+      background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 100%);
+    }
+    .lookbook-products__name {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-bold);
+    }
+    .lookbook-products__sku {
+      font-size: var(--text-xs);
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* CTA section */
+    .lookbook-cta {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .lookbook-cta__bg {
+      position: absolute;
+      inset: 0;
+    }
+    .lookbook-cta__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .lookbook-cta__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 21, 32, 0.7);
+    }
+    .lookbook-cta__content {
+      position: relative;
+      z-index: 1;
+      padding: var(--space-16);
+    }
+    .lookbook-cta__title {
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.03em;
+      margin-bottom: var(--space-8);
+    }
+
+    /* Lookbook hero overrides */
+    .lookbook-hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .lookbook-hero__bg {
+      position: absolute;
+      inset: 0;
+    }
+    .lookbook-hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .lookbook-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(14, 21, 32, 0.8) 0%,
+        rgba(14, 21, 32, 0.2) 35%,
+        transparent 65%
+      );
+    }
+    .lookbook-hero__content {
+      position: relative;
+      z-index: 1;
+      padding: 0 var(--space-6) clamp(100px, 14vh, 160px);
+      max-width: 800px;
+    }
+    .lookbook-hero__season {
+      font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      opacity: 0.7;
+      margin-bottom: var(--space-6);
+    }
+    .lookbook-hero__title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      margin-bottom: var(--space-6);
+    }
+    .lookbook-hero__sub {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      font-weight: var(--font-weight-light);
+      line-height: 1.5;
+      opacity: 0.8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Gradient placeholder for missing product images */
+    .lookbook-products__placeholder {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease;
+    }
+    .lookbook-products__item:hover .lookbook-products__placeholder {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .lookbook-mosaic--lr,
+      .lookbook-mosaic--rl {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      .lookbook-mosaic__item--tall {
+        grid-row: span 1;
+      }
+      .lookbook-mosaic__item {
+        min-height: 260px;
+      }
+      .lookbook-products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .lookbook-hero__content {
+        padding-bottom: 100px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -344,20 +614,17 @@
   </div>
 
   <!-- ============================================================
-       1. HERO — Full-viewport SS26 campaign hero
+       1. HERO — Full-viewport editorial lookbook hero
        ============================================================ -->
-  <section class="hero" aria-label="Spring Summer 2026 campaign">
-    <div class="hero__bg">
-      <img src="https://mediahub.beechfieldbrands.com/m/7ab94fd961416885/Product_medium-beechfield_b688_vintage-olive_lifestyle_DSC03587.jpg" alt="Beechfield B688 Heritage Cord Cap in Vintage Olive, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
+  <section class="lookbook-hero" aria-label="Spring Summer 2026 Lookbook">
+    <div class="lookbook-hero__bg">
+      <img src="https://mediahub.beechfieldbrands.com/m/7ab94fd961416885/Product_medium-beechfield_b688_vintage-olive_lifestyle_DSC03587.jpg" alt="Beechfield B688 Heritage Cord Cap in Vintage Olive, lifestyle">
     </div>
-    <div class="hero__overlay"></div>
-    <div class="container hero__content">
-      <h1 class="hero__title">Spring / Summer 2026</h1>
-      <p class="hero__subtitle">Fresh colours, new fabrics and styles for the season ahead. Designed for decoration, ready to brand.</p>
-      <div class="flex gap-4" style="margin-top:var(--space-8)">
-        <a href="../../products/" class="btn btn--white">Shop New Arrivals</a>
-        <a href="#" class="btn btn--outline-white">Download Lookbook</a>
-      </div>
+    <div class="lookbook-hero__overlay"></div>
+    <div class="lookbook-hero__content">
+      <p class="lookbook-hero__season">Beechfield Original Headwear</p>
+      <h1 class="lookbook-hero__title">Spring / Summer<br>2026</h1>
+      <p class="lookbook-hero__sub">11 New Products. 17 Fresh Colours. Designed for Decoration.</p>
     </div>
     <div class="hero__scroll" aria-hidden="true">
       <span>Scroll</span>
@@ -366,232 +633,189 @@
   </section>
 
   <!-- ============================================================
-       2. TRUST STRIP — Brand credibility markers
+       2. COLLECTION STATEMENT — Centred editorial text
        ============================================================ -->
-  <div class="trust-strip">
-    <div class="container">
-      <div class="trust-strip__inner">
-        <span class="trust-strip__item">
-          <span class="trust-strip__dot"></span>
-          30 Years of Expertise
-        </span>
-        <span class="trust-strip__item">
-          <span class="trust-strip__dot"></span>
-          Designed for Decoration
-        </span>
-        <span class="trust-strip__item">
-          <span class="trust-strip__dot"></span>
-          Always in Stock
-        </span>
-        <span class="trust-strip__item">
-          <span class="trust-strip__dot"></span>
-          60+ Colours
-        </span>
-        <span class="trust-strip__item">
-          <span class="trust-strip__dot"></span>
-          Responsible by Design
-        </span>
-      </div>
-    </div>
+  <div class="lookbook-statement">
+    <p class="lookbook-statement__text">
+      Classic shapes reworked with clean lines, confident materials and considered comfort. <span class="lookbook-statement__accent">From relaxed lifestyle fits to performance-led styles.</span>
+    </p>
   </div>
 
   <!-- ============================================================
-       3. NEW ARRIVALS — Hero-left tile grid
+       3. FULL-BLEED IMAGE — B10 Olive Green lifestyle
        ============================================================ -->
-  <section class="section--flush" aria-label="New Arrivals">
-    <div style="padding:var(--space-16) var(--space-6) var(--space-10)">
-      <div class="container">
-        <div class="section-header text-center" style="max-width:640px;margin:0 auto">
-          <p class="section-header__label">Just Landed</p>
-          <h2 class="section-header__title">New Arrivals</h2>
-        </div>
-      </div>
-    </div>
-    <div class="tile-grid tile-grid--hero-left">
-
-      <!-- Heritage Cord Cap B688 — tall left tile -->
-      <a href="../../products/b688.html" class="tile tile--tall">
-        <div class="tile__image">
-          <img src="https://mediahub.beechfieldbrands.com/asset/b4a5eb97-6e84-4c1e-9bf4-10e23589e528/Product-medium/beechfield_b688_vintage-olive_front-on-shot.jpg" alt="Beechfield B688 Heritage Cord Cap in Vintage Olive, front-on shot">
-        </div>
-        <div class="tile__overlay"></div>
-        <div class="tile__content">
-          <p class="tile__label">New</p>
-          <h3 class="tile__title">Heritage Cord Cap</h3>
-          <span class="tile__cta">
-            Shop B688
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <!-- Organic Cotton B691 — top right -->
-      <a href="#" class="tile">
-        <div class="tile__image" style="background:linear-gradient(135deg, #0d9488, #1a1a2e);"></div>
-        <div class="tile__overlay"></div>
-        <div class="tile__content">
-          <h3 class="tile__title">Organic Cotton Cap</h3>
-          <span class="tile__cta">
-            Shop B691
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <!-- Recycled Trucker — bottom right -->
-      <a href="#" class="tile">
-        <div class="tile__image" style="background:linear-gradient(135deg, #2563eb, #1a1a2e);"></div>
-        <div class="tile__overlay"></div>
-        <div class="tile__content">
-          <h3 class="tile__title">Recycled Trucker</h3>
-          <span class="tile__cta">
-            Coming Soon
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
-
-    </div>
-  </section>
+  <div class="lookbook-bleed" style="height:80vh" aria-hidden="true">
+    <img src="https://mediahub.beechfieldbrands.com/m/70f33ef727347aa5/Product_medium-beechfield_b10_olive-green_lifestyle_19711.jpg" alt="Beechfield B10 Original 5 Panel Cap in Olive Green, lifestyle">
+  </div>
 
   <!-- ============================================================
-       4. SPLIT BLOCK — New Colours (warm background)
+       4. LOOKBOOK GRID — Lifestyle mosaic (tall left)
        ============================================================ -->
-  <div class="split-block split-block--warm">
-    <div class="split-block__image">
+  <div class="lookbook-mosaic lookbook-mosaic--lr" aria-label="Lifestyle lookbook grid">
+
+    <!-- Tall left: B655 Vintage Black -->
+    <div class="lookbook-mosaic__item lookbook-mosaic__item--tall">
+      <img src="https://mediahub.beechfieldbrands.com/m/378f041609ed53ca/Product_medium-beechfield_b655_vintage-black-lifestyle_1296.jpg" alt="Beechfield B655 Vintage Cap in Black, lifestyle">
+      <div class="lookbook-mosaic__caption">B655 Vintage Dad Cap</div>
+    </div>
+
+    <!-- Top right: B640B Olive/Black -->
+    <div class="lookbook-mosaic__item">
+      <img src="https://mediahub.beechfieldbrands.com/m/6b716f0a2efd5d9b/Product_medium-beechfield_b640b_olive-green_black_lifestyle_2297.jpg" alt="Beechfield B640B Snapback Trucker in Olive Green and Black, lifestyle">
+      <div class="lookbook-mosaic__caption">B640B Snapback Trucker</div>
+    </div>
+
+    <!-- Bottom right: B10 Sky Blue -->
+    <div class="lookbook-mosaic__item">
       <img src="https://mediahub.beechfieldbrands.com/m/6d45c473c996ad14/Product_medium-beechfield_b10_sky-blue_lifestyle_1.jpg" alt="Beechfield B10 Original 5 Panel Cap in Sky Blue, lifestyle">
+      <div class="lookbook-mosaic__caption">B10 Original 5 Panel</div>
     </div>
-    <div class="split-block__content">
-      <p class="split-block__label">SS26 Palette</p>
-      <h2 class="split-block__title">Fresh Colours for Summer</h2>
-      <p class="split-block__text">This season brings a refreshed colour palette across our core range. From soft pastels to bold earth tones, the SS26 palette is designed to inspire your next decoration project.</p>
-      <div class="flex gap-4">
-        <a href="../../cap-studio/colours.html" class="btn btn-primary">Explore Colours</a>
-      </div>
-    </div>
+
   </div>
 
   <!-- ============================================================
-       5. CAMPAIGN LOOKBOOK GRID — 3x2 lifestyle tiles
+       5. QUOTE / CALLOUT STRIP
        ============================================================ -->
-  <section class="section--flush" aria-label="Campaign Lookbook">
-    <div style="padding:var(--space-16) var(--space-6) var(--space-10)">
-      <div class="container">
-        <div class="section-header text-center" style="max-width:640px;margin:0 auto">
-          <p class="section-header__label">SS26 Campaign</p>
-          <h2 class="section-header__title">Lookbook</h2>
-        </div>
+  <div class="lookbook-quote">
+    <p class="lookbook-quote__text">Considered detailing. Thoughtful shapes. Eco-friendly fabrics.</p>
+    <p class="lookbook-quote__sub">Planet-conscious design with impeccable quality woven in.</p>
+  </div>
+
+  <!-- ============================================================
+       6. FULL-BLEED IMAGE — B188 Salmon Pink stitching detail
+       ============================================================ -->
+  <div class="lookbook-bleed" style="height:60vh" aria-hidden="true">
+    <img src="https://mediahub.beechfieldbrands.com/m/145ed300bef5060f/Product_medium-beechfield_b188_salmon-pink_stitching.jpg" alt="Beechfield B188 Salmon Pink, embroidery stitching detail">
+  </div>
+
+  <!-- ============================================================
+       7. PRODUCT HIGHLIGHTS — 2x3 grid of hero products
+       ============================================================ -->
+  <section class="lookbook-products" aria-label="SS26 hero products">
+
+    <!-- B688 Heritage Cord Cap -->
+    <a href="../../products/b688.html" class="lookbook-products__item">
+      <img src="https://mediahub.beechfieldbrands.com/asset/b4a5eb97-6e84-4c1e-9bf4-10e23589e528/Product-medium/beechfield_b688_vintage-olive_front-on-shot.jpg" alt="Beechfield B688 Heritage Cord Cap in Vintage Olive, front-on shot">
+      <div class="lookbook-products__info">
+        <div class="lookbook-products__name">Heritage Cord Cap</div>
+        <div class="lookbook-products__sku">B688</div>
       </div>
-    </div>
-    <div class="tile-grid tile-grid--2x3">
+    </a>
 
-      <!-- B10 Chocolate -->
-      <a href="#" class="tile">
-        <div class="tile__image">
-          <img src="https://mediahub.beechfieldbrands.com/m/ec4847087e60c74/Product_medium-beechfield_b10_chocolate_lifestyle_3162.jpg" alt="Beechfield B10 Original 5 Panel Cap in Chocolate, lifestyle">
-        </div>
-        <div class="tile__overlay"></div>
-        <div class="tile__content">
-          <h3 class="tile__title">B10 Chocolate</h3>
-        </div>
-      </a>
+    <!-- B10 Original 5 Panel -->
+    <a href="../../products/b10.html" class="lookbook-products__item">
+      <img src="https://mediahub.beechfieldbrands.com/m/5d316cd50a1d2b08/Product_medium-beechfield_b10_black_front-on-shot.jpg" alt="Beechfield B10 Original 5 Panel Cap in Black, front-on shot">
+      <div class="lookbook-products__info">
+        <div class="lookbook-products__name">Original 5 Panel Cap</div>
+        <div class="lookbook-products__sku">B10</div>
+      </div>
+    </a>
 
-      <!-- B10 Olive Green -->
-      <a href="#" class="tile">
-        <div class="tile__image">
-          <img src="https://mediahub.beechfieldbrands.com/m/70f33ef727347aa5/Product_medium-beechfield_b10_olive-green_lifestyle_19711.jpg" alt="Beechfield B10 Original 5 Panel Cap in Olive Green, lifestyle">
-        </div>
-        <div class="tile__overlay"></div>
-        <div class="tile__content">
-          <h3 class="tile__title">B10 Olive Green</h3>
-        </div>
-      </a>
+    <!-- B640 Snapback Trucker -->
+    <a href="../../products/b640.html" class="lookbook-products__item">
+      <img src="https://mediahub.beechfieldbrands.com/m/359002aa2d6a87df/Product_medium-beechfield_b640_black_black_front-on-shot.jpg" alt="Beechfield B640 Snapback Trucker in Black, front-on shot">
+      <div class="lookbook-products__info">
+        <div class="lookbook-products__name">Snapback Trucker</div>
+        <div class="lookbook-products__sku">B640</div>
+      </div>
+    </a>
 
-      <!-- B10 Sky Blue -->
-      <a href="#" class="tile">
-        <div class="tile__image">
-          <img src="https://mediahub.beechfieldbrands.com/m/6d45c473c996ad14/Product_medium-beechfield_b10_sky-blue_lifestyle_1.jpg" alt="Beechfield B10 Original 5 Panel Cap in Sky Blue, lifestyle">
-        </div>
-        <div class="tile__overlay"></div>
-        <div class="tile__content">
-          <h3 class="tile__title">B10 Sky Blue</h3>
-        </div>
-      </a>
+    <!-- B655 Dad Cap (gradient placeholder) -->
+    <a href="../../products/b655.html" class="lookbook-products__item">
+      <div class="lookbook-products__placeholder" style="background:linear-gradient(135deg, #44403c 0%, #1c1917 100%);"></div>
+      <div class="lookbook-products__info">
+        <div class="lookbook-products__name">Vintage Dad Cap</div>
+        <div class="lookbook-products__sku">B655</div>
+      </div>
+    </a>
 
-      <!-- B655 Vintage Black -->
-      <a href="#" class="tile">
-        <div class="tile__image">
-          <img src="https://mediahub.beechfieldbrands.com/m/378f041609ed53ca/Product_medium-beechfield_b655_vintage-black-lifestyle_1296.jpg" alt="Beechfield B655 Vintage Cap in Black, lifestyle">
-        </div>
-        <div class="tile__overlay"></div>
-        <div class="tile__content">
-          <h3 class="tile__title">B655 Vintage Black</h3>
-        </div>
-      </a>
+    <!-- B15 Ultimate Cap -->
+    <a href="../../products/b15.html" class="lookbook-products__item">
+      <img src="https://mediahub.beechfieldbrands.com/asset/15cbc540-7ab8-4ee5-8c32-928836247898/Product-medium/beechfield_b15_olive-green_front-on-shot.jpg" alt="Beechfield B15 Ultimate Cap in Olive Green, front-on shot">
+      <div class="lookbook-products__info">
+        <div class="lookbook-products__name">Ultimate 5 Panel Cap</div>
+        <div class="lookbook-products__sku">B15</div>
+      </div>
+    </a>
 
-      <!-- B640B Olive/Black -->
-      <a href="#" class="tile">
-        <div class="tile__image">
-          <img src="https://mediahub.beechfieldbrands.com/m/6b716f0a2efd5d9b/Product_medium-beechfield_b640b_olive-green_black_lifestyle_2297.jpg" alt="Beechfield B640B Snapback Trucker in Olive Green and Black, lifestyle">
-        </div>
-        <div class="tile__overlay"></div>
-        <div class="tile__content">
-          <h3 class="tile__title">B640B Olive/Black</h3>
-        </div>
-      </a>
+    <!-- B45 Cuffed Beanie (gradient placeholder) -->
+    <a href="../../products/b45.html" class="lookbook-products__item">
+      <div class="lookbook-products__placeholder" style="background:linear-gradient(135deg, #78716c 0%, #292524 100%);"></div>
+      <div class="lookbook-products__info">
+        <div class="lookbook-products__name">Cuffed Beanie</div>
+        <div class="lookbook-products__sku">B45</div>
+      </div>
+    </a>
 
-      <!-- B45 Oatmeal -->
-      <a href="#" class="tile">
-        <div class="tile__image">
-          <img src="https://mediahub.beechfieldbrands.com/m/41ff6a2c771d71b/Product_medium-beechfield_b45_heather-oatmeal_lifestyle_19634.jpg" alt="Beechfield B45 Beanie in Heather Oatmeal, lifestyle">
-        </div>
-        <div class="tile__overlay"></div>
-        <div class="tile__content">
-          <h3 class="tile__title">B45 Oatmeal</h3>
-        </div>
-      </a>
-
-    </div>
   </section>
 
   <!-- ============================================================
-       6. SPLIT BLOCK — Decoration Focus (dark, reversed)
+       8. FULL-BLEED IMAGE — B45 Heather Oatmeal lifestyle
        ============================================================ -->
-  <div class="split-block split-block--dark split-block--reverse">
-    <div class="split-block__image">
-      <img src="https://mediahub.beechfieldbrands.com/m/145ed300bef5060f/Product_medium-beechfield_b188_salmon-pink_stitching.jpg" alt="Close-up of embroidery stitching detail on Beechfield B188 cap in Salmon Pink">
-    </div>
-    <div class="split-block__content">
-      <p class="split-block__label">SS26 Decoration</p>
-      <h2 class="split-block__title">Designed to Be Branded</h2>
-      <p class="split-block__text">Every SS26 style is tested across embroidery, transfer and patch decoration. Download our decoration placement guide for the new season.</p>
-      <div class="flex gap-4">
-        <a href="../../decorator-academy/" class="btn btn--white">Decorator Academy</a>
-        <a href="#" class="btn btn--outline-white">Download Guide</a>
-      </div>
-    </div>
+  <div class="lookbook-bleed" style="height:70vh" aria-hidden="true">
+    <img src="https://mediahub.beechfieldbrands.com/m/41ff6a2c771d71b/Product_medium-beechfield_b45_heather-oatmeal_lifestyle_19634.jpg" alt="Beechfield B45 Cuffed Beanie in Heather Oatmeal, lifestyle">
   </div>
 
   <!-- ============================================================
-       7. CTA BANNER — Ready to Stock SS26?
+       9. LOOKBOOK GRID — Detail mosaic (tall right)
        ============================================================ -->
-  <section class="cta-banner" aria-label="Stock SS26">
-    <div class="cta-banner__bg">
-      <img src="https://mediahub.beechfieldbrands.com/m/7ab94fd961416885/Product_medium-beechfield_b688_vintage-olive_lifestyle_DSC03587.jpg" alt="Beechfield B688 Heritage Cord Cap in Vintage Olive, lifestyle">
+  <div class="lookbook-mosaic lookbook-mosaic--rl" aria-label="Detail lookbook grid">
+
+    <!-- Top left: B370 stitching detail -->
+    <div class="lookbook-mosaic__item">
+      <img src="https://mediahub.beechfieldbrands.com/m/d7f9a8a14045acf/Product_medium-beechfield_b370_military-green_stitching.jpg" alt="Beechfield B370 Military Green, stitching detail">
+      <div class="lookbook-mosaic__caption">B370 Stitching Detail</div>
     </div>
-    <div class="cta-banner__overlay"></div>
-    <div class="cta-banner__content">
-      <h2 class="cta-banner__title">Ready to Stock SS26?</h2>
-      <p class="cta-banner__text">The full SS26 range is available now through our distributor network.</p>
+
+    <!-- Tall right: B688 lifestyle close-up -->
+    <div class="lookbook-mosaic__item lookbook-mosaic__item--tall">
+      <img src="https://mediahub.beechfieldbrands.com/m/153c677b6b25fe1/Product_medium-beechfield_b688_vintage-olive-green_lifestyle_4100.jpg" alt="Beechfield B688 Heritage Cord Cap in Vintage Olive Green, lifestyle close-up">
+      <div class="lookbook-mosaic__caption">B688 Heritage Cord Cap</div>
+    </div>
+
+    <!-- Bottom left: B638 ripstrip patch -->
+    <div class="lookbook-mosaic__item">
+      <img src="https://mediahub.beechfieldbrands.com/asset/72917149-362c-4c11-af40-74dcafa66e31/Product-medium/beechfield_b638_military-green_ripstrip-patch.jpg" alt="Beechfield B638 Military Green, ripstrip patch detail">
+      <div class="lookbook-mosaic__caption">B638 Ripstrip Patch</div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+       10. COLLECTION STATEMENT 2 — Centred editorial text
+       ============================================================ -->
+  <div class="lookbook-statement">
+    <p class="lookbook-statement__text">
+      Remaining at the forefront of rebrandable fashion. <span class="lookbook-statement__accent">Style meets sustainability.</span>
+    </p>
+  </div>
+
+  <!-- ============================================================
+       11. FULL-BLEED IMAGE — B686 Bucket Hat lifestyle
+       ============================================================ -->
+  <div class="lookbook-bleed" style="height:60vh" aria-hidden="true">
+    <img src="https://mediahub.beechfieldbrands.com/m/4aa2396cf77a89e2/Product_medium-beechfield_b686_french-navy_white_lifestyle_25391.jpg" alt="Beechfield B686 Bucket Hat in French Navy and White, lifestyle">
+  </div>
+
+  <!-- ============================================================
+       12. CTA SECTION — Editorial call-to-action
+       ============================================================ -->
+  <section class="lookbook-cta" aria-label="Explore the collection">
+    <div class="lookbook-cta__bg">
+      <img src="https://mediahub.beechfieldbrands.com/m/ec4847087e60c74/Product_medium-beechfield_b10_chocolate_lifestyle_3162.jpg" alt="Beechfield B10 Original 5 Panel Cap in Chocolate, lifestyle">
+    </div>
+    <div class="lookbook-cta__overlay"></div>
+    <div class="lookbook-cta__content">
+      <h2 class="lookbook-cta__title">Explore the SS26 Collection</h2>
       <div class="flex flex-center gap-4">
-        <a href="../../where-to-buy/find-a-distributor.html" class="btn btn--white">Find a Distributor</a>
-        <a href="../../where-to-buy/inventory-finder.html" class="btn btn--outline-white">Check Inventory</a>
+        <a href="../../products/" class="btn btn--white">Shop Products</a>
+        <a href="#" class="btn btn--outline-white">Download Lookbook</a>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       8. FOOTER
+       13. FOOTER
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">

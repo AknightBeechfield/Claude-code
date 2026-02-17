@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decorator Academy | Beechfield Original Headwear</title>
-  <meta name="description" content="Your guide to getting the best branding results from Beechfield headwear. Techniques, tips and expert guidance for embroidery, patches, transfer, screen print and more.">
+  <title>Our Collections | Beechfield Original Headwear</title>
+  <meta name="description" content="Explore the Beechfield collections — signature headwear ranges designed for specific markets, occasions and decoration needs. From Originals to EarthAware, Vintage to Urbanwear.">
 
   <!-- Shared styles -->
   <link rel="stylesheet" href="../../shared/css/variables.css">
@@ -17,6 +17,48 @@
 
   <!-- Brand overrides -->
   <link rel="stylesheet" href="../css/brand.css">
+
+  <style>
+    /* Half-height hero for landing pages */
+    .hero--half {
+      min-height: 50vh;
+      align-items: center;
+    }
+
+    .hero--half .hero__content {
+      padding-bottom: var(--space-8);
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero--half .hero__title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .hero--half .hero__overlay {
+      background: linear-gradient(
+        0deg,
+        rgba(14, 21, 32, 0.7) 0%,
+        rgba(14, 21, 32, 0.5) 50%,
+        rgba(14, 21, 32, 0.3) 100%
+      ) !important;
+    }
+
+    /* Placeholder tiles for collections without images */
+    .collection-tile__placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-3xl);
+      font-weight: var(--font-weight-bold);
+      font-family: var(--font-heading);
+      letter-spacing: -0.02em;
+      opacity: 0.15;
+    }
+  </style>
 </head>
 <body>
 
@@ -139,7 +181,7 @@
 
           <!-- Collections -->
           <li class="main-nav__item" data-mega="collections">
-            <a href="../collections/" class="main-nav__link">
+            <a href="./" class="main-nav__link">
               Collections
               <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M2 4 L5 7 L8 4"/>
@@ -150,13 +192,13 @@
                 <div class="mega-menu__column">
                   <span class="mega-menu__heading">Collections</span>
                   <ul class="mega-menu__list">
-                    <li><a href="../collections/originals.html" class="mega-menu__link">Originals</a></li>
-                    <li><a href="../collections/morf.html" class="mega-menu__link">Morf</a></li>
-                    <li><a href="../collections/snowstar.html" class="mega-menu__link">Snowstar</a></li>
-                    <li><a href="../collections/suprafleece.html" class="mega-menu__link">Suprafleece</a></li>
-                    <li><a href="../collections/earthaware.html" class="mega-menu__link">EarthAware</a></li>
-                    <li><a href="../collections/vintage.html" class="mega-menu__link">Vintage</a></li>
-                    <li><a href="../collections/urbanwear.html" class="mega-menu__link">Urbanwear</a></li>
+                    <li><a href="originals.html" class="mega-menu__link">Originals</a></li>
+                    <li><a href="morf.html" class="mega-menu__link">Morf</a></li>
+                    <li><a href="snowstar.html" class="mega-menu__link">Snowstar</a></li>
+                    <li><a href="suprafleece.html" class="mega-menu__link">Suprafleece</a></li>
+                    <li><a href="earthaware.html" class="mega-menu__link">EarthAware</a></li>
+                    <li><a href="vintage.html" class="mega-menu__link">Vintage</a></li>
+                    <li><a href="urbanwear.html" class="mega-menu__link">Urbanwear</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__column">
@@ -223,9 +265,9 @@
             </div>
           </li>
 
-          <!-- Decorator Academy (active) -->
+          <!-- Decorator Academy -->
           <li class="main-nav__item" data-mega="decorator">
-            <a href="./" class="main-nav__link main-nav__link--active">
+            <a href="../decorator-academy/" class="main-nav__link">
               Decorator Academy
               <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M2 4 L5 7 L8 4"/>
@@ -236,16 +278,16 @@
                 <div class="mega-menu__column">
                   <span class="mega-menu__heading">Learn</span>
                   <ul class="mega-menu__list">
-                    <li><a href="designed-for-decoration.html" class="mega-menu__link mega-menu__link--featured">Designed for Decoration</a></li>
-                    <li><a href="techniques.html" class="mega-menu__link">Techniques</a></li>
-                    <li><a href="decoration-protection.html" class="mega-menu__link">Decoration Protection</a></li>
-                    <li><a href="how-to-videos.html" class="mega-menu__link">How to Videos</a></li>
+                    <li><a href="../decorator-academy/designed-for-decoration.html" class="mega-menu__link mega-menu__link--featured">Designed for Decoration</a></li>
+                    <li><a href="../decorator-academy/techniques.html" class="mega-menu__link">Techniques</a></li>
+                    <li><a href="../decorator-academy/decoration-protection.html" class="mega-menu__link">Decoration Protection</a></li>
+                    <li><a href="../decorator-academy/how-to-videos.html" class="mega-menu__link">How to Videos</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__column">
                   <span class="mega-menu__heading">Community</span>
                   <ul class="mega-menu__list">
-                    <li><a href="join-the-community.html" class="mega-menu__link mega-menu__link--featured">Join the Community</a></li>
+                    <li><a href="../decorator-academy/join-the-community.html" class="mega-menu__link mega-menu__link--featured">Join the Community</a></li>
                   </ul>
                 </div>
               </div>
@@ -346,14 +388,14 @@
   <!-- ============================================================
        HERO — Half-height immersive hero
        ============================================================ -->
-  <section class="hero" style="min-height:50vh" aria-label="Decorator Academy">
+  <section class="hero hero--half" aria-label="Our Collections">
     <div class="hero__bg">
-      <img src="https://mediahub.beechfieldbrands.com/m/145ed300bef5060f/Product_medium-beechfield_b188_salmon-pink_stitching.jpg" alt="Close-up of embroidery stitching detail on Beechfield headwear" style="width:100%;height:100%;object-fit:cover;object-position:center">
+      <img src="https://mediahub.beechfieldbrands.com/m/6d45c473c996ad14/Product_medium-beechfield_b10_sky-blue_lifestyle_1.jpg" alt="Beechfield B10 Original 5 Panel Cap in Sky Blue, lifestyle" style="width:100%;height:100%;object-fit:cover;object-position:top">
     </div>
     <div class="hero__overlay"></div>
     <div class="container hero__content">
-      <h1 class="hero__title">Decorator Academy</h1>
-      <p class="hero__subtitle">Your guide to getting the best branding results from Beechfield headwear. Techniques, tips and expert guidance.</p>
+      <h1 class="hero__title">Our Collections</h1>
+      <p class="hero__subtitle">Signature ranges designed for specific markets, occasions and decoration needs.</p>
     </div>
   </section>
 
@@ -388,95 +430,113 @@
   </div>
 
   <!-- ============================================================
-       DESIGNED FOR DECORATION — Warm split block
+       COLLECTION TILES — Row 1: 4 equal tiles with images
        ============================================================ -->
-  <div class="split-block split-block--warm">
-    <div class="split-block__image">
-      <img src="https://mediahub.beechfieldbrands.com/m/d7f9a8a14045acf/Product_medium-beechfield_b370_military-green_stitching.jpg" alt="Beechfield B370 cap stitching detail in Military Green">
+  <section class="section--flush" aria-label="Browse our collections">
+    <div class="collection-grid">
+      <a href="originals.html" class="collection-tile">
+        <div class="collection-tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/6d45c473c996ad14/Product_medium-beechfield_b10_sky-blue_lifestyle_1.jpg" alt="Beechfield Originals collection — B10 Original 5 Panel Cap in Sky Blue, lifestyle">
+        </div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">Originals</h4>
+          <p class="collection-tile__subtitle">The Core Collection</p>
+        </div>
+      </a>
+      <a href="earthaware.html" class="collection-tile">
+        <div class="collection-tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/1fd745ff13d36a7/Product_medium-beechfield_b46_black_lifestyle_1.jpg" alt="Beechfield EarthAware collection — B46 Slouch Beanie in Black, lifestyle">
+        </div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">EarthAware</h4>
+          <p class="collection-tile__subtitle">Organic &amp; Recycled</p>
+        </div>
+      </a>
+      <a href="vintage.html" class="collection-tile">
+        <div class="collection-tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/378f041609ed53ca/Product_medium-beechfield_b655_vintage-black-lifestyle_1296.jpg" alt="Beechfield Vintage collection — B655 Vintage Cap in Black, lifestyle">
+        </div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">Vintage</h4>
+          <p class="collection-tile__subtitle">Washed &amp; Weathered</p>
+        </div>
+      </a>
+      <a href="urbanwear.html" class="collection-tile">
+        <div class="collection-tile__image">
+          <img src="https://mediahub.beechfieldbrands.com/m/6b716f0a2efd5d9b/Product_medium-beechfield_b640b_olive-green_black_lifestyle_2297.jpg" alt="Beechfield Urbanwear collection — B640B Snapback Trucker in Olive Green and Black, lifestyle">
+        </div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">Urbanwear</h4>
+          <p class="collection-tile__subtitle">Street-Inspired</p>
+        </div>
+      </a>
     </div>
-    <div class="split-block__content">
-      <p class="split-block__label">Core Principle</p>
-      <h2 class="split-block__title">Designed for Decoration</h2>
-      <p class="split-block__text">Every Beechfield product is engineered with decoration in mind. Clean front panels, stable substrates, and consistent fabric weights mean your branding looks great — every time.</p>
-      <div class="flex gap-4">
-        <a href="designed-for-decoration.html" class="btn btn-primary">Learn More</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- ============================================================
-       DECORATION TECHNIQUES — 4-column grid
-       ============================================================ -->
-  <section class="section section--lg">
-    <div class="container">
-      <div class="section-header text-center" style="max-width:640px;margin:0 auto var(--space-12)">
-        <h2 class="section-header__title">Decoration Techniques</h2>
-      </div>
-
-      <div class="deco-grid">
-        <a href="techniques.html" class="deco-item">
-          <div class="deco-item__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/145ed300bef5060f/Product_medium-beechfield_b188_salmon-pink_stitching.jpg" alt="Embroidery stitching detail on Beechfield B188">
-          </div>
-          <h4 class="deco-item__title">Embroidery</h4>
-          <p class="deco-item__text">The most popular method. Clean panels and stable fabric for precise stitching.</p>
-        </a>
-        <a href="techniques.html" class="deco-item">
-          <div class="deco-item__image">
-            <img src="https://mediahub.beechfieldbrands.com/asset/72917149-362c-4c11-af40-74dcafa66e31/Product-medium/beechfield_b638_military-green_ripstrip-patch.jpg" alt="Beechfield B638 cap with ripstrip patch in Military Green">
-          </div>
-          <h4 class="deco-item__title">Patches</h4>
-          <p class="deco-item__text">Woven, PVC, and leather patches that adhere perfectly to Beechfield panels.</p>
-        </a>
-        <a href="techniques.html" class="deco-item">
-          <div class="deco-item__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/d7f9a8a14045acf/Product_medium-beechfield_b370_military-green_stitching.jpg" alt="Beechfield B370 cap detail for heat transfer decoration">
-          </div>
-          <h4 class="deco-item__title">Transfer</h4>
-          <p class="deco-item__text">Heat transfer for full-colour photographic designs on flat surfaces.</p>
-        </a>
-        <a href="techniques.html" class="deco-item">
-          <div class="deco-item__image">
-            <img src="https://mediahub.beechfieldbrands.com/m/1014532f65e49d27/Product_medium-beechfield_b916_steel-blue_stitching.jpg" alt="Beechfield B916 cap stitching detail in Steel Blue">
-          </div>
-          <h4 class="deco-item__title">Screen Print</h4>
-          <p class="deco-item__text">Bold, durable prints ideal for promotional and event runs.</p>
-        </a>
-      </div>
+    <!-- Row 2: 3 equal tiles with styled placeholders -->
+    <div class="collection-grid" style="grid-template-columns: repeat(3, 1fr)">
+      <a href="morf.html" class="collection-tile">
+        <div class="collection-tile__placeholder" style="background: linear-gradient(135deg, #1f614d, #0e1520); color: white;">Morf</div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">Morf</h4>
+          <p class="collection-tile__subtitle">Multifunctional Headwear</p>
+        </div>
+      </a>
+      <a href="snowstar.html" class="collection-tile">
+        <div class="collection-tile__placeholder" style="background: linear-gradient(135deg, #4a6fa5, #0e1520); color: white;">Snowstar</div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">Snowstar</h4>
+          <p class="collection-tile__subtitle">Winter Warmth</p>
+        </div>
+      </a>
+      <a href="suprafleece.html" class="collection-tile">
+        <div class="collection-tile__placeholder" style="background: linear-gradient(135deg, #57534e, #0e1520); color: white;">Suprafleece</div>
+        <div class="collection-tile__overlay"></div>
+        <div class="collection-tile__content">
+          <h4 class="collection-tile__title">Suprafleece</h4>
+          <p class="collection-tile__subtitle">Premium Fleece</p>
+        </div>
+      </a>
     </div>
   </section>
 
   <!-- ============================================================
-       PROTECTION & COMPLIANCE — Dark reversed split block
+       SPLIT BLOCK — Lookbook (warm background)
        ============================================================ -->
-  <div class="split-block split-block--dark split-block--reverse">
+  <div class="split-block split-block--warm">
     <div class="split-block__image">
-      <img src="https://mediahub.beechfieldbrands.com/m/1014532f65e49d27/Product_medium-beechfield_b916_steel-blue_stitching.jpg" alt="Beechfield B916 cap quality detail in Steel Blue">
+      <img src="https://mediahub.beechfieldbrands.com/m/70f33ef727347aa5/Product_medium-beechfield_b10_olive-green_lifestyle_19711.jpg" alt="Beechfield B10 Original 5 Panel Cap in Olive Green, front lifestyle">
     </div>
     <div class="split-block__content">
-      <p class="split-block__label">Quality Assurance</p>
-      <h2 class="split-block__title">Decoration Protection</h2>
-      <p class="split-block__text">Understand our fabric treatments, washability guarantees, and quality assurance processes that protect your decorated products.</p>
+      <p class="split-block__label">Seasonal</p>
+      <h2 class="split-block__title">Spring / Summer 2026</h2>
+      <p class="split-block__text">Discover the latest additions to the Beechfield range. Fresh colours, new fabrics and styles for the season ahead.</p>
       <div class="flex gap-4">
-        <a href="decoration-protection.html" class="btn btn--white">View Protection Guide</a>
+        <a href="../lookbooks/ss26.html" class="btn btn-primary">View SS26 Lookbook</a>
+        <a href="../campaign/ss26/" class="btn btn-secondary">Explore Campaign</a>
       </div>
     </div>
   </div>
 
   <!-- ============================================================
-       JOIN THE COMMUNITY — Full-width CTA banner
+       CTA BANNER — Ready to Order?
        ============================================================ -->
-  <section class="cta-banner" aria-label="Join the Decorator Community">
+  <section class="cta-banner" aria-label="Where to buy">
     <div class="cta-banner__bg">
       <img src="https://mediahub.beechfieldbrands.com/m/ec4847087e60c74/Product_medium-beechfield_b10_chocolate_lifestyle_3162.jpg" alt="Beechfield lifestyle">
     </div>
     <div class="cta-banner__overlay"></div>
     <div class="cta-banner__content">
-      <h2 class="cta-banner__title">Join the Decorator Community</h2>
-      <p class="cta-banner__text">Connect with fellow decorators, share techniques, and get early access to new products and decoration guides.</p>
+      <h2 class="cta-banner__title">Ready to Order?</h2>
+      <p class="cta-banner__text">Beechfield products are available through our network of authorised distributors. Find your nearest partner or check stock availability.</p>
       <div class="flex flex-center gap-4">
-        <a href="join-the-community.html" class="btn btn--white">Join Now</a>
-        <a href="../resources/" class="btn btn--outline-white">Browse Resources</a>
+        <a href="../where-to-buy/find-a-distributor.html" class="btn btn--white">Find a Distributor</a>
+        <a href="../where-to-buy/inventory-finder.html" class="btn btn--outline-white">Check Inventory</a>
       </div>
     </div>
   </section>
@@ -519,7 +579,7 @@
             <a href="../resources/faqs.html" class="footer__link">FAQs</a>
             <a href="../where-to-buy/find-a-distributor.html" class="footer__link">Find a Distributor</a>
             <a href="../where-to-buy/inventory-finder.html" class="footer__link">Inventory Finder</a>
-            <a href="join-the-community.html" class="footer__link">Join the Community</a>
+            <a href="../decorator-academy/join-the-community.html" class="footer__link">Join the Community</a>
             <a href="../../beechfield-brands/distributors/become-a-distributor.html" class="footer__link">Become a Distributor</a>
           </nav>
         </div>
@@ -538,7 +598,7 @@
       <div class="footer__bottom">
         <p class="footer__copyright">&copy; 2026 Beechfield Brands Limited. All rights reserved.</p>
         <div class="footer__legal">
-          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Terms & Conditions</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Modern Slavery Statement</a>
         </div>

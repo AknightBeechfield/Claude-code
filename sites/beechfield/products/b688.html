@@ -39,7 +39,7 @@
     .pdp-gallery__main {
       aspect-ratio: 1 / 1;
       background-color: var(--neutral-100);
-      border-radius: var(--radius-lg);
+      border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,7 +58,7 @@
     .pdp-gallery__thumb {
       aspect-ratio: 1 / 1;
       background-color: var(--neutral-100);
-      border-radius: var(--radius-md);
+      border-radius: 0;
       border: 2px solid transparent;
       display: flex;
       align-items: center;
@@ -67,11 +67,20 @@
       color: var(--neutral-400);
       cursor: pointer;
       transition: border-color var(--transition-fast);
+      overflow: hidden;
     }
 
     .pdp-gallery__thumb:hover,
     .pdp-gallery__thumb--active {
       border-color: var(--brand-primary);
+    }
+
+    .pdp-gallery__thumb img {
+      transition: transform 0.4s ease;
+    }
+
+    .pdp-gallery__thumb:hover img {
+      transform: scale(1.06);
     }
 
     /* ── Product info ── */
@@ -181,7 +190,7 @@
       gap: var(--space-3);
       padding: var(--space-4);
       background-color: var(--brand-bg-warm);
-      border-radius: var(--radius-md);
+      border-radius: 0;
     }
 
     .pdp-key-specs__item {
@@ -235,7 +244,7 @@
       margin-top: var(--space-6);
       padding: var(--space-4);
       background-color: var(--neutral-50);
-      border-radius: var(--radius-md);
+      border-radius: 0;
       border-left: 3px solid var(--brand-accent);
     }
 
@@ -268,38 +277,37 @@
       font-weight: var(--font-weight-bold);
     }
 
-    /* ── Related products ── */
+    /* ── Decoration method — flat editorial override ── */
+    .decoration-method {
+      border-radius: 0;
+    }
+
+    /* ── Related products — editorial card overrides ── */
     .related-products {
       padding-top: var(--space-16);
       padding-bottom: var(--space-16);
     }
 
-    /* ── Campaign callout ── */
-    .campaign-callout {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-4);
-      padding: var(--space-6);
-      background: linear-gradient(135deg, var(--brand-accent), var(--bfb-cool-black));
-      border-radius: var(--radius-lg);
-      color: var(--bfb-white);
+    .related-products .product-card {
+      border-radius: 0;
     }
 
-    .campaign-callout__text {
-      font-size: var(--text-lg);
-      font-weight: var(--font-weight-bold);
-      color: var(--bfb-white);
+    .related-products .product-card__image {
+      overflow: hidden;
     }
 
-    .campaign-callout .btn {
-      flex-shrink: 0;
+    .related-products .product-card__image img {
+      transition: transform 0.5s ease;
     }
 
+    .related-products .product-card:hover .product-card__image img {
+      transform: scale(1.05);
+    }
+
+    /* ── Campaign CTA banner (full-width pattern) ── */
     @media (max-width: 480px) {
-      .campaign-callout {
-        flex-direction: column;
-        text-align: center;
+      .cta-banner__content {
+        padding: var(--space-8) var(--space-4);
       }
     }
   </style>
@@ -645,6 +653,21 @@
   </div>
 
   <!-- ============================================================
+       TRUST STRIP — Brand credibility markers
+       ============================================================ -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-strip__inner">
+        <span class="trust-strip__item"><span class="trust-strip__dot"></span>30 Years of Expertise</span>
+        <span class="trust-strip__item"><span class="trust-strip__dot"></span>Designed for Decoration</span>
+        <span class="trust-strip__item"><span class="trust-strip__dot"></span>Always in Stock</span>
+        <span class="trust-strip__item"><span class="trust-strip__dot"></span>60+ Colours</span>
+        <span class="trust-strip__item"><span class="trust-strip__dot"></span>Responsible by Design</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
        PRODUCT DETAIL — 2 Column Grid
        ============================================================ -->
   <section class="section" style="padding-top:0">
@@ -658,16 +681,16 @@
           </div>
           <div class="pdp-gallery__thumbs">
             <div class="pdp-gallery__thumb pdp-gallery__thumb--active" data-img="https://mediahub.beechfieldbrands.com/asset/b4a5eb97-6e84-4c1e-9bf4-10e23589e528/Product-medium/beechfield_b688_vintage-olive_front-on-shot.jpg" data-alt="B688 Heritage Cord Cap in Vintage Olive, front view">
-              <img src="https://mediahub.beechfieldbrands.com/asset/b4a5eb97-6e84-4c1e-9bf4-10e23589e528/Product-medium/beechfield_b688_vintage-olive_front-on-shot.jpg" alt="Front view thumbnail" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md)">
+              <img src="https://mediahub.beechfieldbrands.com/asset/b4a5eb97-6e84-4c1e-9bf4-10e23589e528/Product-medium/beechfield_b688_vintage-olive_front-on-shot.jpg" alt="Front view thumbnail" style="width:100%;height:100%;object-fit:cover">
             </div>
             <div class="pdp-gallery__thumb" data-img="https://mediahub.beechfieldbrands.com/asset/4b5cb168-696d-45d5-9ac2-1c3c05b46271/Product-medium/beechfield_b688_vintage-olive-green.jpg" data-alt="B688 Heritage Cord Cap in Vintage Olive Green, flat product shot">
-              <img src="https://mediahub.beechfieldbrands.com/asset/4b5cb168-696d-45d5-9ac2-1c3c05b46271/Product-medium/beechfield_b688_vintage-olive-green.jpg" alt="Flat product thumbnail" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md)">
+              <img src="https://mediahub.beechfieldbrands.com/asset/4b5cb168-696d-45d5-9ac2-1c3c05b46271/Product-medium/beechfield_b688_vintage-olive-green.jpg" alt="Flat product thumbnail" style="width:100%;height:100%;object-fit:cover">
             </div>
             <div class="pdp-gallery__thumb" data-img="https://mediahub.beechfieldbrands.com/m/48ac48ad14cfbf62/Product_medium-beechfield_b688_vintage-olive-green_lifestyle_3691.jpg" data-alt="B688 Heritage Cord Cap lifestyle shot">
-              <img src="https://mediahub.beechfieldbrands.com/m/48ac48ad14cfbf62/Product_medium-beechfield_b688_vintage-olive-green_lifestyle_3691.jpg" alt="Lifestyle thumbnail 1" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md)">
+              <img src="https://mediahub.beechfieldbrands.com/m/48ac48ad14cfbf62/Product_medium-beechfield_b688_vintage-olive-green_lifestyle_3691.jpg" alt="Lifestyle thumbnail 1" style="width:100%;height:100%;object-fit:cover">
             </div>
             <div class="pdp-gallery__thumb" data-img="https://mediahub.beechfieldbrands.com/m/153c677b6b25fe1/Product_medium-beechfield_b688_vintage-olive-green_lifestyle_4100.jpg" data-alt="B688 Heritage Cord Cap lifestyle close-up">
-              <img src="https://mediahub.beechfieldbrands.com/m/153c677b6b25fe1/Product_medium-beechfield_b688_vintage-olive-green_lifestyle_4100.jpg" alt="Lifestyle thumbnail 2" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md)">
+              <img src="https://mediahub.beechfieldbrands.com/m/153c677b6b25fe1/Product_medium-beechfield_b688_vintage-olive-green_lifestyle_4100.jpg" alt="Lifestyle thumbnail 2" style="width:100%;height:100%;object-fit:cover">
             </div>
           </div>
         </div>
@@ -866,13 +889,19 @@
   </section>
 
   <!-- ============================================================
-       CAMPAIGN CALLOUT
+       CAMPAIGN CALLOUT — Full-width CTA banner
        ============================================================ -->
-  <section class="section-sm">
-    <div class="container">
-      <div class="campaign-callout">
-        <span class="campaign-callout__text">Featured in the SS26 Collection</span>
-        <a href="../campaign/ss26/" class="btn" style="background:#fff;color:#0e1520;border-color:#fff">Explore SS26</a>
+  <section class="cta-banner" aria-label="SS26 Campaign">
+    <div class="cta-banner__bg">
+      <img src="https://mediahub.beechfieldbrands.com/m/48ac48ad14cfbf62/Product_medium-beechfield_b688_vintage-olive-green_lifestyle_3691.jpg" alt="B688 Heritage Cord Cap lifestyle">
+    </div>
+    <div class="cta-banner__overlay"></div>
+    <div class="cta-banner__content">
+      <h2 class="cta-banner__title">Featured in the SS26 Collection</h2>
+      <p class="cta-banner__text">The Heritage Cord Cap is part of our Spring/Summer 2026 line-up. Discover the full collection of vintage-inspired styles designed for decoration.</p>
+      <div class="flex flex-center gap-4">
+        <a href="../campaign/ss26/" class="btn btn--white">Explore SS26</a>
+        <a href="../collections/vintage.html" class="btn btn--outline-white">View Vintage Collection</a>
       </div>
     </div>
   </section>
@@ -880,7 +909,7 @@
   <!-- ============================================================
        ALSO GOOD FOR — Related Products
        ============================================================ -->
-  <section class="section">
+  <section class="section related-products">
     <div class="container">
       <div class="section-header">
         <p class="section-header__label">You Might Also Like</p>

@@ -19,6 +19,68 @@
   <link rel="stylesheet" href="../../css/brand.css">
 
   <style>
+    /* ── Category Hero Banner ── */
+    .category-hero {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .category-hero__image {
+      position: absolute;
+      inset: 0;
+    }
+
+    .category-hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .category-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(14, 21, 32, 0.8) 0%,
+        rgba(14, 21, 32, 0.25) 50%,
+        transparent 100%
+      );
+    }
+
+    .category-hero__content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      padding: var(--space-10) var(--space-8);
+      width: 100%;
+    }
+
+    .category-hero__label {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.7;
+      margin-bottom: var(--space-2);
+    }
+
+    .category-hero__title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .category-hero {
+        height: 220px;
+      }
+    }
+
     /* ── PLP Layout ── */
     .plp-layout {
       display: grid;
@@ -27,12 +89,12 @@
       align-items: start;
     }
 
-    /* ── Filter Sidebar ── */
+    /* ── Filter Sidebar — flat editorial look ── */
     .filter-sidebar {
       position: sticky;
       top: 88px;
       border: 1px solid var(--brand-border);
-      border-radius: var(--radius-lg);
+      border-radius: 0;
       background: var(--bfb-white);
       padding: var(--space-6);
       display: flex;
@@ -115,7 +177,7 @@
       padding: var(--space-2) var(--space-4);
       font-size: var(--text-sm);
       border: 1px solid var(--brand-border);
-      border-radius: var(--radius-md);
+      border-radius: 0;
       background: var(--bfb-white);
       cursor: pointer;
     }
@@ -152,6 +214,29 @@
       color: var(--brand-text-muted);
       font-size: var(--text-lg);
       line-height: var(--leading-relaxed);
+    }
+
+    /* ── Product card — flat editorial overrides ── */
+    .product-card {
+      border-radius: 0;
+    }
+
+    .product-card__image {
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    .product-card__image img {
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-card__image img {
+      transform: scale(1.05);
+    }
+
+    .product-card__body {
+      padding: var(--space-5) var(--space-4) var(--space-6);
+      gap: var(--space-2);
     }
 
     /* ── Product card placeholder image ── */
@@ -514,6 +599,52 @@
   </div>
 
   <!-- ============================================================
+       CATEGORY HERO BANNER
+       ============================================================ -->
+  <section class="category-hero" aria-label="Caps category">
+    <div class="category-hero__image">
+      <img src="https://mediahub.beechfieldbrands.com/m/ec4847087e60c74/Product_medium-beechfield_b10_chocolate_lifestyle_3162.jpg" alt="Beechfield B10 Original 5 Panel Cap in Chocolate, lifestyle">
+    </div>
+    <div class="category-hero__overlay"></div>
+    <div class="category-hero__content">
+      <div class="container">
+        <p class="category-hero__label">Product Range</p>
+        <h1 class="category-hero__title">Caps</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST STRIP — Brand credibility markers
+       ============================================================ -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-strip__inner">
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          30 Years of Expertise
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          Designed for Decoration
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          Always in Stock
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          60+ Colours
+        </span>
+        <span class="trust-strip__item">
+          <span class="trust-strip__dot"></span>
+          Responsible by Design
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
        BREADCRUMB
        ============================================================ -->
   <div class="container">
@@ -532,7 +663,6 @@
   <section class="section-sm">
     <div class="container">
       <div class="plp-intro">
-        <h1>Caps</h1>
         <p>Discover the full range of Beechfield blank caps, designed and engineered for embroidery, patches, transfer, screen print and DTG decoration. From classic baseball caps and structured trucker caps to relaxed dad hats, flat peak snapbacks and 5 panel campers, our cap collection offers premium quality blanks in a wide selection of colours and fabrics. Trusted by decorators and promotional buyers worldwide for consistent fit, durable construction and outstanding branding results.</p>
       </div>
     </div>

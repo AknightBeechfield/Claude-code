@@ -244,6 +244,17 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.mega-menu--1col .mega-menu__inner {
+  grid-template-columns: 1fr;
+  max-width: 320px;
+}
+
+/* Non-clickable heading style (used for section labels in mega menus) */
+.mega-menu__heading--label {
+  pointer-events: none;
+  cursor: default;
+}
+
 .mega-menu__column {
   display: flex;
   flex-direction: column;

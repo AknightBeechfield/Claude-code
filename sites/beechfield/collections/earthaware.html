@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EarthAware® Collection — Beechfield Original Headwear</title>
+  <meta name="description" content="EarthAware® is Beechfield's organic cotton collection — OCS certified, decoration-ready, and built with a lower environmental impact.">
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <style>
+    .collection-hero {
+      background-color: #1f614d;
+      color: #fff;
+      min-height: 540px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+    }
+    .collection-hero__bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, #1a5443 55%, #2a7a5e 100%);
+    }
+    .collection-hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 660px;
+    }
+    .collection-hero__eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 16px;
+    }
+    .collection-hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .collection-hero__tagline {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.8);
+      font-style: italic;
+    }
+    .collection-hero__cert-badge {
+      display: inline-block;
+      margin-top: 32px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .breadcrumb {
+      padding: 14px 0;
+      font-size: 0.85rem;
+      color: #666;
+      border-bottom: 1px solid #eee;
+    }
+    .breadcrumb a { color: #555; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb__sep { margin: 0 8px; color: #aaa; }
+
+    .editorial-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+    .editorial-split--reverse { direction: rtl; }
+    .editorial-split--reverse > * { direction: ltr; }
+    .editorial-split__image { overflow: hidden; }
+    .editorial-split__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .editorial-split__text {
+      padding: 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .editorial-split__text h2 { font-size: 2rem; font-weight: 700; margin-bottom: 20px; }
+    .editorial-split__text p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 16px; }
+
+    .bg-cream { background-color: #f9f5ef; }
+    .bg-dark { background-color: #1a1a1a; color: #fff; }
+    .bg-dark h2 { color: #fff; }
+    .bg-dark p { color: #ccc; }
+    .bg-green { background-color: #1f614d; color: #fff; }
+    .bg-green h2 { color: #fff; }
+    .bg-green p { color: rgba(255,255,255,0.85); }
+
+    /* OCS block */
+    .ocs-block {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 72px 0;
+    }
+    .ocs-block__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .ocs-block h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; color: #fff; }
+    .ocs-block p { font-size: 1.05rem; line-height: 1.7; color: #bbb; margin-bottom: 16px; }
+    .ocs-block__badge {
+      background: #1f614d;
+      padding: 40px;
+      text-align: center;
+    }
+    .ocs-block__badge-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .ocs-block__badge-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 8px;
+    }
+    .ocs-block__badge-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .product-grid-section { padding: 80px 0; }
+    .product-grid-section h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; text-align: center; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .product-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .product-card__image {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+    .product-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .product-card:hover .product-card__image img { transform: scale(1.04); }
+    .product-card__info { padding: 16px; }
+    .product-card__code { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: #888; margin-bottom: 4px; }
+    .product-card__name { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; line-height: 1.3; }
+    .product-card__cert {
+      display: inline-block;
+      margin-top: 8px;
+      background: #e8f4f0;
+      color: #1f614d;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+    }
+
+    .collection-cta { background-color: #1f614d; color: #fff; text-align: center; padding: 80px 0; }
+    .collection-cta h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; }
+    .collection-cta p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .btn-primary {
+      display: inline-block;
+      background: #fff;
+      color: #1f614d;
+      padding: 16px 40px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #ddd; }
+    .btn-outline-white {
+      display: inline-block;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 14px 38px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-top: 16px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline-white:hover { background: #fff; color: #1f614d; }
+
+    @media (max-width: 900px) {
+      .editorial-split { grid-template-columns: 1fr; }
+      .editorial-split--reverse { direction: ltr; }
+      .product-grid { grid-template-columns: 1fr 1fr; }
+      .editorial-split__image { min-height: 280px; }
+      .ocs-block__inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      .product-grid { grid-template-columns: 1fr 1fr; }
+      .editorial-split__text { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
+          <a href="../" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../../bagbase/" class="brand-switcher__link">BagBase</a>
+          <a href="../../quadra/" class="brand-switcher__link">Quadra</a>
+          <a href="../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions">
+        <a href="../where-to-buy/find-a-distributor.html">Find a Distributor</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../" class="site-logo">Beechfield<span>Original Headwear</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li class="main-nav__item"><a href="../products/" class="main-nav__link main-nav__link--active">Products</a></li>
+          <li class="main-nav__item"><a href="../cap-studio/" class="main-nav__link">Cap Studio</a></li>
+          <li class="main-nav__item"><a href="../lookbooks/" class="main-nav__link">Lookbooks</a></li>
+          <li class="main-nav__item"><a href="../decorator-academy/" class="main-nav__link">Decorator Academy</a></li>
+          <li class="main-nav__item"><a href="../where-to-buy/" class="main-nav__link">Where to Buy</a></li>
+          <li class="main-nav__item"><a href="../about/" class="main-nav__link">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <a href="../products/">Collections</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span aria-current="page">EarthAware®</span>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="collection-hero">
+      <div class="collection-hero__bg"></div>
+      <div class="container">
+        <div class="collection-hero__content">
+          <p class="collection-hero__eyebrow">Beechfield Collection</p>
+          <h1>EarthAware®</h1>
+          <p class="collection-hero__tagline">Organic. Certified. Considered.</p>
+          <span class="collection-hero__cert-badge">OCS Certified Organic Cotton</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story split — cream -->
+    <section class="editorial-split bg-cream">
+      <div class="editorial-split__image">
+        <img src="https://mediahub.beechfieldbrands.com/m/4a63922434e7cc92/webimage-B62N-EarthAware-Organic-Cotton-5-Panel-Cap-Dusty-Green-Front-on-shot.png"
+             alt="B62N EarthAware Organic Cotton 5-Panel Cap in Dusty Green" loading="lazy">
+      </div>
+      <div class="editorial-split__text">
+        <h2>The same shapes. A lower footprint.</h2>
+        <p>EarthAware® is Beechfield's organic cotton collection — reworking the classic shapes you know in 100% organic cotton, certified to OCS standards. Same decoration-ready construction. Same reliability. Lower environmental impact.</p>
+        <p>Every style in the EarthAware® range is built to the same performance standards as the rest of the Beechfield catalogue — suitable for embroidery, printing and all major decoration methods.</p>
+      </div>
+    </section>
+
+    <!-- OCS block -->
+    <section class="ocs-block">
+      <div class="container">
+        <div class="ocs-block__inner">
+          <div>
+            <h2>What OCS certified means</h2>
+            <p>The Organic Content Standard (OCS) verifies the presence and amount of organic material in a final product. Every EarthAware® product is independently verified — from raw fibre through to finished headwear.</p>
+            <p>OCS certification gives decorators and their customers a credible, third-party-verified claim to support sustainability positioning — without compromising on product quality or decoration performance.</p>
+          </div>
+          <div class="ocs-block__badge">
+            <span class="ocs-block__badge-icon">&#9679;</span>
+            <p class="ocs-block__badge-label">Independently verified</p>
+            <p class="ocs-block__badge-title">Organic Content Standard</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Split — warm bg with bucket hat -->
+    <section class="editorial-split bg-cream">
+      <div class="editorial-split__image">
+        <img src="https://mediahub.beechfieldbrands.com/m/31e473ca6c2a5d3d/webimage-B90N-EarthAware-Organic-Cotton-Bucket-Hat-Desert-Sand-Front-on-shot.png"
+             alt="B90N EarthAware Organic Cotton Bucket Hat in Desert Sand" loading="lazy">
+      </div>
+      <div class="editorial-split__text">
+        <h2>Beyond the classic cap.</h2>
+        <p>EarthAware® isn't limited to five-panel caps. The collection spans bucket hats, studio caps and structured profiles — giving decorators a full range of organic cotton options to present to their customers.</p>
+        <p>Natural tones and earthy colourways make EarthAware® styles a natural fit for lifestyle, outdoor and wellness brands.</p>
+      </div>
+    </section>
+
+    <!-- Product grid -->
+    <section class="product-grid-section">
+      <div class="container">
+        <h2>EarthAware® key styles</h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/4a63922434e7cc92/webimage-B62N-EarthAware-Organic-Cotton-5-Panel-Cap-Dusty-Green-Front-on-shot.png"
+                   alt="B62N EarthAware Organic Cotton 5-Panel Cap" loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__code">B62N</p>
+              <p class="product-card__name">EarthAware® Organic 5-Panel Cap</p>
+              <span class="product-card__cert">OCS Certified</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/5e3f1359858f9dd2/webimage-B26N-EarthAware-Organic-Cotton-Studio-Cap-Cornflower-Blue-Product-Shot-01.png"
+                   alt="B26N EarthAware Organic Cotton Studio Cap" loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__code">B26N</p>
+              <p class="product-card__name">EarthAware® Organic Studio Cap</p>
+              <span class="product-card__cert">OCS Certified</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/31e473ca6c2a5d3d/webimage-B90N-EarthAware-Organic-Cotton-Bucket-Hat-Desert-Sand-Front-on-shot.png"
+                   alt="B90N EarthAware Organic Cotton Bucket Hat" loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__code">B90N</p>
+              <p class="product-card__name">EarthAware® Organic Bucket Hat</p>
+              <span class="product-card__cert">OCS Certified</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="collection-cta">
+      <div class="container">
+        <h2>Shop EarthAware®</h2>
+        <p>Browse the full range of OCS-certified organic cotton headwear — or speak to your distributor about EarthAware® sampling and stock availability.</p>
+        <a href="../products/?collection=earthaware" class="btn-primary">Shop EarthAware®</a>
+        <br>
+        <a href="../where-to-buy/find-a-distributor.html" class="btn-outline-white">Find a Distributor</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--5col">
+        <div><h4 class="footer__column-title">Products</h4><nav class="footer__links"><a href="../products/" class="footer__link">All Products</a><a href="../products/caps/" class="footer__link">Caps</a><a href="../products/beanies/" class="footer__link">Beanies</a><a href="../products/hats/" class="footer__link">Hats</a></nav></div>
+        <div><h4 class="footer__column-title">For Decorators</h4><nav class="footer__links"><a href="../decorator-academy/" class="footer__link">Decorator Academy</a><a href="../decorator-academy/videos.html" class="footer__link">How-to Videos</a><a href="../decorator-academy/glossary.html" class="footer__link">Glossary</a></nav></div>
+        <div><h4 class="footer__column-title">Marketing Centre</h4><nav class="footer__links"><a href="../marketing-centre/" class="footer__link">Marketing Centre</a><a href="../marketing-centre/sign-up.html" class="footer__link">Sign Up</a></nav></div>
+        <div><h4 class="footer__column-title">About</h4><nav class="footer__links"><a href="../about/about-beechfield.html" class="footer__link">About Beechfield</a><a href="../about/materials-and-fabrics.html" class="footer__link">Materials &amp; Fabrics</a><a href="../about/responsible-choices.html" class="footer__link">Responsible Choices</a></nav></div>
+        <div><h4 class="footer__column-title">Support</h4><nav class="footer__links"><a href="../where-to-buy/" class="footer__link">Where to Buy</a><a href="../resources/faqs.html" class="footer__link">FAQs</a><a href="../about/contact.html" class="footer__link">Contact</a></nav></div>
+      </div>
+      <div class="footer__company">
+        <div class="footer__company-logo">Beechfield<span>Original Headwear</span></div>
+        <div class="footer__company-info"><p>Part of <a href="../../beechfield-brands/">Beechfield Brands Ltd.</a></p><p>&copy; 2026 Beechfield Brands Limited. All rights reserved.</p></div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">Beechfield Original Headwear</p>
+        <div class="footer__legal"><a href="#">Privacy</a><a href="#">Cookies</a><a href="#">Terms</a><a href="#">Accessibility</a><a href="#">Modern Slavery</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js"></script>
+</body>
+</html>

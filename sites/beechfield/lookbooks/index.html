@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decorator Academy | Beechfield Original Headwear</title>
-  <meta name="description" content="Learn how to decorate Beechfield headwear. Embroidery, patches, transfers, screen print, DTG and more — expert guides, videos and tools for decorators.">
+  <title>Lookbooks | Beechfield Original Headwear</title>
+  <meta name="description" content="Season after season. Every Beechfield style story in one place. Browse SS26, AW25/26 and Mid-Year 25 lookbooks.">
   <link rel="stylesheet" href="../../shared/css/variables.css">
   <link rel="stylesheet" href="../../shared/css/reset.css">
   <link rel="stylesheet" href="../../shared/css/base.css">
@@ -13,6 +13,133 @@
   <link rel="stylesheet" href="../../shared/css/navigation.css">
   <link rel="stylesheet" href="../../shared/css/footer.css">
   <link rel="stylesheet" href="../css/brand.css">
+  <style>
+    :root {
+      --bfb-cool-black: #0e1520;
+      --brand-warm: #f5f0e8;
+    }
+
+    /* Hub hero */
+    .lb-hub-hero {
+      padding: 80px 0 64px;
+      background: var(--brand-warm);
+    }
+    .lb-hub-hero__label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+    .lb-hub-hero__title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.07;
+      margin-bottom: 1rem;
+    }
+    .lb-hub-hero__sub {
+      font-size: 1.125rem;
+      opacity: 0.65;
+      max-width: 540px;
+      line-height: 1.65;
+    }
+
+    /* Lookbook tile grid */
+    .lb-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .lb-hub-tile {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .lb-hub-tile:hover {
+      box-shadow: 0 12px 40px rgba(14,21,32,0.13);
+      transform: translateY(-4px);
+    }
+    .lb-hub-tile__img-wrap {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lb-hub-tile__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .lb-hub-tile:hover .lb-hub-tile__img-wrap img {
+      transform: scale(1.04);
+    }
+    .lb-hub-tile__body {
+      padding: 1.75rem 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .lb-hub-tile__season {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.5;
+      margin-bottom: 0.625rem;
+    }
+    .lb-hub-tile__name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 0.875rem;
+    }
+    .lb-hub-tile__desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    .lb-hub-tile__cta {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--bfb-cool-black);
+      text-decoration: none;
+      border-bottom: 2px solid var(--bfb-cool-black);
+      padding-bottom: 2px;
+      align-self: flex-start;
+    }
+
+    /* Section wrapper */
+    .lb-hub-section {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    /* Breadcrumb */
+    .lb-breadcrumb {
+      padding: 1rem 0;
+    }
+
+    @media (max-width: 900px) {
+      .lb-hub-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 580px) {
+      .lb-hub-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -23,7 +150,7 @@
         <span class="brand-switcher__label">Our Brands</span>
         <div class="brand-switcher__links">
           <a href="../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
-          <a href="../../beechfield/" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
           <a href="../../bagbase/" class="brand-switcher__link">BagBase</a>
           <a href="../../quadra/" class="brand-switcher__link">Quadra</a>
           <a href="../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
@@ -35,7 +162,7 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Site header -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="../index.html" class="site-logo">
@@ -155,7 +282,7 @@
 
           <!-- Lookbooks -->
           <li class="main-nav__item" data-mega="lookbooks">
-            <a href="../lookbooks/" class="main-nav__link">
+            <a href="../lookbooks/" class="main-nav__link main-nav__link--active">
               Lookbooks
               <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
             </a>
@@ -175,28 +302,28 @@
 
           <!-- Decorator Academy -->
           <li class="main-nav__item" data-mega="decorator">
-            <a href="./" class="main-nav__link main-nav__link--active">
+            <a href="../decorator-academy/" class="main-nav__link">
               Decorator Academy
               <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
             </a>
             <div class="mega-menu mega-menu--2col">
               <div class="mega-menu__inner">
                 <div class="mega-menu__column">
-                  <a href="designed-for-decoration.html" class="mega-menu__heading" style="text-decoration:none;display:block;">Designed for Decoration</a>
+                  <a href="../decorator-academy/designed-for-decoration.html" class="mega-menu__heading" style="text-decoration:none;display:block;">Designed for Decoration</a>
                   <ul class="mega-menu__list">
                     <li><span class="mega-menu__link mega-menu__heading--label" style="font-size:var(--text-xs);opacity:0.7;">Techniques</span></li>
-                    <li><a href="techniques/embroidery.html" class="mega-menu__link" style="padding-left:var(--space-3);">Embroidery</a></li>
-                    <li><a href="techniques/transfer.html" class="mega-menu__link" style="padding-left:var(--space-3);">Print &amp; Transfer</a></li>
-                    <li><a href="techniques/patches.html" class="mega-menu__link" style="padding-left:var(--space-3);">Patches</a></li>
-                    <li><a href="colours.html" class="mega-menu__link">Colours</a></li>
+                    <li><a href="../decorator-academy/techniques/embroidery.html" class="mega-menu__link" style="padding-left:var(--space-3);">Embroidery</a></li>
+                    <li><a href="../decorator-academy/techniques/transfer.html" class="mega-menu__link" style="padding-left:var(--space-3);">Print &amp; Transfer</a></li>
+                    <li><a href="../decorator-academy/techniques/patches.html" class="mega-menu__link" style="padding-left:var(--space-3);">Patches</a></li>
+                    <li><a href="../decorator-academy/colours.html" class="mega-menu__link">Colours</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__column">
                   <ul class="mega-menu__list" style="margin-top:calc(var(--text-xs) + var(--space-4) + var(--space-2));">
-                    <li><a href="videos.html" class="mega-menu__link mega-menu__link--featured">How-to Videos</a></li>
-                    <li><a href="decorator-studio.html" class="mega-menu__link">Decorator Studio</a></li>
-                    <li><a href="in-the-wild.html" class="mega-menu__link">Case Studies</a></li>
-                    <li><a href="glossary.html" class="mega-menu__link">Glossary</a></li>
+                    <li><a href="../decorator-academy/videos.html" class="mega-menu__link mega-menu__link--featured">How-to Videos</a></li>
+                    <li><a href="../decorator-academy/decorator-studio.html" class="mega-menu__link">Decorator Studio</a></li>
+                    <li><a href="../decorator-academy/in-the-wild.html" class="mega-menu__link">Case Studies</a></li>
+                    <li><a href="../decorator-academy/glossary.html" class="mega-menu__link">Glossary</a></li>
                   </ul>
                 </div>
               </div>
@@ -260,151 +387,68 @@
   </header>
 
   <!-- Breadcrumb -->
-  <div class="container">
+  <div class="container lb-breadcrumb">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="../index.html">Home</a>
       <span class="breadcrumb__separator">/</span>
-      <span>Decorator Academy</span>
+      <span>Lookbooks</span>
     </nav>
   </div>
 
-  <!-- Hero -->
-  <section class="hero" style="min-height:40vh">
-    <div class="hero__bg">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg, #0e1520 0%, #1f614d 100%)"></div>
-    </div>
-    <div class="container hero__content">
-      <p class="text-sm" style="text-transform:uppercase;letter-spacing:0.15em;opacity:0.8;margin-bottom:var(--space-3)">Decorator Academy</p>
-      <h1 class="hero__title" style="font-size:var(--text-5xl)">Designed for<br>Decoration</h1>
-      <p class="hero__subtitle">Every Beechfield product is engineered with decoration in mind. Explore techniques, placement guides, and expert tutorials to get the best results from our headwear.</p>
-    </div>
-  </section>
-
-  <!-- Techniques Grid -->
-  <section class="section">
+  <!-- Hub Hero -->
+  <section class="lb-hub-hero">
     <div class="container">
-      <div class="section-header text-center" style="max-width:640px;margin:0 auto var(--space-10)">
-        <p class="section-header__label">Decoration Techniques</p>
-        <h2 class="section-header__title">Choose Your Method</h2>
-        <p class="section-header__description">Our headwear is compatible with all major decoration techniques. Each method has its strengths — find the right one for your project.</p>
-      </div>
-
-      <div class="grid-3">
-        <!-- Embroidery -->
-        <a href="techniques.html#embroidery" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #1f614d, #0e1520);display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-4xl)">&#9997;</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Embroidery</h3>
-            <p class="card__text">The gold standard for headwear decoration. Direct embroidery delivers premium, durable results on structured and unstructured caps alike. Compatible with all Beechfield headwear.</p>
-            <span class="badge badge-bestseller" style="margin-top:var(--space-2)">Most Popular</span>
-          </div>
-        </a>
-
-        <!-- Patches -->
-        <a href="techniques.html#patches" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #292524, #44403c);display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-4xl)">&#9744;</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Patches</h3>
-            <p class="card__text">Woven, PVC, leather, and embroidered patches. Versatile placement across front, side, and back panels. Sew-on recommended for textured fabrics.</p>
-          </div>
-        </a>
-
-        <!-- Transfer -->
-        <a href="techniques.html#transfer" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #594fdf, #292524);display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-4xl)">&#9881;</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Transfer</h3>
-            <p class="card__text">Heat transfer for full-colour, photographic designs. Compatible with flat-panel and structured styles. Check time, temperature, and pressure guides per product.</p>
-          </div>
-        </a>
-
-        <!-- Screen Print -->
-        <a href="techniques.html#screen-print" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #ffb58d, #fc614d);display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-4xl)">&#9783;</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Screen Print</h3>
-            <p class="card__text">Bold, durable prints on flat surfaces. Ideal for promotional runs and event headwear. Best on beanies, flat-panel caps, and accessories.</p>
-          </div>
-        </a>
-
-        <!-- DTG -->
-        <a href="techniques.html#dtg" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #bde4ba, #1f614d);display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-4xl)">&#9113;</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">DTG (Direct to Garment)</h3>
-            <p class="card__text">Digital printing directly onto fabric. Excellent for complex, multi-colour designs on cotton and cotton-blend headwear.</p>
-          </div>
-        </a>
-
-        <!-- Sublimation -->
-        <a href="techniques.html#sublimation" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #fc614d, #ffb58d);display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-4xl)">&#9670;</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Sublimation</h3>
-            <p class="card__text">All-over print capability on polyester headwear. Vibrant, permanent colour that becomes part of the fabric. Best on white and light-coloured polyester.</p>
-          </div>
-        </a>
-      </div>
+      <span class="lb-hub-hero__label">Beechfield</span>
+      <h1 class="lb-hub-hero__title">Lookbooks</h1>
+      <p class="lb-hub-hero__sub">Season after season. Every style story in one place.</p>
     </div>
   </section>
 
-  <!-- Tools & Resources -->
-  <section class="section bg-warm">
+  <!-- Lookbook Tiles -->
+  <section class="lb-hub-section">
     <div class="container">
-      <div class="section-header text-center" style="max-width:640px;margin:0 auto var(--space-10)">
-        <p class="section-header__label">Tools</p>
-        <h2 class="section-header__title">Decorator Resources</h2>
+      <div class="lb-hub-grid">
+
+        <!-- SS26 -->
+        <a href="ss26.html" class="lb-hub-tile">
+          <div class="lb-hub-tile__img-wrap">
+            <img src="https://mediahub.beechfieldbrands.com/m/b66942402fa0df81/webimage-B155R-Accelerate-Cap-White-Black-Lifestyle-Shot.png" alt="Beechfield SS26 Lookbook cover — B155R Accelerate Cap lifestyle" loading="lazy">
+          </div>
+          <div class="lb-hub-tile__body">
+            <p class="lb-hub-tile__season">Spring / Summer 2026</p>
+            <h2 class="lb-hub-tile__name">Beechfield® SS26 Lookbook</h2>
+            <p class="lb-hub-tile__desc">11 new products, 17 fresh colour updates. Contemporary styling meets practical performance.</p>
+            <span class="lb-hub-tile__cta">View Lookbook &rarr;</span>
+          </div>
+        </a>
+
+        <!-- AW25/26 -->
+        <a href="aw25-26.html" class="lb-hub-tile">
+          <div class="lb-hub-tile__img-wrap">
+            <img src="https://mediahub.beechfieldbrands.com/m/7d1480204a8fb8fb/webimage-B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.png" alt="Beechfield AW25/26 Lookbook cover — B645 Vintage Snapback Trucker in French Navy" loading="lazy">
+          </div>
+          <div class="lb-hub-tile__body">
+            <p class="lb-hub-tile__season">Autumn / Winter 2025–26</p>
+            <h2 class="lb-hub-tile__name">Beechfield® AW Lookbook 25/26</h2>
+            <p class="lb-hub-tile__desc">Winter warmth and proven classics. Trusted performance headwear for the colder months.</p>
+            <span class="lb-hub-tile__cta">View Lookbook &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Mid-Year 25 -->
+        <a href="mid-year-25.html" class="lb-hub-tile">
+          <div class="lb-hub-tile__img-wrap">
+            <img src="https://mediahub.beechfieldbrands.com/m/3f894b65714d723a/webimage-B682-Heritage-Cord-Cap-Brown-Front-on-shot.png" alt="Beechfield Mid-Year 25 Lookbook cover — B682 Heritage Cord Cap in Brown" loading="lazy">
+          </div>
+          <div class="lb-hub-tile__body">
+            <p class="lb-hub-tile__season">Mid-Year 2025</p>
+            <h2 class="lb-hub-tile__name">Beechfield® Mid-Year Headwear Lookbook 25</h2>
+            <p class="lb-hub-tile__desc">Mid-season additions and colour refreshes across the Beechfield range.</p>
+            <span class="lb-hub-tile__cta">View Lookbook &rarr;</span>
+          </div>
+        </a>
+
       </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="card__body text-center" style="padding:var(--space-8)">
-            <div style="font-size:var(--text-4xl);margin-bottom:var(--space-4)">&#128270;</div>
-            <h3 class="card__title">Logo Placement Tool</h3>
-            <p class="card__text">Visualise your logo on any Beechfield product. Upload your artwork and preview decoration positions before production.</p>
-            <a href="#" class="btn btn-primary" style="margin-top:var(--space-4)">Launch Tool</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__body text-center" style="padding:var(--space-8)">
-            <div style="font-size:var(--text-4xl);margin-bottom:var(--space-4)">&#127909;</div>
-            <h3 class="card__title">How to Videos</h3>
-            <p class="card__text">Step-by-step video tutorials for every decoration technique. See best practices in action from our expert decorators.</p>
-            <a href="how-to-videos.html" class="btn btn-primary" style="margin-top:var(--space-4)">Watch Videos</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__body text-center" style="padding:var(--space-8)">
-            <div style="font-size:var(--text-4xl);margin-bottom:var(--space-4)">&#128203;</div>
-            <h3 class="card__title">Decoration Protection</h3>
-            <p class="card__text">Learn about our built-in features that protect and enhance decoration results — from reinforced panels to tear-away labels.</p>
-            <a href="decoration-protection.html" class="btn btn-primary" style="margin-top:var(--space-4)">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Join the Community CTA -->
-  <section class="section bg-dark">
-    <div class="container text-center" style="max-width:640px;margin:0 auto">
-      <h2 style="color:#fff;margin-bottom:var(--space-4)">Join the Decorator Community</h2>
-      <p style="color:rgba(255,255,255,0.7);margin-bottom:var(--space-6);font-size:var(--text-lg)">Get exclusive access to campaign kits, seasonal assets, new product alerts, and connect with fellow decorators. Free to join.</p>
-      <a href="join-the-community.html" class="btn" style="background:#fff;color:#0e1520;border-color:#fff">Join the Community</a>
     </div>
   </section>
 
@@ -426,12 +470,12 @@
         <div>
           <h4 class="footer__column-title">For Decorators</h4>
           <nav class="footer__links">
-            <a href="./" class="footer__link">Decorator Academy</a>
-            <a href="decorator-studio.html" class="footer__link">Decorator Studio</a>
-            <a href="videos.html" class="footer__link">How-to Videos</a>
-            <a href="in-the-wild.html" class="footer__link">In the Wild</a>
-            <a href="glossary.html" class="footer__link">Glossary</a>
-            <a href="colours.html" class="footer__link">Colours</a>
+            <a href="../decorator-academy/" class="footer__link">Decorator Academy</a>
+            <a href="../decorator-academy/decorator-studio.html" class="footer__link">Decorator Studio</a>
+            <a href="../decorator-academy/videos.html" class="footer__link">How-to Videos</a>
+            <a href="../decorator-academy/in-the-wild.html" class="footer__link">In the Wild</a>
+            <a href="../decorator-academy/glossary.html" class="footer__link">Glossary</a>
+            <a href="../decorator-academy/colours.html" class="footer__link">Colours</a>
           </nav>
         </div>
         <div>

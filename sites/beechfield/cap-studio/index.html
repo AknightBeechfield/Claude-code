@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cap Studio — Find the Perfect Cap for Your Brief | Beechfield</title>
+  <meta name="description" content="Cap Studio helps decorators navigate the Beechfield range and find the right blank for any brief, budget and decoration technique.">
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <style>
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      padding: 14px 0;
+      font-size: 0.85rem;
+      color: #666;
+      border-bottom: 1px solid #eee;
+    }
+    .breadcrumb a {
+      color: #555;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb__sep { margin: 0 8px; color: #aaa; }
+
+    /* ── Hero ── */
+    .cap-studio-hero {
+      background: #0e1520;
+      color: #fff;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cap-studio-hero__bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(130deg, #0e1520 50%, #1a2d3a 100%);
+    }
+    .cap-studio-hero__accent {
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(31,97,77,0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cap-studio-hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 660px;
+    }
+    .cap-studio-hero__eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #7ecfb0;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+    .cap-studio-hero h1 {
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .cap-studio-hero__tagline {
+      font-size: 1.35rem;
+      color: #c8d8e8;
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .cap-studio-hero__sub {
+      font-size: 1.05rem;
+      color: #8fa5b8;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 560px;
+    }
+    .btn-cap-studio-primary {
+      display: inline-block;
+      background: #1f614d;
+      color: #fff;
+      padding: 18px 44px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-cap-studio-primary:hover {
+      background: #185240;
+      transform: translateY(-1px);
+    }
+
+    /* ── Feature blocks ── */
+    .features-section {
+      background: #f9f5ef;
+      padding: 80px 0;
+    }
+    .features-section__heading {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      color: #0e1520;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .feature-block {
+      background: #fff;
+      border-radius: 6px;
+      padding: 40px 32px;
+      border-top: 4px solid #1f614d;
+    }
+    .feature-block__icon {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .feature-block__title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0e1520;
+      margin-bottom: 14px;
+    }
+    .feature-block__text {
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* ── Featured styles ── */
+    .featured-styles-section {
+      padding: 80px 0;
+    }
+    .featured-styles-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #0e1520;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .product-card__image {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+    .product-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .product-card:hover .product-card__image img { transform: scale(1.05); }
+    .product-card__info {
+      padding: 16px;
+    }
+    .product-card__code {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .product-card__name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+
+    /* ── CTA block ── */
+    .cap-studio-cta {
+      background: #0e1520;
+      color: #fff;
+      text-align: center;
+      padding: 80px 0;
+    }
+    .cap-studio-cta h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .cap-studio-cta p {
+      color: #8fa5b8;
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    .btn-cta-white {
+      display: inline-block;
+      background: #fff;
+      color: #0e1520;
+      padding: 18px 44px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-cta-white:hover {
+      background: #e0ede8;
+      transform: translateY(-1px);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .product-grid { grid-template-columns: 1fr 1fr; }
+      .feature-block { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
+          <a href="../" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../../bagbase/" class="brand-switcher__link">BagBase</a>
+          <a href="../../quadra/" class="brand-switcher__link">Quadra</a>
+          <a href="../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions">
+        <a href="../where-to-buy/find-a-distributor.html">Find a Distributor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../" class="site-logo">Beechfield<span>Original Headwear</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li class="main-nav__item"><a href="../products/" class="main-nav__link">Products</a></li>
+          <li class="main-nav__item"><a href="../cap-studio/" class="main-nav__link main-nav__link--active">Cap Studio</a></li>
+          <li class="main-nav__item"><a href="../lookbooks/" class="main-nav__link">Lookbooks</a></li>
+          <li class="main-nav__item"><a href="../decorator-academy/" class="main-nav__link">Decorator Academy</a></li>
+          <li class="main-nav__item"><a href="../where-to-buy/" class="main-nav__link">Where to Buy</a></li>
+          <li class="main-nav__item"><a href="../about/" class="main-nav__link">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span aria-current="page">Cap Studio</span>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="cap-studio-hero">
+      <div class="cap-studio-hero__bg"></div>
+      <div class="cap-studio-hero__accent"></div>
+      <div class="container">
+        <div class="cap-studio-hero__content">
+          <p class="cap-studio-hero__eyebrow">Beechfield Cap Studio</p>
+          <h1>Cap Studio</h1>
+          <p class="cap-studio-hero__tagline">Find the perfect cap for your brief. Every time.</p>
+          <p class="cap-studio-hero__sub">From 5-panel classics to all-over print bucket hats, Cap Studio helps decorators navigate the Beechfield range and find the right blank for any brief, budget and decoration technique.</p>
+          <a href="find-your-cap.html" class="btn-cap-studio-primary">Find Your Perfect Cap →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature blocks -->
+    <section class="features-section">
+      <div class="container">
+        <h2 class="features-section__heading">Everything you need to choose with confidence</h2>
+        <div class="features-grid">
+
+          <div class="feature-block">
+            <span class="feature-block__icon">🖨️</span>
+            <h3 class="feature-block__title">Filter by decoration</h3>
+            <p class="feature-block__text">Whether you embroider, screen print, transfer or all-over print, Cap Studio surfaces the styles best suited to your technique.</p>
+          </div>
+
+          <div class="feature-block">
+            <span class="feature-block__icon">🧢</span>
+            <h3 class="feature-block__title">Filter by silhouette</h3>
+            <p class="feature-block__text">Five-panel, six-panel, structured, unstructured, snapback, trucker — filter by the shape your customer wants.</p>
+          </div>
+
+          <div class="feature-block">
+            <span class="feature-block__icon">⛰️</span>
+            <h3 class="feature-block__title">Filter by purpose</h3>
+            <p class="feature-block__text">Sports, corporate, fashion, outdoor. Find caps that perform exactly where your customer needs them.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured styles -->
+    <section class="featured-styles-section">
+      <div class="container">
+        <h2>Featured styles</h2>
+        <div class="product-grid">
+
+          <a href="../products/b15-baseball-cap.html" class="product-card">
+            <div class="product-card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png"
+                   alt="B15 Ultimate 5-Panel Cap with Sandwich Peak" loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__code">B15</p>
+              <p class="product-card__name">Ultimate 5-Panel Cap</p>
+            </div>
+          </a>
+
+          <a href="../products/b640-snapback-trucker.html" class="product-card">
+            <div class="product-card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/7d1480204a8fb8fb/webimage-B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.png"
+                   alt="B640 Vintage Snapback Trucker Cap" loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__code">B640</p>
+              <p class="product-card__name">Vintage Snapback Trucker</p>
+            </div>
+          </a>
+
+          <a href="../products/b655-dad-cap.html" class="product-card">
+            <div class="product-card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png"
+                   alt="B655 Contrast Peak Low Profile Vintage Cap" loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__code">B655</p>
+              <p class="product-card__name">Low Profile Vintage Cap</p>
+            </div>
+          </a>
+
+          <a href="../products/b10-baseball-cap.html" class="product-card">
+            <div class="product-card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/e32066e8b0244e25/webimage-B188-Technical-Running-Cap-Graphite-Grey-Front-on-shot.png"
+                   alt="B10 Baseball Cap" loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__code">B10</p>
+              <p class="product-card__name">Baseball Cap</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA block -->
+    <section class="cap-studio-cta">
+      <div class="container">
+        <h2>Ready to find your cap?</h2>
+        <p>Answer five quick questions and we'll narrow down the perfect Beechfield style for your brief.</p>
+        <a href="find-your-cap.html" class="btn-cta-white">Start the Cap Finder →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--5col">
+        <div><h4 class="footer__column-title">Products</h4><nav class="footer__links"><a href="../products/" class="footer__link">All Products</a><a href="../products/caps/" class="footer__link">Caps</a><a href="../products/beanies/" class="footer__link">Beanies</a><a href="../products/hats/" class="footer__link">Hats</a></nav></div>
+        <div><h4 class="footer__column-title">For Decorators</h4><nav class="footer__links"><a href="../decorator-academy/" class="footer__link">Decorator Academy</a><a href="../decorator-academy/videos.html" class="footer__link">How-to Videos</a><a href="../decorator-academy/glossary.html" class="footer__link">Glossary</a></nav></div>
+        <div><h4 class="footer__column-title">Marketing Centre</h4><nav class="footer__links"><a href="../marketing-centre/" class="footer__link">Marketing Centre</a><a href="../marketing-centre/sign-up.html" class="footer__link">Sign Up</a></nav></div>
+        <div><h4 class="footer__column-title">About</h4><nav class="footer__links"><a href="../about/about-beechfield.html" class="footer__link">About Beechfield</a><a href="../about/materials-and-fabrics.html" class="footer__link">Materials &amp; Fabrics</a><a href="../about/responsible-choices.html" class="footer__link">Responsible Choices</a></nav></div>
+        <div><h4 class="footer__column-title">Support</h4><nav class="footer__links"><a href="../where-to-buy/" class="footer__link">Where to Buy</a><a href="../resources/faqs.html" class="footer__link">FAQs</a><a href="../about/contact.html" class="footer__link">Contact</a></nav></div>
+      </div>
+      <div class="footer__company">
+        <div class="footer__company-logo">Beechfield<span>Original Headwear</span></div>
+        <div class="footer__company-info"><p>Part of <a href="../../beechfield-brands/">Beechfield Brands Ltd.</a></p><p>&copy; 2026 Beechfield Brands Limited. All rights reserved.</p></div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">Beechfield Original Headwear</p>
+        <div class="footer__legal"><a href="#">Privacy</a><a href="#">Cookies</a><a href="#">Terms</a><a href="#">Accessibility</a><a href="#">Modern Slavery</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — Beechfield Original Headwear</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <style>
+    :root { --bf-primary: #0e1520; --bf-accent: #1f614d; --bf-cream: #f5f0e8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--bf-primary); background: #fff; }
+
+    .top-bar { background: var(--bf-primary); color: #fff; font-size: 0.78rem; padding: 0.5rem 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .top-bar__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand-switcher { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .brand-switcher__label { opacity: 0.6; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .brand-switcher__links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .brand-switcher__link { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+    .brand-switcher__link:hover { color: #fff; }
+    .brand-switcher__link--active { color: #fff; font-weight: 600; }
+    .top-bar__actions a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.78rem; }
+    .top-bar__actions a:hover { color: #fff; }
+    .site-header { background: #fff; border-bottom: 1px solid #e8e4dc; position: sticky; top: 0; z-index: 100; }
+    .site-header .container { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; gap: 2rem; }
+    .site-logo { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; color: var(--bf-primary); text-decoration: none; line-height: 1.1; }
+    .site-logo span { display: block; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
+    .main-nav__list { display: flex; list-style: none; gap: 0.25rem; }
+    .main-nav__link { display: block; padding: 0.5rem 0.85rem; color: var(--bf-primary); text-decoration: none; font-size: 0.9rem; font-weight: 500; border-radius: 4px; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+    .main-nav__link:hover { background: var(--bf-cream); }
+    .main-nav__link--active { color: var(--bf-accent); font-weight: 700; }
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .search-toggle, .mobile-toggle { background: none; border: none; cursor: pointer; padding: 0.4rem; color: var(--bf-primary); display: flex; align-items: center; }
+    .mobile-toggle { flex-direction: column; gap: 4px; }
+    .mobile-toggle__bar { display: block; width: 22px; height: 2px; background: var(--bf-primary); border-radius: 2px; }
+
+    /* HERO */
+    .page-hero { background: var(--bf-primary); color: #fff; padding: 5rem 0 4rem; }
+    .page-hero .breadcrumb { font-size: 0.8rem; opacity: 0.5; margin-bottom: 1.5rem; }
+    .page-hero .breadcrumb a { color: inherit; text-decoration: none; }
+    .page-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .page-hero .subtitle { font-size: 1.1rem; opacity: 0.7; max-width: 480px; line-height: 1.6; }
+
+    /* EVENTS SECTION */
+    .events-section { padding: 5rem 0; background: #fff; }
+    .events-section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .events-section .section-intro { color: #555; margin-bottom: 3rem; }
+    .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+    .event-card { border: 1px solid #e0dbd0; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    .event-card__header { padding: 2rem; background: var(--bf-cream); }
+    .event-card__status { display: inline-block; background: rgba(31,97,77,0.12); color: var(--bf-accent); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.25rem 0.6rem; border-radius: 20px; margin-bottom: 1rem; }
+    .event-card__name { font-size: 1.25rem; font-weight: 800; line-height: 1.2; margin-bottom: 0.35rem; }
+    .event-card__abbr { font-size: 0.85rem; color: #666; font-weight: 600; }
+    .event-card__body { padding: 1.5rem 2rem; flex: 1; }
+    .event-meta { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
+    .event-meta__item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: #444; }
+    .event-meta__icon { width: 16px; flex-shrink: 0; opacity: 0.5; }
+    .event-card__footer { padding: 1.25rem 2rem; border-top: 1px solid #e8e4dc; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .btn--accent { background: var(--bf-accent); color: #fff; }
+    .btn--accent:hover { background: #174e3e; }
+    .btn--outline { background: transparent; color: var(--bf-primary); border: 2px solid rgba(14,21,32,0.2); }
+    .btn--outline:hover { border-color: var(--bf-primary); background: var(--bf-primary); color: #fff; }
+
+    /* CO-MARKETING CTA */
+    .cta-banner { background: var(--bf-cream); padding: 4rem 0; }
+    .cta-banner__inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+    .cta-banner h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .cta-banner p { color: #555; max-width: 560px; line-height: 1.6; }
+    @media (max-width: 640px) { .cta-banner__inner { grid-template-columns: 1fr; } }
+
+    .site-footer { background: var(--bf-primary); color: rgba(255,255,255,0.75); padding: 3.5rem 0 0; }
+    .footer__grid { display: grid; gap: 2rem; margin-bottom: 3rem; }
+    .footer__grid--5col { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .footer__column-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #fff; margin-bottom: 1rem; }
+    .footer__links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer__link { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer__link:hover { color: #fff; }
+    .footer__company { display: flex; align-items: center; gap: 2rem; padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+    .footer__company-logo { font-size: 1.1rem; font-weight: 800; color: #fff; line-height: 1.1; }
+    .footer__company-logo span { display: block; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+    .footer__company-info { font-size: 0.82rem; }
+    .footer__company-info a { color: rgba(255,255,255,0.65); }
+    .footer__bottom { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; gap: 1rem; }
+    .footer__copyright { font-size: 0.78rem; }
+    .footer__legal { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .footer__legal a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.78rem; }
+    .footer__legal a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
+          <a href="../" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../../bagbase/" class="brand-switcher__link">BagBase</a>
+          <a href="../../quadra/" class="brand-switcher__link">Quadra</a>
+          <a href="../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions"><a href="../where-to-buy/find-a-distributor.html">Find a Distributor</a></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="../" class="site-logo">Beechfield<span>Original Headwear</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li class="main-nav__item"><a href="../products/" class="main-nav__link">Products</a></li>
+          <li class="main-nav__item"><a href="../cap-studio/" class="main-nav__link">Cap Studio</a></li>
+          <li class="main-nav__item"><a href="../lookbooks/" class="main-nav__link">Lookbooks</a></li>
+          <li class="main-nav__item"><a href="../decorator-academy/" class="main-nav__link">Decorator Academy</a></li>
+          <li class="main-nav__item"><a href="../where-to-buy/" class="main-nav__link">Where to Buy</a></li>
+          <li class="main-nav__item"><a href="../about/" class="main-nav__link main-nav__link--active">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="../about/">About</a> / Events</p>
+        <h1>Events</h1>
+        <p class="subtitle">Find us, meet us, talk headwear.</p>
+      </div>
+    </section>
+
+    <section class="events-section">
+      <div class="container">
+        <h2>Upcoming Shows — 2026</h2>
+        <p class="section-intro">We attend the major trade shows across the UK and Europe. Come and see the range in person.</p>
+        <div class="events-grid">
+
+          <!-- P&P -->
+          <div class="event-card">
+            <div class="event-card__header">
+              <span class="event-card__status">Coming Soon</span>
+              <h3 class="event-card__name">Printwear &amp; Promotion</h3>
+              <p class="event-card__abbr">P&amp;P Birmingham</p>
+            </div>
+            <div class="event-card__body">
+              <div class="event-meta">
+                <div class="event-meta__item">
+                  <svg class="event-meta__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  February 2026
+                </div>
+                <div class="event-meta__item">
+                  <svg class="event-meta__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  NEC Birmingham, UK
+                </div>
+              </div>
+              <p style="font-size:0.9rem;color:#555;line-height:1.6;">The UK's leading trade show for garment decoration. Join us at our stand to see the full Beechfield collection and talk decoration techniques with our team.</p>
+            </div>
+            <div class="event-card__footer">
+              <a href="contact.html" class="btn btn--accent">Register your interest</a>
+            </div>
+          </div>
+
+          <!-- TOTS -->
+          <div class="event-card">
+            <div class="event-card__header">
+              <span class="event-card__status">Coming Soon</span>
+              <h3 class="event-card__name">Trade Only Textile Show</h3>
+              <p class="event-card__abbr">TOTS Harrogate</p>
+            </div>
+            <div class="event-card__body">
+              <div class="event-meta">
+                <div class="event-meta__item">
+                  <svg class="event-meta__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  March 2026
+                </div>
+                <div class="event-meta__item">
+                  <svg class="event-meta__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Harrogate Convention Centre, UK
+                </div>
+              </div>
+              <p style="font-size:0.9rem;color:#555;line-height:1.6;">The leading trade-only show for promotional clothing and accessories. Discover our seasonal collections and speak to our sales team directly.</p>
+            </div>
+            <div class="event-card__footer">
+              <a href="contact.html" class="btn btn--accent">Register your interest</a>
+            </div>
+          </div>
+
+          <!-- FESPA -->
+          <div class="event-card">
+            <div class="event-card__header">
+              <span class="event-card__status">Coming Soon</span>
+              <h3 class="event-card__name">FESPA Global Print Expo</h3>
+              <p class="event-card__abbr">FESPA 2026</p>
+            </div>
+            <div class="event-card__body">
+              <div class="event-meta">
+                <div class="event-meta__item">
+                  <svg class="event-meta__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  May 2026
+                </div>
+                <div class="event-meta__item">
+                  <svg class="event-meta__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Europe
+                </div>
+              </div>
+              <p style="font-size:0.9rem;color:#555;line-height:1.6;">Europe's largest print and decoration expo. A key destination for screen printers, embroiderers and garment decorators looking for new headwear styles.</p>
+            </div>
+            <div class="event-card__footer">
+              <a href="contact.html" class="btn btn--accent">Register your interest</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CO-MARKETING BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <div>
+            <h2>Planning an event?</h2>
+            <p>We support distributor stands with assets, samples and co-marketing. If you're exhibiting and want to feature Beechfield in your display, get in touch.</p>
+          </div>
+          <a href="contact.html" class="btn btn--outline">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--5col">
+        <div><h4 class="footer__column-title">Products</h4><nav class="footer__links"><a href="../products/" class="footer__link">All Products</a><a href="../products/caps/" class="footer__link">Caps</a><a href="../products/beanies/" class="footer__link">Beanies</a><a href="../products/hats/" class="footer__link">Hats</a></nav></div>
+        <div><h4 class="footer__column-title">For Decorators</h4><nav class="footer__links"><a href="../decorator-academy/" class="footer__link">Decorator Academy</a><a href="../decorator-academy/videos.html" class="footer__link">How-to Videos</a><a href="../decorator-academy/glossary.html" class="footer__link">Glossary</a></nav></div>
+        <div><h4 class="footer__column-title">Marketing Centre</h4><nav class="footer__links"><a href="../marketing-centre/" class="footer__link">Marketing Centre</a><a href="../marketing-centre/sign-up.html" class="footer__link">Sign Up</a></nav></div>
+        <div><h4 class="footer__column-title">About</h4><nav class="footer__links"><a href="../about/about-beechfield.html" class="footer__link">About Beechfield</a><a href="../about/materials-and-fabrics.html" class="footer__link">Materials &amp; Fabrics</a><a href="../about/responsible-choices.html" class="footer__link">Responsible Choices</a><a href="../about/events.html" class="footer__link">Events</a><a href="../about/press.html" class="footer__link">Press</a></nav></div>
+        <div><h4 class="footer__column-title">Support</h4><nav class="footer__links"><a href="../where-to-buy/" class="footer__link">Where to Buy</a><a href="../resources/faqs.html" class="footer__link">FAQs</a><a href="../about/contact.html" class="footer__link">Contact</a></nav></div>
+      </div>
+      <div class="footer__company">
+        <div class="footer__company-logo">Beechfield<span>Original Headwear</span></div>
+        <div class="footer__company-info"><p>Part of <a href="../../beechfield-brands/">Beechfield Brands Ltd.</a></p><p>&copy; 2026 Beechfield Brands Limited. All rights reserved.</p></div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">Beechfield Original Headwear</p>
+        <div class="footer__legal"><a href="#">Privacy</a><a href="#">Cookies</a><a href="#">Terms</a><a href="#">Accessibility</a><a href="#">Modern Slavery</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js"></script>
+</body>
+</html>

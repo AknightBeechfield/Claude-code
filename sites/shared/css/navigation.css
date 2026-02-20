@@ -83,6 +83,12 @@
   flex-shrink: 0;
 }
 
+.site-logo img {
+  display: block;
+  height: 36px;
+  width: auto;
+}
+
 .site-logo__text {
   font-family: var(--font-heading);
   font-size: var(--text-3xl);

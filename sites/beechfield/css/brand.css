@@ -1,22 +1,25 @@
 /* ==========================================================================
    Beechfield Original Headwear — Brand overrides
-   Positioning: "Original authority in rebrandable headwear"
+   Palette: White / Black / #eaeaea grey / #1496f7 blue (accent, use sparingly)
+   Typography: Helvetica Neue LT Pro (via Adobe Fonts / Typekit sep5cxb)
    ========================================================================== */
 
 :root {
-  --brand-primary:      #0e1520;
-  --brand-accent:       #1f614d;
-  --brand-highlight:    #ffb58d;
-  --brand-bg-warm:      #f4ede4;
-  --brand-bg-page:      #f9f5f0;
-  --brand-text:         #0e1520;
-  --brand-text-muted:   #6b6460;
-  --brand-border:       #e4ddd6;
+  --brand-primary:      #111111;
+  --brand-accent:       #1496f7;   /* Use max. once per page, as accent only */
+  --brand-highlight:    #1496f7;
+  --brand-bg-warm:      #eaeaea;
+  --brand-text:         #111111;
+  --brand-text-muted:   #666666;
+  --brand-border:       #e0e0e0;
+  --brand-grey:         #eaeaea;
+  --brand-black:        #111111;
+  --brand-white:        #ffffff;
 }
 
-/* ── Page background — warm off-white, not stark white ── */
+/* ── Page background ── */
 body {
-  background-color: var(--brand-bg-page);
+  background-color: #ffffff;
 }
 
 /* ── Header stays crisp white ── */
@@ -34,7 +37,7 @@ body {
   background-color: #ffffff;
 }
 
-/* ── Warm sections use the true brand warm ── */
+/* ── Warm sections use brand grey ── */
 .bg-warm {
   background-color: var(--brand-bg-warm);
 }

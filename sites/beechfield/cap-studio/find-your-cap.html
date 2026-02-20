@@ -21,10 +21,7 @@
       color: #666;
       border-bottom: 1px solid #eee;
     }
-    .breadcrumb a {
-      color: #555;
-      text-decoration: none;
-    }
+    .breadcrumb a { color: #555; text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
     .breadcrumb__sep { margin: 0 8px; color: #aaa; }
 
@@ -32,11 +29,16 @@
     .finder-intro {
       background: #0e1520;
       color: #fff;
-      padding: 60px 0 52px;
-      text-align: center;
+      padding: 64px 0;
+    }
+    .finder-intro__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
     }
     .finder-intro__eyebrow {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #7ecfb0;
@@ -44,173 +46,331 @@
       margin-bottom: 16px;
     }
     .finder-intro h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      margin-bottom: 18px;
-      letter-spacing: -0.02em;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
     }
-    .finder-intro p {
-      font-size: 1.1rem;
+    .finder-intro__lead {
+      font-size: 1rem;
       color: #8fa5b8;
-      max-width: 540px;
-      margin: 0 auto;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+    .finder-intro__steps {
+      border-left: 1px solid rgba(255,255,255,0.12);
+      padding-left: 40px;
+    }
+    .finder-step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    .finder-step:last-child { margin-bottom: 0; }
+    .finder-step__num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #7ecfb0;
+      letter-spacing: 0.05em;
+    }
+    .finder-step__label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .finder-step__desc {
+      font-size: 0.8rem;
+      color: #7a8f9f;
+      line-height: 1.5;
     }
 
-    /* ── Finder sections ── */
-    .finder-section { padding: 60px 0; }
-    .finder-section + .finder-section { border-top: 1px solid #eee; }
-    .finder-section h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 32px;
-      color: #0e1520;
+    /* ── Question sections ── */
+    .finder-section {
+      padding: 56px 0;
+      border-bottom: 1px solid #e8e2dc;
+    }
+    .finder-section:last-of-type { border-bottom: none; }
+    .finder-section__inner {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .finder-section__meta {
+      padding-top: 4px;
     }
     .finder-section__step {
       display: inline-block;
       background: #1f614d;
       color: #fff;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       padding: 4px 10px;
-      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .finder-section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0e1520;
+      line-height: 1.3;
       margin-bottom: 12px;
+    }
+    .finder-section__hint {
+      font-size: 0.82rem;
+      color: #888;
+      line-height: 1.6;
     }
 
     /* ── Option cards ── */
     .options-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 12px;
     }
     .option-card {
-      border: 2px solid #e5e5e5;
-      border-radius: 8px;
-      padding: 24px 20px;
-      text-align: center;
+      border: 1.5px solid #e4ddd6;
+      background: #fff;
+      padding: 20px 16px;
       cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    .option-card:hover { border-color: #1f614d; background: #f0faf6; }
-    .option-card__icon { font-size: 2rem; margin-bottom: 12px; }
-    .option-card__label { font-size: 0.95rem; font-weight: 600; color: #0e1520; }
+    .option-card:hover {
+      border-color: #1f614d;
+      background: #f4f9f7;
+      box-shadow: 0 2px 12px rgba(31,97,77,0.08);
+    }
+    .option-card__icon {
+      color: #1f614d;
+      display: block;
+      flex-shrink: 0;
+    }
+    .option-card__label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #0e1520;
+      line-height: 1.3;
+    }
+    .option-card__desc {
+      font-size: 0.75rem;
+      color: #888;
+      line-height: 1.4;
+      margin-top: -4px;
+    }
 
     /* ── Results section ── */
     .results-section {
-      padding: 60px 0 80px;
-      background: #f9f5ef;
-      border-top: 1px solid #eee;
+      padding: 72px 0 96px;
+      background: #f5f0eb;
     }
     .results-section__header {
-      text-align: center;
-      margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 56px;
     }
     .results-section__eyebrow {
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #1f614d;
-      font-weight: 600;
-      margin-bottom: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
     .results-section h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #0e1520;
-      margin-bottom: 12px;
+      line-height: 1.15;
+      margin-bottom: 0;
     }
     .results-section__sub {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #666;
-      max-width: 480px;
-      margin: 0 auto;
-      line-height: 1.6;
+      line-height: 1.7;
+      align-self: end;
     }
+
+    /* ── Rich product grid ── */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
+      gap: 20px;
     }
     .product-card {
       background: #fff;
-      border: 1px solid #eee;
-      border-radius: 4px;
+      border: 1px solid #e4ddd6;
       overflow: hidden;
       text-decoration: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .product-card:hover {
-      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 32px rgba(14,21,32,0.1);
       transform: translateY(-2px);
     }
     .product-card__image {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 3;
       overflow: hidden;
       background: #f5f5f5;
+      position: relative;
     }
     .product-card__image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top;
+      object-position: center;
       display: block;
-      transition: transform 0.3s;
+      transition: transform 0.4s;
     }
-    .product-card:hover .product-card__image img { transform: scale(1.05); }
-    .product-card__info {
+    .product-card:hover .product-card__image img { transform: scale(1.04); }
+    .product-card__category {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #0e1520;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+    }
+    .product-card__body {
       padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
     .product-card__code {
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #888;
-      margin-bottom: 4px;
+      color: #999;
+      margin-bottom: 3px;
     }
     .product-card__name {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0e1520;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .product-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 12px;
+      border-top: 1px solid #ede8e2;
+      padding-top: 12px;
+    }
+    .product-card__features li {
+      font-size: 0.75rem;
+      color: #555;
+      line-height: 1.5;
+      padding: 2px 0;
+      padding-left: 12px;
+      position: relative;
+    }
+    .product-card__features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 1px;
+      background: #1f614d;
+    }
+    .product-card__best-for {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid #ede8e2;
+    }
+    .product-card__best-for-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 6px;
+    }
+    .product-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .product-card__tag {
+      font-size: 0.65rem;
       font-weight: 600;
-      color: #1a1a1a;
-      line-height: 1.3;
-      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      padding: 2px 7px;
+      border: 1px solid #d6cfc8;
+      color: #555;
+      text-transform: uppercase;
     }
     .product-card__cta {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #1f614d;
-      text-decoration: none;
+      display: block;
+      text-align: center;
+      margin-top: 14px;
+      padding: 10px;
+      background: #0e1520;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.18s;
     }
+    .product-card:hover .product-card__cta { background: #1f614d; }
 
     /* ── Results CTA ── */
     .results-actions {
       text-align: center;
-      margin-top: 48px;
+      margin-top: 56px;
     }
     .btn-back {
       display: inline-block;
-      border: 2px solid #1f614d;
-      color: #1f614d;
-      padding: 14px 38px;
+      border: 2px solid #0e1520;
+      color: #0e1520;
+      padding: 14px 40px;
       font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       text-decoration: none;
-      border-radius: 3px;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.18s, color 0.18s;
     }
-    .btn-back:hover { background: #1f614d; color: #fff; }
+    .btn-back:hover { background: #0e1520; color: #fff; }
 
     /* ── Responsive ── */
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       .product-grid { grid-template-columns: repeat(2, 1fr); }
-      .options-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      .finder-intro__inner { grid-template-columns: 1fr; gap: 40px; }
+      .finder-intro__steps { border-left: none; border-top: 1px solid rgba(255,255,255,0.12); padding-left: 0; padding-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .finder-step { flex-direction: column; gap: 10px; }
     }
-    @media (max-width: 540px) {
+    @media (max-width: 768px) {
+      .finder-section__inner { grid-template-columns: 1fr; gap: 24px; }
+      .results-section__header { grid-template-columns: 1fr; gap: 16px; }
+    }
+    @media (max-width: 640px) {
       .product-grid { grid-template-columns: 1fr 1fr; }
+      .finder-intro__steps { grid-template-columns: 1fr; }
       .options-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
@@ -270,47 +430,120 @@
       </nav>
     </div>
 
-    <!-- Page intro -->
+    <!-- Page intro — 2-col: heading + how it works -->
     <div class="finder-intro">
       <div class="container">
-        <p class="finder-intro__eyebrow">Cap Studio — Cap Finder</p>
-        <h1>Find Your Perfect Cap</h1>
-        <p>Answer these questions to find your ideal Beechfield cap.</p>
+        <div class="finder-intro__inner">
+          <div>
+            <p class="finder-intro__eyebrow">Cap Studio — Cap Finder</p>
+            <h1>Find Your Perfect Cap</h1>
+            <p class="finder-intro__lead">Three questions. Hundreds of variables. One shortlist built around your brief, your decoration technique, and your customer's world.</p>
+          </div>
+          <div class="finder-intro__steps">
+            <div class="finder-step">
+              <div class="finder-step__num">01</div>
+              <div>
+                <p class="finder-step__label">Decoration technique</p>
+                <p class="finder-step__desc">Embroidery, screen print, heat transfer, all-over or patches — each method suits specific cap constructions.</p>
+              </div>
+            </div>
+            <div class="finder-step">
+              <div class="finder-step__num">02</div>
+              <div>
+                <p class="finder-step__label">Silhouette &amp; structure</p>
+                <p class="finder-step__desc">Structured or unstructured, snapback or fitted, panel count — the shape drives everything from cost to decoration placement.</p>
+              </div>
+            </div>
+            <div class="finder-step">
+              <div class="finder-step__num">03</div>
+              <div>
+                <p class="finder-step__label">End use &amp; customer</p>
+                <p class="finder-step__desc">Sports, corporate, fashion, workwear, kids — the use case determines fabric weight, fit, and finish expectations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Section 1: Decoration technique -->
     <section class="finder-section">
       <div class="container">
-        <span class="finder-section__step">Question 1 of 3</span>
-        <h2>What decoration technique do you use?</h2>
-        <div class="options-grid">
-
-          <div class="option-card">
-            <div class="option-card__icon">🪡</div>
-            <div class="option-card__label">Embroidery</div>
+        <div class="finder-section__inner">
+          <div class="finder-section__meta">
+            <span class="finder-section__step">Question 1 of 3</span>
+            <h2>What decoration technique do you use?</h2>
+            <p class="finder-section__hint">Different methods require different fabric weights, panel counts, and crown structures. Selecting your technique first narrows the field significantly.</p>
           </div>
+          <div class="options-grid">
 
-          <div class="option-card">
-            <div class="option-card__icon">🖨️</div>
-            <div class="option-card__label">Screen Print</div>
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 22L19 6"/>
+                  <path d="M17 7l2-1 1 2-2 1"/>
+                  <path d="M17 9c3-1 6 1 5 5s-5 8-9 7"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Embroidery</div>
+              <div class="option-card__desc">Thread-based stitching on structured panels</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="6" width="18" height="13" rx="1"/>
+                  <line x1="5" y1="11" x2="23" y2="11"/>
+                  <line x1="8" y1="14" x2="20" y2="14"/>
+                  <line x1="8" y1="17" x2="20" y2="17"/>
+                  <line x1="14" y1="19" x2="14" y2="22"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Screen Print</div>
+              <div class="option-card__desc">Ink pushed through mesh onto flat surfaces</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 22h20"/>
+                  <path d="M5 18l4-9h14v9z"/>
+                  <path d="M11 9V7M15 9V7M19 9V7"/>
+                  <line x1="4" y1="18" x2="5" y2="18"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Heat Transfer</div>
+              <div class="option-card__desc">Press-applied graphics, ideal for photographic detail</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="5" width="7" height="7" rx="0.5"/>
+                  <rect x="16" y="5" width="7" height="7" rx="0.5"/>
+                  <rect x="5" y="16" width="7" height="7" rx="0.5"/>
+                  <rect x="16" y="16" width="7" height="7" rx="0.5"/>
+                </svg>
+              </span>
+              <div class="option-card__label">All-Over Print</div>
+              <div class="option-card__desc">Edge-to-edge coverage on uncut fabric panels</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="7" y="8" width="14" height="11" rx="1"/>
+                  <path d="M7 11h14"/>
+                  <circle cx="14" cy="5" r="1.5"/>
+                  <line x1="14" y1="6.5" x2="14" y2="8"/>
+                  <line x1="10" y1="14" x2="18" y2="14"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Patches &amp; Labels</div>
+              <div class="option-card__desc">Woven, PVC or leather applied embellishments</div>
+            </div>
+
           </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">🔥</div>
-            <div class="option-card__label">Heat Transfer</div>
-          </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">🎨</div>
-            <div class="option-card__label">All-Over Print</div>
-          </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">🏷️</div>
-            <div class="option-card__label">Patches &amp; Labels</div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -318,40 +551,93 @@
     <!-- Section 2: Silhouette -->
     <section class="finder-section">
       <div class="container">
-        <span class="finder-section__step">Question 2 of 3</span>
-        <h2>What silhouette do you need?</h2>
-        <div class="options-grid">
-
-          <div class="option-card">
-            <div class="option-card__icon">🧢</div>
-            <div class="option-card__label">Structured cap (6-panel)</div>
+        <div class="finder-section__inner">
+          <div class="finder-section__meta">
+            <span class="finder-section__step">Question 2 of 3</span>
+            <h2>What silhouette do you need?</h2>
+            <p class="finder-section__hint">Crown structure affects decoration placement, embroidery stability, and the overall aesthetic your customer expects.</p>
           </div>
+          <div class="options-grid">
 
-          <div class="option-card">
-            <div class="option-card__icon">👒</div>
-            <div class="option-card__label">Unstructured (soft crown)</div>
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 20h18"/>
+                  <path d="M7 20C7 16 8 11 14 10C20 11 21 16 21 20"/>
+                  <path d="M16 20c0 2 2 3 5 3"/>
+                  <path d="M14 10V8"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Structured cap</div>
+              <div class="option-card__desc">High front, firm crown — best for embroidery</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 20h18"/>
+                  <path d="M7 20C8 15 10 12 14 11C18 12 20 15 21 20"/>
+                  <path d="M16 20c0 2 2 3 5 3"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Unstructured</div>
+              <div class="option-card__desc">Low profile, relaxed fit — soft crown aesthetic</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 19h18"/>
+                  <path d="M7 19C7 15 9 12 14 11"/>
+                  <path d="M14 11C16 11 18 12 19 14C20 16 20 18 21 19"/>
+                  <line x1="20" y1="14" x2="22" y2="14"/>
+                  <line x1="20" y1="16" x2="22" y2="16"/>
+                  <line x1="20" y1="18" x2="22" y2="18"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Trucker</div>
+              <div class="option-card__desc">Structured front, mesh back, snapback closure</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 17h22"/>
+                  <path d="M8 17C8 13 10 9 14 8C18 9 20 13 20 17"/>
+                  <path d="M3 17Q3 19 8 19"/>
+                  <path d="M20 17Q25 17 25 19"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Bucket hat</div>
+              <div class="option-card__desc">Wide brim all around, unstructured crown</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h18"/>
+                  <rect x="5" y="16" width="18" height="6" rx="0"/>
+                  <path d="M8 16C8 10 10 6 14 5C18 6 20 10 20 16"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Beanie</div>
+              <div class="option-card__desc">Close-fitting knitwear with fold-over cuff</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 5Q4 5 4 14Q4 23 14 23Q24 23 24 14Q24 5 21 5"/>
+                  <line x1="7" y1="5" x2="21" y2="5"/>
+                  <path d="M10 10Q12 12 14 10"/>
+                  <path d="M10 15Q12 17 14 15"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Neckwear</div>
+              <div class="option-card__desc">Scarves, snoods and gaiters</div>
+            </div>
+
           </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">🚚</div>
-            <div class="option-card__label">Trucker</div>
-          </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">☂️</div>
-            <div class="option-card__label">Bucket hat</div>
-          </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">🧶</div>
-            <div class="option-card__label">Beanie</div>
-          </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">🧣</div>
-            <div class="option-card__label">Neckwear</div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -359,35 +645,73 @@
     <!-- Section 3: Primary use -->
     <section class="finder-section">
       <div class="container">
-        <span class="finder-section__step">Question 3 of 3</span>
-        <h2>What's the primary use?</h2>
-        <div class="options-grid">
-
-          <div class="option-card">
-            <div class="option-card__icon">⛰️</div>
-            <div class="option-card__label">Sports &amp; Outdoors</div>
+        <div class="finder-section__inner">
+          <div class="finder-section__meta">
+            <span class="finder-section__step">Question 3 of 3</span>
+            <h2>What's the primary use?</h2>
+            <p class="finder-section__hint">End-use drives fabric weight, certification requirements, colour range priorities and expected price points.</p>
           </div>
+          <div class="options-grid">
 
-          <div class="option-card">
-            <div class="option-card__icon">🏢</div>
-            <div class="option-card__label">Corporate &amp; Promotion</div>
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 22L10 9L14 15L18 10L25 22z"/>
+                  <circle cx="21" cy="7" r="2"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Sports &amp; Outdoors</div>
+              <div class="option-card__desc">Running, cycling, hiking, team sports</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="10" width="18" height="14" rx="1"/>
+                  <path d="M9 10V7a5 5 0 0110 0v3"/>
+                  <line x1="14" y1="14" x2="14" y2="19"/>
+                  <line x1="11" y1="17" x2="17" y2="17"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Corporate &amp; Promotion</div>
+              <div class="option-card__desc">Events, gifting, branded uniform programmes</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 4l2.5 5 5.5.8-4 3.9.9 5.5L14 17l-4.9 2.2.9-5.5L6 9.8l5.5-.8z"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Fashion &amp; Lifestyle</div>
+              <div class="option-card__desc">Streetwear, editorial, retail collections</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 4a4 4 0 01-1 7.6L8 23"/>
+                  <path d="M13 9l-2 3 3 2-4 9"/>
+                  <circle cx="9" cy="23" r="1"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Workwear</div>
+              <div class="option-card__desc">Trade, PPE programmes, site uniform</div>
+            </div>
+
+            <div class="option-card">
+              <span class="option-card__icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="14" cy="10" r="5"/>
+                  <path d="M6 24v-2a8 8 0 0116 0v2"/>
+                  <path d="M11 10h6"/>
+                </svg>
+              </span>
+              <div class="option-card__label">Kids &amp; Youth</div>
+              <div class="option-card__desc">Schools, sports clubs, junior programmes</div>
+            </div>
+
           </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">👗</div>
-            <div class="option-card__label">Fashion &amp; Lifestyle</div>
-          </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">🔧</div>
-            <div class="option-card__label">Workwear</div>
-          </div>
-
-          <div class="option-card">
-            <div class="option-card__icon">🧒</div>
-            <div class="option-card__label">Kids &amp; Youth</div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -396,9 +720,11 @@
     <section class="results-section">
       <div class="container">
         <div class="results-section__header">
-          <p class="results-section__eyebrow">Your Recommendations</p>
-          <h2>Most popular for your selection</h2>
-          <p class="results-section__sub">Based on the most common decorator briefs, these four styles are your strongest starting points.</p>
+          <div>
+            <p class="results-section__eyebrow">Your Recommendations</p>
+            <h2>Most popular for your selection</h2>
+          </div>
+          <p class="results-section__sub">Based on the most common decorator briefs, these four styles are your strongest starting points. Each is consistently rated for decoration performance, colour consistency and distributor availability.</p>
         </div>
 
         <div class="product-grid">
@@ -407,11 +733,25 @@
             <div class="product-card__image">
               <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png"
                    alt="B15 Ultimate 5-Panel Cap with Sandwich Peak" loading="lazy">
+              <span class="product-card__category">5-Panel Classic</span>
             </div>
-            <div class="product-card__info">
+            <div class="product-card__body">
               <p class="product-card__code">B15</p>
-              <p class="product-card__name">Ultimate 5-Panel Cap</p>
-              <span class="product-card__cta">View product →</span>
+              <p class="product-card__name">Ultimate 5-Panel Cap with Sandwich Peak</p>
+              <ul class="product-card__features">
+                <li>Pre-curved peak with sandwich trim</li>
+                <li>Structured front panels for embroidery</li>
+                <li>Self-fabric adjustable strap</li>
+                <li>100% Chino Cotton</li>
+              </ul>
+              <div class="product-card__best-for">
+                <p class="product-card__best-for-label">Best for</p>
+                <div class="product-card__tags">
+                  <span class="product-card__tag">Embroidery</span>
+                  <span class="product-card__tag">Screen Print</span>
+                </div>
+              </div>
+              <span class="product-card__cta">View product</span>
             </div>
           </a>
 
@@ -419,11 +759,25 @@
             <div class="product-card__image">
               <img src="https://mediahub.beechfieldbrands.com/m/7d1480204a8fb8fb/webimage-B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.png"
                    alt="B640 Vintage Snapback Trucker Cap" loading="lazy">
+              <span class="product-card__category">Trucker</span>
             </div>
-            <div class="product-card__info">
+            <div class="product-card__body">
               <p class="product-card__code">B640</p>
               <p class="product-card__name">Vintage Snapback Trucker</p>
-              <span class="product-card__cta">View product →</span>
+              <ul class="product-card__features">
+                <li>High-profile structured front panels</li>
+                <li>Breathable mesh back</li>
+                <li>Classic snapback closure</li>
+                <li>Cotton/Polyester front, Polyester mesh back</li>
+              </ul>
+              <div class="product-card__best-for">
+                <p class="product-card__best-for-label">Best for</p>
+                <div class="product-card__tags">
+                  <span class="product-card__tag">Embroidery</span>
+                  <span class="product-card__tag">Patches</span>
+                </div>
+              </div>
+              <span class="product-card__cta">View product</span>
             </div>
           </a>
 
@@ -431,11 +785,25 @@
             <div class="product-card__image">
               <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png"
                    alt="B655 Low Profile Vintage Cap" loading="lazy">
+              <span class="product-card__category">Dad Cap</span>
             </div>
-            <div class="product-card__info">
+            <div class="product-card__body">
               <p class="product-card__code">B655</p>
               <p class="product-card__name">Low Profile Vintage Cap</p>
-              <span class="product-card__cta">View product →</span>
+              <ul class="product-card__features">
+                <li>Unstructured soft front — relaxed silhouette</li>
+                <li>Low-profile 6-panel construction</li>
+                <li>Adjustable buckle strap</li>
+                <li>Washed Cotton Twill for vintage feel</li>
+              </ul>
+              <div class="product-card__best-for">
+                <p class="product-card__best-for-label">Best for</p>
+                <div class="product-card__tags">
+                  <span class="product-card__tag">Embroidery</span>
+                  <span class="product-card__tag">All-Over Print</span>
+                </div>
+              </div>
+              <span class="product-card__cta">View product</span>
             </div>
           </a>
 
@@ -443,11 +811,25 @@
             <div class="product-card__image">
               <img src="https://mediahub.beechfieldbrands.com/m/e32066e8b0244e25/webimage-B188-Technical-Running-Cap-Graphite-Grey-Front-on-shot.png"
                    alt="B45 Original Cuffed Beanie" loading="lazy">
+              <span class="product-card__category">Beanie</span>
             </div>
-            <div class="product-card__info">
+            <div class="product-card__body">
               <p class="product-card__code">B45</p>
               <p class="product-card__name">Original Cuffed Beanie</p>
-              <span class="product-card__cta">View product →</span>
+              <ul class="product-card__features">
+                <li>Fold-over cuff gives stable patch area</li>
+                <li>Double-knit for warmth and structure</li>
+                <li>One size — relaxed universal fit</li>
+                <li>100% Acrylic knit</li>
+              </ul>
+              <div class="product-card__best-for">
+                <p class="product-card__best-for-label">Best for</p>
+                <div class="product-card__tags">
+                  <span class="product-card__tag">Embroidery</span>
+                  <span class="product-card__tag">Patches</span>
+                </div>
+              </div>
+              <span class="product-card__cta">View product</span>
             </div>
           </a>
 

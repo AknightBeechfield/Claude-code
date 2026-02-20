@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../../shared/css/navigation.css">
   <link rel="stylesheet" href="../../shared/css/footer.css">
   <link rel="stylesheet" href="../css/brand.css">
+  <link rel="stylesheet" href="https://use.typekit.net/sep5cxb.css">
   <style>
     /* ── Breadcrumb ── */
     .breadcrumb {
@@ -28,183 +29,259 @@
     .breadcrumb a:hover { text-decoration: underline; }
     .breadcrumb__sep { margin: 0 8px; color: #aaa; }
 
-    /* ── Hero ── */
+    /* ── Hero (split layout — image right, text left) ── */
     .cap-studio-hero {
-      background: #0e1520;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+    }
+    @media (max-width: 768px) {
+      .cap-studio-hero { grid-template-columns: 1fr; }
+      .cap-studio-hero__image { min-height: 300px; }
+    }
+    .cap-studio-hero__body {
+      background: #111111;
       color: #fff;
-      min-height: 520px;
       display: flex;
       align-items: center;
-      padding: 80px 0;
-      position: relative;
-      overflow: hidden;
+      padding: 80px 64px;
     }
-    .cap-studio-hero__bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(130deg, #0e1520 50%, #1a2d3a 100%);
+    @media (max-width: 1024px) {
+      .cap-studio-hero__body { padding: 60px 40px; }
     }
-    .cap-studio-hero__accent {
-      position: absolute;
-      top: -120px;
-      right: -120px;
-      width: 560px;
-      height: 560px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(31,97,77,0.35) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cap-studio-hero__content {
-      position: relative;
-      z-index: 2;
-      max-width: 660px;
+    .cap-studio-hero__inner {
+      max-width: 520px;
     }
     .cap-studio-hero__eyebrow {
-      font-size: 0.8rem;
+      font-family: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', Helvetica, sans-serif;
+      font-size: 0.72rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #7ecfb0;
-      margin-bottom: 18px;
-      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+      font-weight: 500;
     }
     .cap-studio-hero h1 {
-      font-size: clamp(3rem, 9vw, 6.5rem);
-      font-weight: 800;
+      font-family: 'neue-haas-grotesk-display', 'Helvetica Neue LT Pro', Helvetica, sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 500;
       line-height: 1;
       margin-bottom: 24px;
       letter-spacing: -0.02em;
+      color: #fff;
     }
     .cap-studio-hero__tagline {
-      font-size: 1.35rem;
-      color: #c8d8e8;
-      font-style: italic;
-      margin-bottom: 20px;
-      line-height: 1.4;
+      font-family: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', Helvetica, sans-serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
+      margin-bottom: 16px;
+      line-height: 1.6;
     }
     .cap-studio-hero__sub {
-      font-size: 1.05rem;
-      color: #8fa5b8;
+      font-family: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', Helvetica, sans-serif;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
       line-height: 1.7;
       margin-bottom: 40px;
-      max-width: 560px;
+    }
+    .cap-studio-hero__image {
+      overflow: hidden;
+    }
+    .cap-studio-hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
     }
     .btn-cap-studio-primary {
       display: inline-block;
-      background: #1f614d;
-      color: #fff;
-      padding: 18px 44px;
+      background: #fff;
+      color: #111111;
+      padding: 16px 40px;
       font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       text-decoration: none;
-      border-radius: 3px;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
     .btn-cap-studio-primary:hover {
-      background: #185240;
-      transform: translateY(-1px);
+      background: #eaeaea;
     }
 
     /* ── Feature blocks ── */
     .features-section {
-      background: #f9f5ef;
+      background: #f5f0eb;
       padding: 80px 0;
     }
     .features-section__heading {
       text-align: center;
       font-size: 1.8rem;
       font-weight: 700;
-      margin-bottom: 48px;
+      margin-bottom: 8px;
       color: #0e1520;
+    }
+    .features-section__sub {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 48px;
     }
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 20px;
     }
     .feature-block {
       background: #fff;
-      border-radius: 6px;
-      padding: 40px 32px;
-      border-top: 4px solid #1f614d;
+      padding: 36px 28px;
+      border-top: 3px solid #1f614d;
     }
     .feature-block__icon {
-      font-size: 2.4rem;
+      color: #1f614d;
       margin-bottom: 20px;
       display: block;
     }
     .feature-block__title {
-      font-size: 1.15rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #0e1520;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
     }
     .feature-block__text {
-      font-size: 0.97rem;
-      line-height: 1.7;
-      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: #666;
     }
 
     /* ── Featured styles ── */
     .featured-styles-section {
       padding: 80px 0;
     }
+    .featured-styles-section__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 40px;
+    }
     .featured-styles-section h2 {
       font-size: 1.8rem;
       font-weight: 700;
-      margin-bottom: 40px;
-      text-align: center;
       color: #0e1520;
+      margin-bottom: 0;
+    }
+    .featured-styles-section__sub {
+      font-size: 0.9rem;
+      color: #777;
+      line-height: 1.7;
     }
     .product-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
+      gap: 20px;
     }
     .product-card {
       background: #fff;
-      border: 1px solid #eee;
-      border-radius: 4px;
+      border: 1px solid #e4ddd6;
       overflow: hidden;
       text-decoration: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .product-card:hover {
-      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 28px rgba(14,21,32,0.1);
       transform: translateY(-2px);
     }
     .product-card__image {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 3;
       overflow: hidden;
       background: #f5f5f5;
+      position: relative;
     }
     .product-card__image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top;
+      object-position: center;
       display: block;
-      transition: transform 0.3s;
+      transition: transform 0.4s;
     }
-    .product-card:hover .product-card__image img { transform: scale(1.05); }
+    .product-card:hover .product-card__image img { transform: scale(1.04); }
+    .product-card__category {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #0e1520;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+    }
     .product-card__info {
       padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
     .product-card__code {
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #888;
-      margin-bottom: 4px;
+      color: #999;
+      margin-bottom: 3px;
     }
     .product-card__name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #1a1a1a;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0e1520;
       line-height: 1.3;
+      margin-bottom: 10px;
     }
+    .product-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px;
+      border-top: 1px solid #ede8e2;
+      padding-top: 10px;
+    }
+    .product-card__features li {
+      font-size: 0.72rem;
+      color: #666;
+      line-height: 1.5;
+      padding: 1px 0 1px 11px;
+      position: relative;
+    }
+    .product-card__features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 1px;
+      background: #1f614d;
+    }
+    .product-card__cta {
+      display: block;
+      text-align: center;
+      margin-top: auto;
+      padding: 9px;
+      background: #0e1520;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.18s;
+    }
+    .product-card:hover .product-card__cta { background: #1f614d; }
 
     /* ── CTA block ── */
     .cap-studio-cta {
@@ -312,10 +389,8 @@
 
     <!-- Hero -->
     <section class="cap-studio-hero">
-      <div class="cap-studio-hero__bg"></div>
-      <div class="cap-studio-hero__accent"></div>
-      <div class="container">
-        <div class="cap-studio-hero__content">
+      <div class="cap-studio-hero__body">
+        <div class="cap-studio-hero__inner">
           <p class="cap-studio-hero__eyebrow">Beechfield Cap Studio</p>
           <h1>Cap Studio</h1>
           <p class="cap-studio-hero__tagline">Find the perfect cap for your brief. Every time.</p>
@@ -323,30 +398,54 @@
           <a href="find-your-cap.html" class="btn-cap-studio-primary">Find Your Perfect Cap →</a>
         </div>
       </div>
+      <div class="cap-studio-hero__image">
+        <img src="https://mediahub.beechfieldbrands.com/asset/23ebb866-c155-41cb-a375-88adbadbad4a/Product-medium/B165-Club-Cap-Red-Black-Lifestyle-Shot.jpg" alt="B165 Club Cap lifestyle shot">
+      </div>
     </section>
 
     <!-- Feature blocks -->
     <section class="features-section">
       <div class="container">
-        <h2 class="features-section__heading">Everything you need to choose with confidence</h2>
+        <h2 class="features-section__heading">Choose with confidence</h2>
+        <p class="features-section__sub">Three variables. Thousands of combinations. Cap Studio narrows the field to the styles that matter for your brief.</p>
         <div class="features-grid">
 
           <div class="feature-block">
-            <span class="feature-block__icon">🖨️</span>
-            <h3 class="feature-block__title">Filter by decoration</h3>
-            <p class="feature-block__text">Whether you embroider, screen print, transfer or all-over print, Cap Studio surfaces the styles best suited to your technique.</p>
+            <span class="feature-block__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="7" width="22" height="15" rx="1"/>
+                <line x1="5" y1="13" x2="27" y2="13"/>
+                <line x1="9" y1="17" x2="23" y2="17"/>
+                <line x1="9" y1="20" x2="23" y2="20"/>
+                <line x1="16" y1="22" x2="16" y2="26"/>
+              </svg>
+            </span>
+            <h3 class="feature-block__title">Decoration technique</h3>
+            <p class="feature-block__text">Whether you embroider, screen print, transfer or all-over print, Cap Studio surfaces the styles built for your method. Crown construction, panel stability and fabric weight all affect the outcome.</p>
           </div>
 
           <div class="feature-block">
-            <span class="feature-block__icon">🧢</span>
-            <h3 class="feature-block__title">Filter by silhouette</h3>
-            <p class="feature-block__text">Five-panel, six-panel, structured, unstructured, snapback, trucker — filter by the shape your customer wants.</p>
+            <span class="feature-block__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 23h20"/>
+                <path d="M8 23C8 18 10 13 16 12C22 13 24 18 24 23"/>
+                <path d="M19 23c0 2.5 2 3.5 5 3.5"/>
+                <path d="M16 12V9"/>
+              </svg>
+            </span>
+            <h3 class="feature-block__title">Silhouette &amp; structure</h3>
+            <p class="feature-block__text">5-panel, 6-panel, structured, unstructured, snapback or trucker — the silhouette determines decoration placement, fit and the price range your customer expects.</p>
           </div>
 
           <div class="feature-block">
-            <span class="feature-block__icon">⛰️</span>
-            <h3 class="feature-block__title">Filter by purpose</h3>
-            <p class="feature-block__text">Sports, corporate, fashion, outdoor. Find caps that perform exactly where your customer needs them.</p>
+            <span class="feature-block__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 25L11 10L16 18L20 11L28 25z"/>
+                <circle cx="24" cy="8" r="2.5"/>
+              </svg>
+            </span>
+            <h3 class="feature-block__title">End use &amp; customer</h3>
+            <p class="feature-block__text">Sports, corporate, fashion or workwear — the intended use drives fabric weight, certification needs and colour range expectations. Get to the right cap faster.</p>
           </div>
 
         </div>
@@ -356,17 +455,27 @@
     <!-- Featured styles -->
     <section class="featured-styles-section">
       <div class="container">
-        <h2>Featured styles</h2>
+        <div class="featured-styles-section__header">
+          <h2>Decorator-proven styles</h2>
+          <p class="featured-styles-section__sub">These four styles represent the most consistently ordered caps across embroidery, screen print and patch decoration programmes. Broad colour ranges, reliable decoration performance.</p>
+        </div>
         <div class="product-grid">
 
           <a href="../products/b15-baseball-cap.html" class="product-card">
             <div class="product-card__image">
               <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png"
                    alt="B15 Ultimate 5-Panel Cap with Sandwich Peak" loading="lazy">
+              <span class="product-card__category">5-Panel Classic</span>
             </div>
             <div class="product-card__info">
               <p class="product-card__code">B15</p>
-              <p class="product-card__name">Ultimate 5-Panel Cap</p>
+              <p class="product-card__name">Ultimate 5-Panel Cap with Sandwich Peak</p>
+              <ul class="product-card__features">
+                <li>Pre-curved peak with sandwich trim</li>
+                <li>Structured front — ideal for embroidery</li>
+                <li>100% Chino Cotton</li>
+              </ul>
+              <span class="product-card__cta">View product</span>
             </div>
           </a>
 
@@ -374,21 +483,35 @@
             <div class="product-card__image">
               <img src="https://mediahub.beechfieldbrands.com/m/7d1480204a8fb8fb/webimage-B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.png"
                    alt="B640 Vintage Snapback Trucker Cap" loading="lazy">
+              <span class="product-card__category">Trucker</span>
             </div>
             <div class="product-card__info">
               <p class="product-card__code">B640</p>
               <p class="product-card__name">Vintage Snapback Trucker</p>
+              <ul class="product-card__features">
+                <li>High-profile structured front panels</li>
+                <li>Breathable mesh back</li>
+                <li>Classic snapback closure</li>
+              </ul>
+              <span class="product-card__cta">View product</span>
             </div>
           </a>
 
           <a href="../products/b655-dad-cap.html" class="product-card">
             <div class="product-card__image">
               <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png"
-                   alt="B655 Contrast Peak Low Profile Vintage Cap" loading="lazy">
+                   alt="B655 Low Profile Vintage Cap" loading="lazy">
+              <span class="product-card__category">Dad Cap</span>
             </div>
             <div class="product-card__info">
               <p class="product-card__code">B655</p>
               <p class="product-card__name">Low Profile Vintage Cap</p>
+              <ul class="product-card__features">
+                <li>Unstructured soft front</li>
+                <li>Washed Cotton Twill — vintage feel</li>
+                <li>Adjustable buckle strap</li>
+              </ul>
+              <span class="product-card__cta">View product</span>
             </div>
           </a>
 
@@ -396,10 +519,17 @@
             <div class="product-card__image">
               <img src="https://mediahub.beechfieldbrands.com/m/e32066e8b0244e25/webimage-B188-Technical-Running-Cap-Graphite-Grey-Front-on-shot.png"
                    alt="B10 Baseball Cap" loading="lazy">
+              <span class="product-card__category">6-Panel Baseball</span>
             </div>
             <div class="product-card__info">
               <p class="product-card__code">B10</p>
               <p class="product-card__name">Baseball Cap</p>
+              <ul class="product-card__features">
+                <li>Classic 6-panel construction</li>
+                <li>Self-fabric buckle strap</li>
+                <li>100% Cotton</li>
+              </ul>
+              <span class="product-card__cta">View product</span>
             </div>
           </a>
 

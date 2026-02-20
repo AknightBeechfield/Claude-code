@@ -182,6 +182,56 @@
       color: #1a1a1a;
       line-height: 1.3;
     }
+    .product-card__image { position: relative; }
+    .product-card__category {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #0e1520;
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      z-index: 1;
+    }
+    .product-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+    .product-card__features li {
+      font-size: 0.8rem;
+      color: #555;
+      padding: 3px 0 3px 14px;
+      position: relative;
+      line-height: 1.4;
+    }
+    .product-card__features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 1px;
+      background: #1f614d;
+    }
+    .product-card__cta {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      background: #0e1520;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 14px;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+    .product-card:hover .product-card__cta { background: #1f614d; }
 
     /* CTA block */
     .collection-cta {
@@ -383,42 +433,70 @@
         <div class="product-grid">
           <article class="product-card">
             <div class="product-card__image">
+              <span class="product-card__category">5-Panel Cap</span>
               <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png"
                    alt="B15C Ultimate 5-Panel Cap with Sandwich Peak" loading="lazy">
             </div>
             <div class="product-card__info">
               <p class="product-card__code">B15C</p>
               <p class="product-card__name">Ultimate 5-Panel Cap with Sandwich Peak</p>
+              <ul class="product-card__features">
+                <li>Structured 5-panel construction</li>
+                <li>Contrast sandwich peak detail</li>
+                <li>Hook-and-loop fastening</li>
+              </ul>
+              <a href="../products/b15c-ultimate-5-panel-cap.html" class="product-card__cta">View Product</a>
             </div>
           </article>
           <article class="product-card">
             <div class="product-card__image">
+              <span class="product-card__category">Performance Cap</span>
               <img src="https://mediahub.beechfieldbrands.com/m/b66942402fa0df81/webimage-B155R-Accelerate-Cap-White-Black-Lifestyle-Shot.png"
                    alt="B155R Accelerate Cap" loading="lazy">
             </div>
             <div class="product-card__info">
               <p class="product-card__code">B155R</p>
               <p class="product-card__name">Accelerate Cap</p>
+              <ul class="product-card__features">
+                <li>Lightweight technical fabric</li>
+                <li>Moisture-wicking sweatband</li>
+                <li>Reflective detailing</li>
+              </ul>
+              <a href="../products/b155r-accelerate-cap.html" class="product-card__cta">View Product</a>
             </div>
           </article>
           <article class="product-card">
             <div class="product-card__image">
+              <span class="product-card__category">Unstructured Cap</span>
               <img src="https://mediahub.beechfieldbrands.com/m/546a01427f9a06c0/webimage-B66-Leisure-Cap-Biscuit-Product-Shot-01.png"
                    alt="B66 Leisure Cap" loading="lazy">
             </div>
             <div class="product-card__info">
               <p class="product-card__code">B66</p>
               <p class="product-card__name">Leisure Cap</p>
+              <ul class="product-card__features">
+                <li>Unstructured 6-panel crown</li>
+                <li>Pre-curved peak</li>
+                <li>Velcro fastening closure</li>
+              </ul>
+              <a href="../products/b66-leisure-cap.html" class="product-card__cta">View Product</a>
             </div>
           </article>
           <article class="product-card">
             <div class="product-card__image">
+              <span class="product-card__category">Casual Cap</span>
               <img src="https://mediahub.beechfieldbrands.com/m/6e38abea47820dd5/webimage-B105-Denim-Cap-Mid-Blue-Product-Shot-01.png"
                    alt="B105 Denim Cap" loading="lazy">
             </div>
             <div class="product-card__info">
               <p class="product-card__code">B105</p>
               <p class="product-card__name">Denim Cap</p>
+              <ul class="product-card__features">
+                <li>100% cotton denim fabric</li>
+                <li>Pre-curved peak</li>
+                <li>Hook-and-loop fastening</li>
+              </ul>
+              <a href="../products/b105-denim-cap.html" class="product-card__cta">View Product</a>
             </div>
           </article>
         </div>

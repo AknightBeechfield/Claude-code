@@ -141,8 +141,7 @@
 }
 
 .main-nav__link:hover {
-  color: var(--brand-accent);
-  border-bottom-color: var(--brand-accent);
+  color: var(--brand-primary);
 }
 
 .main-nav__link--active {
@@ -300,7 +299,8 @@
 }
 
 .mega-menu__link:hover {
-  color: var(--brand-accent);
+  color: var(--brand-primary);
+  text-decoration: underline;
 }
 
 .mega-menu__link--featured {

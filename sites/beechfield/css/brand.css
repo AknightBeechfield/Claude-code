@@ -16,3 +16,33 @@
   --brand-black:        #111111;
   --brand-white:        #ffffff;
 }
+
+/* ── Page background ── */
+body {
+  background-color: #ffffff;
+}
+
+/* ── Header stays crisp white ── */
+.site-header {
+  background-color: #ffffff;
+}
+
+/* ── Mega menu matches header ── */
+.mega-menu {
+  background-color: #ffffff;
+}
+
+/* ── Sections that use white should stay white ── */
+.bg-white {
+  background-color: #ffffff;
+}
+
+/* ── Warm sections use brand grey ── */
+.bg-warm {
+  background-color: var(--brand-bg-warm);
+}
+
+/* ── Footer remains dark ── */
+.site-footer {
+  background-color: var(--brand-primary);
+}

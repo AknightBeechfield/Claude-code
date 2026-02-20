@@ -42,12 +42,13 @@
   --brand-border: #e7e5e4;
 
   /* ── Typography ── */
-  --font-heading: 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body: 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-editorial: 'Source Serif Pro', 'Georgia', serif;
+  --font-heading: 'neue-haas-grotesk-display', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-editorial: 'neue-haas-grotesk-display', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --font-weight-light: 300;
   --font-weight-regular: 400;
+  --font-weight-medium: 500;
   --font-weight-bold: 700;
 
   /* Heading scale (desktop) */

@@ -134,11 +134,11 @@
 }
 
 .main-nav__link:hover {
-  color: var(--brand-accent);
+  color: var(--brand-primary);
 }
 
 .main-nav__link--active {
-  color: var(--brand-accent);
+  color: var(--brand-primary);
 }
 
 .main-nav__arrow {
@@ -287,7 +287,8 @@
 }
 
 .mega-menu__link:hover {
-  color: var(--brand-accent);
+  color: var(--brand-primary);
+  text-decoration: underline;
 }
 
 .mega-menu__link--featured {

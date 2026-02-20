@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../../shared/css/navigation.css">
   <link rel="stylesheet" href="../../shared/css/footer.css">
   <link rel="stylesheet" href="../css/brand.css">
+  <link rel="stylesheet" href="https://use.typekit.net/sep5cxb.css">
   <style>
     /* ── Breadcrumb ── */
     .breadcrumb {
@@ -28,82 +29,87 @@
     .breadcrumb a:hover { text-decoration: underline; }
     .breadcrumb__sep { margin: 0 8px; color: #aaa; }
 
-    /* ── Hero ── */
+    /* ── Hero (split layout — image right, text left) ── */
     .cap-studio-hero {
-      background: #0e1520;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+    }
+    @media (max-width: 768px) {
+      .cap-studio-hero { grid-template-columns: 1fr; }
+      .cap-studio-hero__image { min-height: 300px; }
+    }
+    .cap-studio-hero__body {
+      background: #111111;
       color: #fff;
-      min-height: 520px;
       display: flex;
       align-items: center;
-      padding: 80px 0;
-      position: relative;
-      overflow: hidden;
+      padding: 80px 64px;
     }
-    .cap-studio-hero__bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(130deg, #0e1520 50%, #1a2d3a 100%);
+    @media (max-width: 1024px) {
+      .cap-studio-hero__body { padding: 60px 40px; }
     }
-    .cap-studio-hero__accent {
-      position: absolute;
-      top: -120px;
-      right: -120px;
-      width: 560px;
-      height: 560px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(31,97,77,0.35) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cap-studio-hero__content {
-      position: relative;
-      z-index: 2;
-      max-width: 660px;
+    .cap-studio-hero__inner {
+      max-width: 520px;
     }
     .cap-studio-hero__eyebrow {
-      font-size: 0.8rem;
+      font-family: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', Helvetica, sans-serif;
+      font-size: 0.72rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #7ecfb0;
-      margin-bottom: 18px;
-      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+      font-weight: 500;
     }
     .cap-studio-hero h1 {
-      font-size: clamp(3rem, 9vw, 6.5rem);
-      font-weight: 800;
+      font-family: 'neue-haas-grotesk-display', 'Helvetica Neue LT Pro', Helvetica, sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 500;
       line-height: 1;
       margin-bottom: 24px;
       letter-spacing: -0.02em;
+      color: #fff;
     }
     .cap-studio-hero__tagline {
-      font-size: 1.35rem;
-      color: #c8d8e8;
-      font-style: italic;
-      margin-bottom: 20px;
-      line-height: 1.4;
+      font-family: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', Helvetica, sans-serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
+      margin-bottom: 16px;
+      line-height: 1.6;
     }
     .cap-studio-hero__sub {
-      font-size: 1.05rem;
-      color: #8fa5b8;
+      font-family: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', Helvetica, sans-serif;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
       line-height: 1.7;
       margin-bottom: 40px;
-      max-width: 560px;
+    }
+    .cap-studio-hero__image {
+      overflow: hidden;
+    }
+    .cap-studio-hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
     }
     .btn-cap-studio-primary {
       display: inline-block;
-      background: #1f614d;
-      color: #fff;
-      padding: 18px 44px;
+      background: #fff;
+      color: #111111;
+      padding: 16px 40px;
       font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       text-decoration: none;
-      border-radius: 3px;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
     .btn-cap-studio-primary:hover {
-      background: #185240;
-      transform: translateY(-1px);
+      background: #eaeaea;
     }
 
     /* ── Feature blocks ── */
@@ -383,16 +389,17 @@
 
     <!-- Hero -->
     <section class="cap-studio-hero">
-      <div class="cap-studio-hero__bg"></div>
-      <div class="cap-studio-hero__accent"></div>
-      <div class="container">
-        <div class="cap-studio-hero__content">
+      <div class="cap-studio-hero__body">
+        <div class="cap-studio-hero__inner">
           <p class="cap-studio-hero__eyebrow">Beechfield Cap Studio</p>
           <h1>Cap Studio</h1>
           <p class="cap-studio-hero__tagline">Find the perfect cap for your brief. Every time.</p>
           <p class="cap-studio-hero__sub">From 5-panel classics to all-over print bucket hats, Cap Studio helps decorators navigate the Beechfield range and find the right blank for any brief, budget and decoration technique.</p>
           <a href="find-your-cap.html" class="btn-cap-studio-primary">Find Your Perfect Cap →</a>
         </div>
+      </div>
+      <div class="cap-studio-hero__image">
+        <img src="https://mediahub.beechfieldbrands.com/asset/23ebb866-c155-41cb-a375-88adbadbad4a/Product-medium/B165-Club-Cap-Red-Black-Lifestyle-Shot.jpg" alt="B165 Club Cap lifestyle shot">
       </div>
     </section>
 

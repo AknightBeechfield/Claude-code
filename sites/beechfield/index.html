@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beechfield Original Headwear | Designed for Decoration</title>
-  <meta name="description" content="Original authority in rebrandable headwear. Caps, beanies, bucket hats and more — trusted for consistency, craftsmanship and decoration performance.">
+  <title>Beechfield Original Headwear | Rebrandable Headwear</title>
+  <meta name="description" content="Innovative, reliable headwear made for decorators and distributors worldwide. 500+ styles, OCS certified, designed for decoration from the ground up.">
+
+  <!-- Adobe Fonts / Typekit — Helvetica Neue LT Pro -->
+  <link rel="stylesheet" href="https://use.typekit.net/sep5cxb.css">
 
   <!-- Shared styles -->
   <link rel="stylesheet" href="../shared/css/variables.css">
@@ -14,15 +17,604 @@
   <link rel="stylesheet" href="../shared/css/components.css">
   <link rel="stylesheet" href="../shared/css/navigation.css">
   <link rel="stylesheet" href="../shared/css/footer.css">
-
-  <!-- Brand overrides -->
   <link rel="stylesheet" href="css/brand.css">
+
+  <style>
+    /* ── Global typography overrides ── */
+    body {
+      font-family: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      color: #111;
+      background: #fff;
+    }
+    h1, h2, h3, h4, h5, h6,
+    .hp-hero__title, .hp-section-header__title,
+    .hp-split__text h2, .hp-technique__title,
+    .hp-mktg__title, .hp-wtb__title {
+      font-family: 'neue-haas-grotesk-display', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    h1 { font-weight: 500; }
+    h2 { font-weight: 500; }
+    h3 { font-weight: 700; }
+    h4 { font-weight: 700; }
+
+    /* ── Logo image ── */
+    .site-logo img { display: block; height: 36px; width: auto; }
+
+    /* ── Hero ── */
+    .hp-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hp-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://mediahub.beechfieldbrands.com/asset/3fd4f11d-b305-440f-9fa6-45694f895bfd/Product-medium/B105-Denim-Cap-Mid-Blue-Lifestyle-Shot.jpg');
+      background-size: cover;
+      background-position: center 25%;
+    }
+    .hp-hero__content {
+      position: relative;
+      z-index: 2;
+      padding-bottom: 88px;
+      max-width: 620px;
+    }
+    .hp-hero__eyebrow {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+    }
+    .hp-hero__title {
+      font-size: clamp(3.2rem, 7vw, 7.5rem);
+      font-weight: 500;
+      color: #fff;
+      line-height: 0.95;
+      margin-bottom: 24px;
+      letter-spacing: -0.025em;
+    }
+    .hp-hero__sub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 460px;
+    }
+    .hp-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hp-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-family: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', Helvetica, Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .hp-btn-solid  { background: #fff; color: #111; border-color: #fff; }
+    .hp-btn-solid:hover { background: #eaeaea; border-color: #eaeaea; }
+    .hp-btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); }
+    .hp-btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+    .hp-btn-dark   { background: #111; color: #fff; border-color: #111; }
+    .hp-btn-dark:hover { background: #2a2a2a; border-color: #2a2a2a; }
+    .hp-btn-ghost  { background: transparent; color: #111; border-color: #111; }
+    .hp-btn-ghost:hover { background: #111; color: #fff; }
+    .hp-btn-ghost-white { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); }
+    .hp-btn-ghost-white:hover { border-color: #fff; }
+
+    /* ── Proof bar (BLUE ACCENT — used once on this page) ── */
+    .hp-proof {
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .hp-proof__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .hp-proof__item {
+      padding: 36px 32px;
+      border-right: 1px solid #eaeaea;
+    }
+    .hp-proof__item:last-child { border-right: none; }
+    .hp-proof__item--accent { border-top: 3px solid #1496f7; }
+    .hp-proof__stat {
+      font-family: 'neue-haas-grotesk-display', 'Helvetica Neue LT Pro', Helvetica, Arial, sans-serif;
+      font-size: 2.8rem;
+      font-weight: 500;
+      color: #111;
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .hp-proof__label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #333;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .hp-proof__desc {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: #888;
+      line-height: 1.45;
+    }
+
+    /* ── Section utility ── */
+    .hp-section { padding: 88px 0; }
+    .hp-section--grey { background: #eaeaea; }
+    .hp-section--offwhite { background: #f5f5f5; }
+    .hp-section--black { background: #111; color: #fff; }
+    .hp-eyebrow {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #888;
+      margin-bottom: 14px;
+    }
+    .hp-eyebrow--white { color: rgba(255,255,255,0.5); }
+    .hp-section-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 52px;
+    }
+    .hp-section-header--full { grid-template-columns: 1fr; max-width: 640px; }
+    .hp-section-header__title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+    }
+    .hp-section-header__title--white { color: #fff; }
+    .hp-section-header__right { padding-bottom: 6px; }
+    .hp-section-header__desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.7;
+    }
+    .hp-section-header__desc--white { color: rgba(255,255,255,0.6); }
+    .hp-section-header__link {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #111;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .hp-section-header__link::after { content: '→'; }
+    .hp-section-header__link--white { color: #fff; }
+
+    /* ── Category tiles ── */
+    .hp-cats {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+    }
+    .hp-cat {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+    }
+    .hp-cat img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .hp-cat:hover img { transform: scale(1.04); }
+    .hp-cat__label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 14px 16px;
+      background: #111;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+
+    /* ── Bestsellers / product grid ── */
+    .hp-products {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    .hp-product {
+      display: block;
+      text-decoration: none;
+      color: #111;
+    }
+    .hp-product__img {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: #f0f0f0;
+      margin-bottom: 14px;
+    }
+    .hp-product__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .hp-product:hover .hp-product__img img { transform: scale(1.04); }
+    .hp-product__code {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-bottom: 3px;
+    }
+    .hp-product__name {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.35;
+      color: #111;
+    }
+
+    /* ── Split blocks ── */
+    .hp-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+    }
+    .hp-split--reversed { direction: rtl; }
+    .hp-split--reversed > * { direction: ltr; }
+    .hp-split__image { overflow: hidden; }
+    .hp-split__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .hp-split__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 64px;
+    }
+    .hp-split__text h2 {
+      font-size: clamp(1.9rem, 3vw, 2.9rem);
+      font-weight: 500;
+      margin-bottom: 20px;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .hp-split__text p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hp-split__text h2.white { color: #fff; }
+    .hp-split__text p.white { color: rgba(255,255,255,0.7); }
+    .hp-split__links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .hp-split__link {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #111;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.2s;
+    }
+    .hp-split__link::after { content: '→'; }
+    .hp-split__link:hover { gap: 14px; }
+
+    /* ── Techniques / Decoration ── */
+    .hp-techniques {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 40px;
+    }
+    .hp-technique {
+      background: #fff;
+      padding: 56px 40px;
+      display: block;
+      text-decoration: none;
+      color: #111;
+      border: 1px solid #e8e8e8;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .hp-technique:hover { border-color: #111; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .hp-technique__icon { margin-bottom: 28px; color: #111; }
+    .hp-technique__title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .hp-technique__desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .hp-technique__link {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #111;
+      text-decoration: none;
+    }
+
+    /* ── Materials ── */
+    .hp-materials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .hp-material {
+      background: #fff;
+      border: 1px solid #eaeaea;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      color: #111;
+      transition: border-color 0.2s;
+    }
+    .hp-material:hover { border-color: #111; }
+    .hp-material__img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .hp-material__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .hp-material:hover .hp-material__img img { transform: scale(1.04); }
+    .hp-material__body { padding: 22px 22px 26px; }
+    .hp-material__tag {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #888;
+      margin-bottom: 7px;
+    }
+    .hp-material__title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 7px;
+      line-height: 1.3;
+    }
+    .hp-material__desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* ── In the wild gallery ── */
+    .hp-gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2px;
+    }
+    .hp-gallery-item {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+    }
+    .hp-gallery-item:first-child { grid-row: span 2; }
+    .hp-gallery-item img {
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .hp-gallery-item:hover img { transform: scale(1.04); }
+    .hp-gallery-item__label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 14px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .hp-gallery-item:hover .hp-gallery-item__label { opacity: 1; }
+
+    /* ── Marketing centre ── */
+    .hp-mktg { background: #111; padding: 96px 0; }
+    .hp-mktg-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .hp-mktg__title {
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 18px;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+    }
+    .hp-mktg__desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .hp-mktg__features {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      margin-bottom: 36px;
+    }
+    .hp-mktg__features li {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.45;
+    }
+    .hp-mktg__features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 5px;
+      height: 1px;
+      background: rgba(255,255,255,0.4);
+    }
+    .hp-mktg__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hp-mktg__img {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+    .hp-mktg__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      opacity: 0.75;
+      display: block;
+    }
+
+    /* ── Where to buy ── */
+    .hp-wtb { padding: 80px 0; border-top: 1px solid #eaeaea; }
+    .hp-wtb-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .hp-wtb__title {
+      font-size: 2.4rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .hp-wtb__desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .hp-wtb__links { display: flex; flex-direction: column; gap: 2px; }
+    .hp-wtb__link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 24px;
+      border: 1px solid #eaeaea;
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      font-size: 0.88rem;
+      transition: border-color 0.18s, background 0.18s;
+      margin-top: -1px;
+    }
+    .hp-wtb__link:hover { border-color: #111; background: #f9f9f9; z-index: 1; position: relative; }
+    .hp-wtb__link-sub {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: #888;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .hp-products { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .hp-cats { grid-template-columns: repeat(3, 1fr); }
+      .hp-split, .hp-mktg-inner, .hp-wtb-inner { grid-template-columns: 1fr; gap: 0; }
+      .hp-split--reversed { direction: ltr; }
+      .hp-split__image { min-height: 340px; }
+      .hp-split__text { padding: 48px 24px; }
+      .hp-techniques { grid-template-columns: 1fr 1fr; }
+      .hp-gallery { grid-template-columns: 1fr 1fr; }
+      .hp-gallery-item:first-child { grid-row: auto; }
+      .hp-materials { grid-template-columns: 1fr 1fr; }
+      .hp-section-header { grid-template-columns: 1fr; }
+      .hp-proof__grid { grid-template-columns: repeat(2, 1fr); }
+      .hp-mktg { padding: 64px 0; }
+      .hp-mktg__img { display: none; }
+      .hp-wtb-inner { gap: 48px; }
+    }
+    @media (max-width: 600px) {
+      .hp-cats { grid-template-columns: 1fr 1fr; }
+      .hp-products { grid-template-columns: 1fr 1fr; }
+      .hp-techniques { grid-template-columns: 1fr; }
+      .hp-gallery { grid-template-columns: 1fr; }
+      .hp-materials { grid-template-columns: 1fr; }
+      .hp-hero__title { font-size: 3rem; }
+      .hp-proof__grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ============================================================
-       TOP BAR — Brand Switcher
-       ============================================================ -->
+  <!-- Top bar -->
   <div class="top-bar">
     <div class="container top-bar__inner">
       <nav class="brand-switcher" aria-label="Beechfield Brands family">
@@ -42,33 +634,21 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       HEADER — Logo, Navigation, Search, Account
-       ============================================================ -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container site-header__inner">
-
-      <!-- Logo -->
-      <a href="index.html" class="site-logo">
-        <div>
-          <span class="site-logo__text">Beechfield</span>
-          <span class="site-logo__brand">Original Headwear</span>
-        </div>
+      <a href="index.html" class="site-logo" aria-label="Beechfield Original Headwear">
+        <img src="https://mediahub.beechfieldbrands.com/m/6c13cb59a34019b7/Product_medium-Beechfield-Logo-PNG.jpg"
+             alt="Beechfield Original Headwear" height="36">
       </a>
 
-      <!-- Main Navigation -->
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="main-nav__list">
 
-          <!-- Products -->
           <li class="main-nav__item" data-mega="products">
-            <a href="products/" class="main-nav__link">
-              Products
-              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
-            </a>
+            <a href="products/" class="main-nav__link">Products <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
             <div class="mega-menu mega-menu--products">
               <div class="mega-menu__inner">
-                <!-- Best Sellers -->
                 <div class="mega-menu__column">
                   <span class="mega-menu__heading mega-menu__heading--label">Best Sellers</span>
                   <ul class="mega-menu__list">
@@ -77,20 +657,18 @@
                     <li><a href="products/b15-baseball-cap.html" class="mega-menu__link">B15 – Ultimate 5 Panel Cap</a></li>
                     <li><a href="products/b445-patch-beanie.html" class="mega-menu__link">B445 – Original Patch Beanie</a></li>
                     <li><a href="products/b640-snapback-trucker.html" class="mega-menu__link">B640 – Snapback Trucker</a></li>
+                    <li><a href="products/b90n-earthaware-bucket-hat.html" class="mega-menu__link">B90N – EarthAware Bucket Hat</a></li>
                   </ul>
                 </div>
-                <!-- Seasonal Edits -->
                 <div class="mega-menu__column">
                   <span class="mega-menu__heading mega-menu__heading--label">Seasonal Edits</span>
                   <ul class="mega-menu__list">
-                    <li><a href="lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">New Season Caps</a></li>
-                    <li><a href="products/?filter=new-beanies" class="mega-menu__link">Coming Soon Beanies</a></li>
+                    <li><a href="lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">New Season SS26</a></li>
+                    <li><a href="products/?filter=new-beanies" class="mega-menu__link">New Beanies</a></li>
                     <li><a href="products/?filter=trending" class="mega-menu__link">Trending Hats</a></li>
                     <li><a href="products/?filter=promo" class="mega-menu__link">Promotion</a></li>
-                    <li><a href="products/?filter=monthly" class="mega-menu__link">Monthly Edit</a></li>
                   </ul>
                 </div>
-                <!-- Type -->
                 <div class="mega-menu__column">
                   <span class="mega-menu__heading mega-menu__heading--label">Type</span>
                   <ul class="mega-menu__list">
@@ -101,7 +679,6 @@
                     <li><a href="products/accessories/" class="mega-menu__link">Accessories</a></li>
                   </ul>
                 </div>
-                <!-- Purpose -->
                 <div class="mega-menu__column">
                   <span class="mega-menu__heading mega-menu__heading--label">Purpose</span>
                   <ul class="mega-menu__list">
@@ -109,34 +686,27 @@
                     <li><a href="products/?purpose=sports" class="mega-menu__link">Sports</a></li>
                     <li><a href="products/?purpose=promotion" class="mega-menu__link">Promotion</a></li>
                     <li><a href="products/?purpose=fashion" class="mega-menu__link">Fashion</a></li>
-                    <li><a href="products/?purpose=kids" class="mega-menu__link">Kids</a></li>
                     <li><a href="products/?purpose=workwear" class="mega-menu__link">Workwear</a></li>
                     <li><a href="products/?purpose=gifting" class="mega-menu__link">Gifting</a></li>
                   </ul>
                 </div>
-                <!-- Collections -->
                 <div class="mega-menu__column">
                   <span class="mega-menu__heading mega-menu__heading--label">Collections</span>
                   <ul class="mega-menu__list">
                     <li><a href="collections/originals.html" class="mega-menu__link">Originals</a></li>
-                    <li><a href="collections/morf.html" class="mega-menu__link">Morf</a></li>
-                    <li><a href="collections/snowstar.html" class="mega-menu__link">Snowstar</a></li>
-                    <li><a href="collections/suprafleece.html" class="mega-menu__link">Suprafleece</a></li>
                     <li><a href="collections/earthaware.html" class="mega-menu__link">EarthAware</a></li>
                     <li><a href="collections/vintage.html" class="mega-menu__link">Vintage</a></li>
                     <li><a href="collections/urbanwear.html" class="mega-menu__link">Urbanwear</a></li>
+                    <li><a href="collections/morf.html" class="mega-menu__link">Morf</a></li>
+                    <li><a href="collections/snowstar.html" class="mega-menu__link">Snowstar</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </li>
 
-          <!-- Cap Studio -->
           <li class="main-nav__item" data-mega="cap-studio">
-            <a href="cap-studio/" class="main-nav__link">
-              Cap Studio
-              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
-            </a>
+            <a href="cap-studio/" class="main-nav__link">Cap Studio <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
             <div class="mega-menu mega-menu--3col">
               <div class="mega-menu__inner">
                 <div class="mega-menu__column">
@@ -146,16 +716,13 @@
                   </ul>
                 </div>
                 <div class="mega-menu__column">
-                  <span class="mega-menu__heading mega-menu__heading--label">Signature Shapes</span>
+                  <span class="mega-menu__heading mega-menu__heading--label">Shapes</span>
                   <ul class="mega-menu__list">
                     <li><a href="cap-studio/guides/shapes.html#baseball" class="mega-menu__link">Baseball</a></li>
                     <li><a href="cap-studio/guides/shapes.html#trucker" class="mega-menu__link">Trucker</a></li>
                     <li><a href="cap-studio/guides/shapes.html#dad-hat" class="mega-menu__link">Dad Hat</a></li>
                     <li><a href="cap-studio/guides/shapes.html#flat-peak" class="mega-menu__link">Flat Peak</a></li>
                     <li><a href="cap-studio/guides/shapes.html#army" class="mega-menu__link">Army</a></li>
-                    <li><a href="cap-studio/guides/shapes.html#camper" class="mega-menu__link">Camper</a></li>
-                    <li><a href="cap-studio/guides/shapes.html#visor" class="mega-menu__link">Visor</a></li>
-                    <li><a href="cap-studio/guides/shapes.html#flat-cap" class="mega-menu__link">Flat Cap</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__column">
@@ -164,45 +731,36 @@
                     <li><a href="cap-studio/guides/anatomy.html" class="mega-menu__link">Anatomy of a Cap</a></li>
                     <li><a href="cap-studio/guides/shapes.html" class="mega-menu__link">Shapes Guide</a></li>
                     <li><a href="cap-studio/guides/branding-decoration.html" class="mega-menu__link">Branding &amp; Decoration</a></li>
-                    <li><a href="cap-studio/guides/materials.html" class="mega-menu__link">Materials &amp; Responsible Choices</a></li>
+                    <li><a href="cap-studio/guides/materials.html" class="mega-menu__link">Materials</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </li>
 
-          <!-- Lookbooks -->
           <li class="main-nav__item" data-mega="lookbooks">
-            <a href="lookbooks/" class="main-nav__link">
-              Lookbooks
-              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
-            </a>
+            <a href="lookbooks/" class="main-nav__link">Lookbooks <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
             <div class="mega-menu mega-menu--1col">
               <div class="mega-menu__inner">
                 <div class="mega-menu__column">
                   <a href="lookbooks/" class="mega-menu__heading" style="text-decoration:none;display:block;">Lookbooks</a>
                   <ul class="mega-menu__list">
-                    <li><a href="lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">Beechfield® SS Lookbook 26</a></li>
-                    <li><a href="lookbooks/aw25-26.html" class="mega-menu__link">Beechfield® AW Lookbook 25/26</a></li>
-                    <li><a href="lookbooks/mid-year-25.html" class="mega-menu__link">Beechfield® Mid-Year Headwear Lookbook 25</a></li>
+                    <li><a href="lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">SS26 Lookbook</a></li>
+                    <li><a href="lookbooks/aw25-26.html" class="mega-menu__link">AW25/26 Lookbook</a></li>
+                    <li><a href="lookbooks/mid-year-25.html" class="mega-menu__link">Mid-Year 25 Lookbook</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </li>
 
-          <!-- Decorator Academy -->
           <li class="main-nav__item" data-mega="decorator">
-            <a href="decorator-academy/" class="main-nav__link">
-              Decorator Academy
-              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
-            </a>
+            <a href="decorator-academy/" class="main-nav__link">Decorator Academy <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
             <div class="mega-menu mega-menu--2col">
               <div class="mega-menu__inner">
                 <div class="mega-menu__column">
                   <a href="decorator-academy/designed-for-decoration.html" class="mega-menu__heading" style="text-decoration:none;display:block;">Designed for Decoration</a>
                   <ul class="mega-menu__list">
-                    <li><span class="mega-menu__link mega-menu__heading--label" style="font-size:var(--text-xs);opacity:0.7;">Techniques</span></li>
                     <li><a href="decorator-academy/techniques/embroidery.html" class="mega-menu__link" style="padding-left:var(--space-3);">Embroidery</a></li>
                     <li><a href="decorator-academy/techniques/transfer.html" class="mega-menu__link" style="padding-left:var(--space-3);">Print &amp; Transfer</a></li>
                     <li><a href="decorator-academy/techniques/patches.html" class="mega-menu__link" style="padding-left:var(--space-3);">Patches</a></li>
@@ -221,12 +779,8 @@
             </div>
           </li>
 
-          <!-- Where to Buy -->
           <li class="main-nav__item" data-mega="where-to-buy">
-            <a href="where-to-buy/" class="main-nav__link">
-              Where to Buy
-              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
-            </a>
+            <a href="where-to-buy/" class="main-nav__link">Where to Buy <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
             <div class="mega-menu mega-menu--1col">
               <div class="mega-menu__inner">
                 <div class="mega-menu__column">
@@ -239,12 +793,8 @@
             </div>
           </li>
 
-          <!-- About -->
           <li class="main-nav__item" data-mega="about">
-            <a href="about/" class="main-nav__link">
-              About
-              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
-            </a>
+            <a href="about/" class="main-nav__link">About <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
             <div class="mega-menu mega-menu--1col">
               <div class="mega-menu__inner">
                 <div class="mega-menu__column">
@@ -253,7 +803,6 @@
                     <li><a href="about/materials-and-fabrics.html" class="mega-menu__link">Materials &amp; Fabrics</a></li>
                     <li><a href="about/quality-and-compliance.html" class="mega-menu__link">Quality &amp; Compliance</a></li>
                     <li><a href="about/responsible-choices.html" class="mega-menu__link">Responsible Choices</a></li>
-                    <li><a href="about/stock-and-service.html" class="mega-menu__link">Stock &amp; Service Promise</a></li>
                     <li><a href="about/events.html" class="mega-menu__link">Events</a></li>
                     <li><a href="about/press.html" class="mega-menu__link">Press</a></li>
                   </ul>
@@ -265,18 +814,10 @@
         </ul>
       </nav>
 
-      <!-- Header actions -->
       <div class="header-actions">
         <button class="search-toggle" aria-label="Open search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         </button>
-        <a href="#" class="account-toggle" aria-label="My account">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-          </svg>
-        </a>
         <button class="mobile-toggle" aria-label="Toggle menu">
           <span class="mobile-toggle__bar"></span>
           <span class="mobile-toggle__bar"></span>
@@ -286,7 +827,6 @@
     </div>
   </header>
 
-  <!-- Search Overlay -->
   <div class="search-overlay" role="search">
     <div class="search-overlay__inner">
       <input type="search" class="search-overlay__input" placeholder="Search by product name, SKU, or keyword..." aria-label="Search products">
@@ -294,249 +834,410 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       HERO — Current Campaign / Micro-Edit
-       ============================================================ -->
-  <section class="hero">
-    <div class="hero__bg">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg, #1f614d 0%, #0e1520 100%)"></div>
-    </div>
-    <div class="hero__overlay" style="background:linear-gradient(135deg, rgba(14,21,32,0.6) 0%, transparent 100%)"></div>
-    <div class="container hero__content">
-      <p class="text-sm" style="text-transform:uppercase;letter-spacing:0.15em;opacity:0.8;margin-bottom:var(--space-4)">Spring / Summer 2026</p>
-      <h1 class="hero__title">Original Headwear,<br>Designed for Decoration</h1>
-      <p class="hero__subtitle">For nearly 30 years, Beechfield has remained at the forefront of rebrandable fashion. Trusted for consistency, craftsmanship and decoration performance.</p>
-      <div class="flex gap-4">
-        <a href="campaign/ss26/" class="btn btn-primary" style="background:#fff;color:#0e1520;border-color:#fff">Explore SS26</a>
-        <a href="products/" class="btn btn-secondary" style="border-color:#fff;color:#fff">Shop All Products</a>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <!-- ============================================================
-       SHOP BY TYPE — Category cards
-       ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header text-center" style="max-width:640px;margin:0 auto var(--space-10)">
-        <p class="section-header__label">Shop by Type</p>
-        <h2 class="section-header__title">Find Your Headwear</h2>
-        <p class="section-header__description">From caps and beanies to bucket hats and performance headwear — explore our full range designed for decoration.</p>
-      </div>
-
-      <div class="grid-3" style="gap:var(--space-6)">
-        <!-- Caps -->
-        <a href="products/caps/" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #e7e5e4, #d6d3d1);display:flex;align-items:center;justify-content:center;font-size:var(--text-3xl);color:var(--neutral-400)">Caps</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Caps</h3>
-            <p class="card__text">Baseball, trucker, dad hat, snapback, flat peak and more. Our broadest category with styles for every programme.</p>
-          </div>
-        </a>
-
-        <!-- Beanies -->
-        <a href="products/beanies/" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #e7e5e4, #d6d3d1);display:flex;align-items:center;justify-content:center;font-size:var(--text-3xl);color:var(--neutral-400)">Beanies</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Beanies</h3>
-            <p class="card__text">Cuffed, slouchy, ribbed and bobble styles. Premium knit beanies built for embroidery and patch decoration.</p>
-          </div>
-        </a>
-
-        <!-- Bucket Hats -->
-        <a href="products/bucket-hats/" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #e7e5e4, #d6d3d1);display:flex;align-items:center;justify-content:center;font-size:var(--text-3xl);color:var(--neutral-400)">Bucket Hats</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Bucket Hats</h3>
-            <p class="card__text">From vintage washed to festival-ready. A trend-led silhouette with excellent decoration surfaces.</p>
-          </div>
-        </a>
-
-        <!-- Visors -->
-        <a href="products/visors/" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #e7e5e4, #d6d3d1);display:flex;align-items:center;justify-content:center;font-size:var(--text-3xl);color:var(--neutral-400)">Visors</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Visors</h3>
-            <p class="card__text">Sport and leisure visors with adjustable fits. Ideal for outdoor events and sports branding.</p>
-          </div>
-        </a>
-
-        <!-- Performance -->
-        <a href="products/performance/" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #e7e5e4, #d6d3d1);display:flex;align-items:center;justify-content:center;font-size:var(--text-3xl);color:var(--neutral-400)">Performance</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Performance</h3>
-            <p class="card__text">Technical headwear for active and outdoor use. Moisture-wicking, breathable fabrics built to perform.</p>
-          </div>
-        </a>
-
-        <!-- Accessories -->
-        <a href="products/accessories/" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg, #e7e5e4, #d6d3d1);display:flex;align-items:center;justify-content:center;font-size:var(--text-3xl);color:var(--neutral-400)">Accessories</div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Accessories</h3>
-            <p class="card__text">Scarves, snoods, headbands and more. Complementary pieces to complete any headwear programme.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CAP STUDIO PROMO
-       ============================================================ -->
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="grid-2" style="align-items:center;gap:var(--space-16)">
-        <div>
-          <p class="section-header__label">Beechfield Exclusive</p>
-          <h2>Cap Studio</h2>
-          <p class="text-lg" style="margin-bottom:var(--space-6)">30+ years of headwear expertise, distilled into an interactive guide. Explore shapes, fabrics, and colours to find the perfect cap for your decoration programme.</p>
-          <div class="flex gap-4">
-            <a href="cap-studio/shapes.html" class="btn btn-primary">Explore Shapes</a>
-            <a href="cap-studio/fabrics.html" class="btn btn-secondary">Fabric Guide</a>
-          </div>
+    <!-- ── 1. HERO ── -->
+    <section class="hp-hero" aria-label="Hero">
+      <div class="hp-hero__bg" role="img" aria-label="Person wearing Beechfield B105 Denim Cap"></div>
+      <div class="container hp-hero__content">
+        <span class="hp-hero__eyebrow">Beechfield Original Headwear</span>
+        <h1 class="hp-hero__title">Rebrandable<br>headwear.</h1>
+        <p class="hp-hero__sub">Innovative, reliable headwear for others to customise — brought to life by distributors and decorators worldwide. Nearly 30 years of consistency.</p>
+        <div class="hp-hero__ctas">
+          <a href="products/" class="hp-btn hp-btn-solid">Shop Products</a>
+          <a href="decorator-academy/" class="hp-btn hp-btn-outline">Designed for Decoration</a>
+          <a href="cap-studio/" class="hp-btn hp-btn-ghost-white">Cap Studio</a>
         </div>
-        <div style="aspect-ratio:4/3;background:linear-gradient(135deg, #1f614d, #0e1520);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-2xl)">
-          Cap Studio
+      </div>
+    </section>
+
+    <!-- ── 2. PROOF BAR ── -->
+    <div class="hp-proof">
+      <div class="container hp-proof__grid">
+        <div class="hp-proof__item">
+          <p class="hp-proof__stat">1994</p>
+          <span class="hp-proof__label">Est. in Wigan</span>
+          <p class="hp-proof__desc">Nearly 30 years of headwear expertise, trusted by decorators worldwide.</p>
+        </div>
+        <div class="hp-proof__item hp-proof__item--accent">
+          <p class="hp-proof__stat">500<span style="font-size:2rem">+</span></p>
+          <span class="hp-proof__label">Styles &amp; Colours</span>
+          <p class="hp-proof__desc">Caps, beanies, hats, neckwear and accessories, season after season.</p>
+        </div>
+        <div class="hp-proof__item">
+          <p class="hp-proof__stat">OCS</p>
+          <span class="hp-proof__label">Certified</span>
+          <p class="hp-proof__desc">Organic Content Standard certified across the EarthAware® collection.</p>
+        </div>
+        <div class="hp-proof__item">
+          <p class="hp-proof__stat">Global</p>
+          <span class="hp-proof__label">Distribution</span>
+          <p class="hp-proof__desc">Available through authorised distributors across Europe and beyond.</p>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ============================================================
-       DESIGNED FOR DECORATION
-       ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header text-center" style="max-width:640px;margin:0 auto var(--space-10)">
-        <p class="section-header__label">Decorator Academy</p>
-        <h2 class="section-header__title">Designed for Decoration</h2>
-        <p class="section-header__description">Every Beechfield product is engineered with decoration in mind. Explore techniques, placement guides, and expert tutorials.</p>
+    <!-- ── 3. SHOP BY TYPE ── -->
+    <section class="hp-section" aria-label="Shop by type">
+      <div class="container" style="padding-bottom: 0;">
+        <div class="hp-section-header">
+          <div>
+            <span class="hp-eyebrow">Browse</span>
+            <h2 class="hp-section-header__title">Shop by type</h2>
+          </div>
+          <div class="hp-section-header__right">
+            <p class="hp-section-header__desc">The broadest range of rebrandable headwear in the industry — find the right shape for your programme.</p>
+            <a href="products/" class="hp-section-header__link">View all products</a>
+          </div>
+        </div>
       </div>
-
-      <div class="grid-4">
-        <a href="decoration/embroidery.html" class="card">
-          <div class="card__body text-center">
-            <div style="font-size:var(--text-3xl);margin-bottom:var(--space-3)">&#9997;</div>
-            <h4 class="card__title">Embroidery</h4>
-            <p class="card__text">The most popular decoration method for headwear. Clean surfaces and stable panels for precise stitching.</p>
-          </div>
+      <div class="hp-cats">
+        <a href="products/caps/" class="hp-cat">
+          <img src="https://mediahub.beechfieldbrands.com/m/b66942402fa0df81/webimage-B155R-Accelerate-Cap-White-Black-Lifestyle-Shot.png" alt="Caps" loading="lazy">
+          <span class="hp-cat__label">Caps</span>
         </a>
-        <a href="decoration/patches.html" class="card">
-          <div class="card__body text-center">
-            <div style="font-size:var(--text-3xl);margin-bottom:var(--space-3)">&#9744;</div>
-            <h4 class="card__title">Patches</h4>
-            <p class="card__text">Woven, PVC, and leather patches. Versatile placement options across front, side, and back panels.</p>
-          </div>
+        <a href="products/beanies/" class="hp-cat">
+          <img src="https://mediahub.beechfieldbrands.com/asset/0b605e02-8970-44f5-a220-beb0c506e313/Product-medium/B45-Original-Cuffed-Beanie-Sunset-Lifestyle-04.jpg" alt="Beanies" loading="lazy">
+          <span class="hp-cat__label">Beanies</span>
         </a>
-        <a href="decoration/transfer.html" class="card">
-          <div class="card__body text-center">
-            <div style="font-size:var(--text-3xl);margin-bottom:var(--space-3)">&#9881;</div>
-            <h4 class="card__title">Transfer</h4>
-            <p class="card__text">Heat transfer for full-colour designs. Compatible with our flat-panel and structured cap styles.</p>
-          </div>
+        <a href="products/hats/" class="hp-cat">
+          <img src="https://mediahub.beechfieldbrands.com/m/31e473ca6c2a5d3d/webimage-B90N-EarthAware-Organic-Cotton-Bucket-Hat-Desert-Sand-Front-on-shot.png" alt="Hats" loading="lazy">
+          <span class="hp-cat__label">Hats</span>
         </a>
-        <a href="decoration/screen-print.html" class="card">
-          <div class="card__body text-center">
-            <div style="font-size:var(--text-3xl);margin-bottom:var(--space-3)">&#9783;</div>
-            <h4 class="card__title">Screen Print</h4>
-            <p class="card__text">Bold, durable prints on flat surfaces. Ideal for promotional runs and event headwear.</p>
-          </div>
+        <a href="products/neckwear/" class="hp-cat">
+          <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="Neckwear" loading="lazy">
+          <span class="hp-cat__label">Neckwear</span>
+        </a>
+        <a href="products/accessories/" class="hp-cat">
+          <img src="https://mediahub.beechfieldbrands.com/m/3f894b65714d723a/webimage-B682-Heritage-Cord-Cap-Brown-Front-on-shot.png" alt="Accessories" loading="lazy">
+          <span class="hp-cat__label">Accessories</span>
         </a>
       </div>
+    </section>
 
-      <div class="text-center" style="margin-top:var(--space-8)">
-        <a href="decorator-academy/" class="btn btn-secondary">Visit the Decorator Academy</a>
+    <!-- ── 4. BESTSELLERS ── -->
+    <section class="hp-section" style="padding-top: 0;" aria-label="Bestsellers">
+      <div class="container">
+        <div class="hp-section-header">
+          <div>
+            <span class="hp-eyebrow">Bestsellers</span>
+            <h2 class="hp-section-header__title">Proven performers</h2>
+          </div>
+          <div class="hp-section-header__right">
+            <p class="hp-section-header__desc">The styles decorators and distributors come back to, season after season. Reliable sizing, consistent quality.</p>
+            <a href="products/" class="hp-section-header__link">See all bestsellers</a>
+          </div>
+        </div>
+
+        <div class="hp-products">
+          <a href="products/b45-original-cuffed-beanie.html" class="hp-product">
+            <div class="hp-product__img">
+              <img src="https://mediahub.beechfieldbrands.com/asset/0b605e02-8970-44f5-a220-beb0c506e313/Product-medium/B45-Original-Cuffed-Beanie-Sunset-Lifestyle-04.jpg" alt="B45 Original Cuffed Beanie" loading="lazy">
+            </div>
+            <p class="hp-product__code">B45</p>
+            <p class="hp-product__name">Original Cuffed Beanie</p>
+          </a>
+          <a href="products/b655-dad-cap.html" class="hp-product">
+            <div class="hp-product__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B655 Low Profile Vintage Cap" loading="lazy">
+            </div>
+            <p class="hp-product__code">B655</p>
+            <p class="hp-product__name">Low Profile Vintage Cap</p>
+          </a>
+          <a href="products/b15-baseball-cap.html" class="hp-product">
+            <div class="hp-product__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png" alt="B15 Ultimate 5 Panel Cap" loading="lazy">
+            </div>
+            <p class="hp-product__code">B15</p>
+            <p class="hp-product__name">Ultimate 5 Panel Cap</p>
+          </a>
+          <a href="products/b640-snapback-trucker.html" class="hp-product">
+            <div class="hp-product__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/6cd07caacecc4ac4/webimage-B634R-Classic-Foam-Trucker-Classic-Red-Product-Shot-01.png" alt="B640 Snapback Trucker" loading="lazy">
+            </div>
+            <p class="hp-product__code">B640</p>
+            <p class="hp-product__name">Snapback Trucker</p>
+          </a>
+          <a href="products/b90n-earthaware-bucket-hat.html" class="hp-product">
+            <div class="hp-product__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/31e473ca6c2a5d3d/webimage-B90N-EarthAware-Organic-Cotton-Bucket-Hat-Desert-Sand-Front-on-shot.png" alt="B90N EarthAware Bucket Hat" loading="lazy">
+            </div>
+            <p class="hp-product__code">B90N</p>
+            <p class="hp-product__name">EarthAware® Organic Bucket Hat</p>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================================
-       COLLECTIONS
-       ============================================================ -->
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-header__label">Signature Ranges</p>
-        <h2 class="section-header__title">Our Collections</h2>
+    <!-- ── 5. NEW SEASON SS26 ── -->
+    <section class="hp-split hp-section--grey" aria-label="New season SS26">
+      <div class="hp-split__image">
+        <img src="https://mediahub.beechfieldbrands.com/m/5e3f1359858f9dd2/webimage-B26N-EarthAware-Organic-Cotton-Studio-Cap-Cornflower-Blue-Product-Shot-01.png"
+             alt="B26N EarthAware Organic Cotton Studio Cap in Cornflower Blue" loading="lazy">
       </div>
+      <div class="hp-split__text">
+        <span class="hp-eyebrow">New Season</span>
+        <h2>SS26 — <br>Heads Up.</h2>
+        <p>11 new products. 17 fresh colour updates. SS26 embraces contemporary styling, from relaxed lifestyle fits to performance-led designs. Designed to sell, built to decorate.</p>
+        <div class="hp-split__links">
+          <a href="lookbooks/ss26.html" class="hp-split__link">Explore SS26 Lookbook</a>
+          <a href="products/?filter=new" class="hp-split__link">Shop new arrivals</a>
+        </div>
+      </div>
+    </section>
 
-      <div class="grid-4">
-        <a href="collections/originals.html" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:#0e1520;display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-lg)">Originals</div>
+    <!-- ── 6. CAP STUDIO ── -->
+    <section class="hp-split hp-split--reversed" aria-label="Cap Studio">
+      <div class="hp-split__image">
+        <img src="https://mediahub.beechfieldbrands.com/asset/23ebb866-c155-41cb-a375-88adbadbad4a/Product-medium/B165-Club-Cap-Red-Black-Lifestyle-Shot.jpg"
+             alt="B165 Club Cap lifestyle shot" loading="lazy">
+      </div>
+      <div class="hp-split__text">
+        <span class="hp-eyebrow">Beechfield Exclusive</span>
+        <h2>Cap Studio</h2>
+        <p>Nearly 30 years of headwear expertise, distilled into a practical tool. Explore cap shapes, materials, decoration methods and sizing to find the right product for every brief.</p>
+        <p>Built for decorators, distributors and designers who need confidence before they commit.</p>
+        <div class="hp-split__links">
+          <a href="cap-studio/find-your-cap.html" class="hp-split__link">Find your perfect cap</a>
+          <a href="cap-studio/" class="hp-split__link">Explore Cap Studio</a>
+          <a href="cap-studio/guides/" class="hp-split__link">Cap knowledge guides</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7. DESIGNED FOR DECORATION ── -->
+    <section class="hp-section hp-section--offwhite" aria-label="Designed for decoration">
+      <div class="container">
+        <div class="hp-section-header">
+          <div>
+            <span class="hp-eyebrow">Decorator Academy</span>
+            <h2 class="hp-section-header__title">Designed for decoration.</h2>
           </div>
-          <div class="card__body">
-            <h4 class="card__title">Originals</h4>
-            <p class="card__text">The core collection — timeless styles that form the backbone of any headwear programme.</p>
+          <div class="hp-section-header__right">
+            <p class="hp-section-header__desc">It's not just a tagline. Every Beechfield product is engineered with decoration in mind — from reinforced front panels to TearAway labels and consistent colour matching.</p>
+            <a href="decorator-academy/" class="hp-section-header__link">Visit Decorator Academy</a>
           </div>
+        </div>
+
+        <div class="hp-techniques">
+          <a href="decorator-academy/techniques/embroidery.html" class="hp-technique">
+            <div class="hp-technique__icon">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="32" y1="8" x2="12" y2="36"/>
+                <ellipse cx="32" cy="9" rx="2" ry="3" transform="rotate(-58 32 9)"/>
+                <path d="M12 36 Q16 28 22 32 Q28 36 34 28 Q40 20 44 24"/>
+              </svg>
+            </div>
+            <p class="hp-technique__title">Embroidery</p>
+            <p class="hp-technique__desc">The gold standard for headwear. Stable front panels, structured crowns and consistent results across high-volume runs.</p>
+            <span class="hp-technique__link">Learn about embroidery →</span>
+          </a>
+          <a href="decorator-academy/techniques/patches.html" class="hp-technique">
+            <div class="hp-technique__icon">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 6 L30 6 L38 14 L38 30 L30 38 L14 38 L6 30 L6 14 Z"/>
+                <path d="M17 11 L27 11 L33 17 L33 27 L27 33 L17 33 L11 27 L11 17 Z" stroke-dasharray="3 2.5"/>
+                <path d="M17 22 L21 26 L30 18"/>
+              </svg>
+            </div>
+            <p class="hp-technique__title">Patches</p>
+            <p class="hp-technique__desc">Woven, PVC, leather and embroidered patches. Versatile placement across front, side and back panels, sew-on or iron-on.</p>
+            <span class="hp-technique__link">Explore patches →</span>
+          </a>
+          <a href="decorator-academy/techniques/transfer.html" class="hp-technique">
+            <div class="hp-technique__icon">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M8 18 L8 30 L36 30 L36 24 Q30 18 24 18 Z"/>
+                <path d="M22 18 L22 10 L30 10 L30 18"/>
+                <line x1="14" y1="34" x2="14" y2="40"/>
+                <line x1="22" y1="34" x2="22" y2="40"/>
+                <line x1="30" y1="34" x2="30" y2="40"/>
+              </svg>
+            </div>
+            <p class="hp-technique__title">Heat Transfer</p>
+            <p class="hp-technique__desc">Full-colour, photographic results on flat-panel styles. Check our per-product time, temperature and pressure guides for best results.</p>
+            <span class="hp-technique__link">View transfer guide →</span>
+          </a>
+        </div>
+
+        <div style="text-align:center">
+          <a href="decorator-academy/" class="hp-btn hp-btn-dark">All Decoration Techniques</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 8. MATERIALS & FABRICS ── -->
+    <section class="hp-section" aria-label="Materials and fabrics">
+      <div class="container">
+        <div class="hp-section-header">
+          <div>
+            <span class="hp-eyebrow">Materials &amp; Fabrics</span>
+            <h2 class="hp-section-header__title">Made with intention.</h2>
+          </div>
+          <div class="hp-section-header__right">
+            <p class="hp-section-header__desc">From OCS-certified organic cotton to high-performance technical fabrics and heritage-led natural fibres — every material is chosen with purpose.</p>
+            <a href="about/materials-and-fabrics.html" class="hp-section-header__link">Explore materials hub</a>
+          </div>
+        </div>
+
+        <div class="hp-materials">
+          <a href="collections/earthaware.html" class="hp-material">
+            <div class="hp-material__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/4a63922434e7cc92/webimage-B62N-EarthAware-Organic-Cotton-5-Panel-Cap-Dusty-Green-Front-on-shot.png"
+                   alt="EarthAware Organic Cotton" loading="lazy">
+            </div>
+            <div class="hp-material__body">
+              <p class="hp-material__tag">EarthAware® · OCS Certified</p>
+              <p class="hp-material__title">Organic Cotton</p>
+              <p class="hp-material__desc">100% OCS-certified organic cotton across the EarthAware® collection. Same decoration performance, reduced environmental footprint.</p>
+            </div>
+          </a>
+          <a href="about/materials-and-fabrics.html#technical" class="hp-material">
+            <div class="hp-material__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/e32066e8b0244e25/webimage-B188-Technical-Running-Cap-Graphite-Grey-Front-on-shot.png"
+                   alt="Technical Performance Fabric" loading="lazy">
+            </div>
+            <div class="hp-material__body">
+              <p class="hp-material__tag">Performance</p>
+              <p class="hp-material__title">Technical Fabrics</p>
+              <p class="hp-material__desc">Moisture-wicking, breathable construction across sports and activewear ranges. Built to perform as hard as the person wearing it.</p>
+            </div>
+          </a>
+          <a href="about/materials-and-fabrics.html#heritage" class="hp-material">
+            <div class="hp-material__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/3f894b65714d723a/webimage-B682-Heritage-Cord-Cap-Brown-Front-on-shot.png"
+                   alt="Heritage Cord and Cotton" loading="lazy">
+            </div>
+            <div class="hp-material__body">
+              <p class="hp-material__tag">Heritage</p>
+              <p class="hp-material__title">Cord &amp; Washed Cotton</p>
+              <p class="hp-material__desc">Classic cord and washed finishes for a considered, lived-in aesthetic. Vintage-led styles built on the same Beechfield quality foundations.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 9. IN THE WILD ── -->
+    <section class="hp-section hp-section--black" aria-label="In the wild">
+      <div class="container">
+        <div class="hp-section-header">
+          <div>
+            <span class="hp-eyebrow hp-eyebrow--white">Decorated. Delivered.</span>
+            <h2 class="hp-section-header__title hp-section-header__title--white">In the wild.</h2>
+          </div>
+          <div class="hp-section-header__right">
+            <p class="hp-section-header__desc hp-section-header__desc--white">Beechfield headwear in the hands of decorators and distributors — branded, printed, embroidered and loved.</p>
+            <a href="decorator-academy/in-the-wild.html" class="hp-section-header__link hp-section-header__link--white">See all case studies</a>
+          </div>
+        </div>
+      </div>
+      <div class="hp-gallery">
+        <a href="decorator-academy/in-the-wild.html" class="hp-gallery-item">
+          <img src="https://mediahub.beechfieldbrands.com/asset/23ebb866-c155-41cb-a375-88adbadbad4a/Product-medium/B165-Club-Cap-Red-Black-Lifestyle-Shot.jpg"
+               alt="B165 Club Cap decorated lifestyle" loading="lazy">
+          <span class="hp-gallery-item__label">B165 Club Cap</span>
         </a>
-        <a href="collections/earthaware.html" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:#1f614d;display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-lg)">EarthAware</div>
-          </div>
-          <div class="card__body">
-            <h4 class="card__title">EarthAware</h4>
-            <p class="card__text">Organic and recycled materials. Sustainable headwear without compromising on quality or decoration.</p>
-          </div>
+        <a href="decorator-academy/in-the-wild.html" class="hp-gallery-item">
+          <img src="https://mediahub.beechfieldbrands.com/m/b66942402fa0df81/webimage-B155R-Accelerate-Cap-White-Black-Lifestyle-Shot.png"
+               alt="B155R Accelerate Cap" loading="lazy">
+          <span class="hp-gallery-item__label">B155R Accelerate Cap</span>
         </a>
-        <a href="collections/vintage.html" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:#78716c;display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-lg)">Vintage</div>
-          </div>
-          <div class="card__body">
-            <h4 class="card__title">Vintage</h4>
-            <p class="card__text">Washed and weathered finishes. Fashion-forward headwear with a pre-loved aesthetic.</p>
-          </div>
+        <a href="decorator-academy/in-the-wild.html" class="hp-gallery-item">
+          <img src="https://mediahub.beechfieldbrands.com/asset/0b605e02-8970-44f5-a220-beb0c506e313/Product-medium/B45-Original-Cuffed-Beanie-Sunset-Lifestyle-04.jpg"
+               alt="B45 Original Cuffed Beanie lifestyle" loading="lazy">
+          <span class="hp-gallery-item__label">B45 Original Cuffed Beanie</span>
         </a>
-        <a href="collections/urbanwear.html" class="card">
-          <div class="card__image">
-            <div style="width:100%;height:100%;background:#292524;display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-lg)">Urbanwear</div>
-          </div>
-          <div class="card__body">
-            <h4 class="card__title">Urbanwear</h4>
-            <p class="card__text">Street-inspired silhouettes. Bold shapes and contemporary fabrics for modern branding.</p>
-          </div>
+        <a href="decorator-academy/in-the-wild.html" class="hp-gallery-item">
+          <img src="https://mediahub.beechfieldbrands.com/m/5b91a77fbbfddc63/webimage-B725-Straw-Fedora-Natural-Black-Product-Shot-01.png"
+               alt="B725 Straw Fedora" loading="lazy">
+          <span class="hp-gallery-item__label">B725 Straw Fedora</span>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================================
-       WHERE TO BUY CTA
-       ============================================================ -->
-  <section class="section bg-dark">
-    <div class="container text-center" style="max-width:640px;margin:0 auto">
-      <h2 style="color:#fff;margin-bottom:var(--space-4)">Ready to Order?</h2>
-      <p style="color:rgba(255,255,255,0.7);margin-bottom:var(--space-8);font-size:var(--text-lg)">Beechfield products are available through our network of authorised distributors. Find your nearest partner or check stock availability.</p>
-      <div class="flex flex-center gap-4">
-        <a href="where-to-buy/find-a-distributor.html" class="btn" style="background:#fff;color:#0e1520;border-color:#fff">Find a Distributor</a>
-        <a href="where-to-buy/inventory-finder.html" class="btn btn-secondary" style="border-color:#fff;color:#fff">Check Inventory</a>
+    <!-- ── 10. MARKETING CENTRE ── -->
+    <section class="hp-mktg" aria-label="Marketing Centre">
+      <div class="container">
+        <div class="hp-mktg-inner">
+          <div>
+            <span class="hp-eyebrow hp-eyebrow--white">For Trade Partners</span>
+            <h2 class="hp-mktg__title">Marketing Centre.</h2>
+            <p class="hp-mktg__desc">Your dedicated trade resource hub. Campaign assets, product data sheets, templates, brand toolkits and seasonal guides — everything you need to sell Beechfield with confidence.</p>
+            <ul class="hp-mktg__features">
+              <li>Campaign asset libraries</li>
+              <li>Product data sheets</li>
+              <li>Seasonal brand toolkits</li>
+              <li>Logo &amp; lifestyle imagery</li>
+              <li>Decoration guides</li>
+              <li>Templates &amp; guidelines</li>
+            </ul>
+            <div class="hp-mktg__ctas">
+              <a href="marketing-centre/" class="hp-btn hp-btn-solid">Enter Marketing Centre</a>
+              <a href="marketing-centre/sign-up.html" class="hp-btn hp-btn-ghost-white">Request Access</a>
+            </div>
+          </div>
+          <div class="hp-mktg__img">
+            <img src="https://mediahub.beechfieldbrands.com/m/5eb19eb59e57d288/webimage-B155R-Accelerate-Cap-White-Black-Product-Shot-01.png"
+                 alt="Beechfield SS26 product range" loading="lazy">
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
+    <!-- ── 11. WHERE TO BUY ── -->
+    <section class="hp-wtb" aria-label="Where to buy">
+      <div class="container">
+        <div class="hp-wtb-inner">
+          <div>
+            <span class="hp-eyebrow">Ready to Order?</span>
+            <h2 class="hp-wtb__title">Find a distributor near you.</h2>
+            <p class="hp-wtb__desc">Beechfield headwear is available exclusively through our authorised distributor network. Find your nearest partner, check stock availability, or learn how our distribution model works.</p>
+            <div style="margin-top: 28px;">
+              <a href="where-to-buy/find-a-distributor.html" class="hp-btn hp-btn-dark" style="margin-right: 12px;">Find a Distributor</a>
+              <a href="resources/faqs.html" class="hp-btn hp-btn-ghost">FAQs</a>
+            </div>
+          </div>
+          <div class="hp-wtb__links">
+            <a href="where-to-buy/find-a-distributor.html" class="hp-wtb__link">
+              <div>
+                Find a Distributor
+                <span class="hp-wtb__link-sub">Locate your nearest authorised Beechfield partner</span>
+              </div>
+              <span class="hp-wtb__link-arrow">→</span>
+            </a>
+            <a href="where-to-buy/how-to-buy.html" class="hp-wtb__link">
+              <div>
+                How to Buy
+                <span class="hp-wtb__link-sub">Understand our trade-only distribution model</span>
+              </div>
+              <span class="hp-wtb__link-arrow">→</span>
+            </a>
+            <a href="where-to-buy/inventory-finder.html" class="hp-wtb__link">
+              <div>
+                Inventory Finder
+                <span class="hp-wtb__link-sub">Check real-time stock availability across the range</span>
+              </div>
+              <span class="hp-wtb__link-arrow">→</span>
+            </a>
+            <a href="about/contact.html" class="hp-wtb__link">
+              <div>
+                Contact Us
+                <span class="hp-wtb__link-sub">Get in touch with the Beechfield team</span>
+              </div>
+              <span class="hp-wtb__link-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer__grid footer__grid--5col">
-
-        <!-- Products -->
         <div>
           <h4 class="footer__column-title">Products</h4>
           <nav class="footer__links">
@@ -548,8 +1249,6 @@
             <a href="products/accessories/" class="footer__link">Accessories</a>
           </nav>
         </div>
-
-        <!-- For Decorators -->
         <div>
           <h4 class="footer__column-title">For Decorators</h4>
           <nav class="footer__links">
@@ -561,50 +1260,41 @@
             <a href="decorator-academy/colours.html" class="footer__link">Colours</a>
           </nav>
         </div>
-
-        <!-- Marketing Centre -->
         <div>
           <h4 class="footer__column-title">Marketing Centre</h4>
           <nav class="footer__links">
             <a href="marketing-centre/" class="footer__link">Marketing Centre</a>
-            <a href="marketing-centre/sign-up.html" class="footer__link">Sign Up</a>
+            <a href="marketing-centre/sign-up.html" class="footer__link">Request Access</a>
             <a href="marketing-centre/library.html" class="footer__link">Asset Library</a>
             <a href="marketing-centre/product-documents.html" class="footer__link">Product Documents</a>
             <a href="marketing-centre/campaign-toolkits.html" class="footer__link">Campaign Toolkits</a>
-            <a href="marketing-centre/templates-guidelines.html" class="footer__link">Templates &amp; Guidelines</a>
           </nav>
         </div>
-
-        <!-- About -->
         <div>
           <h4 class="footer__column-title">About</h4>
           <nav class="footer__links">
             <a href="about/about-beechfield.html" class="footer__link">About Beechfield</a>
             <a href="about/materials-and-fabrics.html" class="footer__link">Materials &amp; Fabrics</a>
-            <a href="about/quality-and-compliance.html" class="footer__link">Quality &amp; Compliance</a>
             <a href="about/responsible-choices.html" class="footer__link">Responsible Choices</a>
             <a href="about/events.html" class="footer__link">Events</a>
             <a href="about/press.html" class="footer__link">Press</a>
           </nav>
         </div>
-
-        <!-- Support -->
         <div>
           <h4 class="footer__column-title">Support</h4>
           <nav class="footer__links">
             <a href="where-to-buy/" class="footer__link">Where to Buy</a>
+            <a href="where-to-buy/find-a-distributor.html" class="footer__link">Find a Distributor</a>
             <a href="resources/faqs.html" class="footer__link">FAQs</a>
             <a href="about/contact.html" class="footer__link">Contact</a>
           </nav>
         </div>
-
       </div>
 
-      <!-- Company block -->
       <div class="footer__company">
         <div class="footer__company-logo">
-          Beechfield
-          <span>Original Headwear</span>
+          <img src="https://mediahub.beechfieldbrands.com/m/6c13cb59a34019b7/Product_medium-Beechfield-Logo-PNG.jpg"
+               alt="Beechfield Original Headwear" height="28" style="display:block">
         </div>
         <div class="footer__company-info">
           <p>Part of <a href="../beechfield-brands/">Beechfield Brands Ltd.</a></p>
@@ -613,7 +1303,6 @@
         </div>
       </div>
 
-      <!-- Footer bottom bar -->
       <div class="footer__bottom">
         <p class="footer__copyright">Beechfield Original Headwear</p>
         <div class="footer__legal">
@@ -627,7 +1316,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="../shared/js/navigation.js"></script>
 </body>
 </html>

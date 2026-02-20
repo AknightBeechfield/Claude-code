@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B90N EarthAware® Organic Cotton Bucket Hat | Beechfield Original Headwear</title>
+  <meta name="description" content="B90N EarthAware® Organic Cotton Bucket Hat — OCS-certified organic cotton, wide structured brim, decoration-ready. Available in natural tones and classic colours.">
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <style>
+    :root {
+      --brand-primary: #0e1520;
+      --brand-accent:  #1f614d;
+      --brand-cream:   #f5f0e8;
+      --brand-green:   #1f614d;
+      --brand-green-pale: #e8f5f0;
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb { background: var(--brand-cream); padding: 0.75rem 2rem; font-size: 0.8rem; }
+    .breadcrumb__inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--brand-primary); text-decoration: none; opacity: 0.65; }
+    .breadcrumb a:hover { opacity: 1; }
+    .breadcrumb__sep { opacity: 0.35; }
+    .breadcrumb__current { color: var(--brand-accent); font-weight: 600; }
+
+    /* ── Hero ── */
+    .product-hero {
+      position: relative;
+      min-height: 62vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .product-hero__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .product-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(14, 21, 32, 0.88) 0%,
+        rgba(31, 97, 77, 0.25) 55%,
+        transparent 100%
+      );
+    }
+    .product-hero__content {
+      position: relative;
+      z-index: 2;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      color: #fff;
+    }
+    .product-hero__collection {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(31, 97, 77, 0.8);
+      border: 1px solid rgba(31, 97, 77, 1);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .product-hero__sku {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      margin-left: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .product-hero__title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+      max-width: 680px;
+    }
+    .product-hero__tagline {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      opacity: 0.8;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    .product-hero__cta {
+      display: inline-block;
+      background: var(--brand-accent);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .product-hero__cta:hover { background: #174d3c; }
+
+    /* ── Story split ── */
+    .story-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 540px;
+    }
+    @media (max-width: 768px) { .story-split { grid-template-columns: 1fr; } }
+    .story-split__image { overflow: hidden; background: var(--brand-cream); }
+    .story-split__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      min-height: 360px;
+      display: block;
+    }
+    .story-split__body {
+      background: var(--brand-cream);
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .story-split__label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--brand-accent);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .story-split__heading {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--brand-primary);
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+    .story-split__text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #3a3a3a;
+      margin-bottom: 1.5rem;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid #ddd8d0;
+      margin-top: 0.5rem;
+    }
+    .spec-row {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd8d0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .spec-row__label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand-accent);
+    }
+    .spec-row__value {
+      font-size: 0.85rem;
+      color: var(--brand-primary);
+      font-weight: 500;
+    }
+
+    /* ── OCS / Certification callout ── */
+    .ocs-callout {
+      background: var(--brand-green);
+      color: #fff;
+      padding: 60px 0;
+    }
+    .ocs-callout__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .ocs-callout__inner { grid-template-columns: 1fr; } }
+    .ocs-stat {
+      border-top: 2px solid rgba(255,255,255,0.25);
+      padding-top: 24px;
+    }
+    .ocs-stat__num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .ocs-stat__label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+    .ocs-stat__badge {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 5px 14px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+    }
+
+    /* ── Colour strip ── */
+    .colour-strip { background: var(--brand-primary); padding: 4rem 2rem; color: #fff; }
+    .colour-strip__inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--brand-accent); font-weight: 700; margin-bottom: 0.5rem; }
+    .section-heading { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-bottom: 2.5rem; }
+    .colour-swatches { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .swatch { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
+    .swatch__dot { width: 56px; height: 56px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.15); box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+    .swatch__name { font-size: 0.75rem; text-align: center; opacity: 0.75; letter-spacing: 0.04em; }
+
+    /* ── Built for Decoration ── */
+    .decoration-section { background: var(--brand-primary); color: #fff; padding: 5rem 2rem; }
+    .decoration-section__inner { max-width: 1200px; margin: 0 auto; }
+    .decoration-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 3rem; }
+    @media (max-width: 768px) { .decoration-grid { grid-template-columns: 1fr; } }
+    .decoration-card { border-top: 2px solid var(--brand-accent); padding-top: 1.5rem; }
+    .decoration-card__icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(31,97,77,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .decoration-card__icon svg { width: 20px; height: 20px; stroke: var(--brand-accent); fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .decoration-card__title { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: 0.02em; }
+    .decoration-card__text { font-size: 0.9rem; line-height: 1.7; opacity: 0.75; }
+
+    /* ── Product family cards ── */
+    .family-section { padding: 5rem 2rem; background: #fff; }
+    .family-section--cream { background: var(--brand-cream); }
+    .family-section__inner { max-width: 1200px; margin: 0 auto; }
+    .family-section__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 640px) { .family-section__header { grid-template-columns: 1fr; } }
+    .family-section__header-sub { font-size: 0.9rem; color: #666; line-height: 1.7; }
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 900px) { .cards-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .cards-grid { grid-template-columns: 1fr; } }
+    .card {
+      display: block;
+      text-decoration: none;
+      color: var(--brand-primary);
+      overflow: hidden;
+      border: 1px solid #e4ddd6;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card:hover { box-shadow: 0 8px 24px rgba(14,21,32,0.1); transform: translateY(-3px); }
+    .card__image { aspect-ratio: 4/3; overflow: hidden; background: var(--brand-cream); position: relative; }
+    .card__image img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.35s; }
+    .card:hover .card__image img { transform: scale(1.04); }
+    .card__category {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #0e1520;
+      color: #fff;
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+    }
+    .card__body { padding: 1.1rem 1.25rem 1.4rem; }
+    .card__sku { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: #aaa; font-weight: 600; }
+    .card__title { font-size: 0.95rem; font-weight: 700; margin: 0.3rem 0 0.5rem; line-height: 1.3; }
+    .card__features { list-style: none; padding: 0; margin: 0 0 10px; border-top: 1px solid #ede8e2; padding-top: 10px; }
+    .card__features li { font-size: 0.72rem; color: #666; padding: 1px 0 1px 11px; position: relative; line-height: 1.5; }
+    .card__features li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 1px; background: #1f614d; }
+    .card__cta { font-size: 0.78rem; color: var(--brand-accent); font-weight: 700; letter-spacing: 0.04em; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
+          <a href="../" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../../bagbase/" class="brand-switcher__link">BagBase</a>
+          <a href="../../quadra/" class="brand-switcher__link">Quadra</a>
+          <a href="../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions">
+        <a href="../where-to-buy/find-a-distributor.html">Find a Distributor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../" class="site-logo" aria-label="Beechfield home">
+        <span class="site-logo__text">Beechfield</span>
+        <span class="site-logo__brand">Original Headwear</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li class="main-nav__item" data-mega="products">
+            <a href="../products/" class="main-nav__link main-nav__link--active">
+              Products
+              <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg>
+            </a>
+            <div class="mega-menu mega-menu--products">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Best Sellers</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../products/b45-original-cuffed-beanie.html" class="mega-menu__link">B45 – Original Cuffed Beanie</a></li>
+                    <li><a href="../products/b655-dad-cap.html" class="mega-menu__link">B655 – Low Profile Vintage Cap</a></li>
+                    <li><a href="../products/b15-baseball-cap.html" class="mega-menu__link">B15 – Ultimate 5 Panel Cap</a></li>
+                    <li><a href="../products/b640-snapback-trucker.html" class="mega-menu__link">B640 – Snapback Trucker</a></li>
+                    <li><a href="../products/b90n-earthaware-bucket-hat.html" class="mega-menu__link mega-menu__link--featured">B90N – EarthAware® Bucket Hat</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Type</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../products/caps/" class="mega-menu__link">Caps</a></li>
+                    <li><a href="../products/beanies/" class="mega-menu__link">Beanies</a></li>
+                    <li><a href="../products/hats/" class="mega-menu__link">Hats</a></li>
+                    <li><a href="../products/neckwear/" class="mega-menu__link">Neckwear</a></li>
+                    <li><a href="../products/accessories/" class="mega-menu__link">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Purpose</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../products/?purpose=outdoors" class="mega-menu__link">Outdoors &amp; Activewear</a></li>
+                    <li><a href="../products/?purpose=fashion" class="mega-menu__link">Fashion</a></li>
+                    <li><a href="../products/?purpose=promotion" class="mega-menu__link">Promotion</a></li>
+                    <li><a href="../products/?purpose=workwear" class="mega-menu__link">Workwear</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Collections</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../collections/originals.html" class="mega-menu__link">Originals</a></li>
+                    <li><a href="../collections/earthaware.html" class="mega-menu__link mega-menu__link--featured">EarthAware®</a></li>
+                    <li><a href="../collections/vintage.html" class="mega-menu__link">Vintage</a></li>
+                    <li><a href="../collections/urbanwear.html" class="mega-menu__link">Urbanwear</a></li>
+                    <li><a href="../collections/morf.html" class="mega-menu__link">Morf</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Seasonal</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">SS26 Lookbook</a></li>
+                    <li><a href="../products/?filter=new" class="mega-menu__link">New Arrivals</a></li>
+                    <li><a href="../products/?filter=trending" class="mega-menu__link">Trending Now</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="main-nav__item" data-mega="cap-studio">
+            <a href="../cap-studio/" class="main-nav__link">Cap Studio <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../cap-studio/" class="mega-menu__link mega-menu__link--featured">Cap Studio Overview</a></li><li><a href="../cap-studio/find-your-cap.html" class="mega-menu__link">Find Your Perfect Cap</a></li></ul></div></div></div>
+          </li>
+          <li class="main-nav__item" data-mega="lookbooks">
+            <a href="../lookbooks/" class="main-nav__link">Lookbooks <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">SS26 Lookbook</a></li></ul></div></div></div>
+          </li>
+          <li class="main-nav__item" data-mega="decorator">
+            <a href="../decorator-academy/" class="main-nav__link">Decorator Academy <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--2col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../decorator-academy/techniques/embroidery.html" class="mega-menu__link">Embroidery</a></li><li><a href="../decorator-academy/techniques/transfer.html" class="mega-menu__link">Print &amp; Transfer</a></li><li><a href="../decorator-academy/techniques/patches.html" class="mega-menu__link">Patches</a></li></ul></div><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../decorator-academy/videos.html" class="mega-menu__link">How-to Videos</a></li><li><a href="../decorator-academy/glossary.html" class="mega-menu__link">Glossary</a></li></ul></div></div></div>
+          </li>
+          <li class="main-nav__item" data-mega="where-to-buy">
+            <a href="../where-to-buy/" class="main-nav__link">Where to Buy <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../where-to-buy/find-a-distributor.html" class="mega-menu__link mega-menu__link--featured">Find a Distributor</a></li></ul></div></div></div>
+          </li>
+          <li class="main-nav__item" data-mega="about">
+            <a href="../about/" class="main-nav__link">About <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../about/about-beechfield.html" class="mega-menu__link mega-menu__link--featured">About Beechfield</a></li><li><a href="../about/responsible-choices.html" class="mega-menu__link">Responsible Choices</a></li><li><a href="../about/events.html" class="mega-menu__link">Events</a></li></ul></div></div></div>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="breadcrumb__inner">
+        <a href="../">Home</a>
+        <span class="breadcrumb__sep">/</span>
+        <a href="../products/">Products</a>
+        <span class="breadcrumb__sep">/</span>
+        <a href="../products/hats/">Hats</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">B90N EarthAware® Organic Cotton Bucket Hat</span>
+      </div>
+    </div>
+
+    <!-- 1. Hero -->
+    <section class="product-hero" aria-label="B90N EarthAware Organic Cotton Bucket Hat hero">
+      <img
+        class="product-hero__img"
+        src="https://mediahub.beechfieldbrands.com/m/31e473ca6c2a5d3d/webimage-B90N-EarthAware-Organic-Cotton-Bucket-Hat-Desert-Sand-Front-on-shot.png"
+        alt="B90N EarthAware Organic Cotton Bucket Hat in Desert Sand"
+      >
+      <div class="product-hero__overlay"></div>
+      <div class="product-hero__content">
+        <div>
+          <span class="product-hero__collection">EarthAware® Collection</span>
+          <span class="product-hero__sku">SKU: B90N</span>
+        </div>
+        <h1 class="product-hero__title">EarthAware® Organic Cotton Bucket Hat</h1>
+        <p class="product-hero__tagline">OCS-certified organic cotton. The same decoration performance. A lower impact.</p>
+        <a href="../where-to-buy/find-a-distributor.html" class="product-hero__cta">Find a Distributor</a>
+      </div>
+    </section>
+
+    <!-- 2. Story Split — image | specs -->
+    <section class="story-split" aria-label="Product story and specifications">
+      <div class="story-split__image">
+        <img
+          src="https://mediahub.beechfieldbrands.com/m/31e473ca6c2a5d3d/webimage-B90N-EarthAware-Organic-Cotton-Bucket-Hat-Desert-Sand-Front-on-shot.png"
+          alt="B90N EarthAware Organic Cotton Bucket Hat detail view"
+        >
+      </div>
+      <div class="story-split__body">
+        <p class="story-split__label">The Product</p>
+        <h2 class="story-split__heading">Fashion-led silhouette. Organic backbone.</h2>
+        <p class="story-split__text">
+          The B90N takes the bucket hat silhouette — one of the most in-demand shapes across fashion, festival and outdoor markets — and builds it in 100% organic cotton certified to the Organic Content Standard. The wide, structured brim provides generous decoration real estate on four separate panels, and the unstructured crown accepts embroidery, patches and screen print with equal confidence.
+        </p>
+        <p class="story-split__text">
+          Available in a seasonal palette anchored by natural, earthy tones, the B90N is built for programmes where sustainability is a brief requirement, not an afterthought.
+        </p>
+        <div class="specs-grid">
+          <div class="spec-row">
+            <span class="spec-row__label">Material</span>
+            <span class="spec-row__value">100% Organic Cotton</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Certification</span>
+            <span class="spec-row__value">OCS (Organic Content Standard)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Crown</span>
+            <span class="spec-row__value">Unstructured, 6-panel</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Brim</span>
+            <span class="spec-row__value">Wide all-round, stitched edge</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Closure</span>
+            <span class="spec-row__value">One size, adjustable cord</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Label</span>
+            <span class="spec-row__value">TearAway — brand-clean finish</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Colours</span>
+            <span class="spec-row__value">10+ natural and classic tones</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Decoration panels</span>
+            <span class="spec-row__value">4 crown panels + brim</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EarthAware / OCS Callout -->
+    <div class="ocs-callout">
+      <div class="container">
+        <div class="ocs-callout__inner">
+          <div class="ocs-stat">
+            <span class="ocs-stat__badge">OCS Certified</span>
+            <div class="ocs-stat__num">100%</div>
+            <p class="ocs-stat__label">Organic cotton content, independently verified from fibre to finished product by the Organic Content Standard (OCS).</p>
+          </div>
+          <div class="ocs-stat">
+            <span class="ocs-stat__badge">No Compromise</span>
+            <div class="ocs-stat__num">Same</div>
+            <p class="ocs-stat__label">Decoration performance as the rest of the Beechfield range. OCS certification doesn't affect embroidery stability, colour consistency or brim structure.</p>
+          </div>
+          <div class="ocs-stat">
+            <span class="ocs-stat__badge">EarthAware® Range</span>
+            <div class="ocs-stat__num">Full</div>
+            <p class="ocs-stat__label">Collection spanning caps, bucket hats and beanies — enabling decorators to build complete organic cotton headwear programmes from a single supplier.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Colour Range -->
+    <section class="colour-strip" aria-label="Colour range">
+      <div class="colour-strip__inner">
+        <p class="section-label">Colour Range</p>
+        <h2 class="section-heading">Natural tones and classic colours.</h2>
+        <div class="colour-swatches">
+          <div class="swatch">
+            <div class="swatch__dot" style="background:#c8b99a;"></div>
+            <span class="swatch__name">Desert Sand</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch__dot" style="background:#f5f0e8; border-color:rgba(255,255,255,0.25);"></div>
+            <span class="swatch__name">Natural</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch__dot" style="background:#d4c5a9;"></div>
+            <span class="swatch__name">Stone</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch__dot" style="background:#4a5240;"></div>
+            <span class="swatch__name">Olive</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch__dot" style="background:#1b2a4a;"></div>
+            <span class="swatch__name">French Navy</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch__dot" style="background:#000000;"></div>
+            <span class="swatch__name">Black</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch__dot" style="background:#ffffff; border-color:rgba(255,255,255,0.4);"></div>
+            <span class="swatch__name">White</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch__dot" style="background:#8c7158;"></div>
+            <span class="swatch__name">Tobacco</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Built for Decoration -->
+    <section class="decoration-section" aria-label="Decoration capabilities">
+      <div class="decoration-section__inner">
+        <p class="section-label">Built for Decoration</p>
+        <h2 class="section-heading">Four panels. Versatile placement. One organic blank.</h2>
+        <div class="decoration-grid">
+          <div class="decoration-card">
+            <div class="decoration-card__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 19L17 6"/>
+                <path d="M15 7l2-1 1 2-2 1"/>
+                <path d="M15 9c2-1 5 1 4 5s-5 7-8 6"/>
+              </svg>
+            </div>
+            <h3 class="decoration-card__title">Embroidery</h3>
+            <p class="decoration-card__text">
+              The six-panel crown construction provides a stable, flat surface on each panel. The organic cotton weave holds embroidery thread cleanly — machine backing works without distortion across all standard stitch counts.
+            </p>
+          </div>
+          <div class="decoration-card">
+            <div class="decoration-card__icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="7" width="14" height="10" rx="1"/>
+                <path d="M5 10h14"/>
+                <circle cx="12" cy="5" r="1.5"/>
+                <line x1="12" y1="6.5" x2="12" y2="7"/>
+                <line x1="8" y1="13" x2="16" y2="13"/>
+              </svg>
+            </div>
+            <h3 class="decoration-card__title">Patches &amp; Labels</h3>
+            <p class="decoration-card__text">
+              Woven, rubber and PVC patches bond cleanly to the unstructured panels. The four discrete crown sections give flexible placement options — front, side or back panel without crowding the brim decoration area.
+            </p>
+          </div>
+          <div class="decoration-card">
+            <div class="decoration-card__icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="14" rx="1"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="6" y1="12" x2="18" y2="12"/>
+                <line x1="6" y1="15" x2="18" y2="15"/>
+              </svg>
+            </div>
+            <h3 class="decoration-card__title">Screen Print &amp; Transfer</h3>
+            <p class="decoration-card__text">
+              The flat panel construction and consistent cotton weave deliver predictable ink and heat transfer adhesion. The brim offers an additional print zone for smaller brand hits or repeat patterns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Complete the programme — EarthAware family -->
+    <section class="family-section" aria-label="EarthAware product family">
+      <div class="family-section__inner">
+        <div class="family-section__header">
+          <div>
+            <p class="section-label" style="color:var(--brand-accent)">EarthAware® Collection</p>
+            <h2 class="section-heading" style="color:var(--brand-primary);margin-bottom:0;">Complete the organic programme.</h2>
+          </div>
+          <p class="family-section__header-sub">The B90N sits within a full collection of OCS-certified headwear — giving decorators everything they need to build a coherent organic cotton range from a single supplier.</p>
+        </div>
+        <div class="cards-grid">
+          <a href="b15-baseball-cap.html" class="card">
+            <div class="card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png" alt="B15 Ultimate 5-Panel Cap">
+              <span class="card__category">5-Panel Classic</span>
+            </div>
+            <div class="card__body">
+              <span class="card__sku">B15</span>
+              <h3 class="card__title">Ultimate 5-Panel Cap</h3>
+              <ul class="card__features">
+                <li>Structured front, pre-curved peak</li>
+                <li>60+ colours, TearAway label</li>
+              </ul>
+              <span class="card__cta">View product →</span>
+            </div>
+          </a>
+          <a href="b655-dad-cap.html" class="card">
+            <div class="card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B655 Low Profile Vintage Cap">
+              <span class="card__category">Dad Cap</span>
+            </div>
+            <div class="card__body">
+              <span class="card__sku">B655</span>
+              <h3 class="card__title">Low Profile Vintage Cap</h3>
+              <ul class="card__features">
+                <li>Unstructured, washed cotton twill</li>
+                <li>Adjustable buckle strap</li>
+              </ul>
+              <span class="card__cta">View product →</span>
+            </div>
+          </a>
+          <a href="b45-original-cuffed-beanie.html" class="card">
+            <div class="card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/e32066e8b0244e25/webimage-B188-Technical-Running-Cap-Graphite-Grey-Front-on-shot.png" alt="B45 Original Cuffed Beanie">
+              <span class="card__category">Beanie</span>
+            </div>
+            <div class="card__body">
+              <span class="card__sku">B45</span>
+              <h3 class="card__title">Original Cuffed Beanie</h3>
+              <ul class="card__features">
+                <li>100% acrylic double-knit</li>
+                <li>Fold-over cuff, one size</li>
+              </ul>
+              <span class="card__cta">View product →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. You May Also Like -->
+    <section class="family-section family-section--cream" aria-label="You may also like">
+      <div class="family-section__inner">
+        <div class="family-section__header">
+          <div>
+            <p class="section-label" style="color:var(--brand-accent)">You May Also Like</p>
+            <h2 class="section-heading" style="color:var(--brand-primary);margin-bottom:0;">More from the range.</h2>
+          </div>
+          <p class="family-section__header-sub">Explore other Beechfield styles across caps, beanies and more — all available through our authorised distributor network.</p>
+        </div>
+        <div class="cards-grid">
+          <a href="b640-snapback-trucker.html" class="card">
+            <div class="card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/7d1480204a8fb8fb/webimage-B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.png" alt="B640 Vintage Snapback Trucker">
+              <span class="card__category">Trucker</span>
+            </div>
+            <div class="card__body">
+              <span class="card__sku">B640</span>
+              <h3 class="card__title">Vintage Snapback Trucker</h3>
+              <ul class="card__features">
+                <li>High-profile structured front</li>
+                <li>Mesh back, snapback closure</li>
+              </ul>
+              <span class="card__cta">View product →</span>
+            </div>
+          </a>
+          <a href="b15-baseball-cap.html" class="card">
+            <div class="card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png" alt="B15 Ultimate 5-Panel Cap">
+              <span class="card__category">5-Panel Classic</span>
+            </div>
+            <div class="card__body">
+              <span class="card__sku">B15</span>
+              <h3 class="card__title">Ultimate 5-Panel Cap</h3>
+              <ul class="card__features">
+                <li>Structured front, brushed cotton</li>
+                <li>60+ colours, TearAway label</li>
+              </ul>
+              <span class="card__cta">View product →</span>
+            </div>
+          </a>
+          <a href="b655-dad-cap.html" class="card">
+            <div class="card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B655 Low Profile Vintage Cap">
+              <span class="card__category">Dad Cap</span>
+            </div>
+            <div class="card__body">
+              <span class="card__sku">B655</span>
+              <h3 class="card__title">Low Profile Vintage Cap</h3>
+              <ul class="card__features">
+                <li>Unstructured, washed vintage finish</li>
+                <li>Low profile, all-gender fit</li>
+              </ul>
+              <span class="card__cta">View product →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--5col">
+        <div>
+          <h4 class="footer__column-title">Products</h4>
+          <nav class="footer__links">
+            <a href="../products/" class="footer__link">All Products</a>
+            <a href="../products/caps/" class="footer__link">Caps</a>
+            <a href="../products/beanies/" class="footer__link">Beanies</a>
+            <a href="../products/hats/" class="footer__link">Hats</a>
+            <a href="../products/neckwear/" class="footer__link">Neckwear</a>
+            <a href="../products/accessories/" class="footer__link">Accessories</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">For Decorators</h4>
+          <nav class="footer__links">
+            <a href="../decorator-academy/" class="footer__link">Decorator Academy</a>
+            <a href="../decorator-academy/videos.html" class="footer__link">How-to Videos</a>
+            <a href="../decorator-academy/glossary.html" class="footer__link">Glossary</a>
+            <a href="../decorator-academy/colours.html" class="footer__link">Colours</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">Collections</h4>
+          <nav class="footer__links">
+            <a href="../collections/earthaware.html" class="footer__link">EarthAware®</a>
+            <a href="../collections/originals.html" class="footer__link">Originals</a>
+            <a href="../collections/vintage.html" class="footer__link">Vintage</a>
+            <a href="../collections/urbanwear.html" class="footer__link">Urbanwear</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">About</h4>
+          <nav class="footer__links">
+            <a href="../about/about-beechfield.html" class="footer__link">About Beechfield</a>
+            <a href="../about/materials-and-fabrics.html" class="footer__link">Materials &amp; Fabrics</a>
+            <a href="../about/responsible-choices.html" class="footer__link">Responsible Choices</a>
+            <a href="../about/events.html" class="footer__link">Events</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">Support</h4>
+          <nav class="footer__links">
+            <a href="../where-to-buy/" class="footer__link">Where to Buy</a>
+            <a href="../resources/faqs.html" class="footer__link">FAQs</a>
+            <a href="../about/contact.html" class="footer__link">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__company">
+        <div class="footer__company-logo">Beechfield<span>Original Headwear</span></div>
+        <div class="footer__company-info">
+          <p>Part of <a href="../../beechfield-brands/">Beechfield Brands Ltd.</a></p>
+          <p>Registered in England &amp; Wales. Company No. 02996544</p>
+          <p>&copy; 2026 Beechfield Brands Limited. All rights reserved.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">Beechfield Original Headwear</p>
+        <div class="footer__legal">
+          <a href="#">Privacy</a>
+          <a href="#">Cookies</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Modern Slavery</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js"></script>
+</body>
+</html>

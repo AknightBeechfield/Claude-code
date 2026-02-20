@@ -3,6 +3,8 @@
    Shared CSS custom properties for all 5 brand sites
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
 :root {
   /* ── Brand Colours: Beechfield Brands (Corporate) ── */
   --bfb-cool-black: #0e1520;
@@ -45,10 +47,12 @@
   --font-heading: 'neue-haas-grotesk-display', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-body: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-editorial: 'neue-haas-grotesk-display', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-ui: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
   /* Heading scale (desktop) */

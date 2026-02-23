@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B673 Contrast Peak Low Profile Vintage Cap | Beechfield Original Headwear</title>
+  <meta name="description" content="B673 Contrast Peak Low Profile Vintage Cap — washed cotton twill, unstructured 6-panel, contrast colour pre-curved peak. Available in 2 colourways.">
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <link rel="stylesheet" href="https://use.typekit.net/sep5cxb.css">
+  <style>
+    :root {
+      --brand-primary: #0e1520;
+      --brand-accent: #1f614d;
+      --brand-cream: #f5f0e8;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb { background: var(--brand-cream); padding: 0.75rem 2rem; font-size: 0.8rem; }
+    .breadcrumb__inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--brand-primary); text-decoration: none; opacity: 0.65; }
+    .breadcrumb a:hover { opacity: 1; }
+    .breadcrumb__sep { opacity: 0.35; }
+    .breadcrumb__current { color: var(--brand-accent); font-weight: 600; }
+
+    /* Product Header (two-column) */
+    .product-header { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 3rem; display: grid; grid-template-columns: 55% 45%; gap: 3rem; align-items: start; }
+    @media (max-width: 900px) { .product-header { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem 1rem 2rem; } }
+
+    /* Gallery */
+    .gallery__main { width: 100%; aspect-ratio: 1/1; background: #eaeaea; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+    .gallery__main img { width: 100%; height: 100%; object-fit: contain; transition: opacity 0.3s ease; }
+    .gallery__main video { width: 100%; height: 100%; object-fit: contain; }
+    .gallery__thumbs { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+    .gallery__thumb { width: 72px; height: 72px; background: #eaeaea; border: 2px solid transparent; cursor: pointer; overflow: hidden; padding: 0; transition: border-color 0.2s; }
+    .gallery__thumb--active, .gallery__thumb:hover { border-color: var(--brand-primary); }
+    .gallery__thumb img { width: 100%; height: 100%; object-fit: contain; }
+    .gallery__thumb--video { position: relative; }
+    .gallery__thumb--video::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+    .gallery__thumb--video::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 0; height: 0; border-left: 12px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+
+    /* Product Info */
+    .product-info { padding-top: 0.5rem; }
+    .product-info__collection { display: inline-block; background: rgba(31,97,77,0.1); border: 1px solid var(--brand-accent); color: var(--brand-accent); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.75rem; margin-bottom: 0.75rem; }
+    .product-info__sku { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 0.35rem; }
+    .product-info__name { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: var(--brand-primary); line-height: 1.15; margin-bottom: 0.75rem; }
+    .product-info__desc { font-size: 0.95rem; line-height: 1.7; color: #555; margin-bottom: 1.5rem; }
+
+    /* Colour picker */
+    .colour-picker { margin-bottom: 1.5rem; }
+    .colour-picker__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 0.5rem; }
+    .colour-picker__swatches { display: flex; gap: 0.6rem; margin-bottom: 0.4rem; }
+    .colour-picker__swatch { width: 36px; height: 36px; border-radius: 50%; border: 2px solid #ddd; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; padding: 0; background: none; }
+    .colour-picker__swatch--active, .colour-picker__swatch:hover { border-color: var(--brand-primary); box-shadow: 0 0 0 2px rgba(14,21,32,0.25); }
+    .colour-picker__name { font-size: 0.82rem; color: var(--brand-primary); font-weight: 500; }
+
+    /* Decoration technique pills */
+    .deco-techniques { margin-bottom: 1.5rem; }
+    .deco-techniques__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 0.5rem; }
+    .deco-techniques__pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .deco-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--brand-primary); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.4rem 0.9rem; text-decoration: none; transition: background 0.2s; }
+    .deco-pill:hover { background: #2a3545; }
+    .deco-pill svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* CTAs */
+    .product-ctas { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .product-ctas__btn { flex: 1; min-width: 200px; text-align: center; padding: 0.85rem 1.25rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .product-ctas__btn--primary { background: var(--brand-primary); color: #fff; }
+    .product-ctas__btn--primary:hover { background: #2a3545; }
+    .product-ctas__btn--outline { background: transparent; color: var(--brand-primary); border: 2px solid var(--brand-primary); }
+    .product-ctas__btn--outline:hover { background: var(--brand-primary); color: #fff; }
+
+    /* Quick specs */
+    .quick-specs { display: flex; gap: 0; border-top: 1px solid #e4ddd6; border-bottom: 1px solid #e4ddd6; }
+    .quick-spec { flex: 1; padding: 0.75rem 0; text-align: center; border-right: 1px solid #e4ddd6; }
+    .quick-spec:last-child { border-right: none; }
+    .quick-spec__label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 2px; }
+    .quick-spec__value { font-size: 0.82rem; font-weight: 600; color: var(--brand-primary); }
+
+    /* Section shared */
+    .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--brand-accent); font-weight: 700; margin-bottom: 0.5rem; }
+    .section-heading { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-bottom: 2rem; }
+
+    /* Specifications Table */
+    .specs-section { background: #f5f5f0; padding: 4rem 2rem; }
+    .specs-section__inner { max-width: 1200px; margin: 0 auto; }
+    .specs-table { width: 100%; border-collapse: collapse; }
+    .specs-table tr { border-bottom: 1px solid #ddd8d0; }
+    .specs-table td { padding: 0.85rem 1rem; font-size: 0.88rem; vertical-align: top; }
+    .specs-table td:first-child { font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-accent); width: 240px; white-space: nowrap; }
+    .specs-table td:last-child { color: var(--brand-primary); }
+    .specs-table a { color: var(--brand-accent); text-decoration: underline; text-underline-offset: 2px; }
+    .specs-table a:hover { text-decoration: none; }
+
+    /* Decoration Suitability */
+    .decoration-section { background: #111111; color: #fff; padding: 5rem 2rem; }
+    .decoration-section__inner { max-width: 1200px; margin: 0 auto; }
+    .decoration-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 2.5rem; }
+    @media (max-width: 768px) { .decoration-grid { grid-template-columns: 1fr; } }
+    .decoration-card { border-top: 2px solid var(--brand-accent); padding-top: 1.5rem; }
+    .decoration-card--recommended { border-top-color: #fff; }
+    .decoration-card__icon { width: 40px; height: 40px; background: rgba(31,97,77,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .decoration-card__icon svg { width: 20px; height: 20px; stroke: var(--brand-accent); fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .decoration-card__title { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; letter-spacing: 0.02em; }
+    .decoration-card__badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; margin-bottom: 0.75rem; }
+    .decoration-card__badge--recommended { background: var(--brand-accent); color: #fff; }
+    .decoration-card__badge--good { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); }
+    .decoration-card__ease { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 0.6rem; }
+    .decoration-card__text { font-size: 0.88rem; line-height: 1.7; opacity: 0.75; }
+
+    .decoration-video { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+    @media (max-width: 768px) { .decoration-video { grid-template-columns: 1fr; } }
+    .decoration-video__embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+    .decoration-video__embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .decoration-video__body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .decoration-video__body p { font-size: 0.88rem; line-height: 1.7; opacity: 0.7; margin-bottom: 1.25rem; }
+    .decoration-download { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); padding: 0.6rem 1.2rem; transition: background 0.2s, border-color 0.2s; }
+    .decoration-download:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+    .decoration-download svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* Sustainability & Impact */
+    .sustainability-section { background: #fff; padding: 5rem 2rem; }
+    .sustainability-section__inner { max-width: 1200px; margin: 0 auto; }
+    .sustainability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+    @media (max-width: 768px) { .sustainability-grid { grid-template-columns: 1fr; } }
+    .sustainability-certs__heading { font-size: 0.92rem; font-weight: 700; margin-bottom: 1rem; color: var(--brand-primary); }
+    .sustainability-certs__empty { font-size: 0.88rem; color: #999; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6; }
+    .sustainability-certs__links { display: flex; flex-direction: column; gap: 0.6rem; }
+    .sustainability-certs__link { display: inline-flex; align-items: center; gap: 6px; color: var(--brand-accent); font-size: 0.82rem; font-weight: 600; text-decoration: none; }
+    .sustainability-certs__link:hover { text-decoration: underline; }
+    .sustainability-certs__link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .impact-stats__heading { font-size: 0.92rem; font-weight: 700; margin-bottom: 1rem; color: var(--brand-primary); }
+    .impact-stats__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    @media (max-width: 580px) { .impact-stats__grid { grid-template-columns: 1fr; } }
+    .impact-stat { border-top: 2px solid var(--brand-accent); padding-top: 1rem; }
+    .impact-stat__num { font-size: 1.6rem; font-weight: 800; color: var(--brand-primary); line-height: 1; margin-bottom: 4px; }
+    .impact-stat__unit { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #999; margin-bottom: 4px; }
+    .impact-stat__label { font-size: 0.78rem; color: #666; line-height: 1.5; }
+
+    /* Comparison Table */
+    .compare-section { background: #f5f5f0; padding: 5rem 2rem; }
+    .compare-section__inner { max-width: 1200px; margin: 0 auto; }
+    .compare-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 2rem; }
+    .compare-table { width: 100%; min-width: 700px; border-collapse: collapse; font-size: 0.82rem; }
+    .compare-table th, .compare-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #ddd8d0; vertical-align: top; }
+    .compare-table th { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; background: #eeeee8; position: sticky; top: 0; }
+    .compare-table td:first-child { font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand-accent); white-space: nowrap; }
+    .compare-current { background: rgba(31,97,77,0.06); }
+    .compare-table thead .compare-current { background: rgba(31,97,77,0.12); color: var(--brand-accent) !important; }
+    .compare-thumb { width: 64px; height: 64px; object-fit: contain; background: #eaeaea; }
+    .compare-link { color: var(--brand-accent); font-weight: 700; text-decoration: none; font-size: 0.78rem; }
+    .compare-link:hover { text-decoration: underline; }
+
+    /* Narrative */
+    .narrative-section { background: var(--brand-cream); padding: 5rem 2rem; }
+    .narrative-section__inner { max-width: 900px; margin: 0 auto; }
+    .narrative-section__heading { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--brand-primary); margin-bottom: 1.5rem; line-height: 1.15; }
+    .narrative-section__text { font-size: 1rem; line-height: 1.8; color: #3a3a3a; margin-bottom: 1.25rem; }
+    .narrative-section__text:last-child { margin-bottom: 0; }
+
+    /* Product Family Cards */
+    .family-section { padding: 5rem 2rem; background: #fff; }
+    .family-section__inner { max-width: 1200px; margin: 0 auto; }
+    .family-section__header { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 2rem; }
+    @media (max-width: 640px) { .family-section__header { grid-template-columns: 1fr; } }
+    .family-section__header-sub { font-size: 0.9rem; color: #666; line-height: 1.7; }
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 900px) { .cards-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .cards-grid { grid-template-columns: 1fr; } }
+    .card { display: block; text-decoration: none; color: var(--brand-primary); overflow: hidden; border: 1px solid #e4ddd6; transition: box-shadow 0.2s, transform 0.2s; }
+    .card:hover { box-shadow: 0 8px 24px rgba(14,21,32,0.1); transform: translateY(-3px); }
+    .card__image { aspect-ratio: 4/3; overflow: hidden; background: var(--brand-cream); position: relative; }
+    .card__image img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.35s; }
+    .card:hover .card__image img { transform: scale(1.04); }
+    .card__category { position: absolute; top: 10px; left: 10px; background: #0e1520; color: #fff; font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; }
+    .card__body { padding: 1.1rem 1.25rem 1.4rem; }
+    .card__sku { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: #aaa; font-weight: 600; }
+    .card__title { font-size: 0.95rem; font-weight: 700; margin: 0.3rem 0 0.5rem; line-height: 1.3; }
+    .card__features { list-style: none; padding: 0; margin: 0 0 10px; border-top: 1px solid #ede8e2; padding-top: 10px; }
+    .card__features li { font-size: 0.72rem; color: #666; padding: 1px 0 1px 11px; position: relative; line-height: 1.5; }
+    .card__features li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 1px; background: #1f614d; }
+    .card__cta { font-size: 0.78rem; color: var(--brand-accent); font-weight: 700; letter-spacing: 0.04em; }
+
+    /* Print */
+    @media print {
+      .top-bar, .site-header, .breadcrumb, .site-footer, .gallery__thumbs, .product-ctas, .deco-techniques, .colour-picker, .decoration-section, .compare-section, .family-section, .narrative-section { display: none !important; }
+      body { font-size: 11pt; color: #000; }
+      .product-header { grid-template-columns: 40% 60%; gap: 1.5rem; padding: 1rem 0; }
+      .gallery__main { max-height: 280px; }
+      .product-info__name { font-size: 1.4rem; }
+      .specs-section { padding: 1rem 0; background: #fff; }
+      .specs-table td { padding: 0.4rem 0.5rem; font-size: 9pt; }
+      .sustainability-section { padding: 1rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
+          <a href="../" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../../bagbase/" class="brand-switcher__link">BagBase</a>
+          <a href="../../quadra/" class="brand-switcher__link">Quadra</a>
+          <a href="../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions">
+        <a href="../where-to-buy/find-a-distributor.html">Find a Distributor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="site-logo" aria-label="Beechfield Original Headwear">
+        <img src="https://mediahub.beechfieldbrands.com/m/6c13cb59a34019b7/Product_medium-Beechfield-Logo-PNG.jpg" alt="Beechfield Original Headwear" height="36">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li class="main-nav__item" data-mega="products">
+            <a href="../products/" class="main-nav__link main-nav__link--active">Products <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--products">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Best Sellers</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="b45-original-cuffed-beanie.html" class="mega-menu__link">B45 &ndash; Original Cuffed Beanie</a></li>
+                    <li><a href="b655-dad-cap.html" class="mega-menu__link">B655 &ndash; Low Profile Vintage Cap</a></li>
+                    <li><a href="b15-baseball-cap.html" class="mega-menu__link">B15 &ndash; Ultimate 5 Panel Cap</a></li>
+                    <li><a href="b640-snapback-trucker.html" class="mega-menu__link">B640 &ndash; Snapback Trucker</a></li>
+                    <li><a href="b90n-earthaware-bucket-hat.html" class="mega-menu__link mega-menu__link--featured">B90N &ndash; EarthAware&reg; Bucket Hat</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Type</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../products/caps/" class="mega-menu__link">Caps</a></li>
+                    <li><a href="../products/beanies/" class="mega-menu__link">Beanies</a></li>
+                    <li><a href="../products/hats/" class="mega-menu__link">Hats</a></li>
+                    <li><a href="../products/neckwear/" class="mega-menu__link">Neckwear</a></li>
+                    <li><a href="../products/accessories/" class="mega-menu__link">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Purpose</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../products/?purpose=outdoors" class="mega-menu__link">Outdoors &amp; Activewear</a></li>
+                    <li><a href="../products/?purpose=fashion" class="mega-menu__link">Fashion</a></li>
+                    <li><a href="../products/?purpose=promotion" class="mega-menu__link">Promotion</a></li>
+                    <li><a href="../products/?purpose=workwear" class="mega-menu__link">Workwear</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Collections</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../collections/originals.html" class="mega-menu__link">Originals</a></li>
+                    <li><a href="../collections/earthaware.html" class="mega-menu__link mega-menu__link--featured">EarthAware&reg;</a></li>
+                    <li><a href="../collections/vintage.html" class="mega-menu__link">Vintage</a></li>
+                    <li><a href="../collections/urbanwear.html" class="mega-menu__link">Urbanwear</a></li>
+                    <li><a href="../collections/morf.html" class="mega-menu__link">Morf</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Seasonal</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">SS26 Lookbook</a></li>
+                    <li><a href="../products/?filter=new" class="mega-menu__link">New Arrivals</a></li>
+                    <li><a href="../products/?filter=trending" class="mega-menu__link">Trending Now</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="main-nav__item" data-mega="cap-studio">
+            <a href="../cap-studio/" class="main-nav__link">Cap Studio <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../cap-studio/" class="mega-menu__link mega-menu__link--featured">Cap Studio Overview</a></li><li><a href="../cap-studio/find-your-cap.html" class="mega-menu__link">Find Your Perfect Cap</a></li></ul></div></div></div>
+          </li>
+          <li class="main-nav__item" data-mega="lookbooks">
+            <a href="../lookbooks/" class="main-nav__link">Lookbooks <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">SS26 Lookbook</a></li></ul></div></div></div>
+          </li>
+          <li class="main-nav__item" data-mega="decorator">
+            <a href="../decorator-academy/" class="main-nav__link">Decorator Academy <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--2col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../decorator-academy/techniques/embroidery.html" class="mega-menu__link">Embroidery</a></li><li><a href="../decorator-academy/techniques/transfer.html" class="mega-menu__link">Print &amp; Transfer</a></li><li><a href="../decorator-academy/techniques/patches.html" class="mega-menu__link">Patches</a></li></ul></div><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../decorator-academy/videos.html" class="mega-menu__link">How-to Videos</a></li><li><a href="../decorator-academy/glossary.html" class="mega-menu__link">Glossary</a></li></ul></div></div></div>
+          </li>
+          <li class="main-nav__item" data-mega="where-to-buy">
+            <a href="../where-to-buy/" class="main-nav__link">Where to Buy <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../where-to-buy/find-a-distributor.html" class="mega-menu__link mega-menu__link--featured">Find a Distributor</a></li></ul></div></div></div>
+          </li>
+          <li class="main-nav__item" data-mega="about">
+            <a href="../about/" class="main-nav__link">About <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col"><div class="mega-menu__inner"><div class="mega-menu__column"><ul class="mega-menu__list"><li><a href="../about/about-beechfield.html" class="mega-menu__link mega-menu__link--featured">About Beechfield</a></li><li><a href="../about/responsible-choices.html" class="mega-menu__link">Responsible Choices</a></li><li><a href="../about/events.html" class="mega-menu__link">Events</a></li></ul></div></div></div>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="breadcrumb__inner">
+        <a href="../">Home</a>
+        <span class="breadcrumb__sep">/</span>
+        <a href="../products/">Products</a>
+        <span class="breadcrumb__sep">/</span>
+        <a href="../products/caps/">Caps</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">B673 Contrast Peak Low Profile Vintage Cap</span>
+      </div>
+    </div>
+
+    <!-- 2. Product Header — two-column above the fold -->
+    <section class="product-header" aria-label="B673 Contrast Peak Low Profile Vintage Cap">
+
+      <!-- Left: Image Gallery -->
+      <div class="gallery">
+        <div class="gallery__main" id="gallery-main">
+          <img id="main-image"
+               src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png"
+               alt="B673 Contrast Peak Low Profile Vintage Cap in Natural / Vintage Black">
+        </div>
+        <div class="gallery__thumbs" id="thumb-strip">
+          <button class="gallery__thumb gallery__thumb--active" data-img="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" aria-label="Front view">
+            <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="Front view">
+          </button>
+          <button class="gallery__thumb gallery__thumb--video" data-video="https://mediahub.beechfieldbrands.com/asset/bc34029a-ac4b-4f63-83de-d265a0dda8f4/mp4/B673-Constrat-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Desert-Sand-Product-Video.mp4" aria-label="Product video">
+            <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="Product video">
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="product-info">
+        <span class="product-info__collection">Vintage Collection</span>
+        <span class="product-info__sku">B673</span>
+        <h1 class="product-info__name">Contrast Peak Low Profile Vintage Cap</h1>
+        <p class="product-info__desc">A washed cotton twill 6-panel cap with a distinctive contrast colour pre-curved peak. The unstructured, low-profile crown delivers the relaxed vintage silhouette decorators and brands are looking for.</p>
+
+        <!-- Colour Swatches -->
+        <div class="colour-picker">
+          <p class="colour-picker__label">Colour</p>
+          <div class="colour-picker__swatches">
+            <button class="colour-picker__swatch colour-picker__swatch--active" data-color="natural-vintage-black" style="background: linear-gradient(135deg, #f5f0e8 50%, #1a1a1a 50%);" aria-label="Natural / Vintage Black"></button>
+            <button class="colour-picker__swatch" data-color="natural-vintage-desert-sand" style="background: linear-gradient(135deg, #f5f0e8 50%, #c8b99a 50%);" aria-label="Natural / Vintage Desert Sand"></button>
+          </div>
+          <p class="colour-picker__name" id="colour-name">Natural / Vintage Black</p>
+        </div>
+
+        <!-- Recommended Decoration Techniques -->
+        <div class="deco-techniques">
+          <p class="deco-techniques__label">Recommended Decoration</p>
+          <div class="deco-techniques__pills">
+            <a href="#decoration" class="deco-pill">
+              <svg viewBox="0 0 24 24"><path d="M7 19L17 6"/><path d="M15 7l2-1 1 2-2 1"/><path d="M15 9c2-1 5 1 4 5s-5 7-8 6"/></svg>
+              Embroidery
+            </a>
+            <a href="#decoration" class="deco-pill">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="6" y1="15" x2="18" y2="15"/></svg>
+              Transfer
+            </a>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="product-ctas">
+          <a href="https://mediahub.beechfieldbrands.com/" class="product-ctas__btn product-ctas__btn--primary" target="_blank" rel="noopener">Download Product Information &amp; Imagery</a>
+          <a href="../where-to-buy/" class="product-ctas__btn product-ctas__btn--outline">View Stock Availability</a>
+        </div>
+
+        <!-- Quick Specs -->
+        <div class="quick-specs">
+          <div class="quick-spec">
+            <p class="quick-spec__label">Material</p>
+            <p class="quick-spec__value">100% Washed Cotton Twill</p>
+          </div>
+          <div class="quick-spec">
+            <p class="quick-spec__label">Weight</p>
+            <p class="quick-spec__value">~60gsm</p>
+          </div>
+          <div class="quick-spec">
+            <p class="quick-spec__label">Closure</p>
+            <p class="quick-spec__value">Metal Buckle</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Product Specifications Table -->
+    <section class="specs-section" aria-label="Product specifications">
+      <div class="specs-section__inner">
+        <p class="section-label">Specifications</p>
+        <h2 class="section-heading" style="color: var(--brand-primary);">Full product details.</h2>
+        <table class="specs-table">
+          <tr><td>Product Code</td><td>B673</td></tr>
+          <tr><td>Product Name</td><td>Contrast Peak Low Profile Vintage Cap</td></tr>
+          <tr><td>Collection</td><td>Vintage</td></tr>
+          <tr><td>Category</td><td>Caps &rsaquo; Low Profile</td></tr>
+          <tr><td>Material</td><td>100% washed cotton twill</td></tr>
+          <tr><td>Weight</td><td>~60gsm</td></tr>
+          <tr><td>Crown</td><td>Unstructured, 6-panel, low profile</td></tr>
+          <tr><td>Peak / Visor</td><td>Pre-curved, contrast colour</td></tr>
+          <tr><td>Closure</td><td>Adjustable metal buckle strap</td></tr>
+          <tr><td>Sizing</td><td>One size</td></tr>
+          <tr><td>Label</td><td>TearAway &mdash; brand-clean finish</td></tr>
+          <tr><td>Colours</td><td>2 contrast colourways</td></tr>
+          <tr><td>Country of Origin</td><td>China</td></tr>
+          <tr><td>Sustainability Cert.</td><td>&mdash;</td></tr>
+          <tr><td>Digital Product Passport</td><td><a href="#">View Digital Product Passport</a></td></tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. Decoration Suitability -->
+    <section class="decoration-section" id="decoration" aria-label="Decoration suitability">
+      <div class="decoration-section__inner">
+        <p class="section-label" style="color: rgba(255,255,255,0.5);">Decoration Suitability</p>
+        <h2 class="section-heading">Built for branding.</h2>
+        <div class="decoration-grid">
+          <!-- Embroidery — Recommended -->
+          <div class="decoration-card decoration-card--recommended">
+            <div class="decoration-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M7 19L17 6"/><path d="M15 7l2-1 1 2-2 1"/><path d="M15 9c2-1 5 1 4 5s-5 7-8 6"/></svg>
+            </div>
+            <h3 class="decoration-card__title">Embroidery</h3>
+            <span class="decoration-card__badge decoration-card__badge--recommended">Recommended</span>
+            <p class="decoration-card__ease">Ease of decoration: Excellent</p>
+            <p class="decoration-card__text">The six-panel unstructured crown provides a flat, stable surface for embroidery. Front panel, side and back all accept standard stitch counts cleanly. The washed cotton twill holds thread without distortion.</p>
+          </div>
+          <!-- Patches & Labels -->
+          <div class="decoration-card">
+            <div class="decoration-card__icon">
+              <svg viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="10" rx="1"/><path d="M5 10h14"/><circle cx="12" cy="5" r="1.5"/><line x1="12" y1="6.5" x2="12" y2="7"/><line x1="8" y1="13" x2="16" y2="13"/></svg>
+            </div>
+            <h3 class="decoration-card__title">Patches &amp; Labels</h3>
+            <span class="decoration-card__badge decoration-card__badge--good">Good</span>
+            <p class="decoration-card__ease">Ease of decoration: Good</p>
+            <p class="decoration-card__text">Woven, rubber and PVC patches bond cleanly to the unstructured panels. Front panel is the primary placement zone. Low-profile crown means patches sit closer to the head &mdash; keep sizing moderate.</p>
+          </div>
+          <!-- Screen Print & Transfer — Recommended -->
+          <div class="decoration-card decoration-card--recommended">
+            <div class="decoration-card__icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="6" y1="15" x2="18" y2="15"/></svg>
+            </div>
+            <h3 class="decoration-card__title">Screen Print &amp; Transfer</h3>
+            <span class="decoration-card__badge decoration-card__badge--recommended">Recommended</span>
+            <p class="decoration-card__ease">Ease of decoration: Good</p>
+            <p class="decoration-card__text">The consistent cotton twill weave delivers predictable heat transfer adhesion on the front panel. The pre-curved peak accepts smaller transfer designs. DTF and vinyl transfers both perform well.</p>
+          </div>
+        </div>
+
+        <!-- Decoration Video + Download Guide -->
+        <div class="decoration-video">
+          <div class="decoration-video__embed">
+            <iframe src="https://www.youtube.com/embed/D4DipxvQvK4?list=PLzJWWChL2fMdOB7nO53jCI0irpIBEnC9Q" title="How to decorate headwear — Beechfield Decorator Academy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="decoration-video__body">
+            <h3>How to Decorate This Product</h3>
+            <p>Watch our Decorator Academy video for step-by-step guidance on embroidery placement, backing recommendations and heat transfer tips specific to unstructured cotton caps.</p>
+            <a href="https://mediahub.beechfieldbrands.com/" class="decoration-download" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Decoration Guide
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Sustainability & Impact -->
+    <section class="sustainability-section" aria-label="Sustainability and environmental impact">
+      <div class="sustainability-section__inner">
+        <p class="section-label">Sustainability &amp; Impact</p>
+        <h2 class="section-heading" style="color: var(--brand-primary);">Environmental footprint.</h2>
+        <div class="sustainability-grid">
+          <!-- Certifications -->
+          <div class="sustainability-certs">
+            <h3 class="sustainability-certs__heading">Certifications</h3>
+            <p class="sustainability-certs__empty">This product does not currently hold a specific sustainability certification. For OCS-certified organic cotton alternatives, see the <a href="../collections/earthaware.html" style="color:var(--brand-accent)">EarthAware&reg; collection</a>.</p>
+            <div class="sustainability-certs__links">
+              <a href="#" class="sustainability-certs__link">
+                <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Digital Product Passport
+              </a>
+              <a href="../about/responsible-choices.html" class="sustainability-certs__link">
+                <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Responsible Choices
+              </a>
+            </div>
+          </div>
+          <!-- Environmental Impact -->
+          <div class="impact-stats">
+            <h3 class="impact-stats__heading">Environmental Impact (est. per unit)</h3>
+            <div class="impact-stats__grid">
+              <div class="impact-stat">
+                <p class="impact-stat__num">2.8</p>
+                <p class="impact-stat__unit">kg CO&#8322;e</p>
+                <p class="impact-stat__label">Carbon emissions from raw material to finished product</p>
+              </div>
+              <div class="impact-stat">
+                <p class="impact-stat__num">1,200</p>
+                <p class="impact-stat__unit">Litres</p>
+                <p class="impact-stat__label">Water consumption across the production lifecycle</p>
+              </div>
+              <div class="impact-stat">
+                <p class="impact-stat__num">3.5</p>
+                <p class="impact-stat__unit">kWh</p>
+                <p class="impact-stat__label">Energy used in manufacturing and finishing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Comparison Table -->
+    <section class="compare-section" aria-label="Compare similar products">
+      <div class="compare-section__inner">
+        <p class="section-label">Compare</p>
+        <h2 class="section-heading" style="color: var(--brand-primary);">See how it stacks up.</h2>
+        <div class="compare-wrapper">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="compare-current">B673</th>
+                <th>B655</th>
+                <th>B657</th>
+                <th>B682</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Name</td><td class="compare-current">Contrast Peak Low Profile Vintage Cap</td><td>Low Profile Vintage Cap</td><td>Military Cap</td><td>Heritage Cord Cap</td></tr>
+              <tr>
+                <td>Image</td>
+                <td class="compare-current"><img class="compare-thumb" src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B673"></td>
+                <td><img class="compare-thumb" src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B655"></td>
+                <td><img class="compare-thumb" src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B657"></td>
+                <td><img class="compare-thumb" src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B682"></td>
+              </tr>
+              <tr><td>Material</td><td class="compare-current">Washed cotton twill</td><td>Brushed cotton</td><td>Cotton canvas</td><td>Cotton corduroy</td></tr>
+              <tr><td>Crown</td><td class="compare-current">Unstructured, 6-panel</td><td>Unstructured, 6-panel</td><td>Unstructured</td><td>Unstructured, 5-panel</td></tr>
+              <tr><td>Closure</td><td class="compare-current">Metal buckle</td><td>Buckle strap</td><td>Adjustable</td><td>Buckle strap</td></tr>
+              <tr><td>Colours</td><td class="compare-current">2</td><td>6</td><td>4</td><td>3</td></tr>
+              <tr><td>Recommended Decoration</td><td class="compare-current">Embroidery, Transfer</td><td>Embroidery, Transfer</td><td>Embroidery</td><td>Embroidery, Patches</td></tr>
+              <tr><td>Ease of Decoration</td><td class="compare-current">Excellent</td><td>Excellent</td><td>Good</td><td>Good</td></tr>
+              <tr><td>Sustainability Cert.</td><td class="compare-current">&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+              <tr>
+                <td></td>
+                <td class="compare-current"><strong style="color:var(--brand-accent);">Current product</strong></td>
+                <td><a href="b655-dad-cap.html" class="compare-link">View B655 &rarr;</a></td>
+                <td><a href="#" class="compare-link">View B657 &rarr;</a></td>
+                <td><a href="#" class="compare-link">View B682 &rarr;</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Brand / Product Narrative -->
+    <section class="narrative-section" aria-label="About this product">
+      <div class="narrative-section__inner">
+        <p class="section-label">The Story</p>
+        <h2 class="narrative-section__heading">Vintage character. Modern decoration performance.</h2>
+        <p class="narrative-section__text">The Vintage collection is built on a simple premise: headwear should look lived-in from the first wear. The B673 Contrast Peak Low Profile Vintage Cap delivers that with a washed cotton twill fabric that has the softness and character of a cap that&rsquo;s been worn for years &mdash; but with the consistency and decoration performance that trade decorators demand from a blank.</p>
+        <p class="narrative-section__text">The distinctive contrast peak is the design detail that sets the B673 apart. Where other dad caps play it safe with tonal construction, the two-tone approach gives the B673 a point of difference that streetwear brands, lifestyle labels and fashion-forward decorators are drawn to. It&rsquo;s subtle enough for corporate programmes but distinctive enough to stand out at retail.</p>
+        <p class="narrative-section__text">The unstructured, low-profile crown sits close to the head &mdash; the relaxed silhouette that has dominated cap trends for the past five years and shows no signs of slowing. The metal buckle closure at the back provides a premium feel and adjustable fit. TearAway labelling means your brand is the only one visible to the wearer.</p>
+      </div>
+    </section>
+
+    <!-- 8. You May Also Like -->
+    <section class="family-section" aria-label="You may also like">
+      <div class="family-section__inner">
+        <div class="family-section__header">
+          <div>
+            <p class="section-label" style="color:var(--brand-accent)">You May Also Like</p>
+            <h2 class="section-heading" style="color:var(--brand-primary);margin-bottom:0;">More from the Vintage range.</h2>
+          </div>
+          <p class="family-section__header-sub">Explore other Beechfield styles across the Vintage collection and beyond &mdash; all available through our authorised distributor network.</p>
+        </div>
+        <div class="cards-grid">
+          <a href="b655-dad-cap.html" class="card">
+            <div class="card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B655 Low Profile Vintage Cap">
+              <span class="card__category">Vintage</span>
+            </div>
+            <div class="card__body">
+              <span class="card__sku">B655</span>
+              <h3 class="card__title">Low Profile Vintage Cap</h3>
+              <ul class="card__features">
+                <li>Unstructured, washed cotton twill</li>
+                <li>6 colourways, adjustable buckle</li>
+              </ul>
+              <span class="card__cta">View product &rarr;</span>
+            </div>
+          </a>
+          <a href="#" class="card">
+            <div class="card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B682 Heritage Cord Cap">
+              <span class="card__category">Vintage</span>
+            </div>
+            <div class="card__body">
+              <span class="card__sku">B682</span>
+              <h3 class="card__title">Heritage Cord Cap</h3>
+              <ul class="card__features">
+                <li>Cotton corduroy, unstructured 5-panel</li>
+                <li>3 colourways, buckle strap</li>
+              </ul>
+              <span class="card__cta">View product &rarr;</span>
+            </div>
+          </a>
+          <a href="b640-snapback-trucker.html" class="card">
+            <div class="card__image">
+              <img src="https://mediahub.beechfieldbrands.com/m/7d1480204a8fb8fb/webimage-B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.png" alt="B645 Vintage Snapback Trucker">
+              <span class="card__category">Vintage</span>
+            </div>
+            <div class="card__body">
+              <span class="card__sku">B645</span>
+              <h3 class="card__title">Vintage Snapback Trucker</h3>
+              <ul class="card__features">
+                <li>Structured front, mesh back</li>
+                <li>Snapback closure, vintage wash</li>
+              </ul>
+              <span class="card__cta">View product &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--5col">
+        <div>
+          <h4 class="footer__column-title">Products</h4>
+          <nav class="footer__links">
+            <a href="../products/" class="footer__link">All Products</a>
+            <a href="../products/caps/" class="footer__link">Caps</a>
+            <a href="../products/beanies/" class="footer__link">Beanies</a>
+            <a href="../products/hats/" class="footer__link">Hats</a>
+            <a href="../products/neckwear/" class="footer__link">Neckwear</a>
+            <a href="../products/accessories/" class="footer__link">Accessories</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">For Decorators</h4>
+          <nav class="footer__links">
+            <a href="../decorator-academy/" class="footer__link">Decorator Academy</a>
+            <a href="../decorator-academy/videos.html" class="footer__link">How-to Videos</a>
+            <a href="../decorator-academy/glossary.html" class="footer__link">Glossary</a>
+            <a href="../decorator-academy/colours.html" class="footer__link">Colours</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">Collections</h4>
+          <nav class="footer__links">
+            <a href="../collections/earthaware.html" class="footer__link">EarthAware&reg;</a>
+            <a href="../collections/originals.html" class="footer__link">Originals</a>
+            <a href="../collections/vintage.html" class="footer__link">Vintage</a>
+            <a href="../collections/urbanwear.html" class="footer__link">Urbanwear</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">About</h4>
+          <nav class="footer__links">
+            <a href="../about/about-beechfield.html" class="footer__link">About Beechfield</a>
+            <a href="../about/materials-and-fabrics.html" class="footer__link">Materials &amp; Fabrics</a>
+            <a href="../about/responsible-choices.html" class="footer__link">Responsible Choices</a>
+            <a href="../about/events.html" class="footer__link">Events</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">Support</h4>
+          <nav class="footer__links">
+            <a href="../where-to-buy/" class="footer__link">Where to Buy</a>
+            <a href="../resources/faqs.html" class="footer__link">FAQs</a>
+            <a href="../about/contact.html" class="footer__link">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__company">
+        <div class="footer__company-logo">Beechfield<span>Original Headwear</span></div>
+        <div class="footer__company-info">
+          <p>Part of <a href="../../beechfield-brands/">Beechfield Brands Ltd.</a></p>
+          <p>Registered in England &amp; Wales. Company No. 02996544</p>
+          <p>&copy; 2026 Beechfield Brands Limited. All rights reserved.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">Beechfield Original Headwear</p>
+        <div class="footer__legal">
+          <a href="#">Privacy</a>
+          <a href="#">Cookies</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Modern Slavery</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js"></script>
+  <script>
+    /* ── B673 Product Data ── */
+    var PRODUCT_DATA = {
+      colors: [
+        {
+          id: 'natural-vintage-black',
+          name: 'Natural / Vintage Black',
+          images: [
+            'https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png'
+          ]
+        },
+        {
+          id: 'natural-vintage-desert-sand',
+          name: 'Natural / Vintage Desert Sand',
+          images: [
+            'https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png'
+          ]
+        }
+      ],
+      video: 'https://mediahub.beechfieldbrands.com/asset/bc34029a-ac4b-4f63-83de-d265a0dda8f4/mp4/B673-Constrat-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Desert-Sand-Product-Video.mp4'
+    };
+
+    /* ── Colour Switcher ── */
+    var swatches = document.querySelectorAll('.colour-picker__swatch');
+    var colourName = document.getElementById('colour-name');
+    var mainImage = document.getElementById('main-image');
+    var galleryMain = document.getElementById('gallery-main');
+
+    swatches.forEach(function(swatch) {
+      swatch.addEventListener('click', function() {
+        var colorId = swatch.dataset.color;
+        var colorData = PRODUCT_DATA.colors.find(function(c) { return c.id === colorId; });
+        if (!colorData) return;
+
+        swatches.forEach(function(s) { s.classList.remove('colour-picker__swatch--active'); });
+        swatch.classList.add('colour-picker__swatch--active');
+
+        colourName.textContent = colorData.name;
+
+        // Remove video if playing
+        var existingVideo = galleryMain.querySelector('video');
+        if (existingVideo) { existingVideo.remove(); mainImage.style.display = ''; }
+
+        if (colorData.images.length > 0) {
+          mainImage.style.opacity = '0';
+          setTimeout(function() {
+            mainImage.src = colorData.images[0];
+            mainImage.alt = 'B673 Contrast Peak Low Profile Vintage Cap in ' + colorData.name;
+            mainImage.style.opacity = '1';
+          }, 200);
+        }
+
+        history.replaceState(null, '', '#color=' + colorId);
+        updateThumbnails(colorData);
+      });
+    });
+
+    function updateThumbnails(colorData) {
+      var strip = document.getElementById('thumb-strip');
+      strip.innerHTML = '';
+
+      colorData.images.forEach(function(imgUrl, i) {
+        var btn = document.createElement('button');
+        btn.className = 'gallery__thumb' + (i === 0 ? ' gallery__thumb--active' : '');
+        btn.dataset.img = imgUrl;
+        btn.setAttribute('aria-label', i === 0 ? 'Front view' : 'View ' + (i + 1));
+        btn.innerHTML = '<img src="' + imgUrl + '" alt="Product view">';
+        btn.addEventListener('click', function() { swapMainImage(imgUrl, btn); });
+        strip.appendChild(btn);
+      });
+
+      var videoBtn = document.createElement('button');
+      videoBtn.className = 'gallery__thumb gallery__thumb--video';
+      videoBtn.setAttribute('aria-label', 'Product video');
+      videoBtn.innerHTML = '<img src="' + colorData.images[0] + '" alt="Product video">';
+      videoBtn.addEventListener('click', function() { playVideo(); });
+      strip.appendChild(videoBtn);
+    }
+
+    /* ── Image Gallery ── */
+    document.querySelectorAll('.gallery__thumb:not(.gallery__thumb--video)').forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        if (thumb.dataset.img) swapMainImage(thumb.dataset.img, thumb);
+      });
+    });
+
+    document.querySelectorAll('.gallery__thumb--video').forEach(function(thumb) {
+      thumb.addEventListener('click', function() { playVideo(); });
+    });
+
+    function swapMainImage(src, activeThumb) {
+      var existingVideo = galleryMain.querySelector('video');
+      if (existingVideo) { existingVideo.remove(); mainImage.style.display = ''; }
+
+      mainImage.style.opacity = '0';
+      setTimeout(function() {
+        mainImage.src = src;
+        mainImage.style.opacity = '1';
+      }, 200);
+
+      document.querySelectorAll('.gallery__thumb').forEach(function(t) { t.classList.remove('gallery__thumb--active'); });
+      if (activeThumb) activeThumb.classList.add('gallery__thumb--active');
+    }
+
+    function playVideo() {
+      mainImage.style.display = 'none';
+      var existingVideo = galleryMain.querySelector('video');
+      if (existingVideo) { existingVideo.play(); return; }
+
+      var video = document.createElement('video');
+      video.src = PRODUCT_DATA.video;
+      video.controls = true;
+      video.autoplay = true;
+      video.style.cssText = 'width:100%;height:100%;object-fit:contain;';
+      galleryMain.appendChild(video);
+
+      document.querySelectorAll('.gallery__thumb').forEach(function(t) { t.classList.remove('gallery__thumb--active'); });
+      var vThumb = document.querySelector('.gallery__thumb--video');
+      if (vThumb) vThumb.classList.add('gallery__thumb--active');
+    }
+
+    /* ── Load colour from URL hash ── */
+    (function() {
+      var hash = window.location.hash;
+      if (hash.indexOf('#color=') === 0) {
+        var colorId = hash.replace('#color=', '');
+        var swatch = document.querySelector('[data-color="' + colorId + '"]');
+        if (swatch) swatch.click();
+      }
+    })();
+  </script>
+</body>
+</html>

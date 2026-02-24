@@ -524,7 +524,6 @@
   grid-column: span 2;
   position: relative;
   overflow: hidden;
-  border: 1px solid #eaeaea;
   min-height: 280px;
   display: flex;
   align-items: flex-end;
@@ -650,7 +649,9 @@
 .cross-brand__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+  gap: 1px;
+  background: #eaeaea;
+  border: 1px solid #eaeaea;
 }
 
 @media (max-width: 1200px) {
@@ -852,7 +853,9 @@
 .cross-brand-colour__row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+  gap: 1px;
+  background: #eaeaea;
+  border: 1px solid #eaeaea;
 }
 
 @media (max-width: 1200px) {

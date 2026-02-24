@@ -701,14 +701,14 @@
     <!-- Collection tabs -->
     <div class="plp-collections" role="tablist" aria-label="Filter by collection">
       <div class="container" style="display:contents">
-        <a href="index.html" class="plp-col-tab plp-col-tab--active" style="padding-left:0">All</a>
-        <a href="?collection=originals" class="plp-col-tab">Originals</a>
-        <a href="?collection=earthaware" class="plp-col-tab">EarthAware®</a>
-        <a href="?collection=vintage" class="plp-col-tab">Vintage</a>
-        <a href="?collection=urbanwear" class="plp-col-tab">Urbanwear</a>
-        <a href="?collection=morf" class="plp-col-tab">Morf</a>
-        <a href="?collection=snowstar" class="plp-col-tab">Snowstar</a>
-        <a href="?filter=new" class="plp-col-tab" style="color:#1496f7">New SS26</a>
+        <a href="#" class="plp-col-tab plp-col-tab--active" data-filter-value="all" style="padding-left:0">All</a>
+        <a href="#" class="plp-col-tab" data-filter-value="originals">Originals</a>
+        <a href="#" class="plp-col-tab" data-filter-value="earthaware">EarthAware®</a>
+        <a href="#" class="plp-col-tab" data-filter-value="vintage">Vintage</a>
+        <a href="#" class="plp-col-tab" data-filter-value="urbanwear">Urbanwear</a>
+        <a href="#" class="plp-col-tab" data-filter-value="morf">Morf</a>
+        <a href="#" class="plp-col-tab" data-filter-value="snowstar">Snowstar</a>
+        <a href="#" class="plp-col-tab" data-filter-value="new" style="color:#1496f7">New SS26</a>
       </div>
     </div>
 
@@ -716,12 +716,12 @@
     <div class="container">
       <div class="plp-toolbar">
         <div class="plp-filters" role="group" aria-label="Filter by type">
-          <a href="index.html" class="plp-filter plp-filter--active">All <span class="plp-filter__count">500+</span></a>
-          <a href="?type=caps" class="plp-filter">Caps <span class="plp-filter__count">240</span></a>
-          <a href="?type=beanies" class="plp-filter">Beanies <span class="plp-filter__count">95</span></a>
-          <a href="?type=hats" class="plp-filter">Hats <span class="plp-filter__count">62</span></a>
-          <a href="?type=neckwear" class="plp-filter">Neckwear <span class="plp-filter__count">44</span></a>
-          <a href="?type=accessories" class="plp-filter">Accessories <span class="plp-filter__count">38</span></a>
+          <a href="#" class="plp-filter plp-filter--active" data-filter-group="type" data-filter-value="all">All <span class="plp-filter__count">0</span></a>
+          <a href="#" class="plp-filter" data-filter-group="type" data-filter-value="caps">Caps <span class="plp-filter__count">0</span></a>
+          <a href="#" class="plp-filter" data-filter-group="type" data-filter-value="beanies">Beanies <span class="plp-filter__count">0</span></a>
+          <a href="#" class="plp-filter" data-filter-group="type" data-filter-value="hats">Hats <span class="plp-filter__count">0</span></a>
+          <a href="#" class="plp-filter" data-filter-group="type" data-filter-value="neckwear">Neckwear <span class="plp-filter__count">0</span></a>
+          <a href="#" class="plp-filter" data-filter-group="type" data-filter-value="accessories">Accessories <span class="plp-filter__count">0</span></a>
         </div>
         <div class="plp-sort">
           <span class="plp-sort__label">Sort by</span>
@@ -744,65 +744,69 @@
           <div class="plp-sidebar__group">
             <span class="plp-sidebar__heading">Type</span>
             <ul class="plp-sidebar__list">
-              <li class="plp-sidebar__item"><a href="index.html" class="plp-sidebar__link plp-sidebar__link--active">All Products <span class="plp-sidebar__badge">500+</span></a></li>
-              <li class="plp-sidebar__item"><a href="?type=caps" class="plp-sidebar__link">Caps <span class="plp-sidebar__badge">240</span></a></li>
-              <li class="plp-sidebar__item"><a href="?type=beanies" class="plp-sidebar__link">Beanies <span class="plp-sidebar__badge">95</span></a></li>
-              <li class="plp-sidebar__item"><a href="?type=hats" class="plp-sidebar__link">Hats <span class="plp-sidebar__badge">62</span></a></li>
-              <li class="plp-sidebar__item"><a href="?type=neckwear" class="plp-sidebar__link">Neckwear <span class="plp-sidebar__badge">44</span></a></li>
-              <li class="plp-sidebar__item"><a href="?type=accessories" class="plp-sidebar__link">Accessories <span class="plp-sidebar__badge">38</span></a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link plp-sidebar__link--active" data-filter-group="type" data-filter-value="all">All Products <span class="plp-sidebar__badge">0</span></a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="type" data-filter-value="caps">Caps <span class="plp-sidebar__badge">0</span></a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="type" data-filter-value="beanies">Beanies <span class="plp-sidebar__badge">0</span></a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="type" data-filter-value="hats">Hats <span class="plp-sidebar__badge">0</span></a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="type" data-filter-value="neckwear">Neckwear <span class="plp-sidebar__badge">0</span></a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="type" data-filter-value="accessories">Accessories <span class="plp-sidebar__badge">0</span></a></li>
             </ul>
           </div>
 
           <div class="plp-sidebar__group">
             <span class="plp-sidebar__heading">Collection</span>
             <ul class="plp-sidebar__list">
-              <li class="plp-sidebar__item"><a href="?collection=originals" class="plp-sidebar__link">Originals</a></li>
-              <li class="plp-sidebar__item"><a href="?collection=earthaware" class="plp-sidebar__link">EarthAware®</a></li>
-              <li class="plp-sidebar__item"><a href="?collection=vintage" class="plp-sidebar__link">Vintage</a></li>
-              <li class="plp-sidebar__item"><a href="?collection=urbanwear" class="plp-sidebar__link">Urbanwear</a></li>
-              <li class="plp-sidebar__item"><a href="?collection=morf" class="plp-sidebar__link">Morf</a></li>
-              <li class="plp-sidebar__item"><a href="?collection=snowstar" class="plp-sidebar__link">Snowstar</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="collection" data-filter-value="originals">Originals</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="collection" data-filter-value="earthaware">EarthAware®</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="collection" data-filter-value="vintage">Vintage</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="collection" data-filter-value="urbanwear">Urbanwear</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="collection" data-filter-value="morf">Morf</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="collection" data-filter-value="snowstar">Snowstar</a></li>
             </ul>
           </div>
 
           <div class="plp-sidebar__group">
             <span class="plp-sidebar__heading">Purpose</span>
             <ul class="plp-sidebar__list">
-              <li class="plp-sidebar__item"><a href="?purpose=outdoors" class="plp-sidebar__link">Outdoors &amp; Activewear</a></li>
-              <li class="plp-sidebar__item"><a href="?purpose=sports" class="plp-sidebar__link">Sports</a></li>
-              <li class="plp-sidebar__item"><a href="?purpose=promotion" class="plp-sidebar__link">Promotion</a></li>
-              <li class="plp-sidebar__item"><a href="?purpose=fashion" class="plp-sidebar__link">Fashion</a></li>
-              <li class="plp-sidebar__item"><a href="?purpose=workwear" class="plp-sidebar__link">Workwear</a></li>
-              <li class="plp-sidebar__item"><a href="?purpose=gifting" class="plp-sidebar__link">Gifting</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="purpose" data-filter-value="outdoors">Outdoors &amp; Activewear</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="purpose" data-filter-value="sports">Sports</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="purpose" data-filter-value="promotion">Promotion</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="purpose" data-filter-value="fashion">Fashion</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="purpose" data-filter-value="workwear">Workwear</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="purpose" data-filter-value="gifting">Gifting</a></li>
             </ul>
           </div>
 
           <div class="plp-sidebar__group">
             <span class="plp-sidebar__heading">Decoration</span>
             <ul class="plp-sidebar__list">
-              <li class="plp-sidebar__item"><a href="?deco=embroidery" class="plp-sidebar__link">Embroidery-ready</a></li>
-              <li class="plp-sidebar__item"><a href="?deco=transfer" class="plp-sidebar__link">Heat Transfer</a></li>
-              <li class="plp-sidebar__item"><a href="?deco=patches" class="plp-sidebar__link">Patches</a></li>
-              <li class="plp-sidebar__item"><a href="?deco=screen" class="plp-sidebar__link">Screen Print</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="deco" data-filter-value="embroidery">Embroidery-ready</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="deco" data-filter-value="transfer">Heat Transfer</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="deco" data-filter-value="patches">Patches</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="deco" data-filter-value="screen">Screen Print</a></li>
             </ul>
           </div>
 
           <div class="plp-sidebar__group">
             <span class="plp-sidebar__heading">Sustainability</span>
             <ul class="plp-sidebar__list">
-              <li class="plp-sidebar__item"><a href="?feature=organic" class="plp-sidebar__link">OCS Certified Organic</a></li>
-              <li class="plp-sidebar__item"><a href="?feature=recycled" class="plp-sidebar__link">Recycled Materials</a></li>
-              <li class="plp-sidebar__item"><a href="?feature=tearaway" class="plp-sidebar__link">TearAway Label</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="feature" data-filter-value="organic">OCS Certified Organic</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="feature" data-filter-value="recycled">Recycled Materials</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="feature" data-filter-value="tearaway">TearAway Label</a></li>
             </ul>
           </div>
         </aside>
+
+        <!-- Active filter pills -->
+        <div class="plp-active-filters"></div>
 
         <!-- Product grid -->
         <div class="plp-grid-wrap">
           <div class="plp-grid" role="list">
 
-            <!-- B45 -->
-            <a href="b45-original-cuffed-beanie.html" class="pc" role="listitem">
+            <!-- ═══ BESTSELLERS (top of grid) ═══ -->
+
+            <a href="b45-original-cuffed-beanie.html" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="promotion sports fashion" data-deco="embroidery transfer patches" data-feature="tearaway" data-sku="B45" data-name="Original Cuffed Beanie" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/asset/0b605e02-8970-44f5-a220-beb0c506e313/Product-medium/B45-Original-Cuffed-Beanie-Sunset-Lifestyle-04.jpg" alt="B45 Original Cuffed Beanie" loading="lazy">
                 <span class="pc__badge">Bestseller</span>
@@ -810,19 +814,11 @@
               <div class="pc__body">
                 <p class="pc__sku">B45</p>
                 <p class="pc__name">Original Cuffed Beanie</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#c0392b"></span>
-                  <span class="pc__colour-dot" style="background:#2471a3"></span>
-                  <span class="pc__colour-dot" style="background:#1e8449"></span>
-                  <span class="pc__colour-dot" style="background:#f5f5f5; border-color:#ddd"></span>
-                  <span class="pc__colour-more">+38</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-dot" style="background:#1e8449"></span><span class="pc__colour-dot" style="background:#f5f5f5;border-color:#ddd"></span><span class="pc__colour-more">+38</span></div>
               </div>
             </a>
 
-            <!-- B655 -->
-            <a href="b655-dad-cap.html" class="pc" role="listitem">
+            <a href="b655-dad-cap.html" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer screen" data-feature="" data-sku="B655" data-name="Low Profile Vintage Cap" data-date="2021-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B655 Low Profile Vintage Cap" loading="lazy">
                 <span class="pc__badge">Bestseller</span>
@@ -830,18 +826,11 @@
               <div class="pc__body">
                 <p class="pc__sku">B655</p>
                 <p class="pc__name">Low Profile Vintage Cap</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#d5ccc4"></span>
-                  <span class="pc__colour-dot" style="background:#1a5276"></span>
-                  <span class="pc__colour-dot" style="background:#784212"></span>
-                  <span class="pc__colour-more">+14</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#d5ccc4"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-dot" style="background:#784212"></span><span class="pc__colour-more">+14</span></div>
               </div>
             </a>
 
-            <!-- B15 -->
-            <a href="b15-baseball-cap.html" class="pc" role="listitem">
+            <a href="b15-baseball-cap.html" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-sku="B15" data-name="Ultimate 5 Panel Cap" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png" alt="B15 Ultimate 5 Panel Cap" loading="lazy">
                 <span class="pc__badge">Bestseller</span>
@@ -849,51 +838,37 @@
               <div class="pc__body">
                 <p class="pc__sku">B15</p>
                 <p class="pc__name">Ultimate 5 Panel Cap</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#1e8449"></span>
-                  <span class="pc__colour-dot" style="background:#c0392b"></span>
-                  <span class="pc__colour-dot" style="background:#2471a3"></span>
-                  <span class="pc__colour-dot" style="background:#f0f0f0; border-color:#ddd"></span>
-                  <span class="pc__colour-more">+30</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#1e8449"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-dot" style="background:#f0f0f0;border-color:#ddd"></span><span class="pc__colour-more">+30</span></div>
               </div>
             </a>
 
-            <!-- B640 -->
-            <a href="b640-snapback-trucker.html" class="pc" role="listitem">
+            <a href="b640-snapback-trucker.html" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion promotion" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-sku="B640" data-name="Snapback Trucker" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/6cd07caacecc4ac4/webimage-B634R-Classic-Foam-Trucker-Classic-Red-Product-Shot-01.png" alt="B640 Snapback Trucker" loading="lazy">
               </div>
               <div class="pc__body">
                 <p class="pc__sku">B640</p>
                 <p class="pc__name">Snapback Trucker</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#c0392b"></span>
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#2471a3"></span>
-                  <span class="pc__colour-dot" style="background:#f5f5f5; border-color:#ddd"></span>
-                  <span class="pc__colour-more">+16</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-dot" style="background:#f5f5f5;border-color:#ddd"></span><span class="pc__colour-more">+16</span></div>
               </div>
             </a>
 
             <!-- ═══ Collection Promo Block (spans 2 columns) ═══ -->
             <div class="plp-promo" role="listitem">
               <div class="plp-promo__media">
-                <img src="https://mediahub.beechfieldbrands.com/asset/0b605e02-8970-44f5-a220-beb0c506e313/Product-medium/B45-Original-Cuffed-Beanie-Sunset-Lifestyle-04.jpg"
-                     alt="EarthAware Collection — organic cotton headwear in natural tones" loading="lazy">
+                <img src="https://mediahub.beechfieldbrands.com/asset/0b605e02-8970-44f5-a220-beb0c506e313/Product-medium/B45-Original-Cuffed-Beanie-Sunset-Lifestyle-04.jpg" alt="EarthAware Collection — organic cotton headwear in natural tones" loading="lazy">
               </div>
               <div class="plp-promo__overlay">
                 <span class="plp-promo__eyebrow">EarthAware&reg; Collection</span>
                 <h3 class="plp-promo__title">Organic. Certified. Considered.</h3>
-                <p class="plp-promo__text">OCS-certified organic cotton headwear — same shapes, lower footprint. Verified from fibre to finished product.</p>
+                <p class="plp-promo__text">OCS-certified organic cotton headwear — same shapes, lower footprint.</p>
                 <a href="../collections/earthaware.html" class="plp-promo__cta">Explore Collection</a>
               </div>
             </div>
 
-            <!-- B90N -->
-            <a href="b90n-earthaware-bucket-hat.html" class="pc" role="listitem">
+            <!-- ═══ EARTHAWARE COLLECTION ═══ -->
+
+            <a href="b90n-earthaware-bucket-hat.html" class="pc" role="listitem" data-type="hats" data-collection="earthaware" data-purpose="fashion outdoors" data-deco="embroidery transfer" data-feature="organic" data-sku="B90N" data-name="EarthAware Organic Bucket Hat" data-date="2024-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/31e473ca6c2a5d3d/webimage-B90N-EarthAware-Organic-Cotton-Bucket-Hat-Desert-Sand-Front-on-shot.png" alt="B90N EarthAware Bucket Hat" loading="lazy">
                 <span class="pc__badge pc__badge--earth">EarthAware®</span>
@@ -901,36 +876,11 @@
               <div class="pc__body">
                 <p class="pc__sku">B90N</p>
                 <p class="pc__name">EarthAware® Organic Bucket Hat</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#c8b89a"></span>
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#5d6d7e"></span>
-                  <span class="pc__colour-dot" style="background:#4a235a"></span>
-                  <span class="pc__colour-more">+8</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#c8b89a"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#5d6d7e"></span><span class="pc__colour-dot" style="background:#4a235a"></span><span class="pc__colour-more">+8</span></div>
               </div>
             </a>
 
-            <!-- B62N -->
-            <a href="../collections/earthaware.html" class="pc" role="listitem">
-              <div class="pc__img">
-                <img src="https://mediahub.beechfieldbrands.com/m/4a63922434e7cc92/webimage-B62N-EarthAware-Organic-Cotton-5-Panel-Cap-Dusty-Green-Front-on-shot.png" alt="B62N EarthAware 5 Panel Cap" loading="lazy">
-                <span class="pc__badge pc__badge--earth">EarthAware®</span>
-              </div>
-              <div class="pc__body">
-                <p class="pc__sku">B62N</p>
-                <p class="pc__name">EarthAware® Organic Cotton 5-Panel Cap</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#7dbe9e"></span>
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#a0c4e8"></span>
-                  <span class="pc__colour-more">+6</span>
-                </div>
-              </div>
-            </a>
-
-            <!-- B26N -->
-            <a href="b26n-earthaware-studio-cap.html" class="pc" role="listitem">
+            <a href="b26n-earthaware-studio-cap.html" class="pc" role="listitem" data-type="caps" data-collection="earthaware" data-purpose="fashion sports" data-deco="embroidery transfer" data-feature="organic" data-new="ss26" data-sku="B26N" data-name="EarthAware Organic Cotton Studio Cap" data-date="2026-01-15">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/5e3f1359858f9dd2/webimage-B26N-EarthAware-Organic-Cotton-Studio-Cap-Cornflower-Blue-Product-Shot-01.png" alt="B26N EarthAware Studio Cap" loading="lazy">
                 <span class="pc__badge pc__badge--new">New SS26</span>
@@ -938,107 +888,458 @@
               <div class="pc__body">
                 <p class="pc__sku">B26N</p>
                 <p class="pc__name">EarthAware® Organic Cotton Studio Cap</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#6fa8dc"></span>
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#f9cb9c"></span>
-                  <span class="pc__colour-more">+5</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#6fa8dc"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#f9cb9c"></span><span class="pc__colour-more">+5</span></div>
               </div>
             </a>
 
-            <!-- B155R -->
-            <a href="../lookbooks/ss26.html" class="pc" role="listitem">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="earthaware" data-purpose="fashion promotion" data-deco="embroidery transfer" data-feature="organic" data-sku="B62N" data-name="EarthAware Organic Cotton 5-Panel Cap" data-date="2024-06-01">
               <div class="pc__img">
-                <img src="https://mediahub.beechfieldbrands.com/m/b66942402fa0df81/webimage-B155R-Accelerate-Cap-White-Black-Lifestyle-Shot.png" alt="B155R Accelerate Cap" loading="lazy">
+                <img src="https://mediahub.beechfieldbrands.com/m/4a63922434e7cc92/webimage-B62N-EarthAware-Organic-Cotton-5-Panel-Cap-Dusty-Green-Front-on-shot.png" alt="B62N EarthAware 5 Panel Cap" loading="lazy">
+                <span class="pc__badge pc__badge--earth">EarthAware®</span>
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B62N</p>
+                <p class="pc__name">EarthAware® Organic Cotton 5-Panel Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#7dbe9e"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#a0c4e8"></span><span class="pc__colour-more">+6</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="earthaware" data-purpose="fashion" data-deco="embroidery transfer" data-feature="organic" data-sku="B60N" data-name="Organic Cotton Trucker" data-date="2024-06-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B60N"><span class="pc__badge pc__badge--earth">EarthAware®</span></div>
+              <div class="pc__body">
+                <p class="pc__sku">B60N</p>
+                <p class="pc__name">Organic Cotton Trucker</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#f5f0e8"></span><span class="pc__colour-dot" style="background:#5d6d7e"></span><span class="pc__colour-more">+4</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="earthaware" data-purpose="promotion fashion" data-deco="embroidery transfer" data-feature="organic" data-sku="B45N" data-name="Organic Cotton Cuffed Beanie" data-date="2024-06-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B45N"><span class="pc__badge pc__badge--earth">EarthAware®</span></div>
+              <div class="pc__body">
+                <p class="pc__sku">B45N</p>
+                <p class="pc__name">Organic Cotton Cuffed Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#f5f0e8"></span><span class="pc__colour-dot" style="background:#1b2a4a"></span><span class="pc__colour-more">+6</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="earthaware" data-purpose="fashion" data-deco="embroidery transfer" data-feature="organic" data-sku="B50N" data-name="Organic Cotton Beanie" data-date="2024-06-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B50N"><span class="pc__badge pc__badge--earth">EarthAware®</span></div>
+              <div class="pc__body">
+                <p class="pc__sku">B50N</p>
+                <p class="pc__name">Organic Cotton Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#f5f0e8"></span><span class="pc__colour-dot" style="background:#7dbe9e"></span><span class="pc__colour-more">+5</span></div>
+              </div>
+            </a>
+
+            <!-- ═══ ORIGINALS CAPS ═══ -->
+
+            <a href="b10-baseball-cap.html" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-sku="B10" data-name="Original 5 Panel Cap" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B10"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B10</p>
+                <p class="pc__name">Original 5 Panel Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-dot" style="background:#1e8449"></span><span class="pc__colour-more">+28</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-sku="B15C" data-name="Ultimate 5 Panel Cap - Sandwich Peak" data-date="2020-01-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png" alt="B15C Ultimate 5 Panel Cap - Sandwich Peak" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B15C</p>
+                <p class="pc__name">Ultimate 5 Panel Cap &ndash; Sandwich Peak</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#1e8449"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-more">+18</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery transfer screen" data-feature="" data-sku="B25" data-name="Authentic 5 Panel Cap" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B25"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B25</p>
+                <p class="pc__name">Authentic 5 Panel Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-dot" style="background:#7f8c8d"></span><span class="pc__colour-more">+10</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery transfer screen" data-feature="" data-sku="B57" data-name="Low Profile Heavy Brushed Cotton Cap" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B57"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B57</p>
+                <p class="pc__name">Low Profile Heavy Brushed Cotton Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-more">+12</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery transfer screen" data-feature="" data-sku="B59" data-name="Authentic Baseball Cap" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B59"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B59</p>
+                <p class="pc__name">Authentic Baseball Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#7f8c8d"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-more">+8</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion" data-deco="embroidery transfer patches screen" data-feature="" data-sku="B65" data-name="Pro-Style Heavy Brushed Cotton Cap" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B65"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B65</p>
+                <p class="pc__name">Pro-Style Heavy Brushed Cotton Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-more">+14</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B66" data-name="Leisure Cap" data-date="2023-01-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/546a01427f9a06c0/webimage-B66-Leisure-Cap-Biscuit-Product-Shot-01.png" alt="B66 Leisure Cap" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B66</p>
+                <p class="pc__name">Leisure Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#d5ccc4"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-more">+4</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B67" data-name="Contrast Peak Leisure Cap" data-date="2023-01-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/35f918a01f613016/webimage-B67-Contrast-Peak-Leisure-Cap-Natural-Burgundy-Product-Shot-01.png" alt="B67 Contrast Peak Leisure Cap" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B67</p>
+                <p class="pc__name">Contrast Peak Leisure Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#f5f0e8"></span><span class="pc__colour-dot" style="background:#800020"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-more">+3</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-sku="B155R" data-name="Accelerate Cap" data-date="2023-06-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/5eb19eb59e57d288/webimage-B155R-Accelerate-Cap-White-Black-Product-Shot-01.png" alt="B155R Accelerate Cap" loading="lazy">
               </div>
               <div class="pc__body">
                 <p class="pc__sku">B155R</p>
                 <p class="pc__name">Accelerate Cap</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#f5f5f5; border-color:#ddd"></span>
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#c0392b"></span>
-                  <span class="pc__colour-dot" style="background:#2471a3"></span>
-                  <span class="pc__colour-more">+10</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#f5f5f5;border-color:#ddd"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-more">+10</span></div>
               </div>
             </a>
 
-            <!-- B165 -->
-            <a href="../decorator-academy/in-the-wild.html" class="pc" role="listitem">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports" data-deco="embroidery transfer screen" data-feature="" data-sku="B165" data-name="Club Cap" data-date="2022-01-01">
               <div class="pc__img">
-                <img src="https://mediahub.beechfieldbrands.com/asset/23ebb866-c155-41cb-a375-88adbadbad4a/Product-medium/B165-Club-Cap-Red-Black-Lifestyle-Shot.jpg" alt="B165 Club Cap" loading="lazy">
+                <img src="https://mediahub.beechfieldbrands.com/m/681b62b300f624f8/webimage-B165-Club-Cap-Red-Black-Product-Shot-01.png" alt="B165 Club Cap" loading="lazy">
               </div>
               <div class="pc__body">
                 <p class="pc__sku">B165</p>
                 <p class="pc__name">Club Cap</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#c0392b"></span>
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#1e8449"></span>
-                  <span class="pc__colour-dot" style="background:#2471a3"></span>
-                  <span class="pc__colour-more">+20</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#1e8449"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-more">+20</span></div>
               </div>
             </a>
 
-            <!-- B682 -->
-            <a href="../collections/vintage.html" class="pc" role="listitem">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports" data-deco="embroidery transfer" data-feature="" data-sku="B166R" data-name="Match Day Cap" data-date="2023-06-01">
               <div class="pc__img">
-                <img src="https://mediahub.beechfieldbrands.com/m/3f894b65714d723a/webimage-B682-Heritage-Cord-Cap-Brown-Front-on-shot.png" alt="B682 Heritage Cord Cap" loading="lazy">
+                <img src="https://mediahub.beechfieldbrands.com/m/f695b26cc132d47/webimage-B166R-Match-Day-Cap-Navy-Sky-Product-Shot-01.png" alt="B166R Match Day Cap" loading="lazy">
               </div>
               <div class="pc__body">
-                <p class="pc__sku">B682</p>
-                <p class="pc__name">Heritage Cord Cap</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#7d5a3c"></span>
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#5d7b6f"></span>
-                  <span class="pc__colour-more">+4</span>
-                </div>
+                <p class="pc__sku">B166R</p>
+                <p class="pc__name">Match Day Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-more">+6</span></div>
               </div>
             </a>
 
-            <!-- B188 -->
-            <a href="../collections/originals.html" class="pc" role="listitem">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-sku="B183" data-name="Technical Training Cap" data-date="2025-01-15">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/1243dbd9eca3b4dd/webimage-B183-Technical-Training-Cap-Cornflower-Blue-Product-Shot-01.png" alt="B183 Technical Training Cap" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B183</p>
+                <p class="pc__name">Technical Training Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#6fa8dc"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-more">+4</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-sku="B188" data-name="Technical Running Cap" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/e32066e8b0244e25/webimage-B188-Technical-Running-Cap-Graphite-Grey-Front-on-shot.png" alt="B188 Technical Running Cap" loading="lazy">
               </div>
               <div class="pc__body">
                 <p class="pc__sku">B188</p>
                 <p class="pc__name">Technical Running Cap</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#7f8c8d"></span>
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-dot" style="background:#c0392b"></span>
-                  <span class="pc__colour-more">+6</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#7f8c8d"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-more">+6</span></div>
               </div>
             </a>
 
-            <!-- B725 -->
-            <a href="../collections/originals.html" class="pc" role="listitem">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="outdoors fashion" data-deco="embroidery transfer" data-feature="" data-sku="B191R" data-name="Water Resistant Lifestyle Cap" data-date="2025-01-15">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/743625e38c197f1/webimage-B191R-Water-Resistant-Lifetstyle-Cap-Olive-Green-Product-Shot-01.png" alt="B191R Water Resistant Lifestyle Cap" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B191R</p>
+                <p class="pc__name">Water Resistant Lifestyle Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#556b2f"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#d5ccc4"></span><span class="pc__colour-more">+3</span></div>
+              </div>
+            </a>
+
+            <!-- ═══ VINTAGE COLLECTION ═══ -->
+
+            <a href="b673-contrast-peak-vintage-cap.html" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B673" data-name="Contrast Peak Low Profile Vintage Cap" data-date="2024-01-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B673 Contrast Peak Vintage Cap" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B673</p>
+                <p class="pc__name">Contrast Peak Low Profile Vintage Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#f5f0e8"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-more">+2</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B682" data-name="Heritage Cord Cap" data-date="2024-01-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/3f894b65714d723a/webimage-B682-Heritage-Cord-Cap-Brown-Front-on-shot.png" alt="B682 Heritage Cord Cap" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B682</p>
+                <p class="pc__name">Heritage Cord Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#7d5a3c"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#5d7b6f"></span><span class="pc__colour-more">+4</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B105" data-name="Denim Cap" data-date="2023-06-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/6e38abea47820dd5/webimage-B105-Denim-Cap-Mid-Blue-Product-Shot-01.png" alt="B105 Denim Cap" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B105</p>
+                <p class="pc__name">Denim Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#5b7fa5"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-more">+2</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B653" data-name="Low Profile 6 Panel Dad Cap" data-date="2022-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B653"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B653</p>
+                <p class="pc__name">Low Profile 6 Panel Dad Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#d5ccc4"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-more">+8</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B672" data-name="6 Panel Vintage Trucker Cap" data-date="2022-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B672"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B672</p>
+                <p class="pc__name">6 Panel Vintage Trucker Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#d5ccc4"></span><span class="pc__colour-dot" style="background:#556b2f"></span><span class="pc__colour-more">+4</span></div>
+              </div>
+            </a>
+
+            <!-- ═══ URBANWEAR COLLECTION ═══ -->
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion promotion" data-deco="embroidery transfer patches screen" data-feature="" data-sku="B634R" data-name="Classic Foam Trucker" data-date="2023-06-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/6cd07caacecc4ac4/webimage-B634R-Classic-Foam-Trucker-Classic-Red-Product-Shot-01.png" alt="B634R Classic Foam Trucker" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B634R</p>
+                <p class="pc__name">Classic Foam Trucker</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-more">+8</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B645" data-name="Vintage Snapback Trucker" data-date="2022-01-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/7d1480204a8fb8fb/webimage-B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.png" alt="B645 Vintage Snapback Trucker" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B645</p>
+                <p class="pc__name">Vintage Snapback Trucker</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#d5ccc4"></span><span class="pc__colour-more">+6</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer screen" data-feature="" data-sku="B610" data-name="5 Panel Snapback Rapper Cap" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B610"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B610</p>
+                <p class="pc__name">5 Panel Snapback Rapper Cap</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-more">+10</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer patches" data-feature="" data-sku="B636" data-name="Applique Patch 5 Panel Trucker" data-date="2023-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B636"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B636</p>
+                <p class="pc__name">Appliqu&eacute; Patch 5 Panel Trucker</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#f5f5f5;border-color:#ddd"></span><span class="pc__colour-more">+4</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B533" data-name="Dip Dye Beanie" data-date="2023-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B533"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B533</p>
+                <p class="pc__name">Dip Dye Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#556b2f"></span><span class="pc__colour-more">+3</span></div>
+              </div>
+            </a>
+
+            <!-- ═══ ORIGINALS BEANIES ═══ -->
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches" data-feature="tearaway" data-sku="B44" data-name="Original Pull-On Beanie" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B44"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B44</p>
+                <p class="pc__name">Original Pull-On Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-dot" style="background:#1e8449"></span><span class="pc__colour-more">+28</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="promotion" data-deco="embroidery transfer patches" data-feature="recycled tearaway" data-sku="B45R" data-name="Recycled Original Cuffed Beanie" data-date="2023-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B45R"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B45R</p>
+                <p class="pc__name">Recycled Original Cuffed Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-dot" style="background:#7f8c8d"></span><span class="pc__colour-more">+6</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery patches" data-feature="tearaway" data-sku="B445" data-name="Original Patch Beanie" data-date="2022-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B445"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B445</p>
+                <p class="pc__name">Original Patch Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-more">+12</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion gifting" data-deco="embroidery" data-feature="" data-sku="B370" data-name="Merino Beanie" data-date="2022-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B370"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B370</p>
+                <p class="pc__name">Merino Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#d5ccc4"></span><span class="pc__colour-dot" style="background:#7f8c8d"></span><span class="pc__colour-more">+4</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B384R" data-name="Oversized Cuffed Beanie" data-date="2023-06-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B384R"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B384R</p>
+                <p class="pc__name">Oversized Cuffed Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#d5ccc4"></span><span class="pc__colour-dot" style="background:#556b2f"></span><span class="pc__colour-more">+6</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="outdoors workwear" data-deco="embroidery" data-feature="" data-sku="B407" data-name="Reflective Beanie" data-date="2022-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B407"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B407</p>
+                <p class="pc__name">Reflective Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#ff6600"></span><span class="pc__colour-dot" style="background:#ffcc00"></span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="outdoors workwear" data-deco="embroidery" data-feature="" data-sku="B447" data-name="Thinsulate Beanie" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B447"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B447</p>
+                <p class="pc__name">Thinsulate&trade; Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-dot" style="background:#7f8c8d"></span><span class="pc__colour-more">+4</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B461" data-name="Slouch Beanie" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B461"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B461</p>
+                <p class="pc__name">Slouch Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#7f8c8d"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-more">+8</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="vintage" data-purpose="fashion" data-deco="embroidery" data-feature="" data-sku="B425" data-name="Heritage Beanie" data-date="2024-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B425"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B425</p>
+                <p class="pc__name">Heritage Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#7d5a3c"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#556b2f"></span><span class="pc__colour-more">+3</span></div>
+              </div>
+            </a>
+
+            <!-- ═══ SNOWSTAR ═══ -->
+
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="snowstar" data-purpose="fashion gifting" data-deco="embroidery" data-feature="" data-sku="B450" data-name="Snowstar Beanie" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B450"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B450</p>
+                <p class="pc__name">Snowstar Beanie</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#f5f5f5;border-color:#ddd"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-more">+10</span></div>
+              </div>
+            </a>
+
+            <!-- ═══ HATS ═══ -->
+
+            <a href="#" class="pc" role="listitem" data-type="hats" data-collection="originals" data-purpose="fashion outdoors" data-deco="embroidery" data-feature="" data-sku="B725" data-name="Straw Fedora" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/5b91a77fbbfddc63/webimage-B725-Straw-Fedora-Natural-Black-Product-Shot-01.png" alt="B725 Straw Fedora" loading="lazy">
               </div>
               <div class="pc__body">
                 <p class="pc__sku">B725</p>
                 <p class="pc__name">Straw Fedora</p>
-                <div class="pc__colours">
-                  <span class="pc__colour-dot" style="background:#e8d5b0"></span>
-                  <span class="pc__colour-dot" style="background:#111"></span>
-                  <span class="pc__colour-more">+2</span>
-                </div>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#e8d5b0"></span><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-more">+2</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="hats" data-collection="originals" data-purpose="fashion" data-deco="embroidery" data-feature="" data-sku="B686" data-name="Reversible Bucket Hat" data-date="2023-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B686"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B686</p>
+                <p class="pc__name">Reversible Bucket Hat</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-dot" style="background:#556b2f"></span><span class="pc__colour-more">+3</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="hats" data-collection="originals" data-purpose="outdoors" data-deco="embroidery" data-feature="" data-sku="B789" data-name="Outback Hat" data-date="2022-01-01">
+              <div class="pc__img">
+                <img src="https://mediahub.beechfieldbrands.com/m/2bbecadfc4595bb4/webimage-B789-Outback-Hat-Black-Product-Shot-01.png" alt="B789 Outback Hat" loading="lazy">
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">B789</p>
+                <p class="pc__name">Outback Hat</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#556b2f"></span><span class="pc__colour-more">+2</span></div>
+              </div>
+            </a>
+
+            <!-- ═══ NECKWEAR ═══ -->
+
+            <a href="#" class="pc" role="listitem" data-type="neckwear" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-sku="B320" data-name="Softshell Sports Tech Neck Warmer" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B320"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B320</p>
+                <p class="pc__name">Softshell Sports Tech Neck Warmer</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-more">+4</span></div>
+              </div>
+            </a>
+
+            <a href="#" class="pc" role="listitem" data-type="neckwear" data-collection="morf" data-purpose="promotion sports outdoors" data-deco="transfer screen" data-feature="" data-sku="B900" data-name="Morf Original" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B900"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B900</p>
+                <p class="pc__name">Morf&trade; Original</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#2471a3"></span><span class="pc__colour-dot" style="background:#1e8449"></span><span class="pc__colour-more">+18</span></div>
+              </div>
+            </a>
+
+            <!-- ═══ ACCESSORIES ═══ -->
+
+            <a href="#" class="pc" role="listitem" data-type="accessories" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery" data-feature="" data-sku="B240" data-name="Suprafleece Aspen Headband" data-date="2020-01-01">
+              <div class="pc__img pc__img--placeholder" data-sku="B240"></div>
+              <div class="pc__body">
+                <p class="pc__sku">B240</p>
+                <p class="pc__name">Suprafleece&trade; Aspen Headband</p>
+                <div class="pc__colours"><span class="pc__colour-dot" style="background:#111"></span><span class="pc__colour-dot" style="background:#c0392b"></span><span class="pc__colour-dot" style="background:#1a5276"></span><span class="pc__colour-more">+4</span></div>
               </div>
             </a>
 
           </div><!-- /plp-grid -->
-
-          <!-- Load more -->
-          <div class="plp-loadmore">
-            <a href="#" class="btn-loadmore">Load More Products</a>
-          </div>
 
           <!-- ═══ Cross-Brand: Studio Collection → Quadra ═══ -->
           <section class="cross-brand" aria-label="Complementary products from Quadra">
@@ -1405,6 +1706,7 @@
   </footer>
 
   <script src="../../shared/js/navigation.js"></script>
+  <script src="../../shared/js/filters.js"></script>
   <script>
     /* ── Search Hard Redirect Demo ──
        When user types bag-related terms in the search overlay,

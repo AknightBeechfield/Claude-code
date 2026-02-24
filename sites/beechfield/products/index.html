@@ -377,6 +377,14 @@
       opacity: 0.7;
     }
 
+    /* ── PLP Promo block grid integration ── */
+    .plp-promo {
+      border-color: #eaeaea;
+    }
+    @media (max-width: 1200px) and (min-width: 701px) {
+      .plp-promo { grid-column: span 2; }
+    }
+
     /* ── Load more ── */
     .plp-loadmore {
       text-align: center;
@@ -620,6 +628,52 @@
       <input type="search" class="search-overlay__input" placeholder="Search by product name, SKU, or keyword..." aria-label="Search products">
       <button class="search-overlay__close" aria-label="Close search">&times;</button>
     </div>
+    <!-- Search Hard Redirect Demo (Scenario 1: user searches for product type not sold by this brand) -->
+    <div class="search-redirect" id="search-redirect-demo" style="display:none;">
+      <div class="search-redirect__message">
+        <p class="search-redirect__heading">Tote bags are available from our sister brand <strong>Westford Mill</strong></p>
+        <p class="search-redirect__desc">Westford Mill specialises in sustainable cotton and jute bags designed for decoration.</p>
+      </div>
+      <div class="search-redirect__products">
+        <a href="../../westford-mill/products/w101-bag-for-life.html" class="pc pc--compact">
+          <div class="pc__img pc__img--placeholder" data-sku="W101" style="aspect-ratio:1/1;">
+            <span class="pc__badge pc__badge--brand">Westford Mill</span>
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">W101</p>
+            <p class="pc__name">Bag for Life</p>
+          </div>
+        </a>
+        <a href="../../westford-mill/products/w610-everyday-canvas-tote.html" class="pc pc--compact">
+          <div class="pc__img pc__img--placeholder" data-sku="W610" style="aspect-ratio:1/1;">
+            <span class="pc__badge pc__badge--brand">Westford Mill</span>
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">W610</p>
+            <p class="pc__name">Everyday Canvas Tote</p>
+          </div>
+        </a>
+        <a href="../../westford-mill/products/w804-earthaware-organic-varsity-shopper.html" class="pc pc--compact">
+          <div class="pc__img pc__img--placeholder" data-sku="W804" style="aspect-ratio:1/1;">
+            <span class="pc__badge pc__badge--brand">Westford Mill</span>
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">W804</p>
+            <p class="pc__name">EarthAware&reg; Varsity Shopper</p>
+          </div>
+        </a>
+        <a href="../../westford-mill/products/w108-canvas-classic-shopper.html" class="pc pc--compact">
+          <div class="pc__img pc__img--placeholder" data-sku="W108" style="aspect-ratio:1/1;">
+            <span class="pc__badge pc__badge--brand">Westford Mill</span>
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">W108</p>
+            <p class="pc__name">Canvas Classic Shopper</p>
+          </div>
+        </a>
+      </div>
+      <a href="../../westford-mill/products/?type=tote" class="search-redirect__cta">View on Westford Mill &rarr;</a>
+    </div>
   </div>
 
   <main>
@@ -824,6 +878,20 @@
               </div>
             </a>
 
+            <!-- ═══ Collection Promo Block (spans 2 columns) ═══ -->
+            <div class="plp-promo" role="listitem">
+              <div class="plp-promo__media">
+                <img src="https://mediahub.beechfieldbrands.com/asset/0b605e02-8970-44f5-a220-beb0c506e313/Product-medium/B45-Original-Cuffed-Beanie-Sunset-Lifestyle-04.jpg"
+                     alt="EarthAware Collection — organic cotton headwear in natural tones" loading="lazy">
+              </div>
+              <div class="plp-promo__overlay">
+                <span class="plp-promo__eyebrow">EarthAware&reg; Collection</span>
+                <h3 class="plp-promo__title">Organic. Certified. Considered.</h3>
+                <p class="plp-promo__text">OCS-certified organic cotton headwear — same shapes, lower footprint. Verified from fibre to finished product.</p>
+                <a href="../collections/earthaware.html" class="plp-promo__cta">Explore Collection</a>
+              </div>
+            </div>
+
             <!-- B90N -->
             <a href="b90n-earthaware-bucket-hat.html" class="pc" role="listitem">
               <div class="pc__img">
@@ -972,6 +1040,284 @@
             <a href="#" class="btn-loadmore">Load More Products</a>
           </div>
 
+          <!-- ═══ Cross-Brand: Studio Collection → Quadra ═══ -->
+          <section class="cross-brand" aria-label="Complementary products from Quadra">
+            <div class="cross-brand__header">
+              <p class="cross-brand__eyebrow">From our sister brand &mdash; Quadra</p>
+              <h3 class="cross-brand__title">Complete the Studio look with Quadra</h3>
+              <p class="cross-brand__desc">The Quadra Studio collection pairs perfectly with Beechfield Studio headwear &mdash; same design language, purpose-built for sport and lifestyle.</p>
+            </div>
+            <div class="cross-brand__grid">
+              <a href="../../quadra/products/qs306-studio-backpack.html" class="pc" role="listitem">
+                <div class="pc__img pc__img--placeholder" data-sku="QS306">
+                  <span class="pc__badge pc__badge--brand">Quadra</span>
+                </div>
+                <div class="pc__body">
+                  <p class="pc__sku">QS306</p>
+                  <p class="pc__name">Studio Backpack</p>
+                  <div class="pc__colours">
+                    <span class="pc__colour-dot" style="background:#111"></span>
+                    <span class="pc__colour-dot" style="background:#5d6d7e"></span>
+                    <span class="pc__colour-dot" style="background:#c8b89a"></span>
+                  </div>
+                </div>
+              </a>
+              <a href="../../quadra/products/qs308-studio-belt-bag.html" class="pc" role="listitem">
+                <div class="pc__img pc__img--placeholder" data-sku="QS308">
+                  <span class="pc__badge pc__badge--brand">Quadra</span>
+                </div>
+                <div class="pc__body">
+                  <p class="pc__sku">QS308</p>
+                  <p class="pc__name">Studio Belt Bag</p>
+                  <div class="pc__colours">
+                    <span class="pc__colour-dot" style="background:#111"></span>
+                    <span class="pc__colour-dot" style="background:#5d6d7e"></span>
+                  </div>
+                </div>
+              </a>
+              <a href="../../quadra/products/qs302-studio-water-bottle-carrier.html" class="pc" role="listitem">
+                <div class="pc__img pc__img--placeholder" data-sku="QS302">
+                  <span class="pc__badge pc__badge--brand">Quadra</span>
+                </div>
+                <div class="pc__body">
+                  <p class="pc__sku">QS302</p>
+                  <p class="pc__name">Studio Water Bottle Carrier</p>
+                  <div class="pc__colours">
+                    <span class="pc__colour-dot" style="background:#111"></span>
+                    <span class="pc__colour-dot" style="background:#c8b89a"></span>
+                  </div>
+                </div>
+              </a>
+              <a href="../../quadra/products/qs300-studio-holdall.html" class="pc" role="listitem">
+                <div class="pc__img pc__img--placeholder" data-sku="QS300">
+                  <span class="pc__badge pc__badge--brand">Quadra</span>
+                </div>
+                <div class="pc__body">
+                  <p class="pc__sku">QS300</p>
+                  <p class="pc__name">Studio Holdall</p>
+                  <div class="pc__colours">
+                    <span class="pc__colour-dot" style="background:#111"></span>
+                    <span class="pc__colour-dot" style="background:#5d6d7e"></span>
+                    <span class="pc__colour-dot" style="background:#c8b89a"></span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <a href="../../quadra/collections/studio.html" class="cross-brand__cta">View all Quadra Studio products &rarr;</a>
+          </section>
+
+          <!-- ═══ Cross-Brand: EarthAware → Westford Mill ═══ -->
+          <section class="cross-brand" aria-label="Sustainable bags from Westford Mill">
+            <div class="cross-brand__header">
+              <p class="cross-brand__eyebrow">From our sister brand &mdash; Westford Mill</p>
+              <h3 class="cross-brand__title">Pair with sustainable bags from Westford Mill</h3>
+              <p class="cross-brand__desc">Westford Mill&rsquo;s EarthAware&reg; collection uses the same organic cotton ethos &mdash; OCS-certified bags designed for decoration.</p>
+            </div>
+            <div class="cross-brand__grid">
+              <a href="../../westford-mill/products/w804-earthaware-organic-varsity-shopper.html" class="pc" role="listitem">
+                <div class="pc__img pc__img--placeholder" data-sku="W804">
+                  <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                </div>
+                <div class="pc__body">
+                  <p class="pc__sku">W804</p>
+                  <p class="pc__name">EarthAware&reg; Organic Varsity Shopper</p>
+                  <div class="pc__colours">
+                    <span class="pc__colour-dot" style="background:#f5f0e8"></span>
+                    <span class="pc__colour-dot" style="background:#111"></span>
+                    <span class="pc__colour-dot" style="background:#1b2a4a"></span>
+                  </div>
+                </div>
+              </a>
+              <a href="../../westford-mill/products/w812-earthaware-organic-sea-bag.html" class="pc" role="listitem">
+                <div class="pc__img pc__img--placeholder" data-sku="W812">
+                  <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                </div>
+                <div class="pc__body">
+                  <p class="pc__sku">W812</p>
+                  <p class="pc__name">EarthAware&reg; Organic Sea Bag</p>
+                  <div class="pc__colours">
+                    <span class="pc__colour-dot" style="background:#f5f0e8"></span>
+                    <span class="pc__colour-dot" style="background:#111"></span>
+                  </div>
+                </div>
+              </a>
+              <a href="../../westford-mill/products/w850-earthaware-organic-marina-tote.html" class="pc" role="listitem">
+                <div class="pc__img pc__img--placeholder" data-sku="W850">
+                  <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                </div>
+                <div class="pc__body">
+                  <p class="pc__sku">W850</p>
+                  <p class="pc__name">EarthAware&reg; Organic Marina Tote</p>
+                  <div class="pc__colours">
+                    <span class="pc__colour-dot" style="background:#f5f0e8"></span>
+                    <span class="pc__colour-dot" style="background:#111"></span>
+                    <span class="pc__colour-dot" style="background:#7dbe9e"></span>
+                  </div>
+                </div>
+              </a>
+              <a href="../../westford-mill/products/w858-earthaware-organic-contrast-shopper.html" class="pc" role="listitem">
+                <div class="pc__img pc__img--placeholder" data-sku="W858">
+                  <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                </div>
+                <div class="pc__body">
+                  <p class="pc__sku">W858</p>
+                  <p class="pc__name">EarthAware&reg; Organic Contrast Shopper</p>
+                  <div class="pc__colours">
+                    <span class="pc__colour-dot" style="background:#f5f0e8"></span>
+                    <span class="pc__colour-dot" style="background:#111"></span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <a href="../../westford-mill/collections/earthaware.html" class="cross-brand__cta">View all Westford Mill EarthAware&reg; products &rarr;</a>
+          </section>
+
+          <!-- ═══ Colour-Based Cross-Brand Discovery (shown when colour filter active) ═══ -->
+          <section class="cross-brand-colour" aria-label="Blue products from sister brands">
+            <div class="cross-brand-colour__header">
+              <h3 class="cross-brand-colour__title">You searched for <strong>Blue</strong> products</h3>
+              <p class="cross-brand-colour__desc">Blue products are also available across our sister brands.</p>
+            </div>
+
+            <!-- Quadra — Blue products -->
+            <div class="cross-brand-colour__brand">
+              <div class="cross-brand-colour__brand-header">
+                <span class="cross-brand-colour__brand-name">Quadra</span>
+                <a href="../../quadra/products/?colour=blue" class="cross-brand-colour__brand-link">View all blue Quadra products &rarr;</a>
+              </div>
+              <div class="cross-brand-colour__row">
+                <a href="../../quadra/products/qs306-studio-backpack.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="QS306">
+                    <span class="pc__badge pc__badge--brand">Quadra</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">QS306</p>
+                    <p class="pc__name">Studio Backpack</p>
+                  </div>
+                </a>
+                <a href="../../quadra/products/qd540-zurich-travel-backpack.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="QD540">
+                    <span class="pc__badge pc__badge--brand">Quadra</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">QD540</p>
+                    <p class="pc__name">Z&uuml;rich Travel Backpack</p>
+                  </div>
+                </a>
+                <a href="../../quadra/products/qd271-stockholm-laptop-backpack.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="QD271">
+                    <span class="pc__badge pc__badge--brand">Quadra</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">QD271</p>
+                    <p class="pc__name">Stockholm Laptop Backpack</p>
+                  </div>
+                </a>
+                <a href="../../quadra/products/qs309-studio-cross-body.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="QS309">
+                    <span class="pc__badge pc__badge--brand">Quadra</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">QS309</p>
+                    <p class="pc__name">Studio Cross Body Bag</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Westford Mill — Blue products -->
+            <div class="cross-brand-colour__brand">
+              <div class="cross-brand-colour__brand-header">
+                <span class="cross-brand-colour__brand-name">Westford Mill</span>
+                <a href="../../westford-mill/products/?colour=blue" class="cross-brand-colour__brand-link">View all blue Westford Mill products &rarr;</a>
+              </div>
+              <div class="cross-brand-colour__row">
+                <a href="../../westford-mill/products/w101-bag-for-life.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="W101">
+                    <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">W101</p>
+                    <p class="pc__name">Bag for Life &ndash; Long Handles</p>
+                  </div>
+                </a>
+                <a href="../../westford-mill/products/w610-everyday-canvas-tote.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="W610">
+                    <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">W610</p>
+                    <p class="pc__name">Everyday Canvas Tote</p>
+                  </div>
+                </a>
+                <a href="../../westford-mill/products/w850-earthaware-organic-marina-tote.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="W850">
+                    <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">W850</p>
+                    <p class="pc__name">EarthAware&reg; Organic Marina Tote</p>
+                  </div>
+                </a>
+                <a href="../../westford-mill/products/w108-canvas-classic-shopper.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="W108">
+                    <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">W108</p>
+                    <p class="pc__name">Canvas Classic Shopper</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- BagBase — Blue products -->
+            <div class="cross-brand-colour__brand">
+              <div class="cross-brand-colour__brand-header">
+                <span class="cross-brand-colour__brand-name">BagBase</span>
+                <a href="../../bagbase/products/?colour=blue" class="cross-brand-colour__brand-link">View all blue BagBase products &rarr;</a>
+              </div>
+              <div class="cross-brand-colour__row">
+                <a href="../../bagbase/products/bg125-original-fashion-backpack.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="BG125">
+                    <span class="pc__badge pc__badge--brand">BagBase</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">BG125</p>
+                    <p class="pc__name">Original Fashion Backpack</p>
+                  </div>
+                </a>
+                <a href="../../bagbase/products/bg140-original-barrel-bag.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="BG140">
+                    <span class="pc__badge pc__badge--brand">BagBase</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">BG140</p>
+                    <p class="pc__name">Original Barrel Bag</p>
+                  </div>
+                </a>
+                <a href="../../bagbase/products/bg545-athleisure-sports-backpack.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="BG545">
+                    <span class="pc__badge pc__badge--brand">BagBase</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">BG545</p>
+                    <p class="pc__name">Athleisure Sports Backpack</p>
+                  </div>
+                </a>
+                <a href="../../bagbase/products/bg212-universal-backpack.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="BG212">
+                    <span class="pc__badge pc__badge--brand">BagBase</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">BG212</p>
+                    <p class="pc__name">Universal Backpack</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+
         </div><!-- /plp-grid-wrap -->
       </div><!-- /plp-layout -->
     </div><!-- /container -->
@@ -1059,5 +1405,27 @@
   </footer>
 
   <script src="../../shared/js/navigation.js"></script>
+  <script>
+    /* ── Search Hard Redirect Demo ──
+       When user types bag-related terms in the search overlay,
+       show the cross-brand redirect to Westford Mill.
+       Scenario 1: User is on Beechfield and searches for a product type
+       that Beechfield does not sell (e.g. tote bag, shopper, backpack). */
+    (function() {
+      var searchInput = document.querySelector('.search-overlay__input');
+      var redirectDemo = document.getElementById('search-redirect-demo');
+      if (!searchInput || !redirectDemo) return;
+
+      var bagTerms = ['tote', 'bag', 'shopper', 'backpack', 'holdall', 'duffel', 'rucksack', 'sack'];
+
+      searchInput.addEventListener('input', function() {
+        var query = searchInput.value.toLowerCase().trim();
+        var isBagSearch = bagTerms.some(function(term) {
+          return query.indexOf(term) !== -1;
+        });
+        redirectDemo.style.display = isBagSearch && query.length > 2 ? 'block' : 'none';
+      });
+    })();
+  </script>
 </body>
 </html>

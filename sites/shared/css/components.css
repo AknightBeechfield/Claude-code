@@ -743,6 +743,38 @@
   text-decoration: underline;
 }
 
+/* ── Complete the Look: Quadra dark variant ── */
+.complete-look--quadra {
+  background: #1a1a2e;
+}
+
+.complete-look--quadra .card__category {
+  background: #415a77;
+}
+
+.complete-look--quadra .card__cta {
+  color: #415a77;
+}
+
+.complete-look--quadra .complete-look__brand-link {
+  display: inline-block;
+  padding: 10px 28px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.complete-look--quadra .complete-look__brand-link:hover {
+  background: #415a77;
+  border-color: #415a77;
+  color: #fff;
+  text-decoration: none;
+}
+
 /* ── Search Hard Redirect ── */
 .search-redirect {
   padding: 32px;
@@ -863,4 +895,347 @@
 }
 @media (max-width: 700px) {
   .cross-brand-colour__row { grid-template-columns: 1fr 1fr; }
+}
+
+/* ==========================================================================
+   Cross-Brand: Distinctive Brand Theming
+   Each brand section gets its own visual identity
+   ========================================================================== */
+
+/* ── Shared: Brand logo in cross-brand headers ── */
+.cross-brand__logo {
+  display: block;
+  max-height: 24px;
+  width: auto;
+  margin-bottom: 12px;
+  object-fit: contain;
+}
+
+.cross-brand-colour__brand-logo {
+  height: 18px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   QUADRA — Premium & Purpose-Built
+   Dark charcoal background, slate blue accents, white text, clean product shots
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.cross-brand--quadra {
+  background: #1a1a2e;
+  padding: 48px 32px 40px;
+  border-top: none;
+  border-radius: 6px;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.cross-brand--quadra .cross-brand__logo {
+  max-height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+.cross-brand--quadra .cross-brand__eyebrow {
+  color: #415a77;
+  letter-spacing: 0.18em;
+}
+
+.cross-brand--quadra .cross-brand__title {
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.cross-brand--quadra .cross-brand__desc {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cross-brand--quadra .cross-brand__grid {
+  background: #0e1520;
+  border-color: #0e1520;
+  gap: 1px;
+}
+
+.cross-brand--quadra .cross-brand__grid .pc {
+  background: #ffffff;
+}
+
+.cross-brand--quadra .pc__badge--brand {
+  background: #415a77;
+}
+
+.cross-brand--quadra .pc:hover {
+  box-shadow: 0 0 0 2px #415a77;
+  z-index: 1;
+  position: relative;
+}
+
+.cross-brand--quadra .cross-brand__cta {
+  display: inline-block;
+  padding: 10px 28px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.cross-brand--quadra .cross-brand__cta:hover {
+  background: #415a77;
+  border-color: #415a77;
+  color: #fff;
+}
+
+/* Quadra in colour discovery sub-sections */
+.cross-brand-colour__brand--quadra .cross-brand-colour__brand-header {
+  border-bottom-color: #415a77;
+}
+
+.cross-brand-colour__brand--quadra .cross-brand-colour__brand-name {
+  color: #1a1a2e;
+  font-weight: 800;
+}
+
+.cross-brand-colour__brand--quadra .cross-brand-colour__brand-logo {
+  filter: none;
+}
+
+.cross-brand-colour__brand--quadra .cross-brand-colour__brand-link {
+  color: #415a77;
+}
+
+.cross-brand-colour__brand--quadra .cross-brand-colour__brand-link:hover {
+  color: #1a1a2e;
+}
+
+.cross-brand-colour__brand--quadra .pc__badge--brand {
+  background: #415a77;
+}
+
+.cross-brand-colour__brand--quadra .cross-brand-colour__row,
+.cross-brand-colour__brand--quadra .cross-brand__grid {
+  border-color: #c8d6e5;
+  background: #c8d6e5;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   WESTFORD MILL — Natural & Sustainable
+   Warm cream background, forest green accents, editorial typography
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.cross-brand--westford-mill {
+  background: #f5f0e8;
+  padding: 48px 32px 40px;
+  border-top: none;
+  border-radius: 6px;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.cross-brand--westford-mill .cross-brand__logo {
+  max-height: 22px;
+}
+
+.cross-brand--westford-mill .cross-brand__eyebrow {
+  color: #2d5016;
+  letter-spacing: 0.16em;
+}
+
+.cross-brand--westford-mill .cross-brand__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0;
+  color: #2d3a2a;
+}
+
+.cross-brand--westford-mill .cross-brand__desc {
+  color: #6b5e4f;
+}
+
+.cross-brand--westford-mill .cross-brand__grid {
+  background: transparent;
+  border: none;
+  gap: 16px;
+}
+
+.cross-brand--westford-mill .cross-brand__grid .pc {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.cross-brand--westford-mill .cross-brand__grid .pc:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.cross-brand--westford-mill .pc__badge--brand {
+  background: #2d5016;
+}
+
+.cross-brand--westford-mill .cross-brand__cta {
+  display: inline-block;
+  padding: 10px 28px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #2d5016;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+.cross-brand--westford-mill .cross-brand__cta:hover {
+  background: #1e3a0e;
+  color: #fff;
+}
+
+/* Westford Mill in colour discovery sub-sections */
+.cross-brand-colour__brand--westford-mill .cross-brand-colour__brand-header {
+  border-bottom-color: #7dbe9e;
+}
+
+.cross-brand-colour__brand--westford-mill .cross-brand-colour__brand-name {
+  color: #2d5016;
+  font-weight: 800;
+}
+
+.cross-brand-colour__brand--westford-mill .cross-brand-colour__brand-link {
+  color: #2d5016;
+}
+
+.cross-brand-colour__brand--westford-mill .cross-brand-colour__brand-link:hover {
+  color: #1e3a0e;
+}
+
+.cross-brand-colour__brand--westford-mill .pc__badge--brand {
+  background: #2d5016;
+}
+
+.cross-brand-colour__brand--westford-mill .cross-brand-colour__row,
+.cross-brand-colour__brand--westford-mill .cross-brand__grid {
+  border-color: #ddd8ce;
+  background: #ddd8ce;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   BAGBASE — Bold & Trend-Led
+   White background, coral accents, punchy typography, energetic hover
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.cross-brand--bagbase {
+  background: #ffffff;
+  padding: 48px 32px 40px;
+  border-top: 3px solid #fc614d;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.cross-brand--bagbase .cross-brand__logo {
+  max-height: 22px;
+}
+
+.cross-brand--bagbase .cross-brand__eyebrow {
+  color: #fc614d;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.cross-brand--bagbase .cross-brand__title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: #111;
+}
+
+.cross-brand--bagbase .cross-brand__desc {
+  color: #555;
+}
+
+.cross-brand--bagbase .cross-brand__grid {
+  background: #fc614d;
+  border-color: #fc614d;
+  gap: 2px;
+}
+
+.cross-brand--bagbase .cross-brand__grid .pc {
+  background: #ffffff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cross-brand--bagbase .cross-brand__grid .pc:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(252, 97, 77, 0.2);
+  z-index: 1;
+  position: relative;
+}
+
+.cross-brand--bagbase .pc__badge--brand {
+  background: #fc614d;
+}
+
+.cross-brand--bagbase .cross-brand__cta {
+  display: inline-block;
+  padding: 12px 32px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #fc614d;
+  transition: background 0.18s;
+}
+
+.cross-brand--bagbase .cross-brand__cta:hover {
+  background: #e54a38;
+  color: #fff;
+}
+
+/* BagBase in colour discovery sub-sections */
+.cross-brand-colour__brand--bagbase .cross-brand-colour__brand-header {
+  border-bottom-color: #fc614d;
+}
+
+.cross-brand-colour__brand--bagbase .cross-brand-colour__brand-name {
+  color: #111;
+  font-weight: 800;
+}
+
+.cross-brand-colour__brand--bagbase .cross-brand-colour__brand-link {
+  color: #fc614d;
+}
+
+.cross-brand-colour__brand--bagbase .cross-brand-colour__brand-link:hover {
+  color: #e54a38;
+}
+
+.cross-brand-colour__brand--bagbase .pc__badge--brand {
+  background: #fc614d;
+}
+
+.cross-brand-colour__brand--bagbase .cross-brand-colour__row,
+.cross-brand-colour__brand--bagbase .cross-brand__grid {
+  border-color: #fcd5cf;
+  background: #fcd5cf;
+}
+
+.cross-brand-colour__brand--bagbase .pc {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cross-brand-colour__brand--bagbase .pc:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(252, 97, 77, 0.15);
+  z-index: 1;
+  position: relative;
 }

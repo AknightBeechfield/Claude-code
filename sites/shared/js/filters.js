@@ -19,12 +19,16 @@
   /* ── Cross-brand section refs ── */
   var cbSections = {};
 
-  /* ── Blue image swap lookup ── */
+  /* ── Blue image swap lookup ──
+     Products that show a non-blue default image get swapped to a blue
+     variant when the blue colour filter is active. Products already
+     showing blue/navy as their default image are NOT listed here. */
   var blueImageSwaps = {
     'B45':   'https://mediahub.beechfieldbrands.com/asset/04729327-8f12-4c09-8ad0-3a30991c99af/Product-medium/B45-Original-Cuffed-Beanie-Dusty-Blue-Front-on-shot-01.jpg',
     'B155R': 'https://mediahub.beechfieldbrands.com/asset/8417567f-45fe-4bd3-85a6-df2ab83fb4c8/Product-medium/B155R-Accelerate-Cap-Navy-White-Product-Shot-01.jpg',
     'B165':  'https://mediahub.beechfieldbrands.com/asset/704fce81-e655-4c78-b5ce-e0770785be5b/Product-medium/B165-Club-Cap-Royal-Navy-Product.jpg',
-    'B645':  'https://mediahub.beechfieldbrands.com/asset/089bd71e-4418-43d4-b0f0-82754f7f0abb/Product-medium/B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.jpg'
+    'B645':  'https://mediahub.beechfieldbrands.com/asset/089bd71e-4418-43d4-b0f0-82754f7f0abb/Product-medium/B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.jpg',
+    'B640':  'https://mediahub.beechfieldbrands.com/m/7d1480204a8fb8fb/webimage-B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.png'
   };
 
   /* ── Init ── */
@@ -146,29 +150,83 @@
     handleBlueImageSwaps();
   }
 
-  /* ── Apply filters ── */
+  /* ── Apply filters (with animation) ── */
   function applyFilters() {
     var visibleCount = 0;
+    var enterIndex = 0;
+    var hasActiveFilter = Object.keys(activeFilters).length > 0 || activeSearch;
 
     products.forEach(function (card) {
       var visible = true;
 
-      for (var group in activeFilters) {
-        if (!activeFilters.hasOwnProperty(group)) continue;
-        var filterVal = activeFilters[group];
-        var cardVal   = (card.getAttribute('data-' + group) || '').toLowerCase();
-
-        // Support space-separated multi-values (e.g. data-purpose="promotion sports")
-        var cardValues = cardVal.split(/\s+/);
-        if (cardValues.indexOf(filterVal) === -1) {
+      // Text-based search filter (e.g. "studio" matches data-name)
+      if (activeSearch === 'studio') {
+        var name = (card.getAttribute('data-name') || '').toLowerCase();
+        if (name.indexOf('studio') === -1) {
           visible = false;
-          break;
         }
       }
 
-      card.style.display = visible ? '' : 'none';
-      if (visible) visibleCount++;
+      if (visible) {
+        for (var group in activeFilters) {
+          if (!activeFilters.hasOwnProperty(group)) continue;
+          var filterVal = activeFilters[group];
+          var cardVal   = (card.getAttribute('data-' + group) || '').toLowerCase();
+
+          // Support space-separated multi-values (e.g. data-purpose="promotion sports")
+          var cardValues = cardVal.split(/\s+/);
+          if (cardValues.indexOf(filterVal) === -1) {
+            visible = false;
+            break;
+          }
+        }
+      }
+
+      var wasVisible = card.style.display !== 'none';
+
+      if (visible) {
+        card.style.display = '';
+        // Animate entering cards (was hidden, now visible) with stagger
+        if (!wasVisible && hasActiveFilter) {
+          card.classList.remove('pc--filter-out');
+          card.style.setProperty('--fi', Math.min(enterIndex, 8));
+          card.classList.add('pc--filter-in');
+          enterIndex++;
+        } else {
+          card.classList.remove('pc--filter-out', 'pc--filter-in');
+          card.style.removeProperty('--fi');
+        }
+        visibleCount++;
+      } else {
+        // Animate out then hide
+        card.classList.remove('pc--filter-in');
+        card.style.removeProperty('--fi');
+        if (wasVisible && hasActiveFilter) {
+          card.classList.add('pc--filter-out');
+          // Remove from layout after animation completes
+          (function(c) {
+            setTimeout(function() {
+              if (c.classList.contains('pc--filter-out')) {
+                c.style.display = 'none';
+                c.classList.remove('pc--filter-out');
+              }
+            }, 250);
+          })(card);
+        } else {
+          card.style.display = 'none';
+        }
+      }
     });
+
+    // Clean up filter-in class after animation
+    if (hasActiveFilter) {
+      setTimeout(function() {
+        products.forEach(function(card) {
+          card.classList.remove('pc--filter-in');
+          card.style.removeProperty('--fi');
+        });
+      }, 600);
+    }
 
     // Keep promo block visible unless a specific type/collection filter hides it contextually
     if (promoBlock) {
@@ -330,31 +388,43 @@
 
   /* ── Cross-brand section visibility ── */
   function updateCrossBrandSections() {
-    // Hide ALL sections first
+    // Hide ALL sections first and remove reveal/tint classes
     for (var key in cbSections) {
-      if (cbSections[key]) cbSections[key].style.display = 'none';
+      if (cbSections[key]) {
+        cbSections[key].style.display = 'none';
+        cbSections[key].classList.remove('cb--reveal', 'cb-blue-active');
+      }
     }
 
-    // Show ONLY the one matching the current scenario
+    // Show ONLY the one matching the current scenario (with reveal animation)
     if (activeSearch === 'studio') {
-      if (cbSections.studio) cbSections.studio.style.display = '';
+      revealSection(cbSections.studio);
       return;
     }
 
     if (activeSearch === 'blue' || activeFilters.colour === 'blue') {
-      if (cbSections.colour) cbSections.colour.style.display = '';
+      revealSection(cbSections.colour);
+      if (cbSections.colour) cbSections.colour.classList.add('cb-blue-active');
       return;
     }
 
     if (activeFilters.feature === 'recycled') {
-      if (cbSections.recycled) cbSections.recycled.style.display = '';
+      revealSection(cbSections.recycled);
       return;
     }
 
     if (activeFilters.collection === 'earthaware' || activeFilters.feature === 'organic') {
-      if (cbSections.earthaware) cbSections.earthaware.style.display = '';
+      revealSection(cbSections.earthaware);
       return;
     }
+  }
+
+  function revealSection(el) {
+    if (!el) return;
+    el.style.display = '';
+    // Force reflow so animation restarts
+    void el.offsetHeight;
+    el.classList.add('cb--reveal');
   }
 
   /* ── Blue image swaps ── */

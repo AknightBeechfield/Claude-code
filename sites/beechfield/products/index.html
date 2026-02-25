@@ -24,7 +24,7 @@
     body {
       font-family: 'neue-haas-grotesk-text', 'Helvetica Neue LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-weight: 300;
-      color: #111;
+      color: #333333;
       background: #fff;
     }
     h1, h2, h3 {
@@ -405,6 +405,62 @@
       display: inline-block;
       margin-top: 4px;
       border-radius: 2px;
+    }
+
+    /* ── Blue colour tint overlay on cross-brand products ── */
+    .cb-blue-active .pc__img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,82,118,0.18) 0%, rgba(36,113,163,0.12) 100%);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .cb-blue-active .pc__img {
+      position: relative;
+    }
+
+    /* ── Filter animation: fade + scale on product cards ── */
+    .plp-grid .pc {
+      transition:
+        opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .plp-grid .pc.pc--filter-out {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    .plp-grid .pc.pc--filter-in {
+      animation: cardFilterIn 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+    @keyframes cardFilterIn {
+      from { opacity: 0; transform: scale(0.95) translateY(6px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Stagger delay via CSS custom property --fi (set by JS) */
+    .plp-grid .pc.pc--filter-in {
+      animation-delay: calc(var(--fi, 0) * 35ms);
+    }
+
+    /* Filter pill entrance animation */
+    .plp-pill {
+      animation: pillIn 220ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    @keyframes pillIn {
+      from { opacity: 0; transform: scale(0.85) translateY(3px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Cross-brand section reveal animation */
+    .cross-brand.cb--reveal,
+    .cross-brand-colour.cb--reveal {
+      animation: sectionReveal 400ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+    @keyframes sectionReveal {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
   </style>

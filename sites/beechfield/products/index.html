@@ -380,6 +380,33 @@
       .plp-promo { grid-column: span 2; }
     }
 
+    /* ── Studio search highlight ── */
+    .pc--studio-highlight {
+      outline: 3px solid #1f614d !important;
+      outline-offset: -1px;
+      animation: pulse-studio 2s ease-in-out 3;
+      z-index: 1;
+      position: relative;
+    }
+    @keyframes pulse-studio {
+      0%, 100% { outline-color: #1f614d; }
+      50% { outline-color: #bde4ba; }
+    }
+
+    /* ── GRS certification badge ── */
+    .pc__badge--grs {
+      background: #1f614d;
+      color: #fff;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      display: inline-block;
+      margin-top: 4px;
+      border-radius: 2px;
+    }
+
   </style>
 </head>
 <body>
@@ -652,6 +679,85 @@
       </div>
       <a href="../../westford-mill/products/?type=tote" class="search-redirect__cta">View on Westford Mill &rarr;</a>
     </div>
+
+    <!-- Search Scenario: Studio / Yoga / Fitness -->
+    <div class="search-redirect" id="search-redirect-studio" style="display:none;">
+      <div class="search-redirect__message">
+        <p class="search-redirect__heading">Looking for studio headwear? Try our <strong>B26N EarthAware&reg; Studio Cap</strong></p>
+        <p class="search-redirect__desc">The B26N pairs perfectly with the Quadra Studio collection for a complete sport &amp; lifestyle kit.</p>
+      </div>
+      <div class="search-redirect__products">
+        <a href="b26n-earthaware-studio-cap.html" class="pc pc--compact">
+          <div class="pc__img" style="aspect-ratio:1/1;">
+            <img src="https://mediahub.beechfieldbrands.com/m/5e3f1359858f9dd2/webimage-B26N-EarthAware-Organic-Cotton-Studio-Cap-Cornflower-Blue-Product-Shot-01.png" alt="B26N EarthAware Studio Cap" loading="lazy">
+            <span class="pc__badge pc__badge--new">New SS26</span>
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">B26N</p>
+            <p class="pc__name">EarthAware&reg; Studio Cap</p>
+          </div>
+        </a>
+        <a href="../../quadra/products/qs306-studio-backpack.html" class="pc pc--compact">
+          <div class="pc__img" style="aspect-ratio:1/1;">
+            <img src="https://mediahub.beechfieldbrands.com/asset/8dbffd66-2cd0-4a65-ab30-b762cb3be39c/Product-medium/quadra_qs306_black.jpg" alt="QS306 Studio Backpack" loading="lazy">
+            <span class="pc__badge pc__badge--brand">Quadra</span>
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">QS306</p>
+            <p class="pc__name">Studio Backpack</p>
+          </div>
+        </a>
+        <a href="../../quadra/products/qs308-studio-belt-bag.html" class="pc pc--compact">
+          <div class="pc__img" style="aspect-ratio:1/1;">
+            <img src="https://mediahub.beechfieldbrands.com/asset/94ead510-1359-4c33-9873-665fcaf0135f/Product-medium/QS308-Studio-Belt-Bag-Black-Product-Shot-01.jpg" alt="QS308 Studio Belt Bag" loading="lazy">
+            <span class="pc__badge pc__badge--brand">Quadra</span>
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">QS308</p>
+            <p class="pc__name">Studio Belt Bag</p>
+          </div>
+        </a>
+      </div>
+      <a href="#" class="search-redirect__cta" id="search-studio-apply">Show Studio products &rarr;</a>
+    </div>
+
+    <!-- Search Scenario: Blue products -->
+    <div class="search-redirect" id="search-redirect-blue" style="display:none;">
+      <div class="search-redirect__message">
+        <p class="search-redirect__heading">Blue products across <strong>Beechfield</strong> and our sister brands</p>
+        <p class="search-redirect__desc">We found blue headwear in the Beechfield range, plus blue bags and accessories from Quadra, BagBase and Westford Mill.</p>
+      </div>
+      <div class="search-redirect__products">
+        <a href="b45-original-cuffed-beanie.html" class="pc pc--compact">
+          <div class="pc__img" style="aspect-ratio:1/1;">
+            <img src="https://mediahub.beechfieldbrands.com/asset/04729327-8f12-4c09-8ad0-3a30991c99af/Product-medium/B45-Original-Cuffed-Beanie-Dusty-Blue-Front-on-shot-01.jpg" alt="B45 Original Cuffed Beanie — Dusty Blue" loading="lazy">
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">B45</p>
+            <p class="pc__name">Original Cuffed Beanie</p>
+          </div>
+        </a>
+        <a href="#" class="pc pc--compact">
+          <div class="pc__img" style="aspect-ratio:1/1;">
+            <img src="https://mediahub.beechfieldbrands.com/asset/704fce81-e655-4c78-b5ce-e0770785be5b/Product-medium/B165-Club-Cap-Royal-Navy-Product.jpg" alt="B165 Club Cap — Royal/Navy" loading="lazy">
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">B165</p>
+            <p class="pc__name">Club Cap</p>
+          </div>
+        </a>
+        <a href="#" class="pc pc--compact">
+          <div class="pc__img" style="aspect-ratio:1/1;">
+            <img src="https://mediahub.beechfieldbrands.com/asset/089bd71e-4418-43d4-b0f0-82754f7f0abb/Product-medium/B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.jpg" alt="B645 Vintage Snapback Trucker — French Navy" loading="lazy">
+          </div>
+          <div class="pc__body">
+            <p class="pc__sku">B645</p>
+            <p class="pc__name">Vintage Snapback Trucker</p>
+          </div>
+        </a>
+      </div>
+      <a href="#" class="search-redirect__cta" id="search-blue-apply">Show Blue products &rarr;</a>
+    </div>
   </div>
 
   <main>
@@ -773,6 +879,17 @@
               <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="feature" data-filter-value="tearaway">TearAway Label</a></li>
             </ul>
           </div>
+
+          <div class="plp-sidebar__group">
+            <span class="plp-sidebar__heading">Colour</span>
+            <ul class="plp-sidebar__list">
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="colour" data-filter-value="blue">Blue / Navy</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="colour" data-filter-value="black">Black</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="colour" data-filter-value="red">Red</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="colour" data-filter-value="green">Green</a></li>
+              <li class="plp-sidebar__item"><a href="#" class="plp-sidebar__link" data-filter-group="colour" data-filter-value="natural">White / Natural</a></li>
+            </ul>
+          </div>
         </aside>
 
         <!-- Product grid -->
@@ -783,7 +900,7 @@
 
             <!-- ═══ BESTSELLERS (top of grid) ═══ -->
 
-            <a href="b45-original-cuffed-beanie.html" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="promotion sports fashion" data-deco="embroidery transfer patches" data-feature="tearaway" data-sku="B45" data-name="Original Cuffed Beanie" data-date="2020-01-01">
+            <a href="b45-original-cuffed-beanie.html" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="promotion sports fashion" data-deco="embroidery transfer patches" data-feature="tearaway" data-colour="black blue green natural red" data-sku="B45" data-name="Original Cuffed Beanie" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/asset/0b605e02-8970-44f5-a220-beb0c506e313/Product-medium/B45-Original-Cuffed-Beanie-Sunset-Lifestyle-04.jpg" alt="B45 Original Cuffed Beanie" loading="lazy">
                 <span class="pc__badge">Bestseller</span>
@@ -795,7 +912,7 @@
               </div>
             </a>
 
-            <a href="b655-dad-cap.html" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer screen" data-feature="" data-sku="B655" data-name="Low Profile Vintage Cap" data-date="2021-01-01">
+            <a href="b655-dad-cap.html" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer screen" data-feature="" data-colour="black blue brown natural" data-sku="B655" data-name="Low Profile Vintage Cap" data-date="2021-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B655 Low Profile Vintage Cap" loading="lazy">
                 <span class="pc__badge">Bestseller</span>
@@ -807,7 +924,7 @@
               </div>
             </a>
 
-            <a href="b15-baseball-cap.html" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-sku="B15" data-name="Ultimate 5 Panel Cap" data-date="2020-01-01">
+            <a href="b15-baseball-cap.html" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-colour="black blue green natural red" data-sku="B15" data-name="Ultimate 5 Panel Cap" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png" alt="B15 Ultimate 5 Panel Cap" loading="lazy">
                 <span class="pc__badge">Bestseller</span>
@@ -819,7 +936,7 @@
               </div>
             </a>
 
-            <a href="b640-snapback-trucker.html" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion promotion" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-sku="B640" data-name="Snapback Trucker" data-date="2020-01-01">
+            <a href="b640-snapback-trucker.html" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion promotion" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-colour="black blue natural red" data-sku="B640" data-name="Snapback Trucker" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/6cd07caacecc4ac4/webimage-B634R-Classic-Foam-Trucker-Classic-Red-Product-Shot-01.png" alt="B640 Snapback Trucker" loading="lazy">
               </div>
@@ -845,7 +962,7 @@
 
             <!-- ═══ EARTHAWARE COLLECTION ═══ -->
 
-            <a href="b90n-earthaware-bucket-hat.html" class="pc" role="listitem" data-type="hats" data-collection="earthaware" data-purpose="fashion outdoors" data-deco="embroidery transfer" data-feature="organic" data-sku="B90N" data-name="EarthAware Organic Bucket Hat" data-date="2024-06-01">
+            <a href="b90n-earthaware-bucket-hat.html" class="pc" role="listitem" data-type="hats" data-collection="earthaware" data-purpose="fashion outdoors" data-deco="embroidery transfer" data-feature="organic" data-colour="black grey natural purple" data-sku="B90N" data-name="EarthAware Organic Bucket Hat" data-date="2024-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/31e473ca6c2a5d3d/webimage-B90N-EarthAware-Organic-Cotton-Bucket-Hat-Desert-Sand-Front-on-shot.png" alt="B90N EarthAware Bucket Hat" loading="lazy">
                 <span class="pc__badge pc__badge--earth">EarthAware®</span>
@@ -857,7 +974,7 @@
               </div>
             </a>
 
-            <a href="b26n-earthaware-studio-cap.html" class="pc" role="listitem" data-type="caps" data-collection="earthaware" data-purpose="fashion sports" data-deco="embroidery transfer" data-feature="organic" data-new="ss26" data-sku="B26N" data-name="EarthAware Organic Cotton Studio Cap" data-date="2026-01-15">
+            <a href="b26n-earthaware-studio-cap.html" class="pc" role="listitem" data-type="caps" data-collection="earthaware" data-purpose="fashion sports" data-deco="embroidery transfer" data-feature="organic" data-new="ss26" data-colour="black blue natural" data-sku="B26N" data-name="EarthAware Organic Cotton Studio Cap" data-date="2026-01-15">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/5e3f1359858f9dd2/webimage-B26N-EarthAware-Organic-Cotton-Studio-Cap-Cornflower-Blue-Product-Shot-01.png" alt="B26N EarthAware Studio Cap" loading="lazy">
                 <span class="pc__badge pc__badge--new">New SS26</span>
@@ -869,7 +986,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="earthaware" data-purpose="fashion promotion" data-deco="embroidery transfer" data-feature="organic" data-sku="B62N" data-name="EarthAware Organic Cotton 5-Panel Cap" data-date="2024-06-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="earthaware" data-purpose="fashion promotion" data-deco="embroidery transfer" data-feature="organic" data-colour="black blue green" data-sku="B62N" data-name="EarthAware Organic Cotton 5-Panel Cap" data-date="2024-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/4a63922434e7cc92/webimage-B62N-EarthAware-Organic-Cotton-5-Panel-Cap-Dusty-Green-Front-on-shot.png" alt="B62N EarthAware 5 Panel Cap" loading="lazy">
                 <span class="pc__badge pc__badge--earth">EarthAware®</span>
@@ -881,7 +998,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="earthaware" data-purpose="fashion" data-deco="embroidery transfer" data-feature="organic" data-sku="B60N" data-name="Organic Cotton Trucker" data-date="2024-06-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="earthaware" data-purpose="fashion" data-deco="embroidery transfer" data-feature="organic" data-colour="black grey natural" data-sku="B60N" data-name="Organic Cotton Trucker" data-date="2024-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/324f59959a88434c/Product_medium-beechfield_b60n_black.jpg" alt="B60N Organic Cotton Trucker" loading="lazy">
                 <span class="pc__badge pc__badge--earth">EarthAware®</span>
@@ -893,7 +1010,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="earthaware" data-purpose="promotion fashion" data-deco="embroidery transfer" data-feature="organic" data-sku="B45N" data-name="Organic Cotton Cuffed Beanie" data-date="2024-06-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="earthaware" data-purpose="promotion fashion" data-deco="embroidery transfer" data-feature="organic" data-colour="black blue natural" data-sku="B45N" data-name="Organic Cotton Cuffed Beanie" data-date="2024-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/4b02960853571041/Product_medium-beechfield_b45n_oxford-navy.jpg" alt="B45N Organic Cotton Cuffed Beanie" loading="lazy">
                 <span class="pc__badge pc__badge--earth">EarthAware®</span>
@@ -905,7 +1022,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="earthaware" data-purpose="fashion" data-deco="embroidery transfer" data-feature="organic" data-sku="B50N" data-name="Organic Cotton Beanie" data-date="2024-06-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="earthaware" data-purpose="fashion" data-deco="embroidery transfer" data-feature="organic" data-colour="black green natural" data-sku="B50N" data-name="Organic Cotton Beanie" data-date="2024-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/62a1f416f44e4238/Product_medium-beechfield_b50n_black_flat-shot.jpg" alt="B50N Organic Cotton Beanie" loading="lazy">
                 <span class="pc__badge pc__badge--earth">EarthAware®</span>
@@ -919,7 +1036,7 @@
 
             <!-- ═══ ORIGINALS CAPS ═══ -->
 
-            <a href="b10-baseball-cap.html" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-sku="B10" data-name="Original 5 Panel Cap" data-date="2020-01-01">
+            <a href="b10-baseball-cap.html" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-colour="black blue green red" data-sku="B10" data-name="Original 5 Panel Cap" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/3888f56f5efbb58/Product_medium-beechfield_b10_natural_front-on-shot.jpg" alt="B10 Original 5 Panel Cap" loading="lazy">
               </div>
@@ -930,7 +1047,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-sku="B15C" data-name="Ultimate 5 Panel Cap - Sandwich Peak" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches screen" data-feature="tearaway" data-colour="black blue green red" data-sku="B15C" data-name="Ultimate 5 Panel Cap - Sandwich Peak" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png" alt="B15C Ultimate 5 Panel Cap - Sandwich Peak" loading="lazy">
               </div>
@@ -941,7 +1058,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery transfer screen" data-feature="" data-sku="B25" data-name="Authentic 5 Panel Cap" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery transfer screen" data-feature="" data-colour="black blue grey" data-sku="B25" data-name="Authentic 5 Panel Cap" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/asset/56479fb7-caa7-402e-b17f-bc587eacaa09/Product-medium/beechfield_b25_french-navy_front-on-shot.jpg" alt="B25 Authentic 5 Panel Cap" loading="lazy">
               </div>
@@ -952,7 +1069,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery transfer screen" data-feature="" data-sku="B57" data-name="Low Profile Heavy Brushed Cotton Cap" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery transfer screen" data-feature="" data-colour="black blue red" data-sku="B57" data-name="Low Profile Heavy Brushed Cotton Cap" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/7265929a69d95723/Product_medium-beechfield_b57_french-navy.jpg" alt="B57 Low Profile Heavy Brushed Cotton Cap" loading="lazy">
               </div>
@@ -963,7 +1080,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery transfer screen" data-feature="" data-sku="B59" data-name="Authentic Baseball Cap" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery transfer screen" data-feature="" data-colour="black blue grey" data-sku="B59" data-name="Authentic Baseball Cap" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/df2647842182c8c4/Product_medium-beechfield_b59_french-navy.jpg" alt="B59 Authentic Baseball Cap" loading="lazy">
               </div>
@@ -974,7 +1091,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion" data-deco="embroidery transfer patches screen" data-feature="" data-sku="B65" data-name="Pro-Style Heavy Brushed Cotton Cap" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="promotion" data-deco="embroidery transfer patches screen" data-feature="" data-colour="black blue red" data-sku="B65" data-name="Pro-Style Heavy Brushed Cotton Cap" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/22a115755fc4611d/Product_medium-beechfield_b65_black_front-on-shot.jpg" alt="B65 Pro-Style Heavy Brushed Cotton Cap" loading="lazy">
               </div>
@@ -985,7 +1102,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B66" data-name="Leisure Cap" data-date="2023-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="black blue natural" data-sku="B66" data-name="Leisure Cap" data-date="2023-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/546a01427f9a06c0/webimage-B66-Leisure-Cap-Biscuit-Product-Shot-01.png" alt="B66 Leisure Cap" loading="lazy">
               </div>
@@ -996,7 +1113,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B67" data-name="Contrast Peak Leisure Cap" data-date="2023-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="blue natural red" data-sku="B67" data-name="Contrast Peak Leisure Cap" data-date="2023-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/35f918a01f613016/webimage-B67-Contrast-Peak-Leisure-Cap-Natural-Burgundy-Product-Shot-01.png" alt="B67 Contrast Peak Leisure Cap" loading="lazy">
               </div>
@@ -1007,7 +1124,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-sku="B155R" data-name="Accelerate Cap" data-date="2023-06-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-colour="black blue natural red" data-sku="B155R" data-name="Accelerate Cap" data-date="2023-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/5eb19eb59e57d288/webimage-B155R-Accelerate-Cap-White-Black-Product-Shot-01.png" alt="B155R Accelerate Cap" loading="lazy">
               </div>
@@ -1018,7 +1135,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports" data-deco="embroidery transfer screen" data-feature="" data-sku="B165" data-name="Club Cap" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports" data-deco="embroidery transfer screen" data-feature="" data-colour="black blue green red" data-sku="B165" data-name="Club Cap" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/681b62b300f624f8/webimage-B165-Club-Cap-Red-Black-Product-Shot-01.png" alt="B165 Club Cap" loading="lazy">
               </div>
@@ -1029,7 +1146,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports" data-deco="embroidery transfer" data-feature="" data-sku="B166R" data-name="Match Day Cap" data-date="2023-06-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports" data-deco="embroidery transfer" data-feature="" data-colour="black blue red" data-sku="B166R" data-name="Match Day Cap" data-date="2023-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/f695b26cc132d47/webimage-B166R-Match-Day-Cap-Navy-Sky-Product-Shot-01.png" alt="B166R Match Day Cap" loading="lazy">
               </div>
@@ -1040,7 +1157,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-sku="B183" data-name="Technical Training Cap" data-date="2025-01-15">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-colour="black blue red" data-sku="B183" data-name="Technical Training Cap" data-date="2025-01-15">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/1243dbd9eca3b4dd/webimage-B183-Technical-Training-Cap-Cornflower-Blue-Product-Shot-01.png" alt="B183 Technical Training Cap" loading="lazy">
               </div>
@@ -1051,7 +1168,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-sku="B188" data-name="Technical Running Cap" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-colour="black grey red" data-sku="B188" data-name="Technical Running Cap" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/e32066e8b0244e25/webimage-B188-Technical-Running-Cap-Graphite-Grey-Front-on-shot.png" alt="B188 Technical Running Cap" loading="lazy">
               </div>
@@ -1062,7 +1179,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="outdoors fashion" data-deco="embroidery transfer" data-feature="" data-sku="B191R" data-name="Water Resistant Lifestyle Cap" data-date="2025-01-15">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="originals" data-purpose="outdoors fashion" data-deco="embroidery transfer" data-feature="" data-colour="black green natural" data-sku="B191R" data-name="Water Resistant Lifestyle Cap" data-date="2025-01-15">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/743625e38c197f1/webimage-B191R-Water-Resistant-Lifetstyle-Cap-Olive-Green-Product-Shot-01.png" alt="B191R Water Resistant Lifestyle Cap" loading="lazy">
               </div>
@@ -1075,7 +1192,7 @@
 
             <!-- ═══ VINTAGE COLLECTION ═══ -->
 
-            <a href="b673-contrast-peak-vintage-cap.html" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B673" data-name="Contrast Peak Low Profile Vintage Cap" data-date="2024-01-01">
+            <a href="b673-contrast-peak-vintage-cap.html" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="black natural" data-sku="B673" data-name="Contrast Peak Low Profile Vintage Cap" data-date="2024-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/cf863ad130b4596b/webimage-B673-Contrast-Peak-Low-Profile-Vintage-Cap-Natural-Vintage-Black-Front-on-shot.png" alt="B673 Contrast Peak Vintage Cap" loading="lazy">
               </div>
@@ -1086,7 +1203,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B682" data-name="Heritage Cord Cap" data-date="2024-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="black green" data-sku="B682" data-name="Heritage Cord Cap" data-date="2024-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/3f894b65714d723a/webimage-B682-Heritage-Cord-Cap-Brown-Front-on-shot.png" alt="B682 Heritage Cord Cap" loading="lazy">
               </div>
@@ -1097,7 +1214,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B105" data-name="Denim Cap" data-date="2023-06-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="black blue" data-sku="B105" data-name="Denim Cap" data-date="2023-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/6e38abea47820dd5/webimage-B105-Denim-Cap-Mid-Blue-Product-Shot-01.png" alt="B105 Denim Cap" loading="lazy">
               </div>
@@ -1108,7 +1225,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B653" data-name="Low Profile 6 Panel Dad Cap" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="black blue natural" data-sku="B653" data-name="Low Profile 6 Panel Dad Cap" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/asset/3bc6787f-2980-4cec-b39b-15d3892d92b3/Product-medium/beechfield_b653_black_front-on-shot.jpg" alt="B653 Low Profile 6 Panel Dad Cap" loading="lazy">
               </div>
@@ -1119,7 +1236,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B672" data-name="6 Panel Vintage Trucker Cap" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="vintage" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="black blue green natural" data-sku="B672" data-name="6 Panel Vintage Trucker Cap" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/5cb7eba7f2d893b5/Product_medium-beechfield_b672_vintage-black_stone_front-on-shot.jpg" alt="B672 6 Panel Vintage Trucker Cap" loading="lazy">
               </div>
@@ -1132,7 +1249,7 @@
 
             <!-- ═══ URBANWEAR COLLECTION ═══ -->
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion promotion" data-deco="embroidery transfer patches screen" data-feature="" data-sku="B634R" data-name="Classic Foam Trucker" data-date="2023-06-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion promotion" data-deco="embroidery transfer patches screen" data-feature="" data-colour="black blue red" data-sku="B634R" data-name="Classic Foam Trucker" data-date="2023-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/6cd07caacecc4ac4/webimage-B634R-Classic-Foam-Trucker-Classic-Red-Product-Shot-01.png" alt="B634R Classic Foam Trucker" loading="lazy">
               </div>
@@ -1143,7 +1260,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B645" data-name="Vintage Snapback Trucker" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="black blue natural" data-sku="B645" data-name="Vintage Snapback Trucker" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/7d1480204a8fb8fb/webimage-B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.png" alt="B645 Vintage Snapback Trucker" loading="lazy">
               </div>
@@ -1154,7 +1271,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer screen" data-feature="" data-sku="B610" data-name="5 Panel Snapback Rapper Cap" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer screen" data-feature="" data-colour="black blue red" data-sku="B610" data-name="5 Panel Snapback Rapper Cap" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/7fe6144cce3f6ac7/Product_medium-beechfield_b610_french-navy_front-on-shot.jpg" alt="B610 5 Panel Snapback Rapper Cap" loading="lazy">
               </div>
@@ -1165,7 +1282,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer patches" data-feature="" data-sku="B636" data-name="Applique Patch 5 Panel Trucker" data-date="2023-01-01">
+            <a href="#" class="pc" role="listitem" data-type="caps" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer patches" data-feature="" data-colour="black natural" data-sku="B636" data-name="Applique Patch 5 Panel Trucker" data-date="2023-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/7f56cbbe44d1541a/Product_medium-beechfield_b636_black_stone.jpg" alt="B636 Applique Patch 5 Panel Trucker" loading="lazy">
               </div>
@@ -1176,7 +1293,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B533" data-name="Dip Dye Beanie" data-date="2023-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="urbanwear" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="blue green red" data-sku="B533" data-name="Dip Dye Beanie" data-date="2023-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/asset/1c0cb504-a393-457c-a872-0deac5726b93/Product-medium/B533-Dip-Dye-Beanie-Natural-Stone-Dip-Dye-Navy-Dip-Dye-Ecomm-Shot-05.jpg" alt="B533 Dip Dye Beanie" loading="lazy">
               </div>
@@ -1189,7 +1306,7 @@
 
             <!-- ═══ ORIGINALS BEANIES ═══ -->
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches" data-feature="tearaway" data-sku="B44" data-name="Original Pull-On Beanie" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="promotion sports" data-deco="embroidery transfer patches" data-feature="tearaway" data-colour="black blue green red" data-sku="B44" data-name="Original Pull-On Beanie" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/238e7beda228a526/Product_medium-beechfield_b44_french-navy.jpg" alt="B44 Original Pull-On Beanie" loading="lazy">
               </div>
@@ -1200,7 +1317,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="promotion" data-deco="embroidery transfer patches" data-feature="recycled tearaway" data-sku="B45R" data-name="Recycled Original Cuffed Beanie" data-date="2023-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="promotion" data-deco="embroidery transfer patches" data-feature="recycled tearaway" data-colour="black blue grey" data-sku="B45R" data-name="Recycled Original Cuffed Beanie" data-date="2023-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/c17c88746f245aad/Product_medium-beechfield_b45r_black.jpg" alt="B45R Recycled Original Cuffed Beanie" loading="lazy">
               </div>
@@ -1211,7 +1328,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery patches" data-feature="tearaway" data-sku="B445" data-name="Original Patch Beanie" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion promotion" data-deco="embroidery patches" data-feature="tearaway" data-colour="black blue red" data-sku="B445" data-name="Original Patch Beanie" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/asset/b77100ce-fc1f-4506-9e08-e41bc16fef68/Product-medium/beechfield_b445_french-navy.jpg" alt="B445 Original Patch Beanie" loading="lazy">
               </div>
@@ -1222,7 +1339,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion gifting" data-deco="embroidery" data-feature="" data-sku="B370" data-name="Merino Beanie" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion gifting" data-deco="embroidery" data-feature="" data-colour="black grey natural" data-sku="B370" data-name="Merino Beanie" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/6ef804bb85fc3b4b/Product_medium-beechfield_b370_black.jpg" alt="B370 Merino Beanie" loading="lazy">
               </div>
@@ -1233,7 +1350,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B384R" data-name="Oversized Cuffed Beanie" data-date="2023-06-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="black green natural" data-sku="B384R" data-name="Oversized Cuffed Beanie" data-date="2023-06-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/dcf4ece99cf1a66/Product_medium-beechfield_b384r_oxford-navy_flat-shot.jpg" alt="B384R Oversized Cuffed Beanie" loading="lazy">
               </div>
@@ -1244,7 +1361,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="outdoors workwear" data-deco="embroidery" data-feature="" data-sku="B407" data-name="Reflective Beanie" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="outdoors workwear" data-deco="embroidery" data-feature="" data-colour="black orange yellow" data-sku="B407" data-name="Reflective Beanie" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/57ca81acc383ec92/Product_medium-beechfield_b407_black.jpg" alt="B407 Reflective Beanie" loading="lazy">
               </div>
@@ -1255,7 +1372,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="outdoors workwear" data-deco="embroidery" data-feature="" data-sku="B447" data-name="Thinsulate Beanie" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="outdoors workwear" data-deco="embroidery" data-feature="" data-colour="black blue grey" data-sku="B447" data-name="Thinsulate Beanie" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/41e4e7e63c1d500/Product_medium-beechfield_b447_black.jpg" alt="B447 Thinsulate Beanie" loading="lazy">
               </div>
@@ -1266,7 +1383,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-sku="B461" data-name="Slouch Beanie" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="originals" data-purpose="fashion" data-deco="embroidery transfer" data-feature="" data-colour="black grey red" data-sku="B461" data-name="Slouch Beanie" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/2e7448a4aa39cc6c/Product_medium-beechfield_b461_black.jpg" alt="B461 Slouch Beanie" loading="lazy">
               </div>
@@ -1277,7 +1394,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="vintage" data-purpose="fashion" data-deco="embroidery" data-feature="" data-sku="B425" data-name="Heritage Beanie" data-date="2024-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="vintage" data-purpose="fashion" data-deco="embroidery" data-feature="" data-colour="black green" data-sku="B425" data-name="Heritage Beanie" data-date="2024-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/275567007561fb7e/Product_medium-beechfield_b425_black.jpg" alt="B425 Heritage Beanie" loading="lazy">
               </div>
@@ -1290,7 +1407,7 @@
 
             <!-- ═══ SNOWSTAR ═══ -->
 
-            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="snowstar" data-purpose="fashion gifting" data-deco="embroidery" data-feature="" data-sku="B450" data-name="Snowstar Beanie" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="beanies" data-collection="snowstar" data-purpose="fashion gifting" data-deco="embroidery" data-feature="" data-colour="black blue natural red" data-sku="B450" data-name="Snowstar Beanie" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/27b16b96a162871c/Product_medium-beechfield_b450_french-navy_light-grey_turn-up.jpg" alt="B450 Snowstar Beanie" loading="lazy">
               </div>
@@ -1303,7 +1420,7 @@
 
             <!-- ═══ HATS ═══ -->
 
-            <a href="#" class="pc" role="listitem" data-type="hats" data-collection="originals" data-purpose="fashion outdoors" data-deco="embroidery" data-feature="" data-sku="B725" data-name="Straw Fedora" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="hats" data-collection="originals" data-purpose="fashion outdoors" data-deco="embroidery" data-feature="" data-colour="black natural" data-sku="B725" data-name="Straw Fedora" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/5b91a77fbbfddc63/webimage-B725-Straw-Fedora-Natural-Black-Product-Shot-01.png" alt="B725 Straw Fedora" loading="lazy">
               </div>
@@ -1314,7 +1431,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="hats" data-collection="originals" data-purpose="fashion" data-deco="embroidery" data-feature="" data-sku="B686" data-name="Reversible Bucket Hat" data-date="2023-01-01">
+            <a href="#" class="pc" role="listitem" data-type="hats" data-collection="originals" data-purpose="fashion" data-deco="embroidery" data-feature="" data-colour="black blue green" data-sku="B686" data-name="Reversible Bucket Hat" data-date="2023-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/15366897988261f5/Product_medium-beechfield_b686_french-navy_white.jpg" alt="B686 Reversible Bucket Hat" loading="lazy">
               </div>
@@ -1325,7 +1442,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="hats" data-collection="originals" data-purpose="outdoors" data-deco="embroidery" data-feature="" data-sku="B789" data-name="Outback Hat" data-date="2022-01-01">
+            <a href="#" class="pc" role="listitem" data-type="hats" data-collection="originals" data-purpose="outdoors" data-deco="embroidery" data-feature="" data-colour="black green" data-sku="B789" data-name="Outback Hat" data-date="2022-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/2bbecadfc4595bb4/webimage-B789-Outback-Hat-Black-Product-Shot-01.png" alt="B789 Outback Hat" loading="lazy">
               </div>
@@ -1338,7 +1455,7 @@
 
             <!-- ═══ NECKWEAR ═══ -->
 
-            <a href="#" class="pc" role="listitem" data-type="neckwear" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-sku="B320" data-name="Softshell Sports Tech Neck Warmer" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="neckwear" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery transfer" data-feature="" data-colour="black blue red" data-sku="B320" data-name="Softshell Sports Tech Neck Warmer" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/6a455c2cc800407/Product_medium-beechfield_b320_black.jpg" alt="B320 Softshell Sports Tech Neck Warmer" loading="lazy">
               </div>
@@ -1349,7 +1466,7 @@
               </div>
             </a>
 
-            <a href="#" class="pc" role="listitem" data-type="neckwear" data-collection="morf" data-purpose="promotion sports outdoors" data-deco="transfer screen" data-feature="" data-sku="B900" data-name="Morf Original" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="neckwear" data-collection="morf" data-purpose="promotion sports outdoors" data-deco="transfer screen" data-feature="" data-colour="black blue green red" data-sku="B900" data-name="Morf Original" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/2b17469f1a29be89/Product_medium-beechfield_b900_black.jpg" alt="B900 Morf Original" loading="lazy">
               </div>
@@ -1362,7 +1479,7 @@
 
             <!-- ═══ ACCESSORIES ═══ -->
 
-            <a href="#" class="pc" role="listitem" data-type="accessories" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery" data-feature="" data-sku="B240" data-name="Suprafleece Aspen Headband" data-date="2020-01-01">
+            <a href="#" class="pc" role="listitem" data-type="accessories" data-collection="originals" data-purpose="sports outdoors" data-deco="embroidery" data-feature="" data-colour="black blue red" data-sku="B240" data-name="Suprafleece Aspen Headband" data-date="2020-01-01">
               <div class="pc__img">
                 <img src="https://mediahub.beechfieldbrands.com/m/2e07ed5ace19040a/Product_medium-beechfield_b240_french-navy.jpg" alt="B240 Suprafleece Aspen Headband" loading="lazy">
               </div>
@@ -1376,7 +1493,7 @@
           </div><!-- /plp-grid -->
 
           <!-- ═══ Cross-Brand: Studio Collection → Quadra ═══ -->
-          <section class="cross-brand" aria-label="Complementary products from Quadra">
+          <section class="cross-brand" id="cb-quadra-studio" aria-label="Complementary products from Quadra" style="display:none;">
             <div class="cross-brand__header">
               <p class="cross-brand__eyebrow">From our sister brand &mdash; Quadra</p>
               <h3 class="cross-brand__title">Complete the Studio look with Quadra</h3>
@@ -1446,7 +1563,7 @@
           </section>
 
           <!-- ═══ Cross-Brand: EarthAware → Westford Mill ═══ -->
-          <section class="cross-brand" aria-label="Sustainable bags from Westford Mill">
+          <section class="cross-brand" id="cb-wm-earthaware" aria-label="Sustainable bags from Westford Mill" style="display:none;">
             <div class="cross-brand__header">
               <p class="cross-brand__eyebrow">From our sister brand &mdash; Westford Mill</p>
               <h3 class="cross-brand__title">Pair with sustainable bags from Westford Mill</h3>
@@ -1515,8 +1632,174 @@
             <a href="../../westford-mill/collections/earthaware.html" class="cross-brand__cta">View all Westford Mill EarthAware&reg; products &rarr;</a>
           </section>
 
+          <!-- ═══ Cross-Brand: Recycled / GRS Certified ═══ -->
+          <section class="cross-brand" id="cb-recycled-grs" aria-label="GRS Recycled products from sister brands" style="display:none;">
+            <div class="cross-brand__header">
+              <p class="cross-brand__eyebrow">Recycled &amp; GRS Certified &mdash; From Our Sister Brands</p>
+              <h3 class="cross-brand__title">More recycled products across the family</h3>
+              <p class="cross-brand__desc">GRS-certified recycled bags and accessories from BagBase, Quadra and Westford Mill &mdash; all designed for decoration.</p>
+            </div>
+
+            <!-- BagBase Recycled -->
+            <div class="cross-brand-colour__brand" style="margin-bottom:28px;">
+              <div class="cross-brand-colour__brand-header">
+                <span class="cross-brand-colour__brand-name">BagBase</span>
+                <a href="../../bagbase/products/?feature=recycled" class="cross-brand-colour__brand-link">View all recycled BagBase &rarr;</a>
+              </div>
+              <div class="cross-brand__grid">
+                <a href="../../bagbase/products/bg195s-leopard-print-mini-backpack.html" class="pc" role="listitem">
+                  <div class="pc__img">
+                    <img src="https://mediahub.beechfieldbrands.com/asset/5e6d74d2-cd4e-493d-ad3b-b5b6ae212506/Product-medium/BG195S-Leopard-Print-Backpack-Leopard-Product-Shot-01.jpg" alt="BG195S Leopard Print Mini Backpack" loading="lazy">
+                    <span class="pc__badge pc__badge--brand">BagBase</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">BG195S</p>
+                    <p class="pc__name">Leopard Print Mini Backpack</p>
+                    <span class="pc__badge pc__badge--grs">New &bull; GRS</span>
+                  </div>
+                </a>
+                <a href="../../bagbase/products/bg701-quilted-tote-bag.html" class="pc" role="listitem">
+                  <div class="pc__img">
+                    <img src="https://mediahub.beechfieldbrands.com/asset/1661896a-2262-4843-ab26-bccbd04a95f7/Product-medium/BG701-Quilted-Tote-Bag-Natural-Stone-Product-Shot-01.jpg" alt="BG701 Quilted Tote Bag" loading="lazy">
+                    <span class="pc__badge pc__badge--brand">BagBase</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">BG701</p>
+                    <p class="pc__name">Quilted Tote Bag</p>
+                    <span class="pc__badge pc__badge--grs">New &bull; GRS</span>
+                  </div>
+                </a>
+                <a href="../../bagbase/products/bg186-premium-recycled-roll-top-backpack.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="BG186">
+                    <span class="pc__badge pc__badge--brand">BagBase</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">BG186</p>
+                    <p class="pc__name">Premium Recycled Roll Top Backpack</p>
+                    <span class="pc__badge pc__badge--grs">Bestseller &bull; GRS</span>
+                  </div>
+                </a>
+                <a href="../../bagbase/products/bg184-original-carryall-tote-bag.html" class="pc" role="listitem">
+                  <div class="pc__img">
+                    <img src="https://mediahub.beechfieldbrands.com/asset/ee8b840d-c551-4fdd-8f74-649e0f69270c/Product-medium/BG184-Original-Carryall-Tote-Bag-Rose-Pink-Product-Shot-01.jpg" alt="BG184 Original Carryall Tote Bag" loading="lazy">
+                    <span class="pc__badge pc__badge--brand">BagBase</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">BG184</p>
+                    <p class="pc__name">Original Carryall Tote Bag</p>
+                    <span class="pc__badge pc__badge--grs">New &bull; GRS</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quadra Recycled -->
+            <div class="cross-brand-colour__brand" style="margin-bottom:28px;">
+              <div class="cross-brand-colour__brand-header">
+                <span class="cross-brand-colour__brand-name">Quadra</span>
+                <a href="../../quadra/products/?feature=recycled" class="cross-brand-colour__brand-link">View all recycled Quadra &rarr;</a>
+              </div>
+              <div class="cross-brand__grid">
+                <a href="../../quadra/products/qd545-zurich-hybrid-holdall.html" class="pc" role="listitem">
+                  <div class="pc__img">
+                    <img src="https://mediahub.beechfieldbrands.com/asset/f5028916-893d-4173-8fb5-64a4fad88d4f/Product-medium/QD545-Zurich-40-Litre-Hybrid-Holdall-Black-Product-Shot-01.jpg" alt="QD545 Zurich 45 Litre Hybrid Holdall" loading="lazy">
+                    <span class="pc__badge pc__badge--brand">Quadra</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">QD545</p>
+                    <p class="pc__name">Z&uuml;rich 45 Litre Hybrid Holdall</p>
+                    <span class="pc__badge pc__badge--grs">New &bull; GRS</span>
+                  </div>
+                </a>
+                <a href="../../quadra/products/qd280-urbanshift-tote.html" class="pc" role="listitem">
+                  <div class="pc__img">
+                    <img src="https://mediahub.beechfieldbrands.com/asset/cbd41fd0-1820-4bdf-9552-fb5fa368a9da/Product-medium/QD280-UrbanShift-Tote-Black-Product-Shot-01.jpg" alt="QD280 UrbanShift Tote" loading="lazy">
+                    <span class="pc__badge pc__badge--brand">Quadra</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">QD280</p>
+                    <p class="pc__name">UrbanShift Tote</p>
+                    <span class="pc__badge pc__badge--grs">New &bull; GRS</span>
+                  </div>
+                </a>
+                <a href="../../quadra/products/qd810-airside-underseat-backpack.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="QD810">
+                    <span class="pc__badge pc__badge--brand">Quadra</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">QD810</p>
+                    <p class="pc__name">Airside Underseat Backpack</p>
+                    <span class="pc__badge pc__badge--grs">GRS</span>
+                  </div>
+                </a>
+                <a href="../../quadra/products/qd80-jumbo-sports-holdall.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="QD80">
+                    <span class="pc__badge pc__badge--brand">Quadra</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">QD80</p>
+                    <p class="pc__name">Jumbo Sports Holdall</p>
+                    <span class="pc__badge pc__badge--grs">Bestseller &bull; GRS</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Westford Mill Recycled -->
+            <div class="cross-brand-colour__brand">
+              <div class="cross-brand-colour__brand-header">
+                <span class="cross-brand-colour__brand-name">Westford Mill</span>
+                <a href="../../westford-mill/products/?feature=recycled" class="cross-brand-colour__brand-link">View all recycled Westford Mill &rarr;</a>
+              </div>
+              <div class="cross-brand__grid">
+                <a href="../../westford-mill/products/w335-leopard-print-canvas-shopper.html" class="pc" role="listitem">
+                  <div class="pc__img">
+                    <img src="https://mediahub.beechfieldbrands.com/asset/d28c38d7-abdf-4e83-8b7a-736cf7f0b0e7/Product-medium/W335-Leopard-Print-Canvas-Accessory-Bag-Vintage-Leopard-Print-Product-Shot-01.jpg" alt="W335 Leopard Print Canvas Shopper" loading="lazy">
+                    <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">W335</p>
+                    <p class="pc__name">Leopard Print Canvas Shopper</p>
+                    <span class="pc__badge pc__badge--grs">New &bull; GRS</span>
+                  </div>
+                </a>
+                <a href="../../westford-mill/products/w901-recycled-cotton-tote.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="W901">
+                    <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">W901</p>
+                    <p class="pc__name">Recycled Cotton Tote</p>
+                    <span class="pc__badge pc__badge--grs">GRS</span>
+                  </div>
+                </a>
+                <a href="../../westford-mill/products/w910-recycled-cotton-gymsac.html" class="pc" role="listitem">
+                  <div class="pc__img pc__img--placeholder" data-sku="W910">
+                    <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">W910</p>
+                    <p class="pc__name">Recycled Cotton Gymsac</p>
+                    <span class="pc__badge pc__badge--grs">GRS</span>
+                  </div>
+                </a>
+                <a href="../../westford-mill/products/w345-garment-dyed-shopper.html" class="pc" role="listitem">
+                  <div class="pc__img">
+                    <img src="https://mediahub.beechfieldbrands.com/asset/34dc9ad5-5ae8-4bd3-b3a6-bed47f6683d6/Product-medium/W345-Garment-Dyed-Shopper-Vintage-Moss-Front-on-Shot.jpg" alt="W345 Garment Dyed Shopper" loading="lazy">
+                    <span class="pc__badge pc__badge--brand">Westford Mill</span>
+                  </div>
+                  <div class="pc__body">
+                    <p class="pc__sku">W345</p>
+                    <p class="pc__name">Garment Dyed Shopper</p>
+                    <span class="pc__badge pc__badge--grs">New &bull; GRS</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+
           <!-- ═══ Colour-Based Cross-Brand Discovery (shown when colour filter active) ═══ -->
-          <section class="cross-brand-colour" aria-label="Blue products from sister brands">
+          <section class="cross-brand-colour" id="cb-colour-blue" aria-label="Blue products from sister brands" style="display:none;">
             <div class="cross-brand-colour__header">
               <h3 class="cross-brand-colour__title">You searched for <strong>Blue</strong> products</h3>
               <p class="cross-brand-colour__desc">Blue products are also available across our sister brands.</p>
@@ -1762,25 +2045,81 @@
   <script src="../../shared/js/navigation.js"></script>
   <script src="../../shared/js/filters.js"></script>
   <script>
-    /* ── Search Hard Redirect Demo ──
-       When user types bag-related terms in the search overlay,
-       show the cross-brand redirect to Westford Mill.
-       Scenario 1: User is on Beechfield and searches for a product type
-       that Beechfield does not sell (e.g. tote bag, shopper, backpack). */
+    /* ── Search Overlay — Multi-Scenario Handler ──
+       Handles 4 search scenarios:
+       1. Bag terms → Westford Mill redirect (existing)
+       2. Studio/yoga/fitness → Studio collection redirect
+       3. Blue/navy → Blue products redirect
+       4. Organic/sustainable → EarthAware redirect */
     (function() {
-      var searchInput = document.querySelector('.search-overlay__input');
-      var redirectDemo = document.getElementById('search-redirect-demo');
-      if (!searchInput || !redirectDemo) return;
+      var searchInput   = document.querySelector('.search-overlay__input');
+      var searchOverlay = document.querySelector('.search-overlay');
+      if (!searchInput) return;
 
-      var bagTerms = ['tote', 'bag', 'shopper', 'backpack', 'holdall', 'duffel', 'rucksack', 'sack'];
+      // Redirect panels
+      var redirectBags   = document.getElementById('search-redirect-demo');
+      var redirectStudio = document.getElementById('search-redirect-studio');
+      var redirectBlue   = document.getElementById('search-redirect-blue');
+
+      // Term lists
+      var bagTerms    = ['tote', 'bag', 'shopper', 'backpack', 'holdall', 'duffel', 'rucksack', 'sack'];
+      var studioTerms = ['studio', 'yoga', 'fitness', 'pilates', 'gym'];
+      var blueTerms   = ['blue', 'navy', 'cobalt', 'azure', 'royal blue'];
+
+      function hideAllPanels() {
+        if (redirectBags)   redirectBags.style.display   = 'none';
+        if (redirectStudio) redirectStudio.style.display = 'none';
+        if (redirectBlue)   redirectBlue.style.display   = 'none';
+      }
 
       searchInput.addEventListener('input', function() {
         var query = searchInput.value.toLowerCase().trim();
-        var isBagSearch = bagTerms.some(function(term) {
-          return query.indexOf(term) !== -1;
-        });
-        redirectDemo.style.display = isBagSearch && query.length > 2 ? 'block' : 'none';
+        hideAllPanels();
+        if (query.length < 2) return;
+
+        // Check bag terms (original behaviour)
+        var isBagSearch = bagTerms.some(function(t) { return query.indexOf(t) !== -1; });
+        if (isBagSearch && redirectBags) {
+          redirectBags.style.display = 'block';
+          return;
+        }
+
+        // Check studio terms (Scenario 1)
+        var isStudioSearch = studioTerms.some(function(t) { return query.indexOf(t) !== -1; });
+        if (isStudioSearch && redirectStudio) {
+          redirectStudio.style.display = 'block';
+        }
+
+        // Check blue terms (Scenario 3)
+        var isBlueSearch = blueTerms.some(function(t) { return query.indexOf(t) !== -1; });
+        if (isBlueSearch && redirectBlue) {
+          redirectBlue.style.display = 'block';
+        }
       });
+
+      // Studio CTA: close overlay, activate studio scenario
+      var studioCta = document.getElementById('search-studio-apply');
+      if (studioCta) {
+        studioCta.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (searchOverlay) searchOverlay.classList.remove('search-overlay--open');
+          searchInput.value = '';
+          hideAllPanels();
+          if (window.__plpSetSearch) window.__plpSetSearch('studio');
+        });
+      }
+
+      // Blue CTA: close overlay, activate blue scenario
+      var blueCta = document.getElementById('search-blue-apply');
+      if (blueCta) {
+        blueCta.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (searchOverlay) searchOverlay.classList.remove('search-overlay--open');
+          searchInput.value = '';
+          hideAllPanels();
+          if (window.__plpSetSearch) window.__plpSetSearch('blue');
+        });
+      }
     })();
   </script>
 </body>

@@ -7,13 +7,25 @@
   'use strict';
 
   /* ── State ── */
-  var activeFilters = {};          // { type: 'caps', collection: 'earthaware', purpose: 'sports' }
+  var activeFilters = {};          // { type: 'caps', collection: 'earthaware', colour: 'blue' }
   var currentSort   = 'bestselling';
+  var activeSearch  = null;        // 'studio' | 'blue' | null
 
   /* ── DOM refs (cached on init) ── */
   var grid, products, promoBlock, headerCount, loadMoreBtn;
   var toolbarBtns, collectionTabs, sidebarLinks, sortSelect;
   var activeFiltersBar;
+
+  /* ── Cross-brand section refs ── */
+  var cbSections = {};
+
+  /* ── Blue image swap lookup ── */
+  var blueImageSwaps = {
+    'B45':   'https://mediahub.beechfieldbrands.com/asset/04729327-8f12-4c09-8ad0-3a30991c99af/Product-medium/B45-Original-Cuffed-Beanie-Dusty-Blue-Front-on-shot-01.jpg',
+    'B155R': 'https://mediahub.beechfieldbrands.com/asset/8417567f-45fe-4bd3-85a6-df2ab83fb4c8/Product-medium/B155R-Accelerate-Cap-Navy-White-Product-Shot-01.jpg',
+    'B165':  'https://mediahub.beechfieldbrands.com/asset/704fce81-e655-4c78-b5ce-e0770785be5b/Product-medium/B165-Club-Cap-Royal-Navy-Product.jpg',
+    'B645':  'https://mediahub.beechfieldbrands.com/asset/089bd71e-4418-43d4-b0f0-82754f7f0abb/Product-medium/B645-Vintage-Snapback-Trucker-French-Navy-French-Navy-Front-on-shot.jpg'
+  };
 
   /* ── Init ── */
   document.addEventListener('DOMContentLoaded', function () {
@@ -26,6 +38,12 @@
     sidebarLinks   = document.querySelectorAll('.plp-sidebar__link[data-filter-group]');
     sortSelect     = document.querySelector('.plp-sort__select');
     activeFiltersBar = document.querySelector('.plp-active-filters');
+
+    // Cache cross-brand sections
+    cbSections.studio     = document.getElementById('cb-quadra-studio');
+    cbSections.earthaware = document.getElementById('cb-wm-earthaware');
+    cbSections.recycled   = document.getElementById('cb-recycled-grs');
+    cbSections.colour     = document.getElementById('cb-colour-blue');
 
     if (!grid) return;
 
@@ -59,11 +77,8 @@
           activeFilters[group] = value;
         }
 
-        applyFilters();
-        updateToolbarActive();
-        updateSidebarActive();
-        updateCollectionTabActive();
-        updateFilterPills();
+        clearSearchState();
+        runFilterUpdate();
       });
     });
   }
@@ -83,11 +98,8 @@
           activeFilters.collection = value;
         }
 
-        applyFilters();
-        updateToolbarActive();
-        updateSidebarActive();
-        updateCollectionTabActive();
-        updateFilterPills();
+        clearSearchState();
+        runFilterUpdate();
       });
     });
   }
@@ -108,11 +120,8 @@
           activeFilters[group] = value;
         }
 
-        applyFilters();
-        updateToolbarActive();
-        updateSidebarActive();
-        updateCollectionTabActive();
-        updateFilterPills();
+        clearSearchState();
+        runFilterUpdate();
       });
     });
   }
@@ -124,6 +133,17 @@
       currentSort = sortSelect.value;
       applySorting();
     });
+  }
+
+  /* ── Central filter update (called from all filter change paths) ── */
+  function runFilterUpdate() {
+    applyFilters();
+    updateToolbarActive();
+    updateSidebarActive();
+    updateCollectionTabActive();
+    updateFilterPills();
+    updateCrossBrandSections();
+    handleBlueImageSwaps();
   }
 
   /* ── Apply filters ── */
@@ -163,7 +183,7 @@
     // Update header count
     if (headerCount) {
       var total = products.length;
-      if (Object.keys(activeFilters).length === 0) {
+      if (Object.keys(activeFilters).length === 0 && !activeSearch) {
         headerCount.textContent = 'Showing ' + total + ' styles';
       } else {
         headerCount.textContent = 'Showing ' + visibleCount + ' of ' + total + ' styles';
@@ -254,12 +274,27 @@
     activeFiltersBar.innerHTML = '';
 
     var keys = Object.keys(activeFilters);
-    if (keys.length === 0) return;
+    if (keys.length === 0 && !activeSearch) return;
 
     var label = document.createElement('span');
     label.className = 'plp-active-filters__label';
     label.textContent = 'Active filters:';
     activeFiltersBar.appendChild(label);
+
+    // Show search pill if active
+    if (activeSearch) {
+      var searchPill = document.createElement('a');
+      searchPill.href = '#';
+      searchPill.className = 'plp-pill';
+      searchPill.innerHTML = activeSearch + ' <span class="plp-pill__remove">&times;</span>';
+      searchPill.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearSearchState();
+        activeFilters = {};
+        runFilterUpdate();
+      });
+      activeFiltersBar.appendChild(searchPill);
+    }
 
     keys.forEach(function (group) {
       var pill = document.createElement('a');
@@ -270,16 +305,14 @@
       pill.addEventListener('click', function (e) {
         e.preventDefault();
         delete activeFilters[group];
-        applyFilters();
-        updateToolbarActive();
-        updateSidebarActive();
-        updateCollectionTabActive();
-        updateFilterPills();
+        clearSearchState();
+        runFilterUpdate();
       });
       activeFiltersBar.appendChild(pill);
     });
 
-    if (keys.length > 1) {
+    var totalPills = keys.length + (activeSearch ? 1 : 0);
+    if (totalPills > 1) {
       var clearAll = document.createElement('a');
       clearAll.href = '#';
       clearAll.className = 'plp-pill';
@@ -288,14 +321,80 @@
       clearAll.addEventListener('click', function (e) {
         e.preventDefault();
         activeFilters = {};
-        applyFilters();
-        updateToolbarActive();
-        updateSidebarActive();
-        updateCollectionTabActive();
-        updateFilterPills();
+        clearSearchState();
+        runFilterUpdate();
       });
       activeFiltersBar.appendChild(clearAll);
     }
+  }
+
+  /* ── Cross-brand section visibility ── */
+  function updateCrossBrandSections() {
+    // Hide ALL sections first
+    for (var key in cbSections) {
+      if (cbSections[key]) cbSections[key].style.display = 'none';
+    }
+
+    // Show ONLY the one matching the current scenario
+    if (activeSearch === 'studio') {
+      if (cbSections.studio) cbSections.studio.style.display = '';
+      return;
+    }
+
+    if (activeSearch === 'blue' || activeFilters.colour === 'blue') {
+      if (cbSections.colour) cbSections.colour.style.display = '';
+      return;
+    }
+
+    if (activeFilters.feature === 'recycled') {
+      if (cbSections.recycled) cbSections.recycled.style.display = '';
+      return;
+    }
+
+    if (activeFilters.collection === 'earthaware' || activeFilters.feature === 'organic') {
+      if (cbSections.earthaware) cbSections.earthaware.style.display = '';
+      return;
+    }
+  }
+
+  /* ── Blue image swaps ── */
+  function handleBlueImageSwaps() {
+    if (activeFilters.colour === 'blue' || activeSearch === 'blue') {
+      applyBlueImageSwaps();
+    } else {
+      revertBlueImageSwaps();
+    }
+  }
+
+  function applyBlueImageSwaps() {
+    products.forEach(function (card) {
+      var sku = card.getAttribute('data-sku');
+      if (blueImageSwaps[sku]) {
+        var img = card.querySelector('.pc__img img');
+        if (img && !img.getAttribute('data-original-src')) {
+          img.setAttribute('data-original-src', img.src);
+          img.src = blueImageSwaps[sku];
+        }
+      }
+    });
+  }
+
+  function revertBlueImageSwaps() {
+    var swapped = grid.querySelectorAll('.pc__img img[data-original-src]');
+    for (var i = 0; i < swapped.length; i++) {
+      swapped[i].src = swapped[i].getAttribute('data-original-src');
+      swapped[i].removeAttribute('data-original-src');
+    }
+  }
+
+  /* ── Search state management ── */
+  function clearSearchState() {
+    if (activeSearch === 'studio') {
+      // Remove studio highlight
+      var highlighted = grid.querySelector('.pc--studio-highlight');
+      if (highlighted) highlighted.classList.remove('pc--studio-highlight');
+    }
+    activeSearch = null;
   }
 
   /* ── Dynamic counts ── */
@@ -350,5 +449,55 @@
       headerCount.textContent = 'Showing ' + total + ' styles';
     }
   }
+
+  /* ── Bridge: search overlay → filter IIFE ── */
+  window.__plpSetSearch = function (scenario) {
+    // Clear any existing search/filter state
+    activeSearch = null;
+    revertBlueImageSwaps();
+    var highlighted = grid ? grid.querySelector('.pc--studio-highlight') : null;
+    if (highlighted) highlighted.classList.remove('pc--studio-highlight');
+
+    if (scenario === 'studio') {
+      activeSearch = 'studio';
+      activeFilters = {};
+
+      // Highlight B26N
+      var studioCard = grid.querySelector('.pc[data-sku="B26N"]');
+      if (studioCard) {
+        studioCard.classList.add('pc--studio-highlight');
+        setTimeout(function () {
+          studioCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+
+      applyFilters();
+      updateToolbarActive();
+      updateSidebarActive();
+      updateCollectionTabActive();
+      updateFilterPills();
+      updateCrossBrandSections();
+
+    } else if (scenario === 'blue') {
+      activeSearch = 'blue';
+      activeFilters = { colour: 'blue' };
+
+      runFilterUpdate();
+
+      // Scroll to grid
+      if (grid) {
+        setTimeout(function () {
+          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  };
+
+  window.__plpClearSearch = function () {
+    clearSearchState();
+    activeFilters = {};
+    revertBlueImageSwaps();
+    runFilterUpdate();
+  };
 
 })();

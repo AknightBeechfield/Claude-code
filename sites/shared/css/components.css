@@ -990,26 +990,32 @@
   color: #fff;
 }
 
-/* Quadra in colour discovery sub-sections */
+/* Quadra in multi-brand sub-sections — dark charcoal wrapper */
+.cross-brand-colour__brand--quadra {
+  background: #1a1a2e;
+  padding: 28px 24px 24px;
+  border-radius: 6px;
+}
+
 .cross-brand-colour__brand--quadra .cross-brand-colour__brand-header {
   border-bottom-color: #415a77;
 }
 
 .cross-brand-colour__brand--quadra .cross-brand-colour__brand-name {
-  color: #1a1a2e;
+  color: #c8d6e5;
   font-weight: 800;
 }
 
 .cross-brand-colour__brand--quadra .cross-brand-colour__brand-logo {
-  filter: none;
+  filter: brightness(0) invert(1);
 }
 
 .cross-brand-colour__brand--quadra .cross-brand-colour__brand-link {
-  color: #415a77;
+  color: #778da9;
 }
 
 .cross-brand-colour__brand--quadra .cross-brand-colour__brand-link:hover {
-  color: #1a1a2e;
+  color: #ffffff;
 }
 
 .cross-brand-colour__brand--quadra .pc__badge--brand {
@@ -1018,8 +1024,18 @@
 
 .cross-brand-colour__brand--quadra .cross-brand-colour__row,
 .cross-brand-colour__brand--quadra .cross-brand__grid {
-  border-color: #c8d6e5;
-  background: #c8d6e5;
+  border-color: #0e1520;
+  background: #0e1520;
+}
+
+.cross-brand-colour__brand--quadra .pc {
+  transition: box-shadow 0.2s;
+}
+
+.cross-brand-colour__brand--quadra .pc:hover {
+  box-shadow: 0 0 0 2px #415a77;
+  z-index: 1;
+  position: relative;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1099,7 +1115,13 @@
   color: #fff;
 }
 
-/* Westford Mill in colour discovery sub-sections */
+/* Westford Mill in multi-brand sub-sections — warm cream wrapper */
+.cross-brand-colour__brand--westford-mill {
+  background: #f5f0e8;
+  padding: 28px 24px 24px;
+  border-radius: 6px;
+}
+
 .cross-brand-colour__brand--westford-mill .cross-brand-colour__brand-header {
   border-bottom-color: #7dbe9e;
 }
@@ -1107,6 +1129,11 @@
 .cross-brand-colour__brand--westford-mill .cross-brand-colour__brand-name {
   color: #2d5016;
   font-weight: 800;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .cross-brand-colour__brand--westford-mill .cross-brand-colour__brand-link {
@@ -1123,8 +1150,21 @@
 
 .cross-brand-colour__brand--westford-mill .cross-brand-colour__row,
 .cross-brand-colour__brand--westford-mill .cross-brand__grid {
-  border-color: #ddd8ce;
-  background: #ddd8ce;
+  border-color: transparent;
+  background: transparent;
+  gap: 12px;
+}
+
+.cross-brand-colour__brand--westford-mill .pc {
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.cross-brand-colour__brand--westford-mill .pc:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1201,7 +1241,14 @@
   color: #fff;
 }
 
-/* BagBase in colour discovery sub-sections */
+/* BagBase in multi-brand sub-sections — white + coral accent wrapper */
+.cross-brand-colour__brand--bagbase {
+  background: #fff8f7;
+  padding: 28px 24px 24px;
+  border-radius: 6px;
+  border-top: 3px solid #fc614d;
+}
+
 .cross-brand-colour__brand--bagbase .cross-brand-colour__brand-header {
   border-bottom-color: #fc614d;
 }
@@ -1209,10 +1256,13 @@
 .cross-brand-colour__brand--bagbase .cross-brand-colour__brand-name {
   color: #111;
   font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 
 .cross-brand-colour__brand--bagbase .cross-brand-colour__brand-link {
   color: #fc614d;
+  font-weight: 700;
 }
 
 .cross-brand-colour__brand--bagbase .cross-brand-colour__brand-link:hover {
@@ -1225,8 +1275,9 @@
 
 .cross-brand-colour__brand--bagbase .cross-brand-colour__row,
 .cross-brand-colour__brand--bagbase .cross-brand__grid {
-  border-color: #fcd5cf;
-  background: #fcd5cf;
+  border-color: #fc614d;
+  background: #fc614d;
+  gap: 2px;
 }
 
 .cross-brand-colour__brand--bagbase .pc {
@@ -1235,7 +1286,7 @@
 
 .cross-brand-colour__brand--bagbase .pc:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 16px rgba(252, 97, 77, 0.15);
+  box-shadow: 0 8px 24px rgba(252, 97, 77, 0.2);
   z-index: 1;
   position: relative;
 }

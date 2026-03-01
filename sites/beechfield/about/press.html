@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press — Beechfield Original Headwear</title>
+  <meta name="description" content="Beechfield press resources, latest news, brand assets and media contact information.">
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <style>
+    :root { --bf-primary: #0e1520; --bf-accent: #1f614d; --bf-cream: #f5f0e8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--bf-primary); background: #fff; }
+    .top-bar { background: var(--bf-primary); color: #fff; font-size: 0.78rem; padding: 0.5rem 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .top-bar__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand-switcher { display: flex; align-items: center; gap: 1rem; }
+    .brand-switcher__label { opacity: 0.6; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .brand-switcher__links { display: flex; gap: 1rem; }
+    .brand-switcher__link { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .brand-switcher__link--active { color: #fff; font-weight: 600; }
+    .top-bar__actions a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.78rem; }
+    .site-header { background: #fff; border-bottom: 1px solid #e8e4dc; position: sticky; top: 0; z-index: 100; }
+    .site-header .container { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; gap: 2rem; }
+    .site-logo { font-size: 1.25rem; font-weight: 800; color: var(--bf-primary); text-decoration: none; line-height: 1.1; }
+    .site-logo span { display: block; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
+    .main-nav__list { display: flex; list-style: none; gap: 0.25rem; }
+    .main-nav__link { display: block; padding: 0.5rem 0.85rem; color: var(--bf-primary); text-decoration: none; font-size: 0.9rem; font-weight: 500; border-radius: 4px; }
+    .main-nav__link:hover { background: var(--bf-cream); }
+    .main-nav__link--active { color: var(--bf-accent); font-weight: 700; }
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .search-toggle, .mobile-toggle { background: none; border: none; cursor: pointer; padding: 0.4rem; color: var(--bf-primary); display: flex; align-items: center; }
+    .mobile-toggle { flex-direction: column; gap: 4px; }
+    .mobile-toggle__bar { display: block; width: 22px; height: 2px; background: var(--bf-primary); border-radius: 2px; }
+
+    .page-hero { background: var(--bf-primary); color: #fff; padding: 5rem 0 4rem; }
+    .page-hero .breadcrumb { font-size: 0.8rem; opacity: 0.5; margin-bottom: 1.5rem; }
+    .page-hero .breadcrumb a { color: inherit; text-decoration: none; }
+    .page-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; max-width: 700px; }
+    .page-hero .subtitle { font-size: 1.1rem; opacity: 0.7; max-width: 500px; line-height: 1.6; }
+
+    .content-section { padding: 5rem 0; }
+    .content-section--alt { background: var(--bf-cream); }
+    .content-section--dark { background: var(--bf-primary); color: #fff; }
+
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+    .news-card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #e8e4dc; transition: box-shadow 0.2s; }
+    .news-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .news-card__img { aspect-ratio: 16/9; overflow: hidden; background: #f5f5f5; }
+    .news-card__img img { width: 100%; height: 100%; object-fit: cover; }
+    .news-card__body { padding: 1.5rem; }
+    .news-card__date { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bf-accent); font-weight: 600; margin-bottom: 0.5rem; }
+    .news-card__title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3; }
+    .news-card__excerpt { font-size: 0.92rem; color: #555; line-height: 1.6; }
+
+    .contact-block { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-block__info h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; }
+    .contact-block__info p { font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 1rem; }
+    .contact-block__detail { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 1.25rem; }
+    .contact-block__detail-icon { flex-shrink: 0; width: 36px; height: 36px; background: var(--bf-cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .contact-block__detail-text strong { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.15rem; }
+    .contact-block__detail-text span { font-size: 0.92rem; color: #555; }
+    .contact-block__detail-text a { color: var(--bf-accent); text-decoration: none; }
+
+    .asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+    .asset-card { background: #fff; border-radius: 8px; padding: 2rem; border: 1px solid #e8e4dc; text-align: center; }
+    .asset-card__icon { margin-bottom: 1rem; }
+    .asset-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .asset-card p { font-size: 0.88rem; color: #555; line-height: 1.5; margin-bottom: 1rem; }
+    .asset-card__link { display: inline-block; font-size: 0.85rem; font-weight: 600; color: var(--bf-accent); text-decoration: none; border-bottom: 1px solid currentColor; }
+
+    .btn { display: inline-block; padding: 0.85rem 2rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+    .btn--primary { background: var(--bf-primary); color: #fff; }
+    .btn--accent { background: var(--bf-accent); color: #fff; }
+
+    .site-footer { background: var(--bf-primary); color: rgba(255,255,255,0.75); padding: 3.5rem 0 0; }
+    .footer__grid { display: grid; gap: 2rem; margin-bottom: 3rem; }
+    .footer__grid--5col { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .footer__column-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #fff; margin-bottom: 1rem; }
+    .footer__links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer__link { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.88rem; }
+    .footer__company { display: flex; align-items: center; gap: 2rem; padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+    .footer__company-logo { font-size: 1.1rem; font-weight: 800; color: #fff; line-height: 1.1; }
+    .footer__company-logo span { display: block; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+    .footer__company-info { font-size: 0.82rem; }
+    .footer__company-info a { color: rgba(255,255,255,0.65); }
+    .footer__bottom { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; gap: 1rem; }
+    .footer__copyright { font-size: 0.78rem; }
+    .footer__legal { display: flex; gap: 1.25rem; }
+    .footer__legal a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.78rem; }
+
+    @media (max-width: 768px) { .contact-block { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
+          <a href="../" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../../bagbase/" class="brand-switcher__link">BagBase</a>
+          <a href="../../quadra/" class="brand-switcher__link">Quadra</a>
+          <a href="../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions"><a href="../where-to-buy/find-a-distributor.html">Find a Distributor</a></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="../" class="site-logo">Beechfield<span>Original Headwear</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li><a href="../products/" class="main-nav__link">Products</a></li>
+          <li><a href="../cap-studio/" class="main-nav__link">Cap Studio</a></li>
+          <li><a href="../lookbooks/" class="main-nav__link">Lookbooks</a></li>
+          <li><a href="../decorator-academy/" class="main-nav__link">Decorator Academy</a></li>
+          <li><a href="../where-to-buy/" class="main-nav__link">Where to Buy</a></li>
+          <li><a href="../about/" class="main-nav__link main-nav__link--active">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="../">Home</a> / <a href="./">About</a> / Press</p>
+        <h1>Press &amp; Media</h1>
+        <p class="subtitle">Latest news, brand assets and media contacts for Beechfield Original Headwear.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:2rem;">Latest News</h2>
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-card__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/5e3f1359858f9dd2/webimage-B26N-EarthAware-Organic-Cotton-Studio-Cap-Cornflower-Blue-Product-Shot-01.png" alt="EarthAware Studio Cap" loading="lazy">
+            </div>
+            <div class="news-card__body">
+              <p class="news-card__date">February 2026</p>
+              <h3 class="news-card__title">SS26 Collection Launch</h3>
+              <p class="news-card__excerpt">Beechfield's Spring/Summer 2026 range introduces new organic cotton colourways, expanded cord textures, and a refreshed performance line with recycled content.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-card__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/4a63922434e7cc92/webimage-B62N-EarthAware-Organic-Cotton-5-Panel-Cap-Dusty-Green-Front-on-shot.png" alt="EarthAware 5-Panel Cap" loading="lazy">
+            </div>
+            <div class="news-card__body">
+              <p class="news-card__date">January 2026</p>
+              <h3 class="news-card__title">EarthAware Range Expands</h3>
+              <p class="news-card__excerpt">Six new styles join the OCS-certified EarthAware collection, including organic cotton beanies and an expanded organic cord range.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-card__img">
+              <img src="https://mediahub.beechfieldbrands.com/m/b66942402fa0df81/webimage-B155R-Accelerate-Cap-White-Black-Lifestyle-Shot.png" alt="Accelerate Cap" loading="lazy">
+            </div>
+            <div class="news-card__body">
+              <p class="news-card__date">November 2025</p>
+              <h3 class="news-card__title">Printwear &amp; Promotion 2026 Confirmed</h3>
+              <p class="news-card__excerpt">Beechfield will exhibit at Printwear &amp; Promotion Live at the NEC Birmingham in February 2026, showcasing the full SS26 range.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt">
+      <div class="container">
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:0.5rem;text-align:center;">Brand Assets</h2>
+        <p style="text-align:center;color:#555;margin-bottom:2.5rem;">Download logos, product images and brand guidelines</p>
+        <div class="asset-grid">
+          <div class="asset-card">
+            <div class="asset-card__icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1f614d" stroke-width="1.5"><rect x="6" y="4" width="28" height="32" rx="2"/><path d="M14 20L20 26L26 20"/><line x1="20" y1="14" x2="20" y2="26"/></svg>
+            </div>
+            <h3>Brand Logo Pack</h3>
+            <p>Beechfield logos in PNG, SVG and EPS formats. Includes mono, colour and reversed variants.</p>
+            <span class="asset-card__link">Request access</span>
+          </div>
+          <div class="asset-card">
+            <div class="asset-card__icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1f614d" stroke-width="1.5"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="15" cy="18" r="3"/><path d="M4 28L14 22L20 26L28 18L36 24"/></svg>
+            </div>
+            <h3>Product Photography</h3>
+            <p>High-resolution product shots and lifestyle imagery available through the Beechfield MediaHub.</p>
+            <a href="https://mediahub.beechfieldbrands.com" class="asset-card__link" target="_blank" rel="noopener">Visit MediaHub</a>
+          </div>
+          <div class="asset-card">
+            <div class="asset-card__icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1f614d" stroke-width="1.5"><rect x="6" y="4" width="28" height="32" rx="2"/><line x1="14" y1="14" x2="26" y2="14"/><line x1="14" y1="20" x2="26" y2="20"/><line x1="14" y1="26" x2="22" y2="26"/></svg>
+            </div>
+            <h3>Brand Guidelines</h3>
+            <p>Colour palette, typography, tone of voice and usage rules for the Beechfield brand identity.</p>
+            <span class="asset-card__link">Request access</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="contact-block">
+          <div class="contact-block__info">
+            <h2>Media Contact</h2>
+            <p>For press enquiries, product samples, interview requests or editorial features, please contact the Beechfield marketing team.</p>
+            <div class="contact-block__detail">
+              <div class="contact-block__detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f614d" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-block__detail-text">
+                <strong>Email</strong>
+                <span><a href="mailto:marketing@beechfield.com">marketing@beechfield.com</a></span>
+              </div>
+            </div>
+            <div class="contact-block__detail">
+              <div class="contact-block__detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f614d" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-block__detail-text">
+                <strong>Address</strong>
+                <span>Beechfield Brands Ltd, Manchester, United Kingdom</span>
+              </div>
+            </div>
+            <div class="contact-block__detail">
+              <div class="contact-block__detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f614d" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="contact-block__detail-text">
+                <strong>Response Time</strong>
+                <span>We aim to respond to press enquiries within 24 hours</span>
+              </div>
+            </div>
+          </div>
+          <div style="background:var(--bf-cream);border-radius:8px;padding:2.5rem;">
+            <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;">Quick Facts</h3>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:1rem;">
+              <li style="font-size:0.92rem;color:#555;padding-left:1.5rem;position:relative;"><span style="position:absolute;left:0;color:#1f614d;font-weight:700;">-</span> Founded 1994 in the United Kingdom</li>
+              <li style="font-size:0.92rem;color:#555;padding-left:1.5rem;position:relative;"><span style="position:absolute;left:0;color:#1f614d;font-weight:700;">-</span> Part of Beechfield Brands Ltd (includes BagBase, Quadra, Westford Mill)</li>
+              <li style="font-size:0.92rem;color:#555;padding-left:1.5rem;position:relative;"><span style="position:absolute;left:0;color:#1f614d;font-weight:700;">-</span> 500+ headwear styles across caps, beanies, hats and accessories</li>
+              <li style="font-size:0.92rem;color:#555;padding-left:1.5rem;position:relative;"><span style="position:absolute;left:0;color:#1f614d;font-weight:700;">-</span> Available through authorised distributors across Europe</li>
+              <li style="font-size:0.92rem;color:#555;padding-left:1.5rem;position:relative;"><span style="position:absolute;left:0;color:#1f614d;font-weight:700;">-</span> OCS-certified organic cotton range (EarthAware)</li>
+              <li style="font-size:0.92rem;color:#555;padding-left:1.5rem;position:relative;"><span style="position:absolute;left:0;color:#1f614d;font-weight:700;">-</span> All products designed for decoration (embroidery, print, transfer, patches)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" style="text-align:center;">
+      <div class="container">
+        <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:0.75rem;">Learn More About Beechfield</h2>
+        <p style="color:#555;margin-bottom:2rem;">Explore our story, products and sustainability commitments.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="about-beechfield.html" class="btn btn--primary">Our Story</a>
+          <a href="../products/" class="btn btn--accent">Browse Products</a>
+          <a href="../lookbooks/ss26.html" class="btn btn--primary">SS26 Lookbook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--5col">
+        <div><h4 class="footer__column-title">Products</h4><nav class="footer__links"><a href="../products/" class="footer__link">All Products</a><a href="../products/caps/" class="footer__link">Caps</a><a href="../products/beanies/" class="footer__link">Beanies</a><a href="../products/hats/" class="footer__link">Hats</a></nav></div>
+        <div><h4 class="footer__column-title">For Decorators</h4><nav class="footer__links"><a href="../decorator-academy/" class="footer__link">Decorator Academy</a><a href="../decorator-academy/videos.html" class="footer__link">How-to Videos</a><a href="../decorator-academy/glossary.html" class="footer__link">Glossary</a></nav></div>
+        <div><h4 class="footer__column-title">Marketing Centre</h4><nav class="footer__links"><a href="../marketing-centre/" class="footer__link">Marketing Centre</a><a href="../marketing-centre/sign-up.html" class="footer__link">Sign Up</a></nav></div>
+        <div><h4 class="footer__column-title">About</h4><nav class="footer__links"><a href="about-beechfield.html" class="footer__link">About Beechfield</a><a href="materials-and-fabrics.html" class="footer__link">Materials &amp; Fabrics</a><a href="responsible-choices.html" class="footer__link">Responsible Choices</a><a href="events.html" class="footer__link">Events</a></nav></div>
+        <div><h4 class="footer__column-title">Support</h4><nav class="footer__links"><a href="../where-to-buy/" class="footer__link">Where to Buy</a><a href="../resources/faqs.html" class="footer__link">FAQs</a><a href="../resources/contact.html" class="footer__link">Contact</a></nav></div>
+      </div>
+      <div class="footer__company">
+        <div class="footer__company-logo">Beechfield<span>Original Headwear</span></div>
+        <div class="footer__company-info"><p>Part of <a href="../../beechfield-brands/">Beechfield Brands Ltd.</a></p><p>&copy; 2026 Beechfield Brands Limited. All rights reserved.</p></div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">Beechfield Original Headwear</p>
+        <div class="footer__legal"><a href="#">Privacy</a><a href="#">Cookies</a><a href="#">Terms</a><a href="#">Accessibility</a><a href="#">Modern Slavery</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js"></script>
+</body>
+</html>

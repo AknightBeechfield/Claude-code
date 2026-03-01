@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: beechfield-website
+    runtime: node
+    nodeVersion: "20"
+    buildCommand: npm install --build-from-source
+    startCommand: node server/index.js
+    envVars:
+      - key: JWT_SECRET
+        value: beechfield-render-secret-change-in-production

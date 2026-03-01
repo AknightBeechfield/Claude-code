@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality &amp; Compliance — Beechfield Original Headwear</title>
+  <meta name="description" content="Beechfield's approach to quality assurance, product testing, certifications and regulatory compliance across our headwear range.">
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <style>
+    :root { --bf-primary: #0e1520; --bf-accent: #1f614d; --bf-cream: #f5f0e8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--bf-primary); background: #fff; }
+    .top-bar { background: var(--bf-primary); color: #fff; font-size: 0.78rem; padding: 0.5rem 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .top-bar__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand-switcher { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .brand-switcher__label { opacity: 0.6; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .brand-switcher__links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .brand-switcher__link { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .brand-switcher__link--active { color: #fff; font-weight: 600; }
+    .top-bar__actions a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.78rem; }
+    .site-header { background: #fff; border-bottom: 1px solid #e8e4dc; position: sticky; top: 0; z-index: 100; }
+    .site-header .container { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; gap: 2rem; }
+    .site-logo { font-size: 1.25rem; font-weight: 800; color: var(--bf-primary); text-decoration: none; line-height: 1.1; }
+    .site-logo span { display: block; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
+    .main-nav__list { display: flex; list-style: none; gap: 0.25rem; }
+    .main-nav__link { display: block; padding: 0.5rem 0.85rem; color: var(--bf-primary); text-decoration: none; font-size: 0.9rem; font-weight: 500; border-radius: 4px; }
+    .main-nav__link:hover { background: var(--bf-cream); }
+    .main-nav__link--active { color: var(--bf-accent); font-weight: 700; }
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .search-toggle, .mobile-toggle { background: none; border: none; cursor: pointer; padding: 0.4rem; color: var(--bf-primary); display: flex; align-items: center; }
+    .mobile-toggle { flex-direction: column; gap: 4px; }
+    .mobile-toggle__bar { display: block; width: 22px; height: 2px; background: var(--bf-primary); border-radius: 2px; }
+
+    .page-hero { background: var(--bf-primary); color: #fff; padding: 5rem 0 4rem; }
+    .page-hero .breadcrumb { font-size: 0.8rem; opacity: 0.5; margin-bottom: 1.5rem; }
+    .page-hero .breadcrumb a { color: inherit; text-decoration: none; }
+    .page-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; max-width: 700px; }
+    .page-hero .subtitle { font-size: 1.1rem; opacity: 0.7; max-width: 500px; line-height: 1.6; }
+
+    .content-section { padding: 5rem 0; }
+    .content-section--alt { background: var(--bf-cream); }
+    .content-section--dark { background: var(--bf-primary); color: #fff; }
+    .content-section--green { background: var(--bf-accent); color: #fff; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .split--reverse { direction: rtl; }
+    .split--reverse > * { direction: ltr; }
+    .split__text h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 1rem; }
+    .split__text p { font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 1rem; }
+    .content-section--dark .split__text p { color: rgba(255,255,255,0.75); }
+    .split__img { border-radius: 8px; overflow: hidden; background: #eee; aspect-ratio: 4/3; }
+    .split__img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .pillar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+    .pillar-card { background: #fff; border-radius: 8px; padding: 2rem; border: 1px solid #e8e4dc; }
+    .pillar-card__icon { font-size: 2rem; margin-bottom: 1rem; }
+    .pillar-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .pillar-card p { font-size: 0.92rem; color: #555; line-height: 1.7; }
+    .pillar-card .tag { display: inline-block; background: #e8f4f0; color: #1f614d; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 3px; margin-top: 0.75rem; }
+
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2rem; }
+    .cert-card { text-align: center; padding: 2rem; }
+    .cert-card__badge { width: 80px; height: 80px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: 800; color: #fff; }
+    .cert-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
+    .cert-card p { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    .btn { display: inline-block; padding: 0.85rem 2rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+    .btn--primary { background: var(--bf-primary); color: #fff; }
+    .btn--accent { background: var(--bf-accent); color: #fff; }
+
+    .site-footer { background: var(--bf-primary); color: rgba(255,255,255,0.75); padding: 3.5rem 0 0; }
+    .footer__grid { display: grid; gap: 2rem; margin-bottom: 3rem; }
+    .footer__grid--5col { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .footer__column-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #fff; margin-bottom: 1rem; }
+    .footer__links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer__link { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.88rem; }
+    .footer__company { display: flex; align-items: center; gap: 2rem; padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+    .footer__company-logo { font-size: 1.1rem; font-weight: 800; color: #fff; line-height: 1.1; }
+    .footer__company-logo span { display: block; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+    .footer__company-info { font-size: 0.82rem; }
+    .footer__company-info a { color: rgba(255,255,255,0.65); }
+    .footer__bottom { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; gap: 1rem; }
+    .footer__copyright { font-size: 0.78rem; }
+    .footer__legal { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .footer__legal a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.78rem; }
+
+    @media (max-width: 768px) { .split { grid-template-columns: 1fr; } .split--reverse { direction: ltr; } }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
+          <a href="../" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../../bagbase/" class="brand-switcher__link">BagBase</a>
+          <a href="../../quadra/" class="brand-switcher__link">Quadra</a>
+          <a href="../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions"><a href="../where-to-buy/find-a-distributor.html">Find a Distributor</a></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="../" class="site-logo">Beechfield<span>Original Headwear</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li><a href="../products/" class="main-nav__link">Products</a></li>
+          <li><a href="../cap-studio/" class="main-nav__link">Cap Studio</a></li>
+          <li><a href="../lookbooks/" class="main-nav__link">Lookbooks</a></li>
+          <li><a href="../decorator-academy/" class="main-nav__link">Decorator Academy</a></li>
+          <li><a href="../where-to-buy/" class="main-nav__link">Where to Buy</a></li>
+          <li><a href="../about/" class="main-nav__link main-nav__link--active">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="../">Home</a> / <a href="./">About</a> / Quality &amp; Compliance</p>
+        <h1>Quality &amp; Compliance</h1>
+        <p class="subtitle">Every product tested, every standard met. How Beechfield ensures consistent quality across the range.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="split">
+          <div class="split__text">
+            <h2>Quality You Can Rely On</h2>
+            <p>For decorators, consistency is everything. A front panel that varies in stiffness from batch to batch means embroidery quality varies too. Fabric weight that shifts between seasons means print parameters have to be re-tested every time.</p>
+            <p>Beechfield invests in raw material testing, construction audits and finished product inspection to ensure that when you set up a cap on your embroidery machine or heat press, the result is the same every single time.</p>
+          </div>
+          <div class="split__img">
+            <img src="https://mediahub.beechfieldbrands.com/m/c9e1cd336a0b46ff/webimage-B15C-Ultimate-5-Panel-Cap-Sandwich-Peak-Bottle-Green-White-Front-on-shot.png" alt="B15C Ultimate 5-Panel Cap showing consistent construction quality" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt">
+      <div class="container">
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:0.5rem;text-align:center;">Our Quality Pillars</h2>
+        <p style="text-align:center;color:#555;margin-bottom:2.5rem;">Three disciplines that underpin every Beechfield product</p>
+        <div class="pillar-grid">
+          <div class="pillar-card">
+            <div class="pillar-card__icon">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1f614d" stroke-width="1.5"><path d="M18 3L30 9V18C30 25 25 31 18 33C11 31 6 25 6 18V9L18 3Z"/><path d="M13 18L16 21L23 14"/></svg>
+            </div>
+            <h3>Material Testing</h3>
+            <p>Every fabric is tested for weight, shrinkage, colour fastness and pilling resistance before it enters production. We test to BS EN ISO standards — the same benchmarks used across the European textile industry.</p>
+            <span class="tag">Pre-Production</span>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-card__icon">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1f614d" stroke-width="1.5"><rect x="4" y="8" width="28" height="20" rx="2"/><circle cx="18" cy="18" r="5"/><path d="M18 13V18L21 20"/></svg>
+            </div>
+            <h3>Production Audits</h3>
+            <p>In-line inspections during manufacturing check seam integrity, panel alignment, peak curvature and hardware durability. Every batch is audited against Beechfield's master specifications before it ships.</p>
+            <span class="tag">In-Production</span>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-card__icon">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1f614d" stroke-width="1.5"><rect x="6" y="4" width="24" height="28" rx="2"/><line x1="12" y1="12" x2="24" y2="12"/><line x1="12" y1="18" x2="24" y2="18"/><line x1="12" y1="24" x2="20" y2="24"/><path d="M22 22L24 24L28 20"/></svg>
+            </div>
+            <h3>AQL Inspection</h3>
+            <p>Finished goods are inspected using Acceptable Quality Level (AQL) sampling. We apply AQL 2.5 for critical defects and AQL 4.0 for minor defects — tighter than most promotional product standards.</p>
+            <span class="tag">Post-Production</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section content-section--dark">
+      <div class="container">
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:0.5rem;text-align:center;">Certifications</h2>
+        <p style="text-align:center;opacity:0.6;margin-bottom:2.5rem;">Independent, third-party verified standards</p>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-card__badge">OCS</div>
+            <h3>Organic Content Standard</h3>
+            <p>Verifies the organic cotton content in our EarthAware range. Chain of custody tracked from raw fibre to finished product.</p>
+          </div>
+          <div class="cert-card">
+            <div class="cert-card__badge">GRS</div>
+            <h3>Global Recycled Standard</h3>
+            <p>Certifies the recycled polyester content in products like the Recycled Original Cuffed Beanie (B45R) and Recycled Pro-Style Cap (B70R).</p>
+          </div>
+          <div class="cert-card">
+            <div class="cert-card__badge">100</div>
+            <h3>OEKO-TEX Standard 100</h3>
+            <p>Tested for harmful substances. Confirms that textiles are safe for human use — important for products worn directly against skin.</p>
+          </div>
+          <div class="cert-card">
+            <div class="cert-card__badge">CE</div>
+            <h3>Regulatory Compliance</h3>
+            <p>All products meet EU and UK regulatory requirements including REACH, product safety directives and appropriate labelling standards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="split split--reverse">
+          <div class="split__text">
+            <h2>Decoration-Ready Quality Control</h2>
+            <p>Standard textile quality is necessary but not sufficient. Because Beechfield products are designed for decoration, we test additional parameters that matter specifically to decorators:</p>
+            <p><strong>Panel tension</strong> — front panels are tested for consistent stiffness so embroidery machines produce uniform results across a batch.</p>
+            <p><strong>Colour consistency</strong> — dye lots are checked against Pantone references to ensure colour accuracy, critical for corporate branding programmes.</p>
+            <p><strong>Tear-away labels</strong> — most Beechfield products feature tear-away care labels, allowing clean re-labelling for private-label programmes.</p>
+          </div>
+          <div class="split__img">
+            <img src="https://mediahub.beechfieldbrands.com/m/41ff6a2c771d71b/Product_medium-beechfield_b45_heather-oatmeal_lifestyle_19634.jpg" alt="Beechfield beanie showing consistent knit quality" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section content-section--alt" style="text-align:center;">
+      <div class="container">
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:0.75rem;">Explore More</h2>
+        <p style="color:#555;margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto;">Learn about our materials, responsible choices, or browse the product range.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="materials-and-fabrics.html" class="btn btn--primary">Materials &amp; Fabrics</a>
+          <a href="responsible-choices.html" class="btn btn--accent">Responsible Choices</a>
+          <a href="../products/" class="btn btn--primary">Browse Products</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--5col">
+        <div><h4 class="footer__column-title">Products</h4><nav class="footer__links"><a href="../products/" class="footer__link">All Products</a><a href="../products/caps/" class="footer__link">Caps</a><a href="../products/beanies/" class="footer__link">Beanies</a><a href="../products/hats/" class="footer__link">Hats</a></nav></div>
+        <div><h4 class="footer__column-title">For Decorators</h4><nav class="footer__links"><a href="../decorator-academy/" class="footer__link">Decorator Academy</a><a href="../decorator-academy/videos.html" class="footer__link">How-to Videos</a><a href="../decorator-academy/glossary.html" class="footer__link">Glossary</a></nav></div>
+        <div><h4 class="footer__column-title">Marketing Centre</h4><nav class="footer__links"><a href="../marketing-centre/" class="footer__link">Marketing Centre</a><a href="../marketing-centre/sign-up.html" class="footer__link">Sign Up</a></nav></div>
+        <div><h4 class="footer__column-title">About</h4><nav class="footer__links"><a href="about-beechfield.html" class="footer__link">About Beechfield</a><a href="materials-and-fabrics.html" class="footer__link">Materials &amp; Fabrics</a><a href="responsible-choices.html" class="footer__link">Responsible Choices</a><a href="events.html" class="footer__link">Events</a></nav></div>
+        <div><h4 class="footer__column-title">Support</h4><nav class="footer__links"><a href="../where-to-buy/" class="footer__link">Where to Buy</a><a href="../resources/faqs.html" class="footer__link">FAQs</a><a href="../resources/contact.html" class="footer__link">Contact</a></nav></div>
+      </div>
+      <div class="footer__company">
+        <div class="footer__company-logo">Beechfield<span>Original Headwear</span></div>
+        <div class="footer__company-info"><p>Part of <a href="../../beechfield-brands/">Beechfield Brands Ltd.</a></p><p>&copy; 2026 Beechfield Brands Limited. All rights reserved.</p></div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">Beechfield Original Headwear</p>
+        <div class="footer__legal"><a href="#">Privacy</a><a href="#">Cookies</a><a href="#">Terms</a><a href="#">Accessibility</a><a href="#">Modern Slavery</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js"></script>
+</body>
+</html>

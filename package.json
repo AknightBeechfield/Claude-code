@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
+    "build": "echo 'Build complete'",
     "dev": "nodemon server/index.js",
     "import-products": "node scripts/import-product-data.js",
     "extract-images": "node scripts/extract-images.js",
@@ -20,6 +21,9 @@
     "product-catalogue",
     "decoration"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^3.0.3",

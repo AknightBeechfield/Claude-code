@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | Beechfield Original Headwear</title>
+  <meta name="description" content="Register for a Beechfield account to save projects, access full asset packs, and get distributor stock visibility.">
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <link rel="stylesheet" href="https://use.typekit.net/sep5cxb.css">
+  <style>
+    .account-page { max-width: 520px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .account-page__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bfb-dark-green); margin-bottom: 0.5rem; }
+    .account-page__title { font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; color: var(--bfb-cool-black); margin-bottom: 0.75rem; line-height: 1.1; }
+    .account-page__subtitle { font-size: 0.95rem; color: #666; line-height: 1.6; margin-bottom: 2.5rem; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #555; margin-bottom: 0.4rem; }
+    .form-group input, .form-group select { width: 100%; padding: 0.75rem 1rem; font-size: 0.92rem; border: 1px solid #d6d3d1; background: #fff; color: var(--bfb-cool-black); font-family: var(--font-body); transition: border-color 0.2s; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--bfb-dark-green); box-shadow: 0 0 0 3px rgba(31,97,77,0.1); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-error { display: none; background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 0.75rem 1rem; font-size: 0.85rem; margin-bottom: 1rem; }
+
+    .form-submit { width: 100%; padding: 0.9rem; background: var(--bfb-cool-black); color: #fff; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: none; cursor: pointer; font-family: var(--font-body); transition: background 0.2s; margin-top: 0.5rem; }
+    .form-submit:hover { background: #2a3545; }
+
+    .form-footer { text-align: center; margin-top: 1.5rem; font-size: 0.88rem; color: #666; }
+    .form-footer a { color: var(--bfb-dark-green); font-weight: 600; text-decoration: none; }
+    .form-footer a:hover { text-decoration: underline; }
+
+    .benefits { background: #f5f5f0; padding: 1.5rem; margin-bottom: 2rem; }
+    .benefits__title { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bfb-dark-green); margin-bottom: 0.75rem; }
+    .benefits__list { list-style: none; padding: 0; margin: 0; }
+    .benefits__list li { font-size: 0.85rem; color: #444; padding: 0.3rem 0 0.3rem 1.25rem; position: relative; line-height: 1.5; }
+    .benefits__list li::before { content: ''; position: absolute; left: 0; top: 0.65rem; width: 8px; height: 1px; background: var(--bfb-dark-green); }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="/" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="#" class="brand-switcher__link">BagBase</a>
+          <a href="#" class="brand-switcher__link">Quadra</a>
+          <a href="#" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions">
+        <a href="../where-to-buy/">Find a Distributor</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="site-logo" aria-label="Beechfield Original Headwear">
+        <img src="https://mediahub.beechfieldbrands.com/m/6c13cb59a34019b7/Product_medium-Beechfield-Logo-PNG.jpg" alt="Beechfield" height="36">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li class="main-nav__item"><a href="../products/" class="main-nav__link">Products</a></li>
+          <li class="main-nav__item"><a href="../cap-studio/" class="main-nav__link">Cap Studio</a></li>
+          <li class="main-nav__item"><a href="../lookbooks/" class="main-nav__link">Lookbooks</a></li>
+          <li class="main-nav__item"><a href="../decorator-academy/" class="main-nav__link">Decorator Academy</a></li>
+          <li class="main-nav__item"><a href="../where-to-buy/" class="main-nav__link">Where to Buy</a></li>
+          <li class="main-nav__item"><a href="../about/" class="main-nav__link">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <a href="login.html" class="account-toggle" aria-label="My account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="account-page">
+      <p class="account-page__label">Club Beech</p>
+      <h1 class="account-page__title">Create your account.</h1>
+      <p class="account-page__subtitle">Join Club Beech and get access to project tools, full asset packs, and distributor stock visibility.</p>
+
+      <div class="benefits">
+        <p class="benefits__title">What you get</p>
+        <ul class="benefits__list">
+          <li>Multi-product project builder with notes and quantities</li>
+          <li>Save and export product shortlists as CSV</li>
+          <li>Full campaign asset packs and decoration templates</li>
+          <li>Distributor stock breakdown by colour</li>
+          <li>New product alerts and campaign notifications</li>
+        </ul>
+      </div>
+
+      <form id="register-form" novalidate>
+        <div class="form-error" id="register-error"></div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" autocomplete="organization" placeholder="Company name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password * (min 8 characters)</label>
+          <input type="password" id="password" name="password" required autocomplete="new-password" minlength="8" placeholder="Choose a password">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+44...">
+          </div>
+          <div class="form-group">
+            <label for="postcode">Postcode</label>
+            <input type="text" id="postcode" name="postcode" autocomplete="postal-code" placeholder="Postcode">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="account_type">I am a...</label>
+          <select id="account_type" name="account_type">
+            <option value="decorator">Decorator / Embroiderer</option>
+            <option value="distributor">Distributor</option>
+            <option value="brand_agency">Brand / Agency</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="form-submit">Create Account</button>
+      </form>
+
+      <p class="form-footer">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Beechfield Brands Limited.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js"></script>
+  <script src="../../shared/js/auth.js"></script>
+</body>
+</html>

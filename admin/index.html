@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Beechfield Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body data-page="dashboard">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">Beechfield<span>Admin Portal</span></div>
+      <nav class="admin-nav">
+        <p class="admin-nav__section">Overview</p>
+        <a href="/admin/" class="admin-nav__link active">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <p class="admin-nav__section">Content</p>
+        <a href="/admin/products.html" class="admin-nav__link">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <span>Products</span>
+        </a>
+        <p class="admin-nav__section">People</p>
+        <a href="/admin/users.html" class="admin-nav__link">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Users</span>
+        </a>
+        <a href="/admin/leads.html" class="admin-nav__link">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Leads / RFQs</span>
+        </a>
+        <p class="admin-nav__section">Operations</p>
+        <a href="/admin/distributors.html" class="admin-nav__link">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>Distributors</span>
+        </a>
+        <a href="/admin/settings.html" class="admin-nav__link">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+        <div style="padding:1rem 1.25rem;margin-top:2rem;border-top:1px solid rgba(255,255,255,0.1);">
+          <a href="/" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">View Live Site &rarr;</a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="admin-main">
+      <div class="admin-header">
+        <h1 class="admin-header__title">Dashboard</h1>
+        <span class="admin-header__user">Admin</span>
+      </div>
+      <div class="admin-content">
+        <div class="stat-grid" id="stats-grid">
+          <div class="stat-card"><p class="stat-card__label">Loading...</p></div>
+        </div>
+
+        <h2 class="admin-section-title">Quick Actions</h2>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="/admin/leads.html" class="admin-btn admin-btn--primary">View New Leads</a>
+          <a href="/admin/users.html" class="admin-btn">Manage Users</a>
+          <a href="/admin/distributors.html" class="admin-btn">Distributors</a>
+          <a href="/admin/settings.html" class="admin-btn">CRM Settings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>

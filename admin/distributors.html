@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distributors | Beechfield Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body data-page="distributors">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">Beechfield<span>Admin Portal</span></div>
+      <nav class="admin-nav">
+        <p class="admin-nav__section">Overview</p>
+        <a href="/admin/" class="admin-nav__link"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Dashboard</span></a>
+        <p class="admin-nav__section">People</p>
+        <a href="/admin/users.html" class="admin-nav__link"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Users</span></a>
+        <a href="/admin/leads.html" class="admin-nav__link"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Leads</span></a>
+        <p class="admin-nav__section">Operations</p>
+        <a href="/admin/distributors.html" class="admin-nav__link active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg><span>Distributors</span></a>
+        <a href="/admin/settings.html" class="admin-nav__link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg><span>Settings</span></a>
+        <div style="padding:1rem 1.25rem;margin-top:2rem;border-top:1px solid rgba(255,255,255,0.1);"><a href="/" style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;">View Live Site &rarr;</a></div>
+      </nav>
+    </aside>
+    <div class="admin-main">
+      <div class="admin-header">
+        <h1 class="admin-header__title">Distributors</h1>
+      </div>
+      <div class="admin-content">
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr><th>ID</th><th>Name</th><th>Slug</th><th>Website</th><th>Region</th><th>Status</th></tr>
+            </thead>
+            <tbody id="distributors-tbody">
+              <tr><td colspan="6" style="text-align:center;padding:2rem;color:#999;">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>

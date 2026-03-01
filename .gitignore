@@ -30,3 +30,6 @@ npm-debug.log*
 pids/
 *.pid
 *.seed
+server/data/beechfield.db
+server/data/*.db
+node_modules/

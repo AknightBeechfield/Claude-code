@@ -1,25 +1,32 @@
 {
-  "name": "meeting-notes-cleaner",
+  "name": "beechfield-website",
   "version": "1.0.0",
-  "description": "A web app to clean and format meeting notes into scan-friendly format",
-  "main": "dist/server.js",
+  "description": "Beechfield Original Headwear — brand site with product catalogue, stock checker, and distributor integration",
+  "main": "server/index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/server.js",
-    "dev": "tsc -w & nodemon dist/server.js",
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "import-products": "node scripts/import-product-data.js",
+    "extract-images": "node scripts/extract-images.js",
+    "seed-stock": "node scripts/seed-stock-data.js",
+    "generate-pages": "node scripts/generate-products.js",
+    "data": "npm run import-products && npm run extract-images && npm run seed-stock",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "lint": "tsc --noEmit"
+    "test:watch": "jest --watch"
   },
   "keywords": [
-    "meeting",
-    "notes",
-    "cleaner",
-    "typescript"
+    "beechfield",
+    "headwear",
+    "product-catalogue",
+    "decoration"
   ],
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.6.2",
+    "cookie-parser": "^1.4.7",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.3",
     "mammoth": "^1.11.0",
     "xlsx": "^0.18.5"
   },

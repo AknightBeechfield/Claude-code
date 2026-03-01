@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Ralawise",
+    "slug": "ralawise",
+    "website_url": "https://www.ralawise.com",
+    "contact_email": "sales@ralawise.com",
+    "phone": "+44 151 329 0000",
+    "region": "UK & Ireland",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Pencarrie",
+    "slug": "pencarrie",
+    "website_url": "https://www.pencarrie.com",
+    "contact_email": "sales@pencarrie.com",
+    "phone": "+44 1onal 000 000",
+    "region": "UK",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "BTC activewear",
+    "slug": "btc-activewear",
+    "website_url": "https://www.btcactivewear.co.uk",
+    "contact_email": "sales@btcactivewear.co.uk",
+    "phone": "+44 1onal 000 000",
+    "region": "UK",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "Tresham",
+    "slug": "tresham",
+    "website_url": "https://www.tresham.co.uk",
+    "contact_email": "sales@tresham.co.uk",
+    "phone": "+44 1onal 000 000",
+    "region": "UK",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "Essentials",
+    "slug": "essentials",
+    "website_url": "https://www.essentialswholesale.com",
+    "contact_email": "sales@essentialswholesale.com",
+    "phone": "+44 1onal 000 000",
+    "region": "UK",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "Harrisons Direct",
+    "slug": "harrisons-direct",
+    "website_url": "https://www.harrisonsdirect.co.uk",
+    "contact_email": "sales@harrisonsdirect.co.uk",
+    "phone": "+44 1onal 000 000",
+    "region": "UK",
+    "active": true
+  },
+  {
+    "id": 7,
+    "name": "Prestige Leisure",
+    "slug": "prestige-leisure",
+    "website_url": "https://www.prestigeleisure.co.uk",
+    "contact_email": "sales@prestigeleisure.co.uk",
+    "phone": "+44 1onal 000 000",
+    "region": "UK",
+    "active": true
+  },
+  {
+    "id": 8,
+    "name": "Impression Direct",
+    "slug": "impression-direct",
+    "website_url": "https://www.impressiondirect.co.uk",
+    "contact_email": "sales@impressiondirect.co.uk",
+    "phone": "+44 1onal 000 000",
+    "region": "UK",
+    "active": true
+  },
+  {
+    "id": 9,
+    "name": "Kingly",
+    "slug": "kingly",
+    "website_url": "https://www.kingly.com",
+    "contact_email": "sales@kingly.com",
+    "phone": "+44 1onal 000 000",
+    "region": "UK & Europe",
+    "active": true
+  },
+  {
+    "id": 10,
+    "name": "MyWorkwear",
+    "slug": "myworkwear",
+    "website_url": "https://www.myworkwear.co.uk",
+    "contact_email": "sales@myworkwear.co.uk",
+    "phone": "+44 1onal 000 000",
+    "region": "UK",
+    "active": true
+  },
+  {
+    "id": 11,
+    "name": "Wilkinson Plus",
+    "slug": "wilkinson-plus",
+    "website_url": "https://www.wilkinsonplus.co.uk",
+    "contact_email": "sales@wilkinsonplus.co.uk",
+    "phone": "+44 1onal 000 000",
+    "region": "UK",
+    "active": true
+  }
+]

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heat Transfer | Beechfield Original Headwear</title>
+  <meta name="description" content="Heat Transfer decoration on Beechfield headwear. Guides, best products and specifications.">
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <link rel="stylesheet" href="https://use.typekit.net/sep5cxb.css">
+  <style>
+    .ed-hero { background: #0e1520; color: #fff; padding: clamp(60px, 8vw, 120px) 0; }
+    .ed-hero .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .ed-hero__breadcrumb { font-size: 0.8rem; opacity: 0.5; margin-bottom: 1.5rem; }
+    .ed-hero__breadcrumb a { color: inherit; text-decoration: none; }
+    .ed-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; max-width: 700px; line-height: 1.1; }
+    .ed-hero__sub { font-size: 1.1rem; opacity: 0.7; max-width: 540px; line-height: 1.6; }
+    .ed-section { padding: clamp(48px, 6vw, 80px) 0; }
+    .ed-section .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .ed-section--alt { background: #f5f0e8; }
+    .ed-section--dark { background: #0e1520; color: #fff; }
+    .ed-section--green { background: #1f614d; color: #fff; }
+    .ed-split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .ed-split--reverse { direction: rtl; }
+    .ed-split--reverse > * { direction: ltr; }
+    .ed-split__img { border-radius: 8px; overflow: hidden; background: #eee; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.9rem; }
+    .ed-split__img img { width: 100%; height: 100%; object-fit: cover; }
+    .ed-split__text h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .ed-split__text p { font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 1rem; }
+    .ed-section--dark .ed-split__text p, .ed-section--green .ed-split__text p { color: rgba(255,255,255,0.75); }
+    .ed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+    .ed-card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #e8e4dc; transition: box-shadow 0.2s; }
+    .ed-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .ed-card__img { aspect-ratio: 16/9; background: #eee; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.85rem; }
+    .ed-card__body { padding: 1.25rem; }
+    .ed-card__body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .ed-card__body p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+    .ed-cta { text-align: center; padding: clamp(48px, 6vw, 80px) 0; background: #f5f0e8; }
+    .ed-cta h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .ed-cta p { color: #555; margin-bottom: 2rem; }
+    .btn { display: inline-block; padding: 0.85rem 2rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.2s; }
+    .btn--primary { background: #0e1520; color: #fff; }
+    .btn--primary:hover { background: #1c2940; }
+    .btn--accent { background: #1f614d; color: #fff; }
+    .btn--accent:hover { background: #174e3e; }
+    .ed-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 2rem; text-align: center; margin-top: 2rem; }
+    .ed-stat__num { font-size: 2rem; font-weight: 800; color: #1f614d; }
+    .ed-stat__label { font-size: 0.85rem; color: #555; margin-top: 0.25rem; }
+    .ed-technique { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+    .ed-technique-card { background: #fff; border-radius: 8px; padding: 2rem; border: 1px solid #e8e4dc; }
+    .ed-technique-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .ed-technique-card p { font-size: 0.92rem; color: #555; line-height: 1.7; }
+    .ed-technique-card .tag { display: inline-block; background: #f0f0f0; color: #333; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 3px; margin-right: 0.5rem; margin-top: 0.75rem; }
+    .ed-faq { max-width: 760px; margin: 0 auto; }
+    .ed-faq details { border-bottom: 1px solid #e8e4dc; padding: 1.25rem 0; }
+    .ed-faq summary { font-weight: 600; cursor: pointer; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .ed-faq summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; }
+    .ed-faq details[open] summary::after { content: '\2212'; }
+    .ed-faq .answer { padding-top: 0.75rem; color: #555; line-height: 1.7; font-size: 0.95rem; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+    .pc { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #e8e4dc; text-decoration: none; color: inherit; display: block; transition: box-shadow 0.2s; }
+    .pc:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .pc__img { aspect-ratio: 1; background: #f5f5f5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .pc__img img { width: 100%; height: 100%; object-fit: contain; }
+    .pc__body { padding: 1rem; }
+    .pc__name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .pc__sku { font-size: 0.8rem; color: #888; }
+    @media (max-width: 768px) {
+      .ed-split { grid-template-columns: 1fr; }
+      .ed-split--reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar" style="background:#0e1520;color:#fff;font-size:0.78rem;padding:0.5rem 0;">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;">
+      <nav aria-label="Beechfield Brands family" style="display:flex;align-items:center;gap:1rem;">
+        <span style="opacity:0.6;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;">Our Brands</span>
+        <div style="display:flex;gap:1rem;">
+          <a href="../../beechfield-brands/" style="color:rgba(255,255,255,0.7);text-decoration:none;">Beechfield Brands</a>
+          <a href="../" style="color:#fff;font-weight:600;text-decoration:none;">Beechfield</a>
+          <a href="../../bagbase/" style="color:rgba(255,255,255,0.7);text-decoration:none;">BagBase</a>
+          <a href="../../quadra/" style="color:rgba(255,255,255,0.7);text-decoration:none;">Quadra</a>
+          <a href="../../westford-mill/" style="color:rgba(255,255,255,0.7);text-decoration:none;">Westford Mill</a>
+        </div>
+      </nav>
+      <a href="../where-to-buy/find-a-distributor.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.78rem;">Find a Distributor</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" style="background:#fff;border-bottom:1px solid #e8e4dc;position:sticky;top:0;z-index:100;">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;">
+      <a href="../" style="font-size:1.25rem;font-weight:800;color:#0e1520;text-decoration:none;line-height:1.1;">Beechfield<span style="display:block;font-size:0.6rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;">Original Headwear</span></a>
+      <nav aria-label="Main navigation">
+        <ul style="display:flex;list-style:none;gap:0.25rem;">
+          <li><a href="../products/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;">Products</a></li>
+          <li><a href="../collections/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;">Collections</a></li>
+          <li><a href="../cap-studio/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;">Cap Studio</a></li>
+          <li><a href="../decorator-academy/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;color:#1f614d;font-weight:700;">Decorator Academy</a></li>
+          <li><a href="../resources/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;">Resources</a></li>
+          <li><a href="../where-to-buy/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;">Where to Buy</a></li>
+          <li><a href="../about/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="ed-hero">
+      <div class="container">
+        <p class="ed-hero__breadcrumb"><a href="../">Home</a> / <a href="../decorator-academy/">Decorator Academy</a> / Heat Transfer</p>
+        <h1>Heat Transfer on Headwear</h1>
+        <p class="ed-hero__sub">Full-colour, photo-quality branding. Ideal for complex logos and small runs.</p>
+      </div>
+    </section>
+
+    
+    <section class="ed-section">
+      <div class="container">
+        <div class="ed-split">
+          <div class="ed-split__text">
+            <h2>Full-Colour Precision</h2>
+            <p>Heat transfer is the go-to for complex, multi-colour logos and photographic designs on headwear. It's cost-effective for smaller runs and delivers consistent results across different fabric types. Digital transfers can reproduce gradients, fine detail and unlimited colours.</p>
+            <p>Smooth, flat surfaces give the best adhesion. Structured cap fronts, flat peak surfaces, and stable-knit beanies all work well. Avoid heavily textured fabrics where the transfer can't make full contact.</p>
+          </div>
+          <div class="ed-split__img">[Transfer application imagery]</div>
+        </div>
+      </div>
+    </section>
+    <section class="ed-section ed-section--alt">
+      <div class="container">
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:2rem;">Best Products for Transfer</h2>
+        <div class="product-grid" id="purpose-products"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#0e1520;color:rgba(255,255,255,0.75);padding:3.5rem 0 0;">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:2rem;margin-bottom:3rem;">
+        <div>
+          <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;margin-bottom:1rem;">Products</h4>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <a href="../products/caps/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Caps</a>
+            <a href="../products/beanies/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Beanies</a>
+            <a href="../products/bucket-hats/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Bucket Hats</a>
+            <a href="../products/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">All Products</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;margin-bottom:1rem;">Resources</h4>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <a href="../cap-studio/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Cap Studio</a>
+            <a href="../decorator-academy/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Decorator Academy</a>
+            <a href="../lookbooks/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Lookbooks</a>
+            <a href="../resources/faqs.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">FAQs</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;margin-bottom:1rem;">About</h4>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <a href="../about/about-beechfield.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Our Story</a>
+            <a href="../about/sustainability.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Sustainability</a>
+            <a href="../where-to-buy/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Where to Buy</a>
+            <a href="../resources/contact.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;margin-bottom:1rem;">Beechfield Brands</h4>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <a href="../../bagbase/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">BagBase</a>
+            <a href="../../quadra/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Quadra</a>
+            <a href="../../westford-mill/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Westford Mill</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:1rem;">
+        <span style="font-size:0.78rem;">&copy; 2026 Beechfield Brands. All rights reserved.</span>
+        <div style="display:flex;gap:1.25rem;">
+          <a href="../about/privacy.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.78rem;">Privacy</a>
+          <a href="../about/terms.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.78rem;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js" defer></script>
+</body>
+</html>

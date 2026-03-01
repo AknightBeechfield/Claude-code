@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Lists | Beechfield Original Headwear</title>
+  <meta name="description" content="Manage your saved product lists and project shortlists. Add notes, quantities, and export to CSV for distributor quotes.">
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <link rel="stylesheet" href="../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../shared/css/footer.css">
+  <link rel="stylesheet" href="../css/brand.css">
+  <link rel="stylesheet" href="https://use.typekit.net/sep5cxb.css">
+  <style>
+    .account-page { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .account-page__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bfb-dark-green); margin-bottom: 0.5rem; }
+    .account-page__title { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--bfb-cool-black); margin-bottom: 1.5rem; line-height: 1.1; }
+
+    .account-nav { display: flex; gap: 0; border-bottom: 1px solid #e7e5e4; margin-bottom: 2.5rem; }
+    .account-nav a { padding: 0.75rem 1.25rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #888; text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+    .account-nav a:hover { color: var(--bfb-cool-black); }
+    .account-nav a.active { color: var(--bfb-cool-black); border-bottom-color: var(--bfb-dark-green); }
+
+    /* List management */
+    .lists-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .lists-header h2 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; }
+    .btn-new-list { padding: 0.6rem 1.2rem; background: var(--bfb-cool-black); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.2s; }
+    .btn-new-list:hover { background: #2a3545; }
+
+    .lists-grid { display: grid; gap: 1rem; }
+    .list-card { border: 1px solid #e7e5e4; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; transition: border-color 0.2s; }
+    .list-card:hover { border-color: var(--bfb-dark-green); }
+    .list-card__info h3 { font-size: 1rem; font-weight: 700; color: var(--bfb-cool-black); margin-bottom: 0.25rem; }
+    .list-card__info p { font-size: 0.82rem; color: #888; }
+    .list-card__actions { display: flex; gap: 0.75rem; align-items: center; }
+    .list-card__actions a, .list-card__actions button { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 0.5rem 0.9rem; border: 1px solid #d6d3d1; background: #fff; color: var(--bfb-cool-black); cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+    .list-card__actions a:hover, .list-card__actions button:hover { background: #f5f5f0; border-color: var(--bfb-cool-black); }
+    .list-card__actions .btn-delete { color: #dc2626; border-color: #fecaca; }
+    .list-card__actions .btn-delete:hover { background: #fef2f2; }
+
+    /* List detail view */
+    .list-detail { display: none; }
+    .list-detail.active { display: block; }
+    .list-detail__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e7e5e4; }
+    .list-detail__back { font-size: 0.78rem; color: var(--bfb-dark-green); text-decoration: none; font-weight: 600; }
+
+    .list-items { width: 100%; }
+    .list-item { display: grid; grid-template-columns: 80px 1fr 100px 120px 40px; gap: 1rem; align-items: center; padding: 1rem 0; border-bottom: 1px solid #f0ebe5; }
+    @media (max-width: 640px) { .list-item { grid-template-columns: 60px 1fr; gap: 0.5rem; } }
+    .list-item__img { width: 80px; height: 80px; background: #f5f5f0; object-fit: contain; }
+    .list-item__info h4 { font-size: 0.88rem; font-weight: 700; color: var(--bfb-cool-black); }
+    .list-item__info p { font-size: 0.78rem; color: #888; }
+    .list-item__qty input { width: 80px; padding: 0.4rem 0.5rem; border: 1px solid #d6d3d1; font-size: 0.85rem; text-align: center; }
+    .list-item__notes input { width: 100%; padding: 0.4rem 0.5rem; border: 1px solid #d6d3d1; font-size: 0.82rem; }
+    .list-item__remove { background: none; border: none; color: #dc2626; cursor: pointer; font-size: 1.1rem; padding: 0.25rem; }
+
+    .empty-state { text-align: center; padding: 3rem 1rem; color: #888; }
+    .empty-state p { margin-bottom: 1rem; }
+
+    /* Guest state */
+    .guest-prompt { text-align: center; padding: 4rem 2rem; }
+    .guest-prompt p { font-size: 1rem; color: #666; margin-bottom: 1.5rem; }
+    .guest-prompt a { display: inline-block; padding: 0.8rem 2rem; background: var(--bfb-cool-black); color: #fff; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
+
+    /* Modal */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+    .modal-overlay.active { display: flex; }
+    .modal { background: #fff; padding: 2rem; max-width: 400px; width: 90%; }
+    .modal h3 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+    .modal input { width: 100%; padding: 0.75rem 1rem; border: 1px solid #d6d3d1; font-size: 0.92rem; margin-bottom: 1rem; }
+    .modal__actions { display: flex; gap: 0.75rem; }
+    .modal__actions button { padding: 0.7rem 1.5rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border: none; cursor: pointer; }
+    .modal__actions .btn-primary { background: var(--bfb-cool-black); color: #fff; }
+    .modal__actions .btn-cancel { background: #f5f5f0; color: var(--bfb-cool-black); border: 1px solid #d6d3d1; }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="/" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="#" class="brand-switcher__link">BagBase</a>
+          <a href="#" class="brand-switcher__link">Quadra</a>
+          <a href="#" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="site-logo" aria-label="Beechfield Original Headwear">
+        <img src="https://mediahub.beechfieldbrands.com/m/6c13cb59a34019b7/Product_medium-Beechfield-Logo-PNG.jpg" alt="Beechfield" height="36">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+          <li class="main-nav__item"><a href="../products/" class="main-nav__link">Products</a></li>
+          <li class="main-nav__item"><a href="../cap-studio/" class="main-nav__link">Cap Studio</a></li>
+          <li class="main-nav__item"><a href="../decorator-academy/" class="main-nav__link">Decorator Academy</a></li>
+          <li class="main-nav__item"><a href="../where-to-buy/" class="main-nav__link">Where to Buy</a></li>
+          <li class="main-nav__item"><a href="../about/" class="main-nav__link">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="profile.html" class="account-toggle" aria-label="My account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="account-page">
+      <!-- Guest state -->
+      <div class="guest-prompt" data-auth="guest">
+        <p class="account-page__label">Club Beech</p>
+        <h1 class="account-page__title">Log in to view your lists.</h1>
+        <p>Create and manage product shortlists for your projects.</p>
+        <a href="login.html?redirect=/account/saved-lists.html">Log In</a>
+      </div>
+
+      <!-- Logged in state -->
+      <div data-auth="required" style="display:none;">
+        <p class="account-page__label">Project Builder</p>
+        <h1 class="account-page__title">Your saved lists.</h1>
+
+        <nav class="account-nav">
+          <a href="profile.html">Profile</a>
+          <a href="saved-lists.html" class="active">Saved Lists</a>
+        </nav>
+
+        <!-- Lists overview -->
+        <div id="lists-overview">
+          <div class="lists-header">
+            <h2>My Lists</h2>
+            <button class="btn-new-list" id="btn-new-list">New List</button>
+          </div>
+          <div class="lists-grid" id="lists-grid">
+            <div class="empty-state" id="empty-state">
+              <p>You haven't created any lists yet.</p>
+              <p>Browse <a href="../products/" style="color:var(--bfb-dark-green);font-weight:600;">products</a> and save items to a list.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- List detail (shown when clicking into a list) -->
+        <div class="list-detail" id="list-detail">
+          <div class="list-detail__header">
+            <a href="#" class="list-detail__back" id="back-to-lists">&larr; Back to lists</a>
+            <div style="display:flex;gap:0.75rem;">
+              <a href="#" id="export-csv" class="list-card__actions" style="font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:0.5rem 0.9rem;border:1px solid #d6d3d1;color:var(--bfb-cool-black);">Export CSV</a>
+            </div>
+          </div>
+          <h2 id="detail-list-name" style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;margin-bottom:1rem;"></h2>
+          <div id="list-items-container"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- New List Modal -->
+  <div class="modal-overlay" id="new-list-modal">
+    <div class="modal">
+      <h3>Create new list</h3>
+      <input type="text" id="new-list-name" placeholder="e.g. Spring Corporate Event" autofocus>
+      <div class="modal__actions">
+        <button class="btn-primary" id="create-list-btn">Create</button>
+        <button class="btn-cancel" id="cancel-list-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Beechfield Brands Limited.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../shared/js/navigation.js"></script>
+  <script src="../../shared/js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Wait for auth to load
+      await new Promise(r => setTimeout(r, 200));
+      if (!window.BeechfieldAuth.isLoggedIn) return;
+
+      const Auth = window.BeechfieldAuth;
+      const listsGrid = document.getElementById('lists-grid');
+      const emptyState = document.getElementById('empty-state');
+      const listsOverview = document.getElementById('lists-overview');
+      const listDetail = document.getElementById('list-detail');
+      let currentListId = null;
+
+      // Load lists
+      async function loadLists() {
+        const { lists } = await Auth.getLists();
+        if (lists.length === 0) {
+          emptyState.style.display = '';
+          return;
+        }
+        emptyState.style.display = 'none';
+        listsGrid.innerHTML = lists.map(list => `
+          <div class="list-card" data-list-id="${list.id}">
+            <div class="list-card__info">
+              <h3>${escHtml(list.name)}</h3>
+              <p>${list.itemCount} item${list.itemCount !== 1 ? 's' : ''} &middot; Created ${new Date(list.created_at).toLocaleDateString('en-GB')}</p>
+            </div>
+            <div class="list-card__actions">
+              <a href="#" class="view-list" data-id="${list.id}">View</a>
+              <button class="btn-delete" data-id="${list.id}">Delete</button>
+            </div>
+          </div>
+        `).join('');
+
+        // Event handlers
+        listsGrid.querySelectorAll('.view-list').forEach(a => {
+          a.addEventListener('click', (e) => { e.preventDefault(); showList(a.dataset.id); });
+        });
+        listsGrid.querySelectorAll('.btn-delete').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            if (confirm('Delete this list?')) {
+              await Auth.deleteList(btn.dataset.id);
+              loadLists();
+            }
+          });
+        });
+      }
+
+      // Show list detail
+      async function showList(id) {
+        currentListId = id;
+        const { list, items } = await Auth.getListItems(id);
+        document.getElementById('detail-list-name').textContent = list.name;
+        document.getElementById('export-csv').href = Auth.getExportUrl(id);
+
+        listsOverview.style.display = 'none';
+        listDetail.classList.add('active');
+
+        const container = document.getElementById('list-items-container');
+        if (items.length === 0) {
+          container.innerHTML = '<div class="empty-state"><p>No items in this list yet. Browse products and add them.</p></div>';
+          return;
+        }
+
+        container.innerHTML = items.map(item => {
+          const p = item.product || {};
+          const imgUrl = '';
+          return `
+            <div class="list-item" data-item-id="${item.id}">
+              <div style="width:80px;height:80px;background:#f5f5f0;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#999;">${p.sku || item.product_sku}</div>
+              <div class="list-item__info">
+                <h4>${escHtml(p.name || item.product_sku)}</h4>
+                <p>${item.product_sku}${item.colour ? ' &middot; ' + escHtml(item.colour) : ''}</p>
+              </div>
+              <div class="list-item__qty">
+                <input type="number" min="1" value="${item.quantity}" data-field="quantity" data-item="${item.id}">
+              </div>
+              <div class="list-item__notes">
+                <input type="text" value="${escHtml(item.notes || '')}" placeholder="Notes..." data-field="notes" data-item="${item.id}">
+              </div>
+              <button class="list-item__remove" data-item="${item.id}" title="Remove">&times;</button>
+            </div>
+          `;
+        }).join('');
+
+        // Update handlers
+        container.querySelectorAll('input[data-field]').forEach(input => {
+          input.addEventListener('change', async () => {
+            const updates = {};
+            updates[input.dataset.field] = input.dataset.field === 'quantity' ? parseInt(input.value) : input.value;
+            await Auth.updateListItem(currentListId, input.dataset.item, updates);
+          });
+        });
+        container.querySelectorAll('.list-item__remove').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            await Auth.removeFromList(currentListId, btn.dataset.item);
+            showList(currentListId);
+          });
+        });
+      }
+
+      // Back to lists
+      document.getElementById('back-to-lists').addEventListener('click', (e) => {
+        e.preventDefault();
+        listDetail.classList.remove('active');
+        listsOverview.style.display = '';
+        loadLists();
+      });
+
+      // New list modal
+      const modal = document.getElementById('new-list-modal');
+      document.getElementById('btn-new-list').addEventListener('click', () => {
+        modal.classList.add('active');
+        document.getElementById('new-list-name').focus();
+      });
+      document.getElementById('cancel-list-btn').addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+      document.getElementById('create-list-btn').addEventListener('click', async () => {
+        const name = document.getElementById('new-list-name').value.trim();
+        if (!name) return;
+        await Auth.createList(name);
+        modal.classList.remove('active');
+        document.getElementById('new-list-name').value = '';
+        loadLists();
+      });
+
+      function escHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+      }
+
+      loadLists();
+    });
+  </script>
+</body>
+</html>

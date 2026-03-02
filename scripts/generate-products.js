@@ -576,11 +576,11 @@ function generatePLP(category, title, introText, filterFn) {
 
   // Filter tabs HTML
   const typeTabsHtml = subTypes.length > 1 ? subTypes.map(t =>
-    `<button class="plp-filter__tab" data-filter-group="type" data-filter-value="${escHtml(t)}">${escHtml(t)}</button>`
+    `<button class="plp-filter" data-filter-group="type" data-filter-value="${escHtml(t)}">${escHtml(t)}</button>`
   ).join('\n              ') : '';
 
   const collectionTabsHtml = collections.length > 1 ? collections.map(c =>
-    `<button class="plp-filter__tab" data-filter-group="collection" data-filter-value="${escHtml(c)}">${escHtml(c)}</button>`
+    `<button class="plp-filter" data-filter-group="collection" data-filter-value="${escHtml(c)}">${escHtml(c)}</button>`
   ).join('\n              ') : '';
 
   return `<!DOCTYPE html>
@@ -610,12 +610,15 @@ function generatePLP(category, title, introText, filterFn) {
     .plp-toolbar__sort select { font-size: 0.82rem; padding: 0.4rem 0.8rem; border: 1px solid #ddd; border-radius: 4px; background: #fff; }
     .plp-filters { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .plp-filters__group-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; width: 100%; margin-bottom: -0.25rem; }
-    .plp-filter__tab { background: none; border: 1px solid #ddd; padding: 0.4rem 1rem; font-size: 0.78rem; font-weight: 600; cursor: pointer; border-radius: 4px; transition: all 0.15s; }
-    .plp-filter__tab:hover { border-color: #111; }
-    .plp-filter__tab--active { background: #111; color: #fff; border-color: #111; }
+    .plp-filter { background: none; border: 1px solid #ddd; padding: 0.4rem 1rem; font-size: 0.78rem; font-weight: 600; cursor: pointer; border-radius: 4px; transition: all 0.15s; }
+    .plp-filter:hover { border-color: #111; }
+    .plp-filter--active { background: #111; color: #fff; border-color: #111; }
     .plp-active-filters { max-width: 1200px; margin: 0 auto; padding: 0.75rem 2rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .plp-active-pill { display: inline-flex; align-items: center; gap: 0.3rem; background: #f0f0f0; font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 3px; cursor: pointer; border: none; }
     .plp-active-pill:hover { background: #e0e0e0; }
+    .plp-pill { display: inline-flex; align-items: center; gap: 0.3rem; background: #f0f0f0; font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 3px; cursor: pointer; border: none; }
+    .plp-pill:hover { background: #e0e0e0; }
+    .plp-pill__x { font-size: 0.85rem; line-height: 1; }
     .plp-grid { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 4rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
     .pc { display: block; text-decoration: none; color: var(--bfb-cool-black, #0e1520); border: 1px solid #e7e5e4; transition: box-shadow 0.2s, transform 0.2s; }
     .pc:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
@@ -645,26 +648,27 @@ function generatePLP(category, title, introText, filterFn) {
     </section>
 
     <div class="plp-toolbar">
-      <span class="plp-toolbar__count"><span id="plp-visible-count">${filteredProducts.length}</span> products</span>
+      <span class="plp-header__count">${filteredProducts.length} styles</span>
       <div class="plp-toolbar__sort">
         <label for="plp-sort" style="font-size:0.78rem;color:#888;margin-right:0.5rem;">Sort by</label>
-        <select id="plp-sort">
-          <option value="name-az">A – Z</option>
-          <option value="name-za">Z – A</option>
+        <select id="plp-sort" class="plp-sort__select">
+          <option value="name-asc">A – Z</option>
+          <option value="name-desc">Z – A</option>
           <option value="newest">Newest</option>
+          <option value="sku-asc">SKU</option>
         </select>
       </div>
     </div>
 
     ${typeTabsHtml ? `<div class="plp-filters">
       <span class="plp-filters__group-label">Type</span>
-      <button class="plp-filter__tab plp-filter__tab--active" data-filter-group="type" data-filter-value="">All</button>
+      <button class="plp-filter plp-filter--active" data-filter-group="type" data-filter-value="all">All</button>
       ${typeTabsHtml}
     </div>` : ''}
 
     ${collectionTabsHtml ? `<div class="plp-filters" style="margin-top:0.5rem;">
       <span class="plp-filters__group-label">Collection</span>
-      <button class="plp-filter__tab plp-filter__tab--active" data-filter-group="collection" data-filter-value="">All</button>
+      <button class="plp-filter plp-filter--active" data-filter-group="collection" data-filter-value="all">All</button>
       ${collectionTabsHtml}
     </div>` : ''}
 

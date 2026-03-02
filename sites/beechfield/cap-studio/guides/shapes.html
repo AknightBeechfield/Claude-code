@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cap Shapes Guide | Beechfield Original Headwear</title>
+  <meta name="description" content="A visual guide to every cap shape: baseball, trucker, dad hat, flat peak, army, camper, visor, and flat cap — with decoration tips.">
+  <link rel="stylesheet" href="../../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../../shared/css/base.css">
+  <link rel="stylesheet" href="../../../shared/css/layout.css">
+  <link rel="stylesheet" href="../../../shared/css/components.css">
+  <link rel="stylesheet" href="../../../shared/css/navigation.css">
+  <link rel="stylesheet" href="../../../shared/css/footer.css">
+  <link rel="stylesheet" href="../../css/brand.css">
+  <link rel="stylesheet" href="https://use.typekit.net/sep5cxb.css">
+  <style>
+    .ed-hero { background: #1b2a4a; color: #fff; padding: clamp(60px, 8vw, 120px) 0; }
+    .ed-hero .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .ed-hero__breadcrumb { font-size: 0.8rem; opacity: 0.5; margin-bottom: 1.5rem; }
+    .ed-hero__breadcrumb a { color: inherit; text-decoration: none; }
+    .ed-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; max-width: 700px; line-height: 1.1; }
+    .ed-hero__sub { font-size: 1.1rem; opacity: 0.7; max-width: 540px; line-height: 1.6; }
+    .ed-section { padding: clamp(48px, 6vw, 80px) 0; }
+    .ed-section .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .ed-section--alt { background: #f5f0e8; }
+    .ed-section--dark { background: #0e1520; color: #fff; }
+    .ed-section--green { background: #1f614d; color: #fff; }
+    .ed-split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .ed-split--reverse { direction: rtl; }
+    .ed-split--reverse > * { direction: ltr; }
+    .ed-split__img { border-radius: 8px; overflow: hidden; background: #eee; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.9rem; }
+    .ed-split__img img { width: 100%; height: 100%; object-fit: cover; }
+    .ed-split__text h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .ed-split__text p { font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 1rem; }
+    .ed-section--dark .ed-split__text p, .ed-section--green .ed-split__text p { color: rgba(255,255,255,0.75); }
+    .ed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+    .ed-card { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #e8e4dc; transition: box-shadow 0.2s; }
+    .ed-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .ed-card__img { aspect-ratio: 16/9; background: #eee; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.85rem; }
+    .ed-card__body { padding: 1.25rem; }
+    .ed-card__body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .ed-card__body p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+    .ed-cta { text-align: center; padding: clamp(48px, 6vw, 80px) 0; background: #f5f0e8; }
+    .ed-cta h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .ed-cta p { color: #555; margin-bottom: 2rem; }
+    .btn { display: inline-block; padding: 0.85rem 2rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.2s; }
+    .btn--primary { background: #0e1520; color: #fff; }
+    .btn--primary:hover { background: #1c2940; }
+    .btn--accent { background: #1f614d; color: #fff; }
+    .btn--accent:hover { background: #174e3e; }
+    .ed-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 2rem; text-align: center; margin-top: 2rem; }
+    .ed-stat__num { font-size: 2rem; font-weight: 800; color: #1f614d; }
+    .ed-stat__label { font-size: 0.85rem; color: #555; margin-top: 0.25rem; }
+    .ed-technique { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+    .ed-technique-card { background: #fff; border-radius: 8px; padding: 2rem; border: 1px solid #e8e4dc; }
+    .ed-technique-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .ed-technique-card p { font-size: 0.92rem; color: #555; line-height: 1.7; }
+    .ed-technique-card .tag { display: inline-block; background: #f0f0f0; color: #333; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 3px; margin-right: 0.5rem; margin-top: 0.75rem; }
+    .ed-faq { max-width: 760px; margin: 0 auto; }
+    .ed-faq details { border-bottom: 1px solid #e8e4dc; padding: 1.25rem 0; }
+    .ed-faq summary { font-weight: 600; cursor: pointer; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .ed-faq summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; }
+    .ed-faq details[open] summary::after { content: '\2212'; }
+    .ed-faq .answer { padding-top: 0.75rem; color: #555; line-height: 1.7; font-size: 0.95rem; }
+    .colour-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem; }
+    .colour-swatch { text-align: center; }
+    .colour-swatch__box { width: 100%; aspect-ratio: 1; border-radius: 8px; border: 1px solid #e8e4dc; margin-bottom: 0.5rem; }
+    .colour-swatch__name { font-size: 0.75rem; font-weight: 600; color: #333; }
+    .colour-swatch__hex { font-size: 0.65rem; color: #999; }
+    .glossary-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .glossary-nav a { display: inline-flex; width: 2rem; height: 2rem; align-items: center; justify-content: center; border-radius: 4px; background: #f5f0e8; font-weight: 700; font-size: 0.85rem; text-decoration: none; color: #333; }
+    .glossary-nav a:hover { background: #0e1520; color: #fff; }
+    .glossary-term { border-bottom: 1px solid #e8e4dc; padding: 1rem 0; }
+    .glossary-term dt { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+    .glossary-term dd { font-size: 0.92rem; color: #555; line-height: 1.7; margin: 0; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: #333; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.7rem 1rem; border: 1px solid #ddd; border-radius: 6px; font-size: 0.95rem; font-family: inherit; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #1f614d; box-shadow: 0 0 0 3px rgba(31,97,77,0.1); }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .checkbox-group label { display: flex; align-items: center; gap: 0.4rem; font-weight: 400; cursor: pointer; }
+    .video-card { position: relative; }
+    .video-card__duration { position: absolute; bottom: 0.5rem; right: 0.5rem; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 3px; }
+    .case-study { background: #fff; border-radius: 8px; padding: 2rem; border: 1px solid #e8e4dc; }
+    .case-study h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .case-study__label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #1f614d; margin-bottom: 0.25rem; }
+    .case-study p { font-size: 0.92rem; color: #555; line-height: 1.7; margin-bottom: 0.75rem; }
+    .anatomy-part { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; padding: 2rem 0; border-bottom: 1px solid #e8e4dc; }
+    .anatomy-part:last-child { border-bottom: none; }
+    .anatomy-part h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .anatomy-part p { font-size: 0.92rem; color: #555; line-height: 1.7; }
+    .anatomy-part__visual { background: #f5f0e8; border-radius: 8px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #888; font-size: 0.85rem; }
+    .shape-section { padding: 3rem 0; border-bottom: 1px solid #e8e4dc; }
+    .shape-section:last-child { border-bottom: none; }
+    .shape-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+    .shape-section__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .shape-section__visual { background: #f5f0e8; border-radius: 8px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #888; }
+    .shape-features { list-style: none; padding: 0; margin: 1rem 0; }
+    .shape-features li { padding: 0.4rem 0; font-size: 0.92rem; color: #555; border-bottom: 1px solid #f0ece4; }
+    .shape-features li::before { content: '\2713'; color: #1f614d; font-weight: 700; margin-right: 0.5rem; }
+    .zone-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+    .zone-card { background: #fff; border-radius: 8px; padding: 1.5rem; border: 1px solid #e8e4dc; text-align: center; }
+    .zone-card__visual { width: 80px; height: 80px; border-radius: 50%; background: #f5f0e8; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+    .zone-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .zone-card p { font-size: 0.85rem; color: #555; line-height: 1.6; }
+    .material-card { background: #fff; border-radius: 8px; padding: 2rem; border: 1px solid #e8e4dc; margin-bottom: 1.5rem; }
+    .material-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .material-card__props { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0; }
+    .material-card__prop { background: #f5f0e8; font-size: 0.75rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 3px; }
+    .material-card p { font-size: 0.92rem; color: #555; line-height: 1.7; }
+    .method-matrix { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.85rem; }
+    .method-matrix th, .method-matrix td { padding: 0.6rem 0.8rem; border: 1px solid #e8e4dc; text-align: center; }
+    .method-matrix th { background: #f5f0e8; font-weight: 700; }
+    .method-matrix .yes { color: #1f614d; font-weight: 700; }
+    .method-matrix .no { color: #ccc; }
+    @media (max-width: 768px) {
+      .ed-split, .anatomy-part, .shape-section__grid { grid-template-columns: 1fr; }
+      .ed-split--reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV: Generated by nav-fragments.js — do not edit manually -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <nav class="brand-switcher" aria-label="Beechfield Brands family">
+        <span class="brand-switcher__label">Our Brands</span>
+        <div class="brand-switcher__links">
+          <a href="../../../../beechfield-brands/" class="brand-switcher__link">Beechfield Brands</a>
+          <a href="../../../" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
+          <a href="../../../../bagbase/" class="brand-switcher__link">BagBase</a>
+          <a href="../../../../quadra/" class="brand-switcher__link">Quadra</a>
+          <a href="../../../../westford-mill/" class="brand-switcher__link">Westford Mill</a>
+        </div>
+      </nav>
+      <div class="top-bar__actions">
+        <a href="../../../where-to-buy/find-a-distributor.html">Find a Distributor</a>
+        <a href="../../../where-to-buy/inventory-finder.html">Inventory Finder</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../../../index.html" class="site-logo" aria-label="Beechfield Original Headwear">
+        <img src="https://mediahub.beechfieldbrands.com/m/6c13cb59a34019b7/Product_medium-Beechfield-Logo-PNG.jpg" alt="Beechfield Original Headwear" height="36">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="main-nav__list">
+
+          <li class="main-nav__item" data-mega="products">
+            <a href="../../../products/" class="main-nav__link">Products <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--products">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Best Sellers</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../products/b45-original-cuffed-beanie.html" class="mega-menu__link">B45 – Original Cuffed Beanie</a></li>
+                    <li><a href="../../../products/b655-dad-cap.html" class="mega-menu__link">B655 – Low Profile Vintage Cap</a></li>
+                    <li><a href="../../../products/b15-baseball-cap.html" class="mega-menu__link">B15 – Ultimate 5 Panel Cap</a></li>
+                    <li><a href="../../../products/b445-patch-beanie.html" class="mega-menu__link">B445 – Original Patch Beanie</a></li>
+                    <li><a href="../../../products/b640-snapback-trucker.html" class="mega-menu__link">B640 – Snapback Trucker</a></li>
+                    <li><a href="../../../products/b90n-earthaware-bucket-hat.html" class="mega-menu__link">B90N – EarthAware Bucket Hat</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Seasonal Edits</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">New Season SS26</a></li>
+                    <li><a href="../../../products/?filter=new-beanies" class="mega-menu__link">New Beanies</a></li>
+                    <li><a href="../../../products/?filter=trending" class="mega-menu__link">Trending Hats</a></li>
+                    <li><a href="../../../products/?filter=promo" class="mega-menu__link">Promotion</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Type</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../products/caps/" class="mega-menu__link">Caps</a></li>
+                    <li><a href="../../../products/beanies/" class="mega-menu__link">Beanies</a></li>
+                    <li><a href="../../../products/hats/" class="mega-menu__link">Hats</a></li>
+                    <li><a href="../../../products/neckwear/" class="mega-menu__link">Neckwear</a></li>
+                    <li><a href="../../../products/accessories/" class="mega-menu__link">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Purpose</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../products/?purpose=outdoors" class="mega-menu__link">Outdoors &amp; Activewear</a></li>
+                    <li><a href="../../../products/?purpose=sports" class="mega-menu__link">Sports</a></li>
+                    <li><a href="../../../products/?purpose=promotion" class="mega-menu__link">Promotion</a></li>
+                    <li><a href="../../../products/?purpose=fashion" class="mega-menu__link">Fashion</a></li>
+                    <li><a href="../../../products/?purpose=workwear" class="mega-menu__link">Workwear</a></li>
+                    <li><a href="../../../products/?purpose=gifting" class="mega-menu__link">Gifting</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Collections</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../collections/originals.html" class="mega-menu__link">Originals</a></li>
+                    <li><a href="../../../collections/earthaware.html" class="mega-menu__link">EarthAware</a></li>
+                    <li><a href="../../../collections/vintage.html" class="mega-menu__link">Vintage</a></li>
+                    <li><a href="../../../collections/urbanwear.html" class="mega-menu__link">Urbanwear</a></li>
+                    <li><a href="../../../collections/morf.html" class="mega-menu__link">Morf</a></li>
+                    <li><a href="../../../collections/snowstar.html" class="mega-menu__link">Snowstar</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item" data-mega="cap-studio">
+            <a href="../../../cap-studio/" class="main-nav__link main-nav__link--active">Cap Studio <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--3col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <a href="../../../cap-studio/" class="mega-menu__heading" style="text-decoration:none;display:block;">Cap Studio</a>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../cap-studio/find-your-cap.html" class="mega-menu__link mega-menu__link--featured">Find Your Perfect Cap</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading mega-menu__heading--label">Shapes</span>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../cap-studio/guides/shapes.html#baseball" class="mega-menu__link">Baseball</a></li>
+                    <li><a href="../../../cap-studio/guides/shapes.html#trucker" class="mega-menu__link">Trucker</a></li>
+                    <li><a href="../../../cap-studio/guides/shapes.html#dad-hat" class="mega-menu__link">Dad Hat</a></li>
+                    <li><a href="../../../cap-studio/guides/shapes.html#flat-peak" class="mega-menu__link">Flat Peak</a></li>
+                    <li><a href="../../../cap-studio/guides/shapes.html#army" class="mega-menu__link">Army</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <a href="../../../cap-studio/guides/" class="mega-menu__heading" style="text-decoration:none;display:block;">Guides</a>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../cap-studio/guides/anatomy.html" class="mega-menu__link">Anatomy of a Cap</a></li>
+                    <li><a href="../../../cap-studio/guides/shapes.html" class="mega-menu__link">Shapes Guide</a></li>
+                    <li><a href="../../../cap-studio/guides/branding-decoration.html" class="mega-menu__link">Branding &amp; Decoration</a></li>
+                    <li><a href="../../../cap-studio/guides/materials.html" class="mega-menu__link">Materials</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item" data-mega="lookbooks">
+            <a href="../../../lookbooks/" class="main-nav__link">Lookbooks <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <a href="../../../lookbooks/" class="mega-menu__heading" style="text-decoration:none;display:block;">Lookbooks</a>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../lookbooks/ss26.html" class="mega-menu__link mega-menu__link--featured">SS26 Lookbook</a></li>
+                    <li><a href="../../../lookbooks/aw25-26.html" class="mega-menu__link">AW25/26 Lookbook</a></li>
+                    <li><a href="../../../lookbooks/mid-year-25.html" class="mega-menu__link">Mid-Year 25 Lookbook</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item" data-mega="decorator">
+            <a href="../../../decorator-academy/" class="main-nav__link">Decorator Academy <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--2col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <a href="../../../decorator-academy/designed-for-decoration.html" class="mega-menu__heading" style="text-decoration:none;display:block;">Designed for Decoration</a>
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../decorator-academy/techniques/embroidery.html" class="mega-menu__link" style="padding-left:var(--space-3);">Embroidery</a></li>
+                    <li><a href="../../../decorator-academy/techniques/transfer.html" class="mega-menu__link" style="padding-left:var(--space-3);">Print &amp; Transfer</a></li>
+                    <li><a href="../../../decorator-academy/techniques/patches.html" class="mega-menu__link" style="padding-left:var(--space-3);">Patches</a></li>
+                    <li><a href="../../../decorator-academy/colours.html" class="mega-menu__link">Colours</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__column">
+                  <ul class="mega-menu__list" style="margin-top:calc(var(--text-xs) + var(--space-4) + var(--space-2));">
+                    <li><a href="../../../decorator-academy/videos.html" class="mega-menu__link mega-menu__link--featured">How-to Videos</a></li>
+                    <li><a href="../../../decorator-academy/decorator-studio.html" class="mega-menu__link">Decorator Studio</a></li>
+                    <li><a href="../../../decorator-academy/in-the-wild.html" class="mega-menu__link">Case Studies</a></li>
+                    <li><a href="../../../decorator-academy/glossary.html" class="mega-menu__link">Glossary</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item" data-mega="where-to-buy">
+            <a href="../../../where-to-buy/" class="main-nav__link">Where to Buy <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../where-to-buy/how-to-buy.html" class="mega-menu__link mega-menu__link--featured">How to Buy</a></li>
+                    <li><a href="../../../where-to-buy/find-a-distributor.html" class="mega-menu__link">Find a Distributor</a></li>
+                    <li><a href="../../../where-to-buy/inventory-finder.html" class="mega-menu__link">Inventory Finder</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item" data-mega="about">
+            <a href="../../../about/" class="main-nav__link">About <svg class="main-nav__arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4 L5 7 L8 4"/></svg></a>
+            <div class="mega-menu mega-menu--1col">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__column">
+                  <ul class="mega-menu__list">
+                    <li><a href="../../../about/about-beechfield.html" class="mega-menu__link mega-menu__link--featured">About Beechfield</a></li>
+                    <li><a href="../../../about/materials-and-fabrics.html" class="mega-menu__link">Materials &amp; Fabrics</a></li>
+                    <li><a href="../../../about/quality-and-compliance.html" class="mega-menu__link">Quality &amp; Compliance</a></li>
+                    <li><a href="../../../about/responsible-choices.html" class="mega-menu__link">Responsible Choices</a></li>
+                    <li><a href="../../../about/events.html" class="mega-menu__link">Events</a></li>
+                    <li><a href="../../../about/press.html" class="mega-menu__link">Press</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <a href="../../../account/login.html" class="account-toggle" aria-label="My account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <span class="mobile-toggle__bar"></span>
+          <span class="mobile-toggle__bar"></span>
+          <span class="mobile-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="search-overlay" role="search">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-overlay__input" placeholder="Search by product name, SKU, or keyword..." aria-label="Search products">
+      <button class="search-overlay__close" aria-label="Close search">&times;</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="ed-hero">
+      <div class="container">
+        <p class="ed-hero__breadcrumb"><a href="../../../">Home</a> / <a href="../../cap-studio/">Cap Studio</a> / <a href="./">Guides</a> / Shapes</p>
+        <h1>Shapes Guide.</h1>
+        <p class="ed-hero__sub">From the structured 6-panel baseball cap to the relaxed dad hat — understand every silhouette and its decoration potential.</p>
+      </div>
+    </section>
+
+    
+    <section class="ed-section">
+      <div class="container">
+        <div class="shape-section" id="baseball">
+          <h2>Baseball Cap</h2>
+          <div class="shape-section__grid">
+            <div>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">The classic structured cap with a curved or flat peak. Available in 5 and 6-panel configurations. The most popular cap shape globally and the go-to choice for branded headwear.</p>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">Beechfield baseball caps feature fold-down buckram, reinforced front panels, and generous embroidery areas — making them the ideal canvas for professional decoration.</p>
+              <ul class="shape-features">
+                <li>5 or 6 panel construction</li>
+                <li>Structured front with buckram</li>
+                <li>Pre-curved or flat peak options</li>
+                <li>Multiple closure types available</li>
+                <li>Largest front decoration area of any cap style</li>
+                <li>Compatible with all decoration methods</li>
+              </ul>
+              <p style="font-size:0.85rem;color:#555;"><strong>Recommended products:</strong> B15, B59, B57, B10</p>
+            </div>
+            <div class="shape-section__visual">Baseball cap silhouette</div>
+          </div>
+        </div>
+
+        <div class="shape-section" id="trucker">
+          <h2>Trucker Cap</h2>
+          <div class="shape-section__grid">
+            <div>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">The trucker cap features a foam or structured front panel with mesh back panels for maximum breathability. Originally designed as promotional giveaways, now a fashion staple.</p>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">The foam front panel provides a slightly raised, padded surface that's ideal for bold embroidered logos and dimensional patches.</p>
+              <ul class="shape-features">
+                <li>Foam or structured front panel</li>
+                <li>Mesh back panels for ventilation</li>
+                <li>Typically snapback closure</li>
+                <li>Higher crown profile than standard baseball</li>
+                <li>Excellent for patches and large front embroidery</li>
+              </ul>
+              <p style="font-size:0.85rem;color:#555;"><strong>Recommended products:</strong> B640, B645, B647</p>
+            </div>
+            <div class="shape-section__visual">Trucker cap silhouette</div>
+          </div>
+        </div>
+
+        <div class="shape-section" id="dad-hat">
+          <h2>Dad Hat</h2>
+          <div class="shape-section__grid">
+            <div>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">The relaxed, unstructured cap with a pre-curved peak and low-profile crown. No buckram means a soft, broken-in feel from day one. Strapback closure with metal buckle or tri-glide.</p>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">While the unstructured construction requires more care during embroidery (proper stabiliser is essential), the casual aesthetic makes dad hats incredibly popular for lifestyle and fashion branding.</p>
+              <ul class="shape-features">
+                <li>Unstructured / no buckram</li>
+                <li>Low-profile, relaxed crown</li>
+                <li>Pre-curved peak</li>
+                <li>Metal buckle or tri-glide closure</li>
+                <li>Vintage/washed variations available</li>
+                <li>Requires stabiliser backing for embroidery</li>
+              </ul>
+              <p style="font-size:0.85rem;color:#555;"><strong>Recommended products:</strong> B653, B655, B677</p>
+            </div>
+            <div class="shape-section__visual">Dad hat silhouette</div>
+          </div>
+        </div>
+
+        <div class="shape-section" id="flat-peak">
+          <h2>Flat Peak / Snapback</h2>
+          <div class="shape-section__grid">
+            <div>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">The urban-style cap with a flat, uncurved peak and structured high crown. Snap closure at back. Bold silhouette associated with streetwear, hip-hop culture, and youth fashion.</p>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">The large, flat front panel provides an excellent surface for oversized logos, patches, and detailed embroidery. The rigid structure makes hooping straightforward.</p>
+              <ul class="shape-features">
+                <li>Flat, uncurved peak</li>
+                <li>High-profile structured crown</li>
+                <li>Plastic snap closure</li>
+                <li>Green or contrasting underbill</li>
+                <li>Oversized front branding area</li>
+              </ul>
+              <p style="font-size:0.85rem;color:#555;"><strong>Recommended products:</strong> B610, B615, B660</p>
+            </div>
+            <div class="shape-section__visual">Flat peak silhouette</div>
+          </div>
+        </div>
+
+        <div class="shape-section" id="army">
+          <h2>Army / Cadet Cap</h2>
+          <div class="shape-section__grid">
+            <div>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">Military-inspired cap with a flat top, short peak, and structured crown. Also known as a cadet cap, patrol cap, or castro cap. Clean, angular silhouette.</p>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">The flat front panel sits slightly forward, providing a unique decoration angle. Works particularly well with centred logos and military-style patch applications.</p>
+              <ul class="shape-features">
+                <li>Flat-top, angular crown</li>
+                <li>Short, straight peak</li>
+                <li>Structured construction</li>
+                <li>Front-centre decoration area</li>
+                <li>Great for woven patches and badges</li>
+              </ul>
+              <p style="font-size:0.85rem;color:#555;"><strong>Recommended products:</strong> B34, B33</p>
+            </div>
+            <div class="shape-section__visual">Army cap silhouette</div>
+          </div>
+        </div>
+
+        <div class="shape-section" id="camper">
+          <h2>Camper Cap</h2>
+          <div class="shape-section__grid">
+            <div>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">A minimalist 5-panel cap with a flat or slightly curved short peak and shallow crown. Clean lines, no top button. The aesthetic is understated and contemporary.</p>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">Popular with outdoor brands, surf labels, and lifestyle brands that want a more refined, less sporty look than a traditional baseball cap.</p>
+              <ul class="shape-features">
+                <li>5-panel construction</li>
+                <li>Shallow, minimalist crown</li>
+                <li>Short, flat peak</li>
+                <li>No top button</li>
+                <li>Nylon or cotton construction</li>
+                <li>Often features a nylon strapback closure</li>
+              </ul>
+              <p style="font-size:0.85rem;color:#555;"><strong>Recommended products:</strong> B694, B691</p>
+            </div>
+            <div class="shape-section__visual">Camper cap silhouette</div>
+          </div>
+        </div>
+
+        <div class="shape-section" id="visor">
+          <h2>Visor</h2>
+          <div class="shape-section__grid">
+            <div>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">An open-top headband with a peak. No crown — the top of the head is exposed. Popular for sport (tennis, golf), outdoor activities, and promotional use.</p>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">The front band provides a focused decoration area. Embroidery must account for the curved, relatively narrow surface.</p>
+              <ul class="shape-features">
+                <li>Open-top design</li>
+                <li>Elasticated or adjustable band</li>
+                <li>Curved or flat peak</li>
+                <li>Lightweight construction</li>
+                <li>Narrow front decoration area</li>
+              </ul>
+              <p style="font-size:0.85rem;color:#555;"><strong>Recommended products:</strong> B41</p>
+            </div>
+            <div class="shape-section__visual">Visor silhouette</div>
+          </div>
+        </div>
+
+        <div class="shape-section" id="flat-cap">
+          <h2>Flat Cap / Ivy Cap</h2>
+          <div class="shape-section__grid">
+            <div>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">A traditional British style with a rounded, low-profile crown and short front peak. Often made from wool, tweed, or linen. Classic, heritage aesthetic.</p>
+              <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:1rem;">Decoration options are more limited due to the construction — embroidery on the side panel is the most common approach. Woven labels and leather patches also work well.</p>
+              <ul class="shape-features">
+                <li>Rounded, low-profile crown</li>
+                <li>Short, integrated peak</li>
+                <li>Heritage/traditional aesthetic</li>
+                <li>Wool, tweed, or cotton construction</li>
+                <li>Side-panel embroidery preferred</li>
+              </ul>
+              <p style="font-size:0.85rem;color:#555;"><strong>Recommended products:</strong> B623, B626</p>
+            </div>
+            <div class="shape-section__visual">Flat cap silhouette</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ed-cta">
+      <h2>Browse the Full Range</h2>
+      <p>See every Beechfield cap shape in our product range.</p>
+      <a href="../../../products/caps/" class="btn btn--primary">Shop Caps</a>
+    </section>
+  </main>
+
+  <!-- FOOTER: Generated by nav-fragments.js — do not edit manually -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--5col">
+        <div>
+          <h4 class="footer__column-title">Products</h4>
+          <nav class="footer__links">
+            <a href="../../../products/" class="footer__link">All Products</a>
+            <a href="../../../products/caps/" class="footer__link">Caps</a>
+            <a href="../../../products/beanies/" class="footer__link">Beanies</a>
+            <a href="../../../products/hats/" class="footer__link">Hats</a>
+            <a href="../../../products/neckwear/" class="footer__link">Neckwear</a>
+            <a href="../../../products/accessories/" class="footer__link">Accessories</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">For Decorators</h4>
+          <nav class="footer__links">
+            <a href="../../../decorator-academy/" class="footer__link">Decorator Academy</a>
+            <a href="../../../decorator-academy/decorator-studio.html" class="footer__link">Decorator Studio</a>
+            <a href="../../../decorator-academy/videos.html" class="footer__link">How-to Videos</a>
+            <a href="../../../decorator-academy/in-the-wild.html" class="footer__link">In the Wild</a>
+            <a href="../../../decorator-academy/glossary.html" class="footer__link">Glossary</a>
+            <a href="../../../decorator-academy/colours.html" class="footer__link">Colours</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">Marketing Centre</h4>
+          <nav class="footer__links">
+            <a href="../../../marketing-centre/" class="footer__link">Marketing Centre</a>
+            <a href="../../../marketing-centre/sign-up.html" class="footer__link">Request Access</a>
+            <a href="../../../marketing-centre/library.html" class="footer__link">Asset Library</a>
+            <a href="../../../marketing-centre/product-documents.html" class="footer__link">Product Documents</a>
+            <a href="../../../marketing-centre/campaign-toolkits.html" class="footer__link">Campaign Toolkits</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">About</h4>
+          <nav class="footer__links">
+            <a href="../../../about/about-beechfield.html" class="footer__link">About Beechfield</a>
+            <a href="../../../about/materials-and-fabrics.html" class="footer__link">Materials &amp; Fabrics</a>
+            <a href="../../../about/responsible-choices.html" class="footer__link">Responsible Choices</a>
+            <a href="../../../about/events.html" class="footer__link">Events</a>
+            <a href="../../../about/press.html" class="footer__link">Press</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer__column-title">Support</h4>
+          <nav class="footer__links">
+            <a href="../../../where-to-buy/" class="footer__link">Where to Buy</a>
+            <a href="../../../where-to-buy/inventory-finder.html" class="footer__link">Inventory Finder</a>
+            <a href="../../../where-to-buy/find-a-distributor.html" class="footer__link">Find a Distributor</a>
+            <a href="../../../resources/faqs.html" class="footer__link">FAQs</a>
+            <a href="../../../resources/contact.html" class="footer__link">Contact</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer__company">
+        <div class="footer__company-logo">
+          <img src="https://mediahub.beechfieldbrands.com/m/6c13cb59a34019b7/Product_medium-Beechfield-Logo-PNG.jpg" alt="Beechfield Original Headwear" height="28" style="display:block">
+        </div>
+        <div class="footer__company-info">
+          <p>Part of <a href="../../../../beechfield-brands/">Beechfield Brands Ltd.</a></p>
+          <p>Registered in England &amp; Wales. Company No. 02996544</p>
+          <p>&copy; 2026 Beechfield Brands Limited. All rights reserved.</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">Beechfield Original Headwear</p>
+        <div class="footer__legal">
+          <a href="#">Privacy</a>
+          <a href="#">Cookies</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Modern Slavery</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../shared/js/navigation.js" defer></script>
+  <script src="../../../shared/js/auth.js"></script>
+</body>
+</html>

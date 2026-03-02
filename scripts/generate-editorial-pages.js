@@ -5,6 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { getHeader, getFooter, getSearchOverlay } = require('./nav-fragments');
 
 const BASE = path.join(__dirname, '..', 'sites', 'beechfield');
 
@@ -93,40 +94,8 @@ function pageShell({ title, description, breadcrumbHtml, heroColor, heroH1, hero
 </head>
 <body>
 
-  <!-- Top bar -->
-  <div class="top-bar" style="background:#0e1520;color:#fff;font-size:0.78rem;padding:0.5rem 0;">
-    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;">
-      <nav aria-label="Beechfield Brands family" style="display:flex;align-items:center;gap:1rem;">
-        <span style="opacity:0.6;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;">Our Brands</span>
-        <div style="display:flex;gap:1rem;">
-          <a href="../../beechfield-brands/" style="color:rgba(255,255,255,0.7);text-decoration:none;">Beechfield Brands</a>
-          <a href="../" style="color:#fff;font-weight:600;text-decoration:none;">Beechfield</a>
-          <a href="../../bagbase/" style="color:rgba(255,255,255,0.7);text-decoration:none;">BagBase</a>
-          <a href="../../quadra/" style="color:rgba(255,255,255,0.7);text-decoration:none;">Quadra</a>
-          <a href="../../westford-mill/" style="color:rgba(255,255,255,0.7);text-decoration:none;">Westford Mill</a>
-        </div>
-      </nav>
-      <a href="../where-to-buy/find-a-distributor.html" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.78rem;">Find a Distributor</a>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="site-header" style="background:#fff;border-bottom:1px solid #e8e4dc;position:sticky;top:0;z-index:100;">
-    <div class="container" style="max-width:1200px;margin:0 auto;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;">
-      <a href="../" style="font-size:1.25rem;font-weight:800;color:#0e1520;text-decoration:none;line-height:1.1;">Beechfield<span style="display:block;font-size:0.6rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;">Original Headwear</span></a>
-      <nav aria-label="Main navigation">
-        <ul style="display:flex;list-style:none;gap:0.25rem;">
-          <li><a href="../products/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;${activeNav === 'products' ? 'color:#1f614d;font-weight:700;' : ''}">Products</a></li>
-          <li><a href="../collections/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;${activeNav === 'collections' ? 'color:#1f614d;font-weight:700;' : ''}">Collections</a></li>
-          <li><a href="../cap-studio/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;${activeNav === 'cap-studio' ? 'color:#1f614d;font-weight:700;' : ''}">Cap Studio</a></li>
-          <li><a href="../decorator-academy/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;${activeNav === 'decorator-academy' ? 'color:#1f614d;font-weight:700;' : ''}">Decorator Academy</a></li>
-          <li><a href="../resources/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;${activeNav === 'resources' ? 'color:#1f614d;font-weight:700;' : ''}">Resources</a></li>
-          <li><a href="../where-to-buy/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;${activeNav === 'where-to-buy' ? 'color:#1f614d;font-weight:700;' : ''}">Where to Buy</a></li>
-          <li><a href="../about/" style="display:block;padding:0.5rem 0.85rem;color:#0e1520;text-decoration:none;font-size:0.9rem;font-weight:500;border-radius:4px;${activeNav === 'about' ? 'color:#1f614d;font-weight:700;' : ''}">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  ${getHeader('../', activeNav)}
+  ${getSearchOverlay()}
 
   <main>
     <!-- Hero -->
@@ -141,57 +110,10 @@ function pageShell({ title, description, breadcrumbHtml, heroColor, heroH1, hero
     ${bodyHtml}
   </main>
 
-  <!-- Footer -->
-  <footer style="background:#0e1520;color:rgba(255,255,255,0.75);padding:3.5rem 0 0;">
-    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:2rem;margin-bottom:3rem;">
-        <div>
-          <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;margin-bottom:1rem;">Products</h4>
-          <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <a href="../products/caps/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Caps</a>
-            <a href="../products/beanies/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Beanies</a>
-            <a href="../products/bucket-hats/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Bucket Hats</a>
-            <a href="../products/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">All Products</a>
-          </div>
-        </div>
-        <div>
-          <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;margin-bottom:1rem;">Resources</h4>
-          <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <a href="../cap-studio/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Cap Studio</a>
-            <a href="../decorator-academy/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Decorator Academy</a>
-            <a href="../lookbooks/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Lookbooks</a>
-            <a href="../resources/faqs.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">FAQs</a>
-          </div>
-        </div>
-        <div>
-          <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;margin-bottom:1rem;">About</h4>
-          <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <a href="../about/about-beechfield.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Our Story</a>
-            <a href="../about/sustainability.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Sustainability</a>
-            <a href="../where-to-buy/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Where to Buy</a>
-            <a href="../resources/contact.html" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Contact</a>
-          </div>
-        </div>
-        <div>
-          <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;margin-bottom:1rem;">Beechfield Brands</h4>
-          <div style="display:flex;flex-direction:column;gap:0.5rem;">
-            <a href="../../bagbase/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">BagBase</a>
-            <a href="../../quadra/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Quadra</a>
-            <a href="../../westford-mill/" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;">Westford Mill</a>
-          </div>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:1rem;">
-        <span style="font-size:0.78rem;">&copy; 2026 Beechfield Brands. All rights reserved.</span>
-        <div style="display:flex;gap:1.25rem;">
-          <a href="../about/privacy.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.78rem;">Privacy</a>
-          <a href="../about/terms.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.78rem;">Terms</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  ${getFooter('../')}
 
-  <script src="../../shared/js/navigation.js" defer></script>
+  <script src="${rel}/../js/navigation.js" defer></script>
+  <script src="${rel}/../js/auth.js"></script>
 </body>
 </html>`;
 }

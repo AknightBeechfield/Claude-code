@@ -6,6 +6,7 @@
  */
 const path = require('path');
 const fs = require('fs');
+const { getHeader, getFooter, getSearchOverlay } = require('./nav-fragments');
 
 const ROOT = path.resolve(__dirname, '..');
 const PRODUCTS_JSON = path.join(ROOT, 'server', 'data', 'products.json');
@@ -159,6 +160,45 @@ function getCleanColours(sku) {
   }).slice(0, 24); // Max 24 swatches
 }
 
+// --- Derive filter data attributes ---
+function getPurposes(p) {
+  const purposes = new Set();
+  const tp = (p.typePurpose || '').toLowerCase();
+  const s1 = (p.silo || '').toLowerCase();
+  const s2 = (p.silo2 || '').toLowerCase();
+  const all = `${tp} ${s1} ${s2}`;
+  if (/outdoor|active|sport|running|cycling/i.test(all)) purposes.add('outdoors');
+  if (/sport|team|athletic|running|cycling/i.test(all)) purposes.add('sports');
+  if (/promo|corporate|event|giveaway/i.test(all)) purposes.add('promotion');
+  if (/fashion|street|vintage|urban|lifestyle/i.test(all)) purposes.add('fashion');
+  if (/work|hi-vis|safety|industrial/i.test(all)) purposes.add('workwear');
+  if (/gift|premium|luxury/i.test(all)) purposes.add('gifting');
+  if (purposes.size === 0) purposes.add('promotion');
+  return Array.from(purposes).join(' ');
+}
+
+function getDecoMethods(p) {
+  const methods = ['embroidery', 'transfer'];
+  const isCap = p.type === 'cap';
+  const pt = (p.productType || '').toLowerCase();
+  if (isCap || pt.includes('bucket') || pt.includes('hat')) methods.push('patches');
+  if (isCap) methods.push('screen');
+  return methods.join(' ');
+}
+
+function getFeatures(p) {
+  const features = [];
+  const label = (p.label || '').toLowerCase();
+  if (label.includes('tear') || label.includes('rip')) features.push('tearaway');
+  if ((p.ecoCredentials || '').toLowerCase() !== 'n/a' && (p.ecoCredentials || '').trim()) features.push('eco');
+  return features.join(' ');
+}
+
+function getColourNames(sku) {
+  const colours = getCleanColours(sku);
+  return colours.map(c => c.name.toLowerCase()).join(' ');
+}
+
 // --- Find related products ---
 function findRelated(product, count = 4) {
   const related = products.filter(p =>
@@ -263,54 +303,10 @@ const PDP_CSS = `
     @media print { .top-bar,.site-header,.breadcrumb,.site-footer,.gallery__thumbs,.product-ctas,.deco-techniques,.colour-picker,.decoration-section,.family-section,.cross-brand { display: none !important; } }
 `;
 
-// --- Navigation HTML ---
-const NAV_HTML = `
-  <div class="top-bar">
-    <div class="container top-bar__inner">
-      <nav class="brand-switcher" aria-label="Beechfield Brands family">
-        <span class="brand-switcher__label">Our Brands</span>
-        <div class="brand-switcher__links">
-          <a href="/" class="brand-switcher__link brand-switcher__link--active">Beechfield</a>
-          <a href="#" class="brand-switcher__link">BagBase</a>
-          <a href="#" class="brand-switcher__link">Quadra</a>
-          <a href="#" class="brand-switcher__link">Westford Mill</a>
-        </div>
-      </nav>
-      <div class="top-bar__actions"><a href="../where-to-buy/">Find a Distributor</a></div>
-    </div>
-  </div>
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a href="../index.html" class="site-logo" aria-label="Beechfield"><img src="https://mediahub.beechfieldbrands.com/m/6c13cb59a34019b7/Product_medium-Beechfield-Logo-PNG.jpg" alt="Beechfield" height="36"></a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <ul class="main-nav__list">
-          <li class="main-nav__item"><a href="../products/" class="main-nav__link main-nav__link--active">Products</a></li>
-          <li class="main-nav__item"><a href="../cap-studio/" class="main-nav__link">Cap Studio</a></li>
-          <li class="main-nav__item"><a href="../lookbooks/" class="main-nav__link">Lookbooks</a></li>
-          <li class="main-nav__item"><a href="../decorator-academy/" class="main-nav__link">Decorator Academy</a></li>
-          <li class="main-nav__item"><a href="../where-to-buy/" class="main-nav__link">Where to Buy</a></li>
-          <li class="main-nav__item"><a href="../about/" class="main-nav__link">About</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="search-toggle" aria-label="Open search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
-        <a href="../account/login.html" class="account-toggle" aria-label="My account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
-        <button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button>
-      </div>
-    </div>
-  </header>`;
-
-const FOOTER_HTML = `
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid footer__grid--5col">
-        <div><h4 class="footer__column-title">Products</h4><nav class="footer__links"><a href="../products/" class="footer__link">All Products</a><a href="../products/caps/" class="footer__link">Caps</a><a href="../products/beanies/" class="footer__link">Beanies</a></nav></div>
-        <div><h4 class="footer__column-title">Collections</h4><nav class="footer__links"><a href="../collections/earthaware.html" class="footer__link">EarthAware</a><a href="../collections/originals.html" class="footer__link">Originals</a><a href="../collections/vintage.html" class="footer__link">Vintage</a></nav></div>
-        <div><h4 class="footer__column-title">Support</h4><nav class="footer__links"><a href="../where-to-buy/" class="footer__link">Where to Buy</a><a href="../resources/faqs.html" class="footer__link">FAQs</a></nav></div>
-      </div>
-      <div class="footer__bottom"><p class="footer__copyright">&copy; 2026 Beechfield Brands Limited.</p><div class="footer__legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
-    </div>
-  </footer>`;
+// --- Navigation HTML (from shared nav-fragments module) ---
+// PDP pages are at /products/slug.html → prefix '../'
+const NAV_HTML = getHeader('../', 'products');
+const FOOTER_HTML = getFooter('../');
 
 const PLACEHOLDER_IMG = '/sites/shared/images/placeholder-product.svg';
 
@@ -544,22 +540,48 @@ function generatePDP(product) {
 function generatePLP(category, title, introText, filterFn) {
   const filteredProducts = products.filter(filterFn);
 
+  // Collect unique sub-types and collections for filter tabs
+  const subTypes = [...new Set(filteredProducts.map(p => p.productType || '').filter(Boolean))].sort();
+  const collections = [...new Set(filteredProducts.map(p => p.collection || '').filter(c => c && c !== 'Uncategorised'))].sort();
+
   const productCards = filteredProducts.map(p => {
-    const img = images[p.sku.toUpperCase()]?.hero || PLACEHOLDER_IMG;
+    const sku = p.sku.toUpperCase();
+    const img = images[sku]?.hero || PLACEHOLDER_IMG;
     const hasEco = p.ecoCredentials && p.ecoCredentials.toLowerCase() !== 'n/a' && p.ecoCredentials.trim();
-    const colours = getCleanColours(p.sku.toUpperCase());
+    const colours = getCleanColours(sku);
+    const colourDots = colours.slice(0, 8).map(c =>
+      `<li class="pc__dot" style="background:${getColourHex(c.name)}${c.name.toLowerCase() === 'white' ? ';border:1px solid #ddd' : ''}" title="${escHtml(c.name)}"></li>`
+    ).join('');
     return `
-        <a href="../${p.slug}.html" class="pc" data-collection="${escHtml(p.collection || '')}" data-type="${escHtml(p.productType || '')}" data-eco="${hasEco ? '1' : '0'}">
+        <a href="../${p.slug}.html" class="pc" role="listitem"
+           data-type="${escHtml(p.productType || '')}" data-collection="${escHtml(p.collection || '')}"
+           data-purpose="${escHtml(getPurposes(p))}" data-deco="${escHtml(getDecoMethods(p))}"
+           data-feature="${escHtml(getFeatures(p))}" data-colour="${escHtml(getColourNames(sku))}"
+           data-sku="${escHtml(p.sku)}" data-name="${escHtml(p.name)}" data-date="${escHtml(p.dateAdded || '2020-01-01')}"
+           data-eco="${hasEco ? '1' : '0'}">
           <div class="pc__img"><img src="${img}" alt="${escHtml(p.name)}" loading="lazy"></div>
           <div class="pc__body">
             <span class="pc__sku">${escHtml(p.sku)}</span>
             <h3 class="pc__name">${escHtml(p.name)}</h3>
             ${p.collection && p.collection !== 'Uncategorised' ? `<span class="pc__collection">${escHtml(p.collection)}</span>` : ''}
             ${hasEco ? `<span class="pc__eco">${escHtml(p.ecoCredentials)}</span>` : ''}
-            ${colours.length > 0 ? `<span class="pc__colours">${colours.length} colours</span>` : ''}
+            ${colours.length > 0 ? `<ul class="pc__dots">${colourDots}${colours.length > 8 ? `<li class="pc__dot-more">+${colours.length - 8}</li>` : ''}</ul>` : ''}
           </div>
         </a>`;
   }).join('');
+
+  // PLP nav: category PLPs are at /products/{category}/index.html → prefix '../../'
+  const plpNav = getHeader('../../', 'products');
+  const plpFooter = getFooter('../../');
+
+  // Filter tabs HTML
+  const typeTabsHtml = subTypes.length > 1 ? subTypes.map(t =>
+    `<button class="plp-filter__tab" data-filter-group="type" data-filter-value="${escHtml(t)}">${escHtml(t)}</button>`
+  ).join('\n              ') : '';
+
+  const collectionTabsHtml = collections.length > 1 ? collections.map(c =>
+    `<button class="plp-filter__tab" data-filter-group="collection" data-filter-value="${escHtml(c)}">${escHtml(c)}</button>`
+  ).join('\n              ') : '';
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -583,7 +605,17 @@ function generatePLP(category, title, introText, filterFn) {
     .plp-hero__label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
     .plp-hero__title { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
     .plp-hero__text { font-size: 0.95rem; line-height: 1.7; max-width: 600px; opacity: 0.8; }
-    .plp-count { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 0; font-size: 0.82rem; color: #888; }
+    .plp-toolbar { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .plp-toolbar__count { font-size: 0.82rem; color: #888; }
+    .plp-toolbar__sort select { font-size: 0.82rem; padding: 0.4rem 0.8rem; border: 1px solid #ddd; border-radius: 4px; background: #fff; }
+    .plp-filters { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .plp-filters__group-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; width: 100%; margin-bottom: -0.25rem; }
+    .plp-filter__tab { background: none; border: 1px solid #ddd; padding: 0.4rem 1rem; font-size: 0.78rem; font-weight: 600; cursor: pointer; border-radius: 4px; transition: all 0.15s; }
+    .plp-filter__tab:hover { border-color: #111; }
+    .plp-filter__tab--active { background: #111; color: #fff; border-color: #111; }
+    .plp-active-filters { max-width: 1200px; margin: 0 auto; padding: 0.75rem 2rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .plp-active-pill { display: inline-flex; align-items: center; gap: 0.3rem; background: #f0f0f0; font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 3px; cursor: pointer; border: none; }
+    .plp-active-pill:hover { background: #e0e0e0; }
     .plp-grid { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 4rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
     .pc { display: block; text-decoration: none; color: var(--bfb-cool-black, #0e1520); border: 1px solid #e7e5e4; transition: box-shadow 0.2s, transform 0.2s; }
     .pc:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
@@ -594,12 +626,14 @@ function generatePLP(category, title, introText, filterFn) {
     .pc__name { font-size: 0.88rem; font-weight: 700; margin: 0.25rem 0 0.4rem; line-height: 1.3; }
     .pc__collection { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: #f5f5f0; padding: 2px 6px; color: #666; margin-right: 0.25rem; }
     .pc__eco { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: rgba(31,97,77,0.1); color: #1f614d; padding: 2px 6px; }
-    .pc__colours { display: block; font-size: 0.72rem; color: #888; margin-top: 0.25rem; }
+    .pc__dots { display: flex; gap: 4px; flex-wrap: wrap; list-style: none; padding: 0; margin: 0.35rem 0 0; }
+    .pc__dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .pc__dot-more { font-size: 0.6rem; color: #888; line-height: 14px; }
   </style>
 </head>
 <body>
-  <div class="top-bar"><div class="container top-bar__inner"><nav class="brand-switcher"><span class="brand-switcher__label">Our Brands</span><div class="brand-switcher__links"><a href="/" class="brand-switcher__link brand-switcher__link--active">Beechfield</a><a href="#" class="brand-switcher__link">BagBase</a><a href="#" class="brand-switcher__link">Quadra</a><a href="#" class="brand-switcher__link">Westford Mill</a></div></nav></div></div>
-  <header class="site-header"><div class="container site-header__inner"><a href="../../index.html" class="site-logo"><img src="https://mediahub.beechfieldbrands.com/m/6c13cb59a34019b7/Product_medium-Beechfield-Logo-PNG.jpg" alt="Beechfield" height="36"></a><nav class="main-nav"><ul class="main-nav__list"><li class="main-nav__item"><a href="../../products/" class="main-nav__link main-nav__link--active">Products</a></li><li class="main-nav__item"><a href="../../cap-studio/" class="main-nav__link">Cap Studio</a></li><li class="main-nav__item"><a href="../../decorator-academy/" class="main-nav__link">Decorator Academy</a></li><li class="main-nav__item"><a href="../../where-to-buy/" class="main-nav__link">Where to Buy</a></li><li class="main-nav__item"><a href="../../about/" class="main-nav__link">About</a></li></ul></nav><div class="header-actions"><button class="mobile-toggle" aria-label="Toggle menu"><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span><span class="mobile-toggle__bar"></span></button></div></div></header>
+  ${plpNav}
+  ${getSearchOverlay()}
 
   <main>
     <section class="plp-hero">
@@ -609,13 +643,41 @@ function generatePLP(category, title, introText, filterFn) {
         <p class="plp-hero__text">${escHtml(introText)}</p>
       </div>
     </section>
-    <p class="plp-count">${filteredProducts.length} products</p>
-    <div class="plp-grid">${productCards}
+
+    <div class="plp-toolbar">
+      <span class="plp-toolbar__count"><span id="plp-visible-count">${filteredProducts.length}</span> products</span>
+      <div class="plp-toolbar__sort">
+        <label for="plp-sort" style="font-size:0.78rem;color:#888;margin-right:0.5rem;">Sort by</label>
+        <select id="plp-sort">
+          <option value="name-az">A – Z</option>
+          <option value="name-za">Z – A</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
+    </div>
+
+    ${typeTabsHtml ? `<div class="plp-filters">
+      <span class="plp-filters__group-label">Type</span>
+      <button class="plp-filter__tab plp-filter__tab--active" data-filter-group="type" data-filter-value="">All</button>
+      ${typeTabsHtml}
+    </div>` : ''}
+
+    ${collectionTabsHtml ? `<div class="plp-filters" style="margin-top:0.5rem;">
+      <span class="plp-filters__group-label">Collection</span>
+      <button class="plp-filter__tab plp-filter__tab--active" data-filter-group="collection" data-filter-value="">All</button>
+      ${collectionTabsHtml}
+    </div>` : ''}
+
+    <div class="plp-active-filters" id="plp-active-filters"></div>
+
+    <div class="plp-grid" id="plp-grid">${productCards}
     </div>
   </main>
 
-  <footer class="site-footer"><div class="container"><div class="footer__bottom"><p class="footer__copyright">&copy; 2026 Beechfield Brands Limited.</p></div></div></footer>
+  ${plpFooter}
   <script src="../../../shared/js/navigation.js"></script>
+  <script src="../../../shared/js/auth.js"></script>
+  <script src="../../../shared/js/filters.js"></script>
 </body>
 </html>`;
 }
@@ -700,5 +762,75 @@ for (const cat of categories) {
   const count = products.filter(cat.filter).length;
   console.log(`  ${cat.dir}/index.html — ${count} products`);
 }
+
+// --- Inject all 248 products into main PLP ---
+console.log('\nUpdating main PLP (products/index.html)...');
+const mainPlpPath = path.join(OUTPUT_DIR, 'index.html');
+let mainPlp = fs.readFileSync(mainPlpPath, 'utf8');
+
+// 1. Replace nav: from <div class="top-bar"> to </header>
+const mainPlpNav = getHeader('../', 'products');
+mainPlp = mainPlp.replace(
+  /[ \t]*<div class="top-bar">[\s\S]*?<\/header>/,
+  mainPlpNav
+);
+
+// 2. Replace footer: from <footer class="site-footer"> to </footer>
+const mainPlpFooter = getFooter('../');
+mainPlp = mainPlp.replace(
+  /[ \t]*(?:<!-- Footer -->\s*)?<footer class="site-footer">[\s\S]*?<\/footer>/,
+  mainPlpFooter
+);
+
+// 3. Generate all 248 product cards in main PLP format
+const allProductCards = products.map(p => {
+  const sku = p.sku.toUpperCase();
+  const imgData = images[sku] || {};
+  const heroImg = imgData.hero || PLACEHOLDER_IMG;
+  const colours = getCleanColours(sku);
+  const hasEco = p.ecoCredentials && p.ecoCredentials.toLowerCase() !== 'n/a' && p.ecoCredentials.trim();
+  const bc = getBreadcrumbType(p);
+  const colourDots = colours.slice(0, 5).map(c =>
+    `<span class="pc__colour-dot" style="background:${getColourHex(c.name)}${c.name.toLowerCase() === 'white' ? ';border-color:#ddd' : ''}"></span>`
+  ).join('');
+  const colourMore = colours.length > 5 ? `<span class="pc__colour-more">+${colours.length - 5}</span>` : '';
+
+  return `
+            <a href="${p.slug}.html" class="pc" role="listitem"
+               data-type="${escHtml(bc.slug)}" data-collection="${escHtml((p.collection || '').toLowerCase())}"
+               data-purpose="${escHtml(getPurposes(p))}" data-deco="${escHtml(getDecoMethods(p))}"
+               data-feature="${escHtml(getFeatures(p))}" data-colour="${escHtml(getColourNames(sku))}"
+               data-sku="${escHtml(p.sku)}" data-name="${escHtml(p.name)}" data-date="${escHtml(p.dateAdded || '2020-01-01')}">
+              <div class="pc__img">
+                <img src="${heroImg}" alt="${escHtml(p.sku)} ${escHtml(p.name)}" loading="lazy">
+                ${hasEco ? '<span class="pc__badge pc__badge--eco">EarthAware</span>' : ''}
+              </div>
+              <div class="pc__body">
+                <p class="pc__sku">${escHtml(p.sku)}</p>
+                <p class="pc__name">${escHtml(p.name)}</p>
+                ${colours.length > 0 ? `<div class="pc__colours">${colourDots}${colourMore}</div>` : ''}
+              </div>
+            </a>`;
+}).join('');
+
+// 4. Replace grid content between <div class="plp-grid" role="list"> and </div><!-- /plp-grid -->
+mainPlp = mainPlp.replace(
+  /(<div class="plp-grid" role="list">)[\s\S]*?(<\/div><!-- \/plp-grid -->)/,
+  `$1${allProductCards}\n          $2`
+);
+
+// 5. Update product count display
+mainPlp = mainPlp.replace(
+  /(<span[^>]*id="plp-count"[^>]*>)\d+/,
+  `$1${products.length}`
+);
+// Also try class-based count
+mainPlp = mainPlp.replace(
+  /(<span class="plp-header__count">)[\s\S]*?(<\/span>)/,
+  `$1${products.length} products$2`
+);
+
+fs.writeFileSync(mainPlpPath, mainPlp);
+console.log(`  products/index.html — injected ${products.length} product cards`);
 
 console.log('\nDone.');
